@@ -1,0 +1,282 @@
+////////////////////////////////////////////////////////
+//                     IMPORTS
+////////////////////////////////////////////////////////
+@use 'mixins' as *;
+
+////////////////////////////////////////////////////////
+//                     ABOUT
+////////////////////////////////////////////////////////
+.about {
+  display: grid;
+  gap: var(--space-500);
+  padding: var(--space-500) var(--space-800);
+
+  &__heading-secondary {
+    font-size: var(--fs-400);
+
+    @include respond-to(bp-750) {
+      font-size: var(--fs-350);
+    }
+    @include respond-to(bp-550) {
+      font-size: var(--fs-300);
+    }
+  }
+
+  &__link {
+    @include format-link(
+      var(--clr-base-link),
+      var(--clr-base-link-alt-alpha),
+      true
+    );
+  }
+
+  &__features {
+    padding-block: var(--space-800);
+
+    @include respond-to(bp-900) {
+      padding: 0;
+    }
+  }
+
+  &__faqs {
+    padding: var(--space-800);
+
+    @include respond-to(bp-1024) {
+      padding-inline: 0;
+    }
+    @include respond-to(bp-900) {
+      padding: 0;
+    }
+  }
+
+  &__contact {
+    display: grid;
+    gap: var(--space-500);
+    padding: var(--space-800);
+    justify-items: center;
+
+    @include respond-to(bp-1024) {
+      padding-inline: 0;
+    }
+
+    @include respond-to(bp-900) {
+      padding: 0;
+    }
+    @include respond-to(bp-750) {
+      gap: var(--space-200);
+    }
+  }
+
+  &__contact-heading {
+  }
+
+  &__contact-text {
+    font-style: normal;
+    font-size: var(--fs-200);
+    text-align: center;
+
+    @include respond-to(bp-750) {
+      font-size: var(--fs-180);
+    }
+  }
+  @include respond-to(bp-900) {
+    padding: var(--space-500);
+
+    & > * {
+      padding-block: var(--space-300);
+    }
+  }
+  @include respond-to(bp-550) {
+    padding: var(--space-200);
+  }
+}
+
+////////////////////////////////////////////////////////
+//                     PRIVACY
+////////////////////////////////////////////////////////
+.privacy {
+  display: grid;
+  gap: var(--space-800);
+  padding: var(--space-800);
+
+  &__heading-primary {
+    justify-self: center;
+    font-size: var(--fs-500);
+
+    @include respond-to(bp-750) {
+      font-size: var(--fs-400);
+    }
+    @include respond-to(bp-550) {
+      font-size: var(--fs-350);
+    }
+  }
+
+  &__heading-secondary {
+    font-size: var(--fs-400);
+
+    @include respond-to(bp-750) {
+      font-size: var(--fs-300);
+    }
+    @include respond-to(bp-550) {
+      font-size: var(--fs-250);
+    }
+  }
+
+  &__short {
+    justify-self: center;
+    display: grid;
+    gap: var(--space-200);
+    justify-items: center;
+
+    @include respond-to(bp-750) {
+      gap: var(--space-100);
+    }
+  }
+
+  &__short-text {
+    text-align: center;
+    font-size: var(--fs-200);
+
+    @include respond-to(bp-750) {
+      font-size: var(--fs-180);
+    }
+  }
+
+  @include respond-to(bp-900) {
+    gap: var(--space-500);
+    padding: var(--space-500);
+  }
+  @include respond-to(bp-550) {
+    padding: var(--space-200);
+  }
+}
+
+////////////////////////////////////////////////////////
+//                     ERROR
+////////////////////////////////////////////////////////
+.error {
+  padding: var(--space-500);
+  display: grid;
+  place-content: center;
+  gap: var(--space-300);
+  place-items: center;
+
+  &__code {
+    font-size: var(--fs-1500);
+    font-family: var(--ff-alt-alpha);
+    font-weight: 700;
+    // letter-spacing: 0.1em;
+    line-height: 1;
+
+    @include respond-to(bp-550) {
+      font-size: var(--fs-1000);
+    }
+  }
+
+  &__message,
+  &__return {
+    font-size: var(--fs-200);
+    // font-family: var(--ff-alt-alpha);
+    color: var(--clr-base-text);
+    text-align: center;
+
+    @include respond-to(bp-550) {
+      font-size: var(--fs-180);
+    }
+  }
+
+  &__link {
+    @include format-link(var(--clr-base-link), var(--clr-base-link-alt-alpha));
+  }
+
+  &__stack-box {
+    // display: none;
+    overflow: auto;
+    max-width: 90%;
+    // background: red;
+  }
+
+  &__stack {
+    padding: var(--space-300);
+  }
+}
+
+////////////////////////////////////////////////////////
+//                     ANSWERED
+////////////////////////////////////////////////////////
+
+.answers {
+  // justify-self: center;
+  padding: var(--space-800);
+
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  grid-template-rows: min-content min-content 1fr;
+  grid-auto-flow: dense;
+  align-items: start;
+  gap: var(--space-800);
+
+  &__question-box {
+    grid-column: 1 / -1;
+    grid-row: 1 / span 1;
+
+    display: grid;
+    gap: var(--space-200);
+  }
+
+  &__answers-box {
+    grid-row: 2 / -1;
+  }
+
+  &__topics {
+    grid-row: 2 / span 1;
+  }
+
+  &__related {
+    grid-row: 3 / -1;
+  }
+
+  &__question {
+    font-size: var(--fs-300);
+
+    @include respond-to(bp-550) {
+      font-size: var(--fs-270);
+    }
+  }
+
+  &__link {
+    @include format-link(var(--clr-base-link), var(--clr-base-link-alt-alpha));
+  }
+
+  &__metadata {
+    display: flex;
+    color: var(--clr-base-text-alt-alpha);
+
+    :not(:last-child)::after {
+      margin-inline: var(--space-100);
+      content: '\00b7';
+      font-weight: 700;
+    }
+
+    @include respond-to(bp-550) {
+      display: block;
+
+      :not(:last-child)::after {
+        display: none;
+      }
+    }
+  }
+
+  @include respond-to(bp-1200) {
+    display: flex;
+    flex-direction: column;
+    // gap: var(--space-800);
+  }
+  @include respond-to(bp-900) {
+    padding: var(--space-500);
+    gap: var(--space-500);
+  }
+  @include respond-to(bp-550) {
+    padding-inline: var(--space-200);
+  }
+}

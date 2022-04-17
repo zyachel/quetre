@@ -1,0 +1,61 @@
+{
+  "name": "quetre",
+  "version": "1.0.0",
+  "description": "a libre front-end for Quora",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass views/sass/main.scss:public/css/styles.css --watch",
+    "sass:build": "sass views/sass/main.scss:public/css/styles.css --style=compressed",
+    "server:dev": "NODE_ENV=development nodemon server.js",
+    "server:prod": "nodemon server.js",
+    "dev": "(pnpm sass:watch) & (pnpm server:dev)",
+    "prod": "(pnpm sass:build) & (pnpm server:prod)",
+    "start": "(npm run sass:build) & (node server.js)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zyachel/quetre.git"
+  },
+  "keywords": [
+    "front-end"
+  ],
+  "author": "zyachel",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/zyachel/quetre/issues"
+  },
+  "homepage": "https://github.com/zyachel/quetre#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cheerio": "^1.0.0-rc.10",
+    "compression": "^1.7.4",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2",
+    "sass": "^1.50.0"
+  },
+  "devDependencies": {
+    "@eslint/create-config": "^0.1.2",
+    "@types/express": "^4.17.13",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2"
+  },
+  "peerDependencies": {
+    "eslint-plugin-import": "^2.25.2",
+    "prettier": "^2.3.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "dev-data/*",
+      "public/*"
+    ]
+  }
+}

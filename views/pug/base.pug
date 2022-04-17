@@ -1,0 +1,49 @@
+doctype html
+html(lang='en')
+  // see the full source code on github in case you're interested. 
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    //- appending title to name in case it exists, else showing name as the title of the page
+    title= title ? `${title} | Quetre`: 'Quetre'
+    meta(name="description", content="A libre front-end for Quora. See any answer without being tracked, without being required to log in, and without being bombarded by pesky ads.")
+    //- preloading css and fonts for performance gains
+    link(rel='preload', href='/fonts/WorkSans.woff2', as='font', type='font/woff2', crossorigin)
+    link(rel='preload', href='/fonts/Quicksand.woff2', as='font', type='font/woff2', crossorigin)
+    link(rel='preload stylesheet', href='/css/styles.css', as='style', crossorigin)
+    //- favicons
+    link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+    link(rel="icon", href="/favicon.ico", type="image/x-icon")
+    link(rel="icon", type="image/png", sizes="32x32", href="/favicon-32x32.png")
+    link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png")
+    link(rel="mask-icon", href="/safari-pinned-tab.svg", color="#0f0e15")
+    link(rel="manifest", href="/site.webmanifest")
+    meta(name="msapplication-TileColor", content="#0f0e15")
+    meta(name="theme-color", content="#0f0e15")
+
+
+
+
+    //- own script
+    script(src='/js/index.js', defer)
+
+  //- initially setting this var to false. will update in case an answer contains some math expression
+  - let someAnswerContainsMath = false;
+
+  body.body
+    -if (title !=='About')
+      a.skip-link(href="#main") Skip to main content
+    //- stuff that's visible on page goes here
+    include _header
+    block content 
+      p placeholder text 
+    include _footer
+
+    //- including mathjax script only when some answer has math expressions(using the var from above)
+    if someAnswerContainsMath
+      script#MathJax-script(
+        type='text/javascript', 
+        src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js',
+        async
+      )

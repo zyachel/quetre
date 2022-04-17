@@ -1,0 +1,106 @@
+////////////////////////////////////////////////////////
+//                     IMPORTS
+////////////////////////////////////////////////////////
+@use 'sass:map';
+@use 'sass:meta';
+@use 'abstracts' as *;
+
+////////////////////////////////////////////////////////
+//                     ANIMATIONS
+////////////////////////////////////////////////////////
+@keyframes slide {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+////////////////////////////////////////////////////////
+//                     MIXINS
+////////////////////////////////////////////////////////
+/////// CONVERTS SASS VARS TO CSS CUSTOM PROPERTIES
+@mixin get-misc-vars {
+  // here $var is name of the key and $val is value
+  @each $var, $val in $misc-vars {
+    --#{$var}: #{$val};
+  }
+}
+
+/////// CONVERTS SASS (THEMED)VARS TO CSS CUSTOM PROPERTIES
+@mixin get-themed-vars($theme: 'light') {
+  // here also, $var is name of the key and $val is value of that key, which in itself is a map. we get value from the map by passing in $theme.
+  @each $var, $val in $themed-vars {
+    --#{$var}: #{map.get($val, $theme)};
+  }
+}
+
+////////////////////////////////////////////////////////
+//                        LINKS
+////////////////////////////////////////////////////////
+@mixin format-link(
+  $clr-base,
+  $clr-hover,
+  $underline: false,
+  $transition: true
+) {
+  text-decoration: none;
+  color: $clr-base;
+
+  &:hover {
+    color: $clr-hover;
+  }
+
+  @if $transition {
+    transition: color 400ms ease;
+  }
+
+  @if $underline {
+    border-bottom: 1px solid currentColor;
+  }
+}
+
+////////////////////////////////////////////////////////
+//                 BREAKPOINT MANAGER
+////////////////////////////////////////////////////////
+
+// map to hold breakpoints
+$breakpoints: (
+  bp-1900: 118.75em,
+  bp-1200: 75em,
+  bp-1024: 64em,
+  bp-900: 56.25em,
+  bp-750: 46.875em,
+  bp-650: 40.625em,
+  bp-550: 34.375em,
+  bp-450: 28.125em,
+);
+
+// main mixin
+@mixin respond-to($given-breakpoint, $min: false) {
+  $breakpoint: null;
+
+  @if (map.has-key($breakpoints, $given-breakpoint)) {
+    $breakpoint: map.get($breakpoints, $given-breakpoint);
+
+    // when only nos are passed
+  } @else if (meta.type-of($given-breakpoint) == 'number') {
+    $breakpoint: $given-breakpoint;
+
+    // throwing an error
+  } @else {
+    @error 'given breakpoint(#{$given-breakpoint}) is neither present in breakpoint map, nor is it a sensible number!';
+  }
+
+  $expr: 'max-width: #{$breakpoint}';
+
+  @if ($min) {
+    $expr: 'min-width: #{$breakpoint}';
+  }
+  @media screen and ($expr) {
+    @content;
+  }
+}

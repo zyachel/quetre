@@ -1,0 +1,39 @@
+extends base
+
+mixin checkMath(spans)
+  each span in spans 
+    -if(span.modifiers?.math)
+      span= `\\(${span.text}\\)`
+    -else
+      span= span.text
+
+block content 
+  main#main.main.answers
+
+    .answers__question-box 
+      h1.heading.heading__primary.answers__question
+        +checkMath(data.question.text.spans)
+      .answers__metadata 
+        p.answers__answers-total= `${ data.numAnswers ? 'Total answers: ' + data.numAnswers : 'Unanswered'}`
+        p.answers__answers-shown Viewable answers: #{data.answers.length}
+        a.answers__question-link.answers__link(href='https://quora.com' + data.question.url) View on Quora 
+
+    .answers-box.answers__answers-box
+      h2.heading.heading__secondary.answers__answers-box-heading Answers
+      .answers-box__list
+        each answerObj in data.answers 
+          include _answer
+
+    aside.topics.answers__topics 
+      h2.heading.heading__secondary.answers__topic-heading Tagged Topics
+      ul.topics__list
+        each topic in data.topics
+          li.topics__item:  a.topics__link.answers__link(href=topic.url)= topic.name
+
+
+    aside.related.answers__related
+      h2.heading.heading__secondary.answers__related-heading Related Questions
+      ul.related__questions 
+        each question in data.relatedQuestions
+          li.related__question-item: a.related__question-link.answers__link(href=question.url)
+            +checkMath(question.text.spans)

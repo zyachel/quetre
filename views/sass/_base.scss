@@ -1,0 +1,165 @@
+////////////////////////////////////////////////////////
+//                     IMPORTS
+////////////////////////////////////////////////////////
+@use 'mixins' as *;
+
+////////////////////////////////////////////////////////
+//                      FONTS
+////////////////////////////////////////////////////////
+@font-face {
+  font-family: 'WorkSans';
+  src: url('/fonts/WorkSans.woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand.woff2');
+  font-display: swap;
+}
+
+////////////////////////////////////////////////////////
+//                     RESET
+////////////////////////////////////////////////////////
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+////////////////////////////////////////////////////////
+//                   BASE STYLING
+////////////////////////////////////////////////////////
+:root {
+  // normal vars
+  @include get-misc-vars;
+  // themed vars(default:light)
+  @include get-themed-vars;
+
+  // dark themed vars when root has an attribute of theme set to 'dark'
+  &[theme='dark'] {
+    @include get-themed-vars(dark);
+  }
+
+  // styles to be applied when js is disabled
+  &:not([js-enabled]) {
+    // if the user prefers dark theme
+    @media (prefers-color-scheme: dark) {
+      // using dark theme instead of default one
+      @include get-themed-vars(dark);
+    }
+  }
+}
+
+.body {
+  font-size: var(--fs-160);
+  font-family: var(--ff-primary);
+  background-color: var(--clr-base-bg);
+  color: var(--clr-base-text);
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+
+  transition: color 500ms ease, background-color 500ms ease;
+}
+
+.main {
+  @include respond-to(bp-1900, true) {
+    width: 110em;
+    margin-inline: auto;
+  }
+}
+
+////////////////////////////////////////////////////////
+//               SELECTION & SCROLLBAR
+////////////////////////////////////////////////////////
+::selection {
+  background: var(--clr-selection-bg);
+  color: var(--clr-selection-text);
+}
+
+// for gecko-based browsers
+@supports (scrollbar-width: auto) {
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--clr-scrollbar-thumb) transparent;
+  }
+}
+
+// for webkit(and its fork blink) based browsers
+@supports not (scrollbar-width: auto) {
+  ::-webkit-scrollbar {
+    height: 0.8em;
+    width: 0.8em;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--clr-scrollbar-thumb);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 100vw;
+
+    &:hover {
+      background-color: var(--clr-scrollbar-thumb-alt-alpha);
+    }
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+////////////////////////////////////////////////////////
+//                 KEYBOARD NAVIGATION
+////////////////////////////////////////////////////////
+:focus {
+  outline: 3px solid var(--clr-focus);
+  outline-offset: 0.2em;
+}
+
+@supports selector(:focus-visible) {
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--clr-focus);
+    outline-offset: 0.2em;
+  }
+}
+
+////////////////////////////////////////////////////////
+//                   FOR MATHJAX
+////////////////////////////////////////////////////////
+mjx-container.MathJax {
+  pointer-events: none;
+}
+/*
+.CtxtMenu_ContextMenu,
+.CtxtMenu_Info {
+  background-color: var(--clr-base-bg) !important;
+  font-family: inherit !important;
+  color: inherit !important;
+}
+.CtxtMenu_InfoTitle,
+.CtxtMenu_InfoSignature,
+.CtxtMenu_MenuClose .CtxtMenu_InfoClose,
+.CtxtMenu_InfoContent {
+  font-family: inherit !important;
+  background: inherit !important;
+  color: inherit !important;
+}
+*/

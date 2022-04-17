@@ -1,0 +1,15 @@
+extends base
+
+block content 
+  main#main.main.error
+    p.error__code= statusCode
+    p.error__message= message
+
+    //- will only apply in dev mode
+    if stack 
+      .error__stack-box: pre.error__stack
+        code.error__text= stack
+
+    p.error__return Go back to the&nbsp;
+      a.error__link(href="/") Home Page
+      |.

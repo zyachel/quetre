@@ -1,0 +1,15 @@
+footer.footer(class=`${title ==='About' ? 'footer__about' : ''}`)
+  block footer
+    //- more stuff will be prepended here on about page
+    nav.footer__nav-box(aria-label='Primary navigation')
+      ul.footer__nav 
+        - if (title !=='About') 
+          li.footer__nav-item: a.footer__nav-link.footer__link(href="/") About
+
+        li.footer__nav-item: a.footer__nav-link.footer__link(href="https://github.com/zyachel/quetre") Source Code 
+        li.footer__nav-item: a.footer__nav-link.footer__link(href="/privacy") Privacy
+        li.footer__nav-item: a.footer__nav-link.footer__link(href="#") Back to top 
+
+    p.footer__license Licensed under&nbsp;
+      a.footer__link(href="https://www.gnu.org/licenses/agpl-3.0.html") GNU AGPLv3
+      | .

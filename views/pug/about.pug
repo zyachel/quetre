@@ -1,0 +1,98 @@
+extends base
+
+block header__nav
+  nav.header__nav-box(aria-label='Table of Contents'): ul.header__nav 
+    li.header__nav-item
+      a.header__link.header__nav-link(href="#features") Features
+    li.header__nav-item
+      a.header__link.header__nav-link(href="#faqs") FAQs
+    li.header__nav-item
+      a.header__link.header__nav-link(href="#contact") Contact
+    li.header__nav-item
+      a.header__link.header__nav-link(href="https://github.com/zyachel/quetre") Source
+
+
+block header__info
+  .header__info 
+    h1.heading.heading__primary.header__hero A libre front-end for Quora
+    a.header__link.header__down(href='#features', aria-label='go to features section'): svg.icon.icon__down: use(href='/misc/sprite.svg#icon-down')
+
+block content 
+  main#main.main.about
+    section.about__features.features#features
+      h2.heading.heading__secondary.about__heading-secondary.features__heading Key features
+      .features__list 
+        .features__feature 
+          svg.features__feature-icon: use(href='/misc/sprite.svg#icon-spy')
+          h3.heading.heading__tertiary.features__feature-heading Privacy focused
+          p.features__feature-text All requests except for images are proxied which makes it impossible for Quora to collate meaningful data points about you.
+        .features__feature 
+          svg.features__feature-icon: use(href='/misc/sprite.svg#icon-fingerprint')
+          h3.heading.heading__tertiary.features__feature-heading No ads or tracking
+          p.features__feature-text Absolutely no ads, no tracking, no browser fingerprinting, and no telemetry of any kind.
+        .features__feature 
+          svg.features__feature-icon: use(href='/misc/sprite.svg#icon-responsive')
+          h3.heading.heading__tertiary.features__feature-heading Fully responsive layout
+          p.features__feature-text Utilises modern CSS features like CSS Grid and Flexbox to make the website fully responsive for all screen sizes.
+        .features__feature 
+          svg.features__feature-icon: use(href='/misc/sprite.svg#icon-bolt')
+          h3.heading.heading__tertiary.features__feature-heading Lightweight and fast
+          p.features__feature-text As the website contains no bloat, pages load in a jiffy and request sizes are tiny.
+        .features__feature 
+          svg.features__feature-icon: use(href='/misc/sprite.svg#icon-palette')
+          h3.heading.heading__tertiary.features__feature-heading Dark and light themes
+          p.features__feature-text Whether you're a nightowl or bright screen lover, you'll enjoy curated color scheme for your taste.
+        .features__feature 
+          svg.features__feature-icon: use(href='/misc/sprite.svg#icon-code')
+          h3.heading.heading__tertiary.features__feature-heading Unofficial API support
+          p.features__feature-text just add&nbsp;
+            code /api/v1/
+            |&nbsp;after the domain name in the URL and get a JSON repsonse.
+
+    section.about__faqs.faqs#faqs
+      h2.heading.heading__secondary.about__heading-secondary.faqs__heading FAQs
+      .faqs__list
+        details.faqs__faq
+          summary.faqs__question There are some unreachable routes.
+            svg.faqs__icon: use(href='/misc/sprite.svg#icon-open')
+          p.faqs__answer I'm working to implement them soon.
+        details.faqs__faq
+          summary.faqs__question Why is website connecting to '*.quoracdn.net' and 'cdn.jsdelivr.net'?
+            svg.faqs__icon: use(href='/misc/sprite.svg#icon-open')
+          p.faqs__answer For the moment, images aren't proxied but directly fetched from quora. Hence the connection to quoracdn. As for the connection to jsdelivr, it is for an open source library &ndash;&nbsp;
+            a.about__link(href='https://www.mathjax.org/') Mathjax
+            |&nbsp;&ndash; which is used to display math eqations nicely. If I get enough time, I'll include it locally.
+        details.faqs__faq
+          summary.faqs__question Why are some math equations showing up weirdly?
+            svg.faqs__icon: use(href='/misc/sprite.svg#icon-open')
+          p.faqs__answer If you're browsing with JavaScript disabled, then the Mathjax library isn't able to load and format tex equations. I'd recommend to enable JavaScript for it since there's no other way to show them in the browser. Even Quora uses Mathjax.
+        details.faqs__faq
+          summary.faqs__question Why can I only view a couple of answers?
+            svg.faqs__icon: use(href='/misc/sprite.svg#icon-open')
+          p.faqs__answer Quora doesn't show all answers at once. It only loads more answers as the user scrolls down. Furthermore, it uses many unique IDs to send ajax requests to fetch those answers. So, all in all, getting more answers isn't impossible but quite difficult requiring some serious amount of time on their website in order to figure out how it all happens. I'm short on time for now.
+        details.faqs__faq
+          summary.faqs__question I have some ideas/want to help.
+            svg.faqs__icon: use(href='/misc/sprite.svg#icon-open')
+          p.faqs__answer You're most welcome to do that. Just&nbsp;
+            a.about__link(href='#contact') contact me
+            |&nbsp;or fork&nbsp;
+            a.about__link(href='https://github.com/zyachel/quetre') the repo
+            |&nbsp;and make a pull request.
+        details.faqs__faq
+          summary.faqs__question Why the name Quetre?
+            svg.faqs__icon: use(href='/misc/sprite.svg#icon-open')
+          p.faqs__answer Quora is&nbsp;
+            a.about__link(href='/Why-is-Quora-called-Quora-4') supposedly
+            |&nbsp;a portmanteau of 'Questions or answers'. In the same vein, Quetre is a portmanteau of 'Questions and answers', but&nbsp;
+            a.about__link(href="https://lingva.ml/en/la/questions%20and%20answers%0A") in Latin
+            |.
+
+    section.about__contact#contact
+      h2.heading.heading__secondary.about__heading-secondary.about__contact-heading Contact
+      address.about__contact-text Reach me via&nbsp;
+        a.about__link(href='https://matrix.to/#/@ninal:matrix.org') Matrix
+        |&nbsp;or&nbsp;
+        a.about__link(href="mailto:aricla@protonmail.com") Email
+        |&nbsp;in case you got any suggestions or feedback, or if you just want to drop a hi :)
+block prepend footer
+  p.footer__logo Quetre

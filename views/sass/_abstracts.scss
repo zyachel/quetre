@@ -1,0 +1,155 @@
+////////////////////////////////////////////////////////
+//                      IMPORTS
+////////////////////////////////////////////////////////
+@use 'sass:map';
+@use 'sass:color';
+
+////////////////////////////////////////////////////////
+//                      COLORS
+////////////////////////////////////////////////////////
+$clr-primary: #e3f6f5;
+$clr-secondary: #272343;
+$clr-highlight: #ff5277;
+
+$misc-vars: (
+  ff-primary: (
+    'Worksans',
+    sans-serif,
+  ),
+  ff-alt-alpha: (
+    'QuickSand',
+    sans-serif,
+  ),
+  fs-160: 1.6rem,
+  fs-180: 1.8rem,
+  fs-200: 2rem,
+  fs-220: 2.2rem,
+  fs-250: 2.5rem,
+  fs-270: 2.7rem,
+  fs-300: 3rem,
+  fs-350: 3.5rem,
+  fs-400: 4rem,
+  fs-500: 5rem,
+  fs-600: 6rem,
+  fs-1000: 10rem,
+  fs-1500: 15rem,
+  space-050: 0.5rem,
+  space-100: 1rem,
+  space-200: 2rem,
+  space-300: 3rem,
+  space-400: 4rem,
+  space-500: 5rem,
+  space-800: 8rem,
+  space-1000: 10rem,
+);
+
+$themed-vars: (
+  // base
+  clr-base-bg:
+    (
+      light: color.scale($clr-primary, $lightness: 90%),
+      dark: color.scale($clr-secondary, $lightness: -65%, $saturation: -40%),
+    ),
+  clr-base-heading: (
+    light: color.scale($clr-secondary, $lightness: -5%),
+    dark: color.scale($clr-primary, $lightness: 50%, $saturation: -100%),
+  ),
+  clr-base-heading-alt-alpha: (
+    light: color.scale($clr-secondary, $lightness: 5%),
+    dark: color.scale($clr-primary, $lightness: 10%),
+  ),
+  clr-base-text: (
+    light: color.scale($clr-secondary, $lightness: -60%),
+    dark: color.scale($clr-primary, $whiteness: 90%, $blackness: 10%),
+  ),
+  clr-base-text-alt-alpha: (
+    light: color.scale($clr-secondary, $whiteness: 20%),
+    dark: color.scale($clr-secondary, $whiteness: 100%),
+  ),
+  clr-code-bg: (
+    light: color.scale($clr-primary, $lightness: 70%, $saturation: -70%),
+    dark: color.scale($clr-secondary, $lightness: -50%, $saturation: -50%),
+  ),
+  clr-code-text: (
+    light: color.scale($clr-secondary, $lightness: 5%, $saturation: -100%),
+    dark: color.scale($clr-primary, $whiteness: 100%, $blackness: 30%),
+  ),
+  clr-base-icon: (
+    light: color.scale($clr-primary, $lightness: -55%),
+    dark: color.scale($clr-primary, $lightness: -40%, $saturation: 90%),
+  ),
+  clr-base-icon-alt-alpha: (
+    light: color.scale($clr-secondary, $lightness: 80%, $saturation: -100%),
+    dark: color.scale($clr-secondary, $lightness: -50%, $saturation: -50%),
+  ),
+  clr-base-link: (
+    light: color.scale($clr-secondary, $lightness: 20%, $saturation: 20%),
+    dark: color.scale($clr-primary, $lightness: -15%, $saturation: -35%),
+  ),
+  clr-base-link-alt-alpha: (
+    light: color.scale($clr-secondary, $lightness: 40%, $saturation: 20%),
+    dark: color.scale($clr-primary, $lightness: -35%, $saturation: -35%),
+  ),
+  // header, footer
+  grad-hf:
+    (
+      light: (
+        $clr-primary 70%,
+        color.scale($clr-primary, $lightness: 95%),
+      ),
+      dark: (
+        color.scale($clr-secondary, $lightness: -60%, $saturation: 7%),
+        color.scale($clr-secondary, $lightness: -60%, $saturation: 5%),
+        color.scale($clr-secondary, $lightness: -60%, $saturation: 2%),
+        color.scale($clr-secondary, $lightness: -60%, $saturation: -0%),
+        color.scale($clr-secondary, $lightness: -62%, $saturation: -5%),
+        color.scale($clr-secondary, $lightness: -65%, $saturation: -40%),
+      ),
+    ),
+  clr-hf-bg: (
+    light: $clr-primary,
+    dark: color.scale($clr-secondary, $lightness: -30%, $saturation: -30%),
+  ),
+  clr-hf-logo: (
+    light: color.scale($clr-secondary, $lightness: 20%),
+    dark: color.scale($clr-primary, $lightness: -40%, $saturation: 20%),
+  ),
+  clr-hf-heading: (
+    light: color.scale($clr-secondary, $lightness: 10%),
+    dark: color.scale($clr-primary, $lightness: -5%),
+  ),
+  clr-hf-text: (
+    light: color.scale($clr-secondary, $lightness: -50%),
+    dark: color.scale($clr-primary, $lightness: 0%),
+  ),
+  clr-hf-link: (
+    light: color.scale($clr-secondary, $lightness: 30%, $saturation: 30%),
+    dark: color.scale($clr-primary, $lightness: -10%),
+  ),
+  clr-hf-link-alt-alpha: (
+    light: color.scale($clr-secondary, $lightness: 40%, $saturation: 60%),
+    dark: color.scale($clr-primary, $lightness: -30%),
+  ),
+  // misc
+  clr-selection-bg:
+    (
+      light: color.scale($clr-secondary, $lightness: 15%),
+      dark: color.scale($clr-primary, $lightness: -85%),
+    ),
+  clr-selection-text: (
+    light: color.scale($clr-primary, $lightness: 50%),
+    dark: color.scale($clr-primary, $lightness: 90%),
+  ),
+  clr-scrollbar-thumb: (
+    light: color.scale($clr-secondary, $lightness: 15%),
+    dark: color.scale($clr-primary, $lightness: -40%),
+  ),
+  clr-scrollbar-thumb-alt-alpha: (
+    light: color.scale($clr-secondary, $lightness: 30%),
+    dark: color.scale($clr-primary, $lightness: -60%),
+  ),
+  clr-focus: (
+    light: color.scale($clr-highlight, $lightness: 0%, $saturation: 0%),
+    dark: color.scale($clr-highlight),
+  )
+);

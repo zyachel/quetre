@@ -1,0 +1,466 @@
+////////////////////////////////////////////////////////
+//                     IMPORTS
+////////////////////////////////////////////////////////
+@use 'mixins' as *;
+
+////////////////////////////////////////////////////////
+//             SKIP TO MAIN CONTENT LINK
+////////////////////////////////////////////////////////
+.skip-link {
+  position: absolute;
+  left: 50%;
+  // background: var(--clr-base-bg);
+  color: var(--clr-base-heading);
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  padding: 0 var(--space-100);
+  border-radius: 0 0 5px 5px;
+  font-size: var(--fs-180);
+  transform: translate(-50%, -150%);
+
+  transition: transform 200ms ease;
+
+  &:is(:focus, :focus-visible) {
+    transform: translate(-50%, 0);
+  }
+}
+////////////////////////////////////////////////////////
+//                   THEME CHANGER
+////////////////////////////////////////////////////////
+.theme-changer {
+  border: none;
+  // outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+
+    transition: all 0.5s ease;
+    transform-origin: center;
+
+    // initial config
+    &--sun {
+      transform: scale(0) rotateZ(-180deg);
+    }
+
+    &--moon {
+      transform: scale(1) rotateZ(0);
+    }
+  }
+}
+// changing config when root has the attr of theme
+:root[theme='dark'] {
+  .theme-changer__icon {
+    &--sun {
+      transform: scale(1) rotateZ(0);
+    }
+
+    &--moon {
+      transform: scale(0) rotateZ(180deg);
+    }
+  }
+}
+
+////////////////////////////////////////////////////////
+//                      ICONS
+////////////////////////////////////////////////////////
+.icon {
+  max-height: var(--fs-500);
+  max-width: var(--fs-500);
+  fill: var(--clr-base-icon);
+
+  &__down {
+    height: var(--fs-350);
+    width: var(--fs-350);
+    opacity: 0.3;
+
+    @include respond-to(bp-450) {
+      height: var(--fs-250);
+      width: var(--fs-250);
+    }
+  }
+}
+
+////////////////////////////////////////////////////////
+//                     HEADINGS
+////////////////////////////////////////////////////////
+.heading {
+  color: var(--clr-base-heading);
+  font-weight: 600;
+}
+
+////////////////////////////////////////////////////////
+//                     FEATURES
+////////////////////////////////////////////////////////
+.features {
+  display: grid;
+  gap: var(--space-800);
+
+  &__heading {
+    justify-self: center;
+  }
+
+  &__list {
+    display: grid;
+    gap: var(--space-800);
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+
+    @include respond-to(bp-900) {
+      gap: var(--space-500);
+      grid-template-columns: auto;
+    }
+  }
+
+  &__feature {
+    display: grid;
+    gap: var(--space-100);
+    grid-template-rows: repeat(3, min-content);
+    font-size: var(--fs-160);
+    // justify-items: center;
+    // text-align: center;
+  }
+
+  &__feature-icon {
+    fill: var(--clr-base-icon);
+    grid-row: 1 / 2;
+
+    height: 3em;
+    width: 3em;
+
+    @include respond-to(bp-750) {
+      height: 2em;
+      width: 2em;
+    }
+  }
+
+  &__feature-heading {
+    grid-row: 2 / 3;
+    font-size: 1.3em;
+  }
+  &__feature-text {
+    grid-row: 3 / 4;
+  }
+
+  @include respond-to(bp-900) {
+    gap: var(--space-500);
+  }
+  @include respond-to(bp-750) {
+    gap: var(--space-200);
+  }
+}
+
+////////////////////////////////////////////////////////
+//                     FAQs
+////////////////////////////////////////////////////////
+.faqs {
+  display: grid;
+  gap: var(--space-800);
+  justify-items: center;
+
+  &__heading {
+    justify-self: center;
+  }
+
+  &__list {
+    justify-self: strech;
+    display: grid;
+    gap: var(--space-500);
+    width: 100%;
+    // text-align: center;
+
+    @include respond-to(bp-750) {
+      gap: var(--space-200);
+    }
+  }
+
+  &__faq {
+    border: 1px solid var(--clr-base-icon-alt-alpha);
+    padding: var(--space-100);
+  }
+
+  &__question {
+    padding: var(--space-100);
+    display: flex;
+    gap: var(--space-100);
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--clr-base-heading-alt-alpha);
+    font-weight: 500;
+    font-size: var(--fs-180);
+    list-style-type: none;
+
+    cursor: pointer;
+  }
+  &__icon {
+    height: 1em;
+    width: 1em;
+    fill: var(--clr-base-icon);
+    transition: all 200ms;
+  }
+
+  &__faq[open] {
+    border: 1px solid var(--clr-base-icon);
+  }
+
+  &__faq[open] &__question &__icon {
+    transform: rotateX(180deg);
+  }
+
+  &__answer {
+    padding: var(--space-100);
+  }
+
+  &__faq[open] &__answer {
+    animation: slide 200ms ease;
+  }
+
+  @include respond-to(bp-900) {
+    gap: var(--space-500);
+  }
+  @include respond-to(bp-750) {
+    gap: var(--space-200);
+  }
+}
+
+////////////////////////////////////////////////////////
+//                     ANSWERS
+////////////////////////////////////////////////////////
+.answers-box {
+  display: grid;
+  gap: var(--space-200);
+
+  &__list {
+    display: grid;
+    gap: var(--space-800);
+  }
+}
+
+.answer {
+  display: grid;
+  gap: var(--space-200);
+
+  // author area
+  &__author {
+    display: grid;
+    gap: 0 var(--space-100);
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, min-content);
+    font-size: var(--fs-160);
+  }
+
+  &__author-name {
+    grid-column: 2 / -1;
+    align-self: end;
+
+    color: var(--clr-base-heading-alt-alpha);
+    font-weight: 500;
+
+    // for verified icon
+    display: flex;
+    gap: var(--space-050);
+
+    // for name linking to profile
+    a {
+      font-size: 1.05em;
+      color: currentColor;
+    }
+  }
+
+  &__author-credentials {
+    grid-column: 2 / -1;
+    align-self: start;
+  }
+
+  &__author-image {
+    grid-row: 1 / -1;
+    grid-column: 1 / span 1;
+
+    max-height: var(--fs-600);
+    max-width: var(--fs-600);
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  // question area
+  &__question {
+    font-size: 1.05em;
+  }
+
+  // main answer formatting
+  &__text {
+    border-block: 1px solid var(--clr-base-icon-alt-alpha);
+    padding: var(--space-100);
+
+    // lobotomised owl selector. equivalent to '> *:not(:first-of-type)' but has no/lowest specificity, and hence better for cascading. who says css isn't a programming language :p
+    > * + * {
+      // every direct child except first will have padding-top
+      padding-top: 0.3em;
+    }
+
+    // some math eqations will overflow.
+    // in mathjax v3, they can't be broken as of now. this is the best solution i could come up with.
+    overflow-x: auto;
+  }
+
+  // paragraphs
+  &__para {
+    // line-height: 1.3;
+    overflow-wrap: anywhere; //breaks long words without hyphens
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin-inline: auto;
+  }
+
+  &__quote {
+    padding-left: 1em;
+    border-left: 3px solid var(--clr-base-icon-alt-alpha);
+    color: var(--clr-base-text-alt-alpha);
+  }
+
+  &__unordered-list {
+    display: list-item;
+    margin-left: 1em;
+    list-style: inside;
+  }
+
+  &__ordered-list {
+    display: list-item;
+    list-style: decimal inside;
+    margin-left: 1em;
+  }
+
+  &__code {
+    white-space: pre-wrap;
+    background: var(--clr-code-bg);
+    color: var(--clr-code-text);
+    padding: 0 1em;
+  }
+
+  // spans
+  &__span-math {
+  }
+
+  &__span-code {
+    white-space: pre-wrap;
+  }
+  &__span-bold {
+    font-weight: 500;
+  }
+  &__span-link {
+    @include format-link(
+      var(--clr-base-link),
+      var(--clr-base-link-alt-alpha),
+      true
+    );
+  }
+
+  &__unviewable {
+    // for aligning both text and svg
+    display: grid;
+    align-content: center;
+    justify-content: start;
+    grid-auto-flow: column;
+    gap: var(--space-100);
+    align-items: center;
+
+    margin-top: var(--space-200);
+    color: var(--clr-base-heading-alt-alpha);
+    font-weight: 500;
+    // border: 1px solid var(--clr-base-icon-alt-alpha);
+    // padding: var(--space-100);
+  }
+
+  // metadata(likes, shares, etc)
+  &__metadata {
+    justify-self: start;
+
+    display: flex;
+    gap: var(--space-200);
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__metadata-item {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0 var(--space-050);
+  }
+
+  &__icon {
+    grid-column: 1 / span 1;
+    justify-self: end;
+    align-self: center;
+
+    height: 1.3em;
+    width: 1.3em;
+    fill: var(--clr-base-icon);
+  }
+
+  &__metadata-data {
+    grid-column: -2 / -1;
+    justify-self: start;
+  }
+
+  &__metadata-text {
+    grid-row: 2 / span 1;
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    font-size: 0.9em;
+    color: var(--clr-base-text-alt-alpha);
+  }
+}
+
+////////////////////////////////////////////////////////
+//                     TOPICS
+////////////////////////////////////////////////////////
+.topics {
+  display: grid;
+  gap: var(--space-200);
+
+  &__list {
+    list-style: none;
+    display: grid;
+    gap: var(--space-100);
+    // display: flex;
+    // flex-wrap: wrap;
+  }
+
+  &__item {
+    // flex: 0 1 auto
+    font-weight: 500;
+  }
+}
+
+////////////////////////////////////////////////////////
+//                     RELATED
+////////////////////////////////////////////////////////
+.related {
+  display: grid;
+  align-content: start;
+  gap: var(--space-200);
+
+  &__questions {
+    list-style: none;
+    display: grid;
+    gap: var(--space-100);
+  }
+
+  &__question-item {
+    font-weight: 500;
+  }
+}

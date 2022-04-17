@@ -1,0 +1,181 @@
+////////////////////////////////////////////////////////
+//                     IMPORTS
+////////////////////////////////////////////////////////
+@use 'mixins' as *;
+
+////////////////////////////////////////////////////////
+//                     HEADER
+////////////////////////////////////////////////////////
+
+.header {
+  background: var(--clr-hf-bg);
+
+  &__about {
+    min-height: 100vh;
+    background: linear-gradient(var(--grad-hf));
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+
+  &__bar {
+    padding: var(--space-300) var(--space-500);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-300);
+
+    @include respond-to(bp-750) {
+      padding: var(--space-300);
+    }
+    @include respond-to(bp-450) {
+      padding: var(--space-200) var(--space-300);
+    }
+  }
+
+  &__logo {
+    font-size: var(--fs-300);
+    font-family: var(--ff-alt-alpha);
+    color: var(--clr-hf-logo);
+    font-weight: 700;
+
+    @include respond-to(bp-450) {
+      font-size: var(--fs-250);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__nav-box {
+    // margin-left: auto; // for pushing nav to the right
+    align-self: center;
+    @include respond-to(bp-650) {
+      // margin-left: auto;
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: var(--space-300);
+  }
+
+  &__nav-item {
+    list-style: none;
+  }
+
+  &__nav-link {
+    font-size: var(--fs-200);
+    font-weight: 500;
+    // color: var(--clr-link);
+    @include format-link(var(--clr-hf-link), var(--clr-hf-link-alt-alpha));
+
+    @include respond-to(bp-750) {
+      font-size: var(--fs-180);
+    }
+  }
+
+  &__theme {
+    height: var(--fs-300);
+    width: var(--fs-300);
+
+    @include respond-to(bp-450) {
+      height: var(--fs-250);
+      width: var(--fs-250);
+    }
+  }
+
+  &__info {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr min-content 0.2fr; // .2fr is bottom padding
+    text-align: center;
+  }
+
+  &__hero {
+    font-size: var(--fs-600);
+    font-family: var(--ff-alt-alpha);
+    color: var(--clr-hf-heading);
+    font-weight: 700;
+
+    @include respond-to(bp-900) {
+      font-size: var(--fs-500);
+    }
+    @include respond-to(bp-750) {
+      font-size: var(--fs-400);
+      padding: var(--space-200);
+    }
+  }
+
+  &__down {
+    align-self: end;
+  }
+}
+
+////////////////////////////////////////////////////////
+//                     FOOTER
+////////////////////////////////////////////////////////
+.footer {
+  padding: var(--space-400);
+  display: grid;
+  gap: var(--space-300);
+  align-items: center;
+
+  background: var(--clr-hf-bg);
+
+  &__about {
+    padding-top: var(--space-800);
+    background: linear-gradient(to top, var(--grad-hf));
+
+    @include respond-to(bp-750) {
+      padding-top: var(--space-500);
+    }
+  }
+
+  &__logo {
+    justify-self: center;
+    font-size: var(--fs-600);
+    color: var(--clr-hf-logo);
+    font-family: var(--ff-alt-alpha);
+    font-weight: 700;
+
+    @include respond-to(bp-900) {
+      font-size: var(--fs-500);
+    }
+
+    @include respond-to(bp-750) {
+      font-size: var(--fs-400);
+    }
+  }
+
+  &__nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: var(--space-200);
+    flex-wrap: wrap;
+  }
+
+  &__nav-item {
+    font-size: var(--fs-180);
+  }
+
+  &__link {
+    @include format-link(var(--clr-hf-link), var(--clr-hf-link-alt-alpha));
+    font-weight: 500;
+  }
+
+  &__license {
+    justify-self: center;
+    font-size: var(--fs-180);
+    color: var(--clr-hf-text);
+    text-align: center;
+  }
+
+  @include respond-to(bp-450) {
+    padding: var(--space-300);
+    gap: var(--space-200);
+  }
+}

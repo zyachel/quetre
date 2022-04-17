@@ -1,0 +1,13 @@
+header.header(class=`${title === 'About' ? 'header__about': ''}`)
+  .header__bar 
+    a.header__link.header__logo(href='/') Quetre
+
+    //- for nav on about page
+    block header__nav
+
+    button.button.theme-changer.header__theme(aria-label='Change Theme')
+      svg.icon.icon__theme.theme-changer__icon.theme-changer__icon--sun: use(href='/misc/sprite.svg#icon-sun')
+      svg.icon.icon__theme.theme-changer__icon.theme-changer__icon--moon: use(href='/misc/sprite.svg#icon-moon')
+
+  //- for info line on about page
+  block header__info
