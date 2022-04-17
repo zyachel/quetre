@@ -21,7 +21,7 @@ process.on('unhandledRejection', err => {
 ////////////////////////////////////////////////////////
 //                 STARTING SERVER
 ////////////////////////////////////////////////////////
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 const server = app.listen(port, () =>
   log(
     `server running in ${process.env.NODE_ENV} mode at port ${port}`,
