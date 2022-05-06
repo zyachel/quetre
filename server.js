@@ -13,11 +13,6 @@ process.on('uncaughtException', err => {
   process.exit(1);
 });
 
-process.on('unhandledRejection', err => {
-  log(err, 'error');
-  server.close(() => process.exit(1));
-});
-
 ////////////////////////////////////////////////////////
 //                 STARTING SERVER
 ////////////////////////////////////////////////////////
@@ -28,3 +23,8 @@ const server = app.listen(port, () =>
     'success'
   )
 );
+
+process.on('unhandledRejection', err => {
+  log(err, 'error');
+  server.close(() => process.exit(1));
+});

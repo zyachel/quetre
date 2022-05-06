@@ -18,16 +18,12 @@ function log(toLog, type = null) {
   };
 
   // changing some values according to the type provided
-  switch (type) {
-    case 'success':
-      data.colorCode = 32;
-      data.emoji = '🟢';
-      break;
-
-    case 'error':
-      data.colorCode = 31;
-      data.emoji = '🔴';
-      break;
+  if (type === 'success') {
+    data.colorCode = 32;
+    data.emoji = '🟢';
+  } else if (type === 'error') {
+    data.colorCode = 31;
+    data.emoji = '🔴';
   }
 
   // actually logging to the console

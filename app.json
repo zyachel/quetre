@@ -1,0 +1,8 @@
+{
+  "name": "Quetre",
+  "description": "A libre front-end for Quora.",
+  "keywords": ["front-end", "quora", "privacy", "foss"],
+  "website": "https://quetre.herokuapp.com/",
+  "repository": "https://github.com/zyachel/quetre",
+  "logo": "https://quetre.herokuapp.com/icon.svg"
+}

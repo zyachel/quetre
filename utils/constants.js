@@ -6,8 +6,6 @@
 export const nonSlugRoutes = [
   'favicon.ico',
   'apple-touch-icon.png',
-  'favicon-32x32.png',
-  'favicon-16x16.png',
-  'safari-pinned-tab.svg',
   'site.webmanifest',
+  'icon.svg',
 ];

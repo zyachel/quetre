@@ -21,7 +21,6 @@ export const unansweredQuestion = catchAsyncErrors(async (req, res, next) => {
   res.status(200).render('answers', {
     title: answers.question.text.spans.map(span => span.text).join(''),
     data: answers,
-    math: answers.hasMath,
   });
 });
 
@@ -35,7 +34,6 @@ export const answeredQuestion = catchAsyncErrors(async (req, res, next) => {
   res.status(200).render('answers', {
     title: answers.question.text.spans.map(span => span.text).join(''),
     data: answers,
-    math: answers.hasMath,
   });
 });
 
