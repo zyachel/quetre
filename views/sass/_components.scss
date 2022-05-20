@@ -304,7 +304,7 @@
     // lobotomised owl selector. equivalent to '> *:not(:first-of-type)' but has no/lowest specificity, and hence better for cascading. who says css isn't a programming language :p
     > * + * {
       // every direct child except first will have padding-top
-      padding-top: 0.3em;
+      padding-top: 1em;
     }
 
     // some math eqations will overflow.
@@ -358,7 +358,7 @@
     white-space: pre-wrap;
   }
   &__span-bold {
-    font-weight: 500;
+    font-weight: 550;
   }
   &__span-link {
     @include format-link(
