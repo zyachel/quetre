@@ -341,6 +341,7 @@
     display: list-item;
     list-style: decimal inside;
     margin-left: 1em;
+    padding-top: 0.7em;
   }
 
   &__code {
@@ -358,8 +359,12 @@
     white-space: pre-wrap;
   }
   &__span-bold {
-    font-weight: 550;
+    font-weight: 600;
   }
+  &__span-italic {
+    font-style: italic;
+  }
+
   &__span-link {
     @include format-link(
       var(--clr-base-link),
