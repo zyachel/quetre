@@ -67,7 +67,7 @@ $themed-vars: (
     dark: color.scale($clr-secondary, $whiteness: 100%),
   ),
   clr-code-bg: (
-    light: color.scale($clr-primary, $lightness: 70%, $saturation: -70%),
+    light: color.scale($clr-primary, $lightness: 20%, $saturation: -90%),
     dark: color.scale($clr-secondary, $lightness: -50%, $saturation: -50%),
   ),
   clr-code-text: (
