@@ -1,3 +1,13 @@
+## [1.0.3](https://github.com/zyachel/quetre/compare/v1.0.2...v1.0.3) (2022-05-21)
+
+
+### Bug Fixes
+
+* **answer:** reduce line-height in answers ([1447ce6](https://github.com/zyachel/quetre/commit/1447ce65b582a4894773d5e062f37bfbbc9e8909)), closes [fix#1](https://github.com/fix/issues/1)
+* make the background of code paragraphs more promient in light mode ([64dfcae](https://github.com/zyachel/quetre/commit/64dfcae88dfe3f7df87b9f9d76a37ce58581c882))
+
+
+
 ## [1.0.2](https://github.com/zyachel/quetre/compare/v1.0.1...v1.0.2) (2022-05-20)
 
 
