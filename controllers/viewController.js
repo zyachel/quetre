@@ -16,24 +16,16 @@ export const privacy = (req, res, next) => {
   res.render('privacy', { title: 'Privacy' });
 };
 
-export const unansweredQuestion = catchAsyncErrors(async (req, res, next) => {
-  const answers = await getAnswers(`/unanswered/${req.params.slug}`);
-  res.status(200).render('answers', {
-    title: answers.question.text.spans.map(span => span.text).join(''),
-    data: answers,
-  });
-});
-
-export const answeredQuestion = catchAsyncErrors(async (req, res, next) => {
+export const answers = catchAsyncErrors(async (req, res, next) => {
   const { slug } = req.params;
   // added this so that a request by browser to get favicon doesn't end up being interpreted as a slug
   if (nonSlugRoutes.includes(slug)) return next();
 
-  const answers = await getAnswers(slug);
+  const answersData = await getAnswers(slug);
 
   res.status(200).render('answers', {
-    title: answers.question.text.spans.map(span => span.text).join(''),
-    data: answers,
+    title: answersData.question.text.spans.map(span => span.text).join(''),
+    data: answersData,
   });
 });
 

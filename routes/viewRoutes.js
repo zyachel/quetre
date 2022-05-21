@@ -1,9 +1,8 @@
 import express from 'express';
 import {
   about,
-  answeredQuestion,
+  answers,
   privacy,
-  unansweredQuestion,
   unimplemented,
 } from '../controllers/viewController.js';
 
@@ -14,7 +13,7 @@ viewRouter.get('/privacy', privacy);
 viewRouter.get('/search', unimplemented);
 viewRouter.get('/profile/:name', unimplemented);
 viewRouter.get('/topic/:name', unimplemented);
-viewRouter.get('/unanswered/:slug', unansweredQuestion);
-viewRouter.get('/:slug', answeredQuestion);
+viewRouter.get('/unanswered/:slug', answers);
+viewRouter.get('/:slug', answers);
 
 export default viewRouter;
