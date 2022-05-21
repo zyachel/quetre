@@ -40,7 +40,7 @@ const fetcher = async resourceStr => {
 
     return data;
   } catch (err) {
-    if (err.response.status === 404) throw new AppError('Not found', 404);
+    if (err.response?.status === 404) throw new AppError('Not found', 404);
     else throw err;
   }
 };
