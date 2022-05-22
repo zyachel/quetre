@@ -280,3 +280,49 @@
     padding-inline: var(--space-200);
   }
 }
+
+////////////////////////////////////////////////////////
+//                     TOPIC
+////////////////////////////////////////////////////////
+.topic {
+  // justify-self: center;
+  padding: var(--space-800);
+
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  grid-template-rows: min-content 1fr;
+  grid-auto-flow: dense;
+  align-items: start;
+  gap: var(--space-800);
+
+  &__stats {
+    grid-column: 1 / -1;
+  }
+
+  &__heading {
+    font-size: var(--fs-300);
+
+    @include respond-to(bp-550) {
+      font-size: var(--fs-270);
+    }
+  }
+
+  &__link {
+    @include format-link(var(--clr-base-link), var(--clr-base-link-alt-alpha));
+  }
+
+  @include respond-to(bp-1200) {
+    display: flex;
+    flex-direction: column;
+    // gap: var(--space-800);
+  }
+
+  @include respond-to(bp-900) {
+    padding: var(--space-500);
+    gap: var(--space-500);
+  }
+
+  @include respond-to(bp-550) {
+    padding-inline: var(--space-200);
+  }
+}

@@ -3,6 +3,7 @@
 ////////////////////////////////////////////////////////
 import catchAsyncErrors from '../utils/catchAsyncErrors.js';
 import getAnswers from '../fetchers/getAnswers.js';
+import getTopic from '../fetchers/getTopic.js';
 
 ////////////////////////////////////////////////////////
 //                     EXPORTS
@@ -17,6 +18,11 @@ export const about = (req, res, next) => {
 
 export const answers = catchAsyncErrors(async (req, res, next) => {
   const data = await getAnswers(req.params.slug);
+  res.status(200).json({ status: 'success', data });
+});
+
+export const topic = catchAsyncErrors(async (req, res, next) => {
+  const data = await getTopic(req.params.slug);
   res.status(200).json({ status: 'success', data });
 });
 

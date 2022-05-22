@@ -4,6 +4,7 @@
 ////////////////////////////////////////////////////////
 import catchAsyncErrors from '../utils/catchAsyncErrors.js';
 import getAnswers from '../fetchers/getAnswers.js';
+import getTopic from '../fetchers/getTopic.js';
 import { nonSlugRoutes } from '../utils/constants.js';
 
 ////////////////////////////////////////////////////////
@@ -27,6 +28,12 @@ export const answers = catchAsyncErrors(async (req, res, next) => {
     title: answersData.question.text.spans.map(span => span.text).join(''),
     data: answersData,
   });
+});
+
+export const topic = catchAsyncErrors(async (req, res, next) => {
+  const topicData = await getTopic(req.params.slug);
+
+  res.status(200).render('topic', { title: topicData.name, data: topicData });
 });
 
 export const unimplemented = (req, res, next) => {

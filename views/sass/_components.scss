@@ -469,3 +469,283 @@
     font-weight: 500;
   }
 }
+
+////////////////////////////////////////////////////////
+//                   TOPIC STATS
+////////////////////////////////////////////////////////
+.topic-stats {
+  display: grid;
+  gap: var(--space-050) var(--space-200);
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(3, auto);
+
+  &__heading {
+    grid-column: 2 / -1;
+    align-self: end;
+    line-height: 1;
+
+    @include respond-to(bp-450) {
+      align-self: center;
+    }
+  }
+
+  &__image {
+    grid-row: 1 / -1;
+    grid-column: 1 / span 1;
+
+    max-height: var(--fs-1000);
+    max-width: var(--fs-1000);
+    margin-block: auto;
+    object-fit: contain;
+
+    @include respond-to(bp-450) {
+      max-height: var(--fs-800);
+      max-width: var(--fs-800);
+    }
+  }
+
+  &__aliases {
+    @include respond-to(bp-450) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__metadata {
+    display: flex;
+    gap: var(--space-500);
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include respond-to(bp-750) {
+      // margin-top: var(--space-100);
+      grid-column: 1 / -1;
+    }
+
+    @include respond-to(bp-650) {
+      gap: var(--space-200);
+    }
+  }
+
+  &__metadata-item {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0 var(--space-050);
+  }
+
+  &__icon {
+    grid-column: 1 / span 1;
+    justify-self: end;
+    align-self: center;
+
+    height: 1.3em;
+    width: 1.3em;
+    fill: var(--clr-base-icon);
+  }
+
+  &__metadata-data {
+    grid-column: -2 / -1;
+    justify-self: start;
+  }
+
+  &__metadata-text {
+    grid-row: 2 / span 1;
+    grid-column: 1 / -1;
+    justify-self: center;
+    font-size: 0.9em;
+    color: var(--clr-base-text-alt-alpha);
+  }
+
+  @include respond-to(bp-750) {
+    grid-template-rows: repeat(2, auto);
+    row-gap: var(--space-100);
+  }
+  @include respond-to(bp-450) {
+    grid-template-rows: auto;
+  }
+}
+
+////////////////////////////////////////////////////////
+//                   FAMOUS AUTHORS
+////////////////////////////////////////////////////////
+.famous-authors {
+  display: grid;
+  gap: var(--space-300);
+
+  &__list {
+    display: grid;
+    gap: var(--space-500);
+  }
+
+  &__author {
+    display: grid;
+    gap: var(--space-050) var(--space-100);
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, min-content);
+    font-size: var(--fs-160);
+
+    @include respond-to(bp-750) {
+      grid-template-rows: repeat(2, min-content);
+    }
+  }
+
+  &__author-name {
+    grid-column: 2 / -1;
+    line-height: 1;
+    align-self: center;
+    color: var(--clr-base-heading-alt-alpha);
+    font-weight: 500;
+
+    // for verified icon
+    display: flex;
+    gap: var(--space-050);
+
+    // for name linking to profile
+    a {
+      font-size: 1.05em;
+      color: currentColor;
+    }
+  }
+
+  &__author-credentials {
+    grid-column: 2 / -1;
+    word-break: break-word;
+  }
+
+  &__author-image {
+    margin-block: auto;
+
+    grid-row: 1 / -1;
+    grid-column: 1 / span 1;
+
+    max-height: var(--fs-800);
+    max-width: var(--fs-800);
+    object-fit: cover;
+
+    clip-path: circle(50% at 50% 50%);
+
+    @include respond-to(bp-750) {
+      max-height: var(--fs-600);
+      max-width: var(--fs-600);
+    }
+  }
+
+  &__metadata {
+    display: flex;
+    gap: var(--space-200);
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include respond-to(bp-750) {
+      margin-top: var(--space-100);
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__metadata-item {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0 var(--space-050);
+  }
+
+  &__icon {
+    grid-column: 1 / span 1;
+    justify-self: end;
+    align-self: center;
+
+    height: 1em;
+    width: 1em;
+    fill: var(--clr-base-icon);
+  }
+
+  &__metadata-data {
+    grid-column: -2 / -1;
+    justify-self: start;
+  }
+
+  &__metadata-text {
+    grid-row: 2 / span 1;
+    grid-column: 1 / -1;
+    justify-self: center;
+    line-height: 1;
+    font-size: 0.9em;
+    color: var(--clr-base-text-alt-alpha);
+  }
+}
+
+////////////////////////////////////////////////////////
+//                   RELATED TOPICS
+////////////////////////////////////////////////////////
+.related-topics {
+  display: grid;
+  gap: var(--space-300);
+
+  &__list {
+    display: grid;
+    gap: var(--space-500);
+  }
+
+  &__topic {
+    display: grid;
+    gap: 0 var(--space-200);
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, min-content);
+  }
+
+  &__topic-name {
+    grid-column: 2 / -1;
+    justify-self: start;
+
+    font-weight: 500;
+    font-size: 1.05em;
+  }
+
+  &__image {
+    grid-row: 1 / -1;
+
+    max-height: var(--fs-800);
+    max-width: var(--fs-800);
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: contain;
+
+    @include respond-to(bp-750) {
+      max-height: var(--fs-600);
+      max-width: var(--fs-600);
+    }
+  }
+
+  &__metadata {
+    grid-row: -2 / -1;
+    justify-self: start;
+  }
+
+  &__metadata-item {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0 var(--space-050);
+  }
+
+  &__icon {
+    grid-column: 1 / span 1;
+    justify-self: end;
+    align-self: center;
+
+    height: 1em;
+    width: 1em;
+    fill: var(--clr-base-icon);
+  }
+
+  &__metadata-data {
+    grid-column: -2 / -1;
+    justify-self: start;
+  }
+
+  &__metadata-text {
+    grid-row: 2 / span 1;
+    grid-column: 1 / -1;
+    justify-self: center;
+    line-height: 1;
+    font-size: 0.9em;
+    color: var(--clr-base-text-alt-alpha);
+  }
+}

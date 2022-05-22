@@ -1,0 +1,75 @@
+extends base
+
+mixin formatNumber(number, ...classes)
+  span(class=classes.join(' '))= new Intl.NumberFormat().format(number)
+
+block content
+  main#main.main.topic
+    //- all info related to the topic
+    .topic__stats.topic-stats
+      h1.heading.heading__primary.topic__heading.topic-stats__heading= data.name
+      img.topic-stats__image(src=data.image alt=`image depicting ${data.name}`)
+      if data.aliases.length
+        p.topic-stats__aliases
+          span.topic-stats__aliases-text Also known as:&nbsp;
+          span.topic-stats__aliases-list= data.aliases.join(', ')
+      .topic-stats__metadata
+        p.topic-stats__metadata-item
+          svg.icon.topic-stats__icon: use(href='/misc/sprite.svg#icon-user')
+          +formatNumber(data.numFollowers, 'topic-stats__metadata-data')
+          span.topic-stats__metadata-text &nbsp;Followers
+        p.topic-stats__metadata-item
+          svg.icon.topic-stats__icon: use(href='/misc/sprite.svg#icon-question')
+          +formatNumber(data.numQuestions, 'topic-stats__metadata-data')
+          span.topic-stats__metadata-text &nbsp;Questions
+        if data.isAdult
+          p.topic-stats__metadata-item
+            svg.icon.topic-stats__icon: use(href='/misc/sprite.svg#icon-danger')
+            span.topic-stats__metadata-data 18+
+            span.topic-stats__metadata-text &nbsp;Adult Topic
+        a.topic__link(href='https://www.quora.com' + data.url) View on Quora
+      
+    .topic__famous-authors.famous-authors
+      h2.heading.heading__secondary.famous-authors__heading Most viewed authors
+      .famous-authors__list
+        each author in data.mostViewedAuthors
+          figure.famous-authors__author
+            figcaption.famous-authors__author-name
+              if author.isAnon
+                span Anonymous
+              else
+                a.topic__link(href=author.profile)= author.name 
+              if author.isVerified
+                svg.famous-authors__icon
+                  title verified
+                  use(href='/misc/sprite.svg#icon-verified')
+            img.famous-authors__author-image(src=author.avatar, alt=`${author.name}'s profile photo`)
+            if author.credential
+            p.famous-authors__author-credentials(aria-label=`${author.name}'s credentials`)= author.credential || ''
+            .famous-authors__metadata
+              p.famous-authors__metadata-item
+                svg.icon.famous-authors__icon: use(href='/misc/sprite.svg#icon-user')
+                +formatNumber(author.numFollowers, 'famous-authors__metadata-data')
+                span.famous-authors__metadata-text &nbsp;Followers
+              p.famous-authors__metadata-item
+                svg.icon.famous-authors__icon: use(href='/misc/sprite.svg#icon-eye')
+                +formatNumber(author.numViews, 'famous-authors__metadata-data')
+                span.famous-authors__metadata-text &nbsp;Views
+              p.famous-authors__metadata-item
+                svg.icon.famous-authors__icon: use(href='/misc/sprite.svg#icon-comments')
+                +formatNumber(author.numAnswers, 'famous-authors__metadata-data')
+                span.famous-authors__metadata-text &nbsp;Answers
+
+    .topic__related-topics.related-topics
+      h2.heading.heading__secondary.related-topics__heading Related Topics
+      .related-topics__list
+        each topic in data.relatedTopics
+          .related-topics__topic
+            a.topic__link.related-topics__topic-name(href=topic.url)= topic.name
+            img.related-topics__image(src=topic.image alt=`image depicting ${topic.name}`)
+            .related-topics__metadata
+              p.related-topics__metadata-item
+                svg.icon.related-topics__icon: use(href='/misc/sprite.svg#icon-user')
+                +formatNumber(topic.numFollowers, 'related-topics__metadata-data')
+                span.topic-stats__metadata-text &nbsp;Followers
+
