@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/zyachel/quetre/compare/v1.0.3...v1.1.0) (2022-05-22)
+
+
+### Bug Fixes
+
+* fix a bug related to fetcher.js ([6ad2269](https://github.com/zyachel/quetre/commit/6ad2269951bb6c72a464f22b6aa428ce84622e94))
+
+
+### Features
+
+* **route:** add new route ([0a35cda](https://github.com/zyachel/quetre/commit/0a35cdaa157d22dac4ac7b58d8ba9b6cd2553b31))
+
+
+
 ## [1.0.3](https://github.com/zyachel/quetre/compare/v1.0.2...v1.0.3) (2022-05-21)
 
 
