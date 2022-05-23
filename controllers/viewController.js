@@ -37,9 +37,9 @@ export const topic = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const unimplemented = (req, res, next) => {
-  res.status(503).render('error', {
+  res.status(501).render('error', {
     title: 'Not yet implemented',
-    statusCode: 503,
+    statusCode: 501,
     message: "This route isn't yet implemented. Check back sometime later!",
   });
 };

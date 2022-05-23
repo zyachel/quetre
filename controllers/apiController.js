@@ -27,7 +27,7 @@ export const topic = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const unimplemented = (req, res, next) => {
-  res.status(503).json({
+  res.status(501).json({
     status: 'fail',
     message: "This route isn't yet implemented. Check back sometime later!",
   });
