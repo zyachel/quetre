@@ -41,6 +41,11 @@ const fetcher = async resourceStr => {
     return data;
   } catch (err) {
     if (err.response?.status === 404) throw new AppError('Not found', 404);
+    else if (err.response?.status === 429)
+      throw new AppError(
+        'Quora is rate limiting this instance. Consider hosting your own. Instructions are at Github',
+        503
+      );
     else throw err;
   }
 };
