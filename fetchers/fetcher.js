@@ -28,7 +28,7 @@ const fetcher = async resourceStr => {
     $('body')
       .children('script')
       .each((i, el) => {
-        if ($(el).html() === 'window.installSettings();')
+        if ($(el).html().includes('window.installSettings()'))
           rawData = $(el)
             .next()
             .html()
