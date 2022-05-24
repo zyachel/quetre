@@ -2,6 +2,7 @@
 //                     IMPORTS
 ////////////////////////////////////////////////////////
 // import log from '../utils/log.js';
+import AppError from '../utils/AppError.js';
 import fetcher from './fetcher.js';
 
 ////////////////////////////////////////////////////////
@@ -15,6 +16,12 @@ const getAnswers = async slug => {
   const {
     data: { question: rawData },
   } = JSON.parse(res);
+
+  if (!rawData)
+    throw new AppError(
+      "Couldn't find such an answer. Maybe check the URL?",
+      400
+    );
 
   // array containing all the answers with metadata
   const ansArr = rawData.pagedListDataConnection.edges
