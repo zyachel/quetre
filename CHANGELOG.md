@@ -1,3 +1,26 @@
+# [2.0.0](https://github.com/zyachel/quetre/compare/v1.1.0...v2.0.0) (2022-05-25)
+
+
+### Bug Fixes
+
+* change status code of routes not implemented to 501 ([04fa753](https://github.com/zyachel/quetre/commit/04fa75362380ffbcaeb11150b0d4dfe015213b13))
+* **fetcher:** fix fetcher scraping logic ([b11ceb4](https://github.com/zyachel/quetre/commit/b11ceb4c33b570a643758ed9c2b78e2b9730e9cd))
+* **fetcher:** send correct error response when a malinformed answer url is accessed ([a9ae36e](https://github.com/zyachel/quetre/commit/a9ae36e26407b5e7779dbe3a256a7be5078a84d1))
+* **robots.txt:** disallow all robots ([75c6c38](https://github.com/zyachel/quetre/commit/75c6c3877ac2c3dd53ec2959357fe5de2cc539e9))
+* send appropriate response in case Quora rate limits the instance ([e8a51f6](https://github.com/zyachel/quetre/commit/e8a51f622405575e69a379bf5aaff091f56dafee))
+
+
+### Performance Improvements
+
+* implement lazy loading of images ([c0b89ba](https://github.com/zyachel/quetre/commit/c0b89ba2c36b63754f467b2ae0b6c82b5742b5bc))
+
+
+### BREAKING CHANGES
+
+* **fetcher:** old fetcher.js won't work as quora changed their html
+
+
+
 # [1.1.0](https://github.com/zyachel/quetre/compare/v1.0.3...v1.1.0) (2022-05-22)
 
 
