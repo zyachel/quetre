@@ -43,7 +43,10 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 ## **Instances**
 
-[quetre.herokuapp.com](https://quetre.herokuapp.com)
+|Instance Name|URL|Country|Provider|
+|-------------|---|-------|--------|
+|Main Instance|[quetre.herokuapp.com](https://quetre.herokuapp.com)|N/A|Heroku|
+|~vern quetre| [quora.vern.cc](https://quora.vern.cc)|Canada|OVHCloud|
 
 Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku. The instance mentioned above is itself using the free tier(of heroku).  
 Click the button below to get started:  
