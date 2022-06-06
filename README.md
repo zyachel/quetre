@@ -161,13 +161,15 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 - [ ] add missing routes like topics, profile, and search
 - [ ] use redis
 - [ ] serve images and other assets from Quetre
-- [ ] implement a better installation method
+- [x] implement a better installation method
 - [ ] implement other trivial routes like a specific answer, spaces, etc.
 - [ ] implement a way to get more answers(not a big priority as of now)
 
 ---
 
 ## Installation
+
+### Manual
 
 1. Install [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/). Instructions are on their websites.
 
@@ -183,6 +185,10 @@ From [their privacy policy](https://www.quora.com/about/privacy)
    ```
 
 Quetre will start running at http://localhost:3000.
+
+### Docker
+
+There is a [docker image](https://github.com/PussTheCat-org/docker-quetre-quay) made by [@TheFrenchGhosty](https://github.com/TheFrenchGhosty) for [PussTheCat.org](https://pussthecat.org/)'s [instance](https://quetre.pussthecat.org/). You can check that out case you want to go the docker way.
 
 ---
 
