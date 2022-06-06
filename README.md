@@ -124,7 +124,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 - Data collected by other services
 
-  Since Quetre is deployed on heroku, heroku might log your IP to prevent abuse. Also, as Quetre connects to '\*.quoracdn.net' and 'cdn.jsdelivr.net' for images and mathjax library respectively, both of these service might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
+  If you're using the official instance(which is deployed on Heroku), Heroku might log your IP to prevent abuse. Also, as Quetre connects to '\*.quoracdn.net' and 'cdn.jsdelivr.net' for images and mathjax library respectively, both of these services might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
 
 ---
 
