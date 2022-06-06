@@ -43,12 +43,13 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 ## **Instances**
 
-|Instance Name|URL|Country|Provider|
-|-------------|---|-------|--------|
-|Main Instance|[quetre.herokuapp.com](https://quetre.herokuapp.com)|N/A|Heroku|
-|~vern quetre| [quora.vern.cc](https://quora.vern.cc)|Canada|OVHCloud|
+| Instance URL                                            | Country | Provider | Notes                                                 |
+| ------------------------------------------------------- | ------- | -------- | ----------------------------------------------------- |
+| [quetre.herokuapp.com](https://quetre.herokuapp.com)    | Europe  | Heroku   | Official instance                                     |
+| [quora.vern.cc](https://quora.vern.cc)                  | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                 |
+| [quetre.pussthecat.org](https://quetre.pussthecat.org/) | Germany | &ndash;  | Operated by [PussTheCat.org](https://pussthecat.org/) |
 
-Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku. The instance mentioned above is itself using the free tier(of heroku).  
+Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku.
 Click the button below to get started:  
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zyachel/quetre)
 
