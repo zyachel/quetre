@@ -1,3 +1,17 @@
+## [2.0.1](https://github.com/zyachel/quetre/compare/v2.0.0...v2.0.1) (2022-06-06)
+
+
+### Bug Fixes
+
+* **favicon:** change favicons to have transparent background ([2cb84f5](https://github.com/zyachel/quetre/commit/2cb84f5a6be5e23c570db5aebb580c7f1b3b2da7)), closes [#5](https://github.com/zyachel/quetre/issues/5)
+
+
+### Performance Improvements
+
+* implement caching for static assets ([475fc79](https://github.com/zyachel/quetre/commit/475fc79cec7f32b2fbce5bca19f84a6040958750))
+
+
+
 # [2.0.0](https://github.com/zyachel/quetre/compare/v1.1.0...v2.0.0) (2022-05-25)
 
 
@@ -51,16 +65,6 @@
 ### Bug Fixes
 
 * fix some more formatting issues ([066f040](https://github.com/zyachel/quetre/commit/066f040eb489d3075cbcccb9cce22b59f146c247))
-
-
-
-## [1.0.1](https://github.com/zyachel/quetre/compare/ab335afb6a202396b57882cb9dc8c159d584e654...v1.0.1) (2022-05-20)
-
-
-### Bug Fixes
-
-* **favicon:** change favicons ([ab335af](https://github.com/zyachel/quetre/commit/ab335afb6a202396b57882cb9dc8c159d584e654))
-* fix formatting issues ([24f18d6](https://github.com/zyachel/quetre/commit/24f18d67377d63829b48a465be8e024079ba809e)), closes [#1](https://github.com/zyachel/quetre/issues/1)
 
 
 
