@@ -22,7 +22,11 @@ app.set('views', pathToViews);
 const pathToPublicDirectory = fileURLToPath(
   new URL('./public', import.meta.url)
 );
-app.use(express.static(pathToPublicDirectory));
+app.use(
+  express.static(pathToPublicDirectory, {
+    maxAge: process.env.CACHE_PERIOD || '1h',
+  })
+);
 
 ////////////////////////////////////////////////////////
 //                   MIDDLEWARES
