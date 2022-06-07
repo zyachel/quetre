@@ -8,11 +8,11 @@
 ////////////////////////////////////////////////////////
 
 .header {
-  background: var(--clr-hf-bg);
+  background-color: var(--clr-hf-bg);
 
   &__about {
     min-height: 100vh;
-    background: linear-gradient(var(--grad-hf));
+    background-image: linear-gradient(var(--grad-hf));
 
     display: grid;
     grid-template-rows: auto 1fr;
