@@ -27,10 +27,14 @@ const sendErrorResponse = (err, req, res, devMode = false) => {
   // 2. FOR WEBPAGES
   else
     res.status(err.statusCode).render('error', {
-      title: 'Error',
-      statusCode: err.statusCode,
-      message: err.message,
-      ...(devMode && { stack: err.stack }),
+      data: {
+        statusCode: err.statusCode,
+        message: err.message,
+        ...(devMode && { stack: err.stack }),
+      },
+      meta: {
+        title: 'Error',
+      },
     });
 };
 

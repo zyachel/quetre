@@ -6,7 +6,8 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     //- appending title to name in case it exists, else showing name as the title of the page
-    title= title ? `${title} | Quetre`: 'Quetre'
+    - const pageTitle = meta.title ? `${meta.title} | Quetre`: 'Quetre'
+    title= pageTitle
     meta(name="description", content="A libre front-end for Quora. See any answer without being tracked, without being required to log in, and without being bombarded by pesky ads.")
     //- preloading css and fonts for performance gains
     link(rel='preload', href='/fonts/WorkSans.woff2', as='font', type='font/woff2', crossorigin)

@@ -11,10 +11,19 @@ import { nonSlugRoutes } from '../utils/constants.js';
 //                     EXPORTS
 ////////////////////////////////////////////////////////
 export const about = (req, res, next) => {
-  res.render('about', { title: 'About' });
+  res.render('about', {
+    meta: {
+      title: 'About',
+    },
+  });
 };
+
 export const privacy = (req, res, next) => {
-  res.render('privacy', { title: 'Privacy' });
+  res.render('privacy', {
+    meta: {
+      title: 'Privacy',
+    },
+  });
 };
 
 export const answers = catchAsyncErrors(async (req, res, next) => {
@@ -23,23 +32,37 @@ export const answers = catchAsyncErrors(async (req, res, next) => {
   if (nonSlugRoutes.includes(slug)) return next();
 
   const answersData = await getAnswers(slug);
+  const title = answersData.question.text.spans.map(span => span.text).join('');
 
   res.status(200).render('answers', {
-    title: answersData.question.text.spans.map(span => span.text).join(''),
     data: answersData,
+    meta: {
+      title,
+    },
   });
 });
 
 export const topic = catchAsyncErrors(async (req, res, next) => {
   const topicData = await getTopic(req.params.slug);
 
-  res.status(200).render('topic', { title: topicData.name, data: topicData });
+  res.status(200).render('topic', {
+    data: topicData,
+    meta: {
+      title: topicData.name,
+    },
+  });
 });
 
 export const unimplemented = (req, res, next) => {
+  const message =
+    "This route isn't yet implemented. Check back sometime later!";
   res.status(501).render('error', {
-    title: 'Not yet implemented',
-    statusCode: 501,
-    message: "This route isn't yet implemented. Check back sometime later!",
+    data: {
+      statusCode: 501,
+      message,
+    },
+    meta: {
+      title: 'Not yet implemented',
+    },
   });
 };

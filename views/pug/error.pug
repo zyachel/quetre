@@ -2,13 +2,13 @@ extends base
 
 block content 
   main#main.main.error
-    p.error__code= statusCode
-    p.error__message= message
+    p.error__code= data.statusCode
+    p.error__message= data.message
 
     //- will only apply in dev mode
-    if stack 
+    if data.stack
       .error__stack-box: pre.error__stack
-        code.error__text= stack
+        code.error__text= data.stack
 
     p.error__return Go back to the&nbsp;
       a.error__link(href="/") Home Page
