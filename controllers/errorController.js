@@ -34,6 +34,9 @@ const sendErrorResponse = (err, req, res, devMode = false) => {
       },
       meta: {
         title: 'Error',
+        url: `${req.urlObj.origin}${req.urlObj.pathname}`,
+        imageUrl: `${req.urlObj.origin}/icon.svg`,
+        description: `ERROR: ${err.message}. Please try again later.`,
       },
     });
 };

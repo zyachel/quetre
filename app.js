@@ -45,6 +45,15 @@ app.use(
 ); // using sane headers on response
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev')); // for logging during development
 
+// middleware to add baseUrl to req object
+app.use((req, res, next) => {
+  req.urlObj = new URL(
+    `${req.protocol}://${req.get('host')}${req.originalUrl}`
+  );
+  next();
+});
+
+// main middlewares to handle routes
 app.use('/', viewRouter);
 app.use('/api/v1/', apiRouter);
 

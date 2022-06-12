@@ -8,7 +8,7 @@ html(lang='en')
     //- appending title to name in case it exists, else showing name as the title of the page
     - const pageTitle = meta.title ? `${meta.title} | Quetre`: 'Quetre'
     title= pageTitle
-    meta(name="description", content="A libre front-end for Quora. See any answer without being tracked, without being required to log in, and without being bombarded by pesky ads.")
+    meta(name="description", content=meta.description)
     //- preloading css and fonts for performance gains
     link(rel='preload', href='/fonts/WorkSans.woff2', as='font', type='font/woff2', crossorigin)
     link(rel='preload', href='/fonts/Quicksand.woff2', as='font', type='font/woff2', crossorigin)
@@ -20,6 +20,17 @@ html(lang='en')
     link(rel='icon', href='/favicon.ico', sizes='any')
     link(rel="apple-touch-icon", href="/apple-touch-icon.png")
     link(rel="manifest", href="/site.webmanifest")
+    //- some seo stuff
+    meta(property='og:url', content=meta.url)
+    meta(property='og:type', content='website')
+    meta(property='og:title', content=meta.title)
+    meta(property='og:description', content=meta.description)
+    meta(property='og:image', content=meta.imageUrl)
+    meta(name='twitter:card', content='summary_large_image')
+    meta(property='twitter:url', content=meta.url)
+    meta(name='twitter:title', content=pageTitle)
+    meta(name='twitter:description', content=meta.description)
+    meta(name='twitter:image', content=meta.imageUrl)
     //- own script
     script(src='/js/index.js', defer)
 
