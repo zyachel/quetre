@@ -34,7 +34,8 @@ const fetcher = async resourceStr => {
             .html()
             ?.match(/"\{.*\}"/m)?.[0];
       });
-    if (!rawData) throw new Error("couldn't retrieve data");
+    if (!rawData || !Object.entries(rawData).length)
+      throw new AppError("couldn't retrieve data", 500);
 
     const data = JSON.parse(rawData);
 

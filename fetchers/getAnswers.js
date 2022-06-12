@@ -11,7 +11,6 @@ import fetcher from './fetcher.js';
 const getAnswers = async slug => {
   // getting data and destructuring it in case it exists
   const res = await fetcher(slug);
-  if (!Object.entries(res).length) throw new Error('no data received!');
 
   const {
     data: { question: rawData },

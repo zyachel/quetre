@@ -10,7 +10,6 @@ import fetcher from './fetcher.js';
 const getTopic = async slug => {
   // getting data and destructuring it in case it exists, else throwing an error
   const res = await fetcher(`topic/${slug}`);
-  if (!Object.entries(res).length) throw new Error('no data received!');
 
   const {
     data: { topic: rawData },
