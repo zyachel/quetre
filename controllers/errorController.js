@@ -36,6 +36,7 @@ const sendErrorResponse = (err, req, res, devMode = false) => {
         title: 'Error',
         url: `${req.urlObj.origin}${req.urlObj.pathname}`,
         imageUrl: `${req.urlObj.origin}/icon.svg`,
+        urlObj: req.urlObj,
         description: `ERROR: ${err.message}. Please try again later.`,
       },
     });

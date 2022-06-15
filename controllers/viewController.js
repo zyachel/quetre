@@ -78,6 +78,7 @@ export const unimplemented = (req, res, next) => {
       title: 'Not yet implemented',
       url: `${req.urlObj.origin}${req.urlObj.pathname}`,
       imageUrl: `${req.urlObj.origin}/icon.svg`,
+      urlObj: req.urlObj,
       description: message,
     },
   });
