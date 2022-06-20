@@ -1,3 +1,21 @@
+# [2.1.0](https://github.com/zyachel/quetre/compare/v2.0.1...v2.1.0) (2022-06-20)
+
+
+### Bug Fixes
+
+* change the code so as to compress static resources as well ([ad01448](https://github.com/zyachel/quetre/commit/ad014480ea648ec69a5d2ab3abbe8f133bd7a0c7))
+* fix errors in fetchers ([b9d65e8](https://github.com/zyachel/quetre/commit/b9d65e89f0daefffc4656c7347842402633c51a2))
+* fix footer styles in about page ([53c708a](https://github.com/zyachel/quetre/commit/53c708a1660b94f39e87f0d0e40584282964b850))
+
+
+### Features
+
+* add link to redirect user to Quora in case of errors ([2dd4a03](https://github.com/zyachel/quetre/commit/2dd4a030d2b2abfff81d06df6ab51b71175b4dd1))
+* add meta tags for seo ([14eece7](https://github.com/zyachel/quetre/commit/14eece71a6e3f8179a98f6da14fd3aae0ba51dbf))
+* add theme sensitive theme-color meta tags ([719988c](https://github.com/zyachel/quetre/commit/719988c587443f73d9ce4a58e6d4adba4e877220))
+
+
+
 ## [2.0.1](https://github.com/zyachel/quetre/compare/v2.0.0...v2.0.1) (2022-06-06)
 
 
@@ -56,15 +74,6 @@
 
 * **answer:** reduce line-height in answers ([1447ce6](https://github.com/zyachel/quetre/commit/1447ce65b582a4894773d5e062f37bfbbc9e8909)), closes [fix#1](https://github.com/fix/issues/1)
 * make the background of code paragraphs more promient in light mode ([64dfcae](https://github.com/zyachel/quetre/commit/64dfcae88dfe3f7df87b9f9d76a37ce58581c882))
-
-
-
-## [1.0.2](https://github.com/zyachel/quetre/compare/v1.0.1...v1.0.2) (2022-05-20)
-
-
-### Bug Fixes
-
-* fix some more formatting issues ([066f040](https://github.com/zyachel/quetre/commit/066f040eb489d3075cbcccb9cce22b59f146c247))
 
 
 
