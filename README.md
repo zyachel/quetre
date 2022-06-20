@@ -1,5 +1,7 @@
 # Quetre
 
+[![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)](https://github.com/humanetech-community/awesome-humane-tech)
+
 Quetre is an alternative front-end to Quora.
 It enables you to see answers without ads, trackers, and other such bloat.
 
