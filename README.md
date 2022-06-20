@@ -43,11 +43,13 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 ## **Instances**
 
-| Instance URL                                            | Country | Provider | Notes                                                 |
-| ------------------------------------------------------- | ------- | -------- | ----------------------------------------------------- |
-| [quetre.herokuapp.com](https://quetre.herokuapp.com)    | Europe  | Heroku   | Official instance                                     |
-| [quora.vern.cc](https://quora.vern.cc)                  | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                 |
-| [quetre.pussthecat.org](https://quetre.pussthecat.org/) | Germany | &ndash;  | Operated by [PussTheCat.org](https://pussthecat.org/) |
+| Instance URL                                              | Region  | Provider | Notes                                                     |
+| --------------------------------------------------------- | ------- | -------- | --------------------------------------------------------- |
+| [quetre.herokuapp.com](https://quetre.herokuapp.com)      | Europe  | Heroku   | Official instance                                         |
+| [quora.vern.cc](https://quora.vern.cc)                    | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                     |
+| [quetre.pussthecat.org](https://quetre.pussthecat.org/)   | Germany | &ndash;  | Operated by [PussTheCat.org](https://pussthecat.org/)     |
+| [wuetre.herokuapp.com](https://wuetre.herokuapp.com/)     | Europe  | Heroku   | Operated by AnonymousZ                                    |
+| [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S.    | Heroku   | Operated by [toyboatcash](https://github.com/toyboatcash) |
 
 Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku.
 Click the button below to get started:  
