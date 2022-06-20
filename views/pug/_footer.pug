@@ -1,9 +1,9 @@
-footer.footer(class=`${title ==='About' ? 'footer__about' : ''}`)
+footer.footer(class=`${meta.title ==='About' ? 'footer__about' : ''}`)
   block footer
     //- more stuff will be prepended here on about page
     nav.footer__nav-box(aria-label='Primary navigation')
       ul.footer__nav 
-        - if (title !=='About') 
+        - if (meta.title !=='About') 
           li.footer__nav-item: a.footer__nav-link.footer__link(href="/") About
 
         li.footer__nav-item: a.footer__nav-link.footer__link(href="https://github.com/zyachel/quetre") Source Code 
