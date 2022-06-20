@@ -1,11 +1,11 @@
-# **Quetre**
+# Quetre
 
 Quetre is an alternative front-end to Quora.
 It enables you to see answers without ads, trackers, and other such bloat.
 
 ---
 
-## **Key Features**
+## Key Features
 
 - Privacy focused
 
@@ -33,15 +33,15 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 ---
 
-## **Screenshots**
+## Screenshots
 
-|                                  |                                   |
-| :------------------------------: | :-------------------------------: |
-| ![](public/misc/img/preview.png) | ![](public/misc/img/preview2.png) |
+|                                                                  |                                                                 |
+| :--------------------------------------------------------------: | :-------------------------------------------------------------: |
+| ![website in light mode on desktop](public/misc/img/preview.png) | ![website in dark mode on mobile](public/misc/img/preview2.png) |
 
 ---
 
-## **Instances**
+## Instances
 
 | Instance URL                                              | Region  | Provider | Notes                                                     |
 | --------------------------------------------------------- | ------- | -------- | --------------------------------------------------------- |
@@ -57,7 +57,7 @@ Click the button below to get started:
 
 ---
 
-## **Comparision**
+## Comparision
 
 ### Speed
 
@@ -178,7 +178,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 2. Clone and set up the repository.
 
    ```bash
-   git clone https://github.com/zyachel/quetre.git
+   git clone https://github.com/zyachel/quetre.git # replace github.com with codeberg.org if you're cloning from there
    cd quetre
    cp .env.example .env # you can make any changes here
    # change `pnpm` to `npm run` here as well as in package.json if you use `npm`
@@ -196,7 +196,71 @@ There is a [docker image](https://github.com/PussTheCat-org/docker-quetre-quay) 
 
 ## Misc
 
-Check out these [projects](https://github.com/mendel5/alternative-front-ends) similar to Quetre.
+### Automatic redirection
+
+Following extensions can be used to automatically redirect Quora URLs to Quetre:
+
+- [redirector](https://github.com/einaregilsson/Redirector)  
+  You can manually add any redirect.
+  Below is a basic config of Quora to Quetre. Replace `quetre.herokuapp.com` in `Redirect to` to any instance of your choice.
+
+  ```
+  Description: Quora to Quetre
+  Example URL: https://www.quora.com/What-is-Linux-4?share=1
+  Include pattern: https?:\/\/(www\.)?quora\.com\/([^\?]*)
+  Redirect to: https://quetre.herokuapp.com/$2
+  Pattern type: Regular Expression
+  Pattern description: redirects all Quora urls(excluding language-specific and spaces) to Quetre
+  ```
+
+  This config should output:  
+  `Example result: https://quetre.herokuapp.com/What-is-Linux-4`
+
+- [LibRedirect](https://github.com/libredirect/libredirect/)  
+  Redirects many popular services to their alternative front-ends. Has a ton of features and an active community. Quetre is supported by default. So, no need to do anything.
+
+### Other alternative front-ends
+
+- [digitalblossom/alternative-frontends](https://github.com/digitalblossom/alternative-frontends): contains other alternative front-ends.
+- [mendel5/alternative-front-ends](https://github.com/mendel5/alternative-front-ends): a bit more general, containing alternative clients too.
+
+---
+
+## Credits
+
+### Programming
+
+- [JavaScript](https://www.ecma-international.org/technical-committees/tc39/): programming language
+- [Sass](https://sass-lang.com/): CSS preprocessor
+- [Pug](https://pugjs.org/): Template engine
+- [Node.js](https://nodejs.org/en/): JS runtime environmen
+- [Express](http://expressjs.com/): Application framework for Node.js
+
+### Resources
+
+- [Inkscape](https://inkscape.org/): Vector graphics editor. Used for making logo and favicons
+- [Material Design Icons](https://materialdesignicons.com/): Used for SVGs
+- [Font Awesome](https://fontawesome.com/): Used for SVGs
+
+### Code hosting
+
+- [GitHub](https://github.com/). Quetre source code: [github.com/zyachel/quetre](https://github.com/zyachel/quetre)
+- [Codeberg](https://codeberg.org/). Quetre source code: [codeberg.org/zyachel/quetre](https://codeberg.org/zyachel/quetre)
+
+### Deployment
+
+- [Heroku](https://www.heroku.com/)
+
+### Inspiration
+
+- [Teddit](https://codeberg.org/teddit/teddit)
+- [Nitter](https://github.com/zedeus/nitter)
+
+### Others
+
+- Contributors
+- Instance maintainers
+- Users :)
 
 ---
 
@@ -208,4 +272,4 @@ Send a message on [\[matrix\]](https://matrix.to/#/@ninal:matrix.org) or go old 
 
 ## License
 
-Licensed under [GNU AGPLv3](/LICENSE).
+Licensed under [GNU AGPLv3](./LICENSE).
