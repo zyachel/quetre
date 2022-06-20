@@ -148,6 +148,10 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
   Quora doesn't show all answers at once. It only loads more answers as the user scrolls down. Furthermore, it uses many unique IDs to send ajax requests to fetch those answers. So, all in all, getting more answers isn't impossible but quite difficult requiring some serious amount of time on their website in order to figure out how it all happens. I'm short on time for now.
 
+- Why am I getting a _Couldn't find such an answer_ error?
+
+  Sometimes Quora doesn't populate the answer page HTML, and hence, Quetre is unable to extract data from it. If that happens, you can refresh the page a couple of times to get the answers.
+
 - I have some ideas/want to help.
 
   You're most welcome to do that. Just [contact me](#contact) or fork [the repo](https://github.com/zyachel/quetre/fork) and make a pull request. You can even help by correcting some typos or translating this README to other languages.
