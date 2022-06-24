@@ -18,8 +18,8 @@ const getAnswers = async slug => {
 
   if (!rawData)
     throw new AppError(
-      "Couldn't find such an answer. Maybe check the URL?",
-      400
+      "Answers couldn't be fetched. Recheck the URL, or resend the request if you believe the URL is correct.",
+      404
     );
 
   // array containing all the answers with metadata

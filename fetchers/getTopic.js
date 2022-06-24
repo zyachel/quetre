@@ -16,7 +16,10 @@ const getTopic = async slug => {
   } = JSON.parse(res);
 
   if (!rawData)
-    throw new AppError("couldn't find such a topic. Maybe check the URL?", 400);
+    throw new AppError(
+      "Topic details couldn't be fetched. Recheck the URL, or resend the request if you believe the URL is correct.",
+      404
+    );
 
   const data = {
     tid: rawData.tid,
