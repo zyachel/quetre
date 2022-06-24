@@ -28,9 +28,9 @@ const fetcher = async resourceStr => {
     $('body')
       .children('script')
       .each((i, el) => {
-        if ($(el).html().includes('window.installSettings()'))
+        if ($(el).html().includes('window.setTimingData'))
           rawData = $(el)
-            .next()
+            .prev()
             .html()
             ?.match(/"\{.*\}"/m)?.[0];
       });
