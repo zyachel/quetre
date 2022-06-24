@@ -1,3 +1,20 @@
+# [3.0.0](https://github.com/zyachel/quetre/compare/v2.1.0...v3.0.0) (2022-06-24)
+
+
+### Bug Fixes
+
+* **fetcher:** fix fetcher logic ([fb7d803](https://github.com/zyachel/quetre/commit/fb7d8034fe98b21c69e1bf5eee4f3c85a2f94215))
+* send a meaningful error response in case an answer/topic can't be fetched ([e7c83bd](https://github.com/zyachel/quetre/commit/e7c83bd06e9398575a46f1a3893f355f2147c157))
+
+
+### BREAKING CHANGES
+
+* **fetcher:** Quora changed their HTML. Previous fetcher logic won't work!
+
+fix https://github.com/zyachel/quetre/issues/10
+
+
+
 # [2.1.0](https://github.com/zyachel/quetre/compare/v2.0.1...v2.1.0) (2022-06-20)
 
 
@@ -64,16 +81,6 @@
 ### Features
 
 * **route:** add new route ([0a35cda](https://github.com/zyachel/quetre/commit/0a35cdaa157d22dac4ac7b58d8ba9b6cd2553b31))
-
-
-
-## [1.0.3](https://github.com/zyachel/quetre/compare/v1.0.2...v1.0.3) (2022-05-21)
-
-
-### Bug Fixes
-
-* **answer:** reduce line-height in answers ([1447ce6](https://github.com/zyachel/quetre/commit/1447ce65b582a4894773d5e062f37bfbbc9e8909)), closes [fix#1](https://github.com/fix/issues/1)
-* make the background of code paragraphs more promient in light mode ([64dfcae](https://github.com/zyachel/quetre/commit/64dfcae88dfe3f7df87b9f9d76a37ce58581c882))
 
 
 
