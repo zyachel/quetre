@@ -196,8 +196,14 @@ Quetre will start running at http://localhost:3000.
 
 ### Docker
 
-There is a [docker image](https://github.com/PussTheCat-org/docker-quetre-quay) made by [@TheFrenchGhosty](https://github.com/TheFrenchGhosty) for [PussTheCat.org](https://pussthecat.org/)'s [instance](https://quetre.pussthecat.org/). You can check that out case you want to go the docker way.
+To run quetre with Docker, you need to install Docker & docker-compose.
 
+   
+   ```bash
+   git clone https://github.com/zyachel/quetre.git # replace github.com with codeberg.org if you're cloning from there
+   cd quetre
+   docker-compose up -d #
+   ```
 ---
 
 ## Misc
