@@ -52,6 +52,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.pussthecat.org](https://quetre.pussthecat.org/)   | Germany | &ndash;  | Operated by [PussTheCat.org](https://pussthecat.org/)     |
 | [wuetre.herokuapp.com](https://wuetre.herokuapp.com/)     | Europe  | Heroku   | Operated by AnonymousZ                                    |
 | [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S.    | Heroku   | Operated by [toyboatcash](https://github.com/toyboatcash) |
+| [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/)           | U.S.    | Oracle   | Operated by [Tokhmi](https://tokhmi.xyz)                  |
 
 Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku.
 Click the button below to get started:  
@@ -198,12 +199,12 @@ Quetre will start running at http://localhost:3000.
 
 To run quetre with Docker, you need to install Docker & docker-compose.
 
-   
-   ```bash
-   git clone https://github.com/zyachel/quetre.git # replace github.com with codeberg.org if you're cloning from there
-   cd quetre
-   docker-compose up -d #
-   ```
+```bash
+git clone https://github.com/zyachel/quetre.git # replace github.com with codeberg.org if you're cloning from there
+cd quetre
+docker-compose up -d #
+```
+
 ---
 
 ## Misc
