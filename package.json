@@ -10,8 +10,8 @@
     "sass:build": "sass views/sass/main.scss:public/css/styles.css --style=compressed",
     "server:dev": "NODE_ENV=development nodemon server.js",
     "server:prod": "nodemon server.js",
-    "dev": "(npm sass:watch) & (npm server:dev)",
-    "prod": "(npm sass:build) & (npm server:prod)",
+    "dev": "(npm run sass:watch) & (npm run server:dev)",
+    "prod": "(npm run sass:build) & (npm run server:prod)",
     "start": "(npm run sass:build) & (node server.js)"
   },
   "repository": {
