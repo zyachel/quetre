@@ -2,15 +2,15 @@
 //                     IMPORTS
 ////////////////////////////////////////////////////////
 // import log from '../utils/log.js';
-import AppError from '../utils/AppError.js';
-import fetcher from './fetcher.js';
+import AppError from "../utils/AppError.js";
+import fetcher from "./fetcher.js";
 
 ////////////////////////////////////////////////////////
 //                     FUNCTION
 ////////////////////////////////////////////////////////
-const getAnswers = async slug => {
+const getAnswers = async (slug, lang) => {
   // getting data and destructuring it in case it exists
-  const res = await fetcher(slug);
+  const res = await fetcher(slug, lang);
 
   const {
     data: { question: rawData },
@@ -24,8 +24,8 @@ const getAnswers = async slug => {
 
   // array containing all the answers with metadata
   const ansArr = rawData.pagedListDataConnection.edges
-    .filter(ansObj => ansObj.node.answer !== undefined)
-    .map(ansObj => ({
+    .filter((ansObj) => ansObj.node.answer !== undefined)
+    .map((ansObj) => ({
       text: JSON.parse(ansObj.node.answer.content).sections,
       isViewable: !!ansObj.node.answer.viewerHasAccess,
       creationTime: ansObj.node.answer.creationTime,
@@ -67,13 +67,13 @@ const getAnswers = async slug => {
     },
     numAnswers: rawData.answerCount,
     answers: ansArr,
-    topics: rawData.topics.map(topicObj => ({
+    topics: rawData.topics.map((topicObj) => ({
       tid: topicObj.tid,
       name: topicObj.name,
       url: topicObj.url,
     })),
     relatedQuestions: rawData.bottomRelatedQuestionsInfo.relatedQuestions.map(
-      questionObj => ({
+      (questionObj) => ({
         qid: questionObj.qid,
         url: questionObj.url,
         text: JSON.parse(questionObj.title).sections[0],

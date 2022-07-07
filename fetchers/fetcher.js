@@ -2,9 +2,9 @@
 ////////////////////////////////////////////////////////
 //                      IMPORTS
 ////////////////////////////////////////////////////////
-import * as cheerio from 'cheerio';
-import axiosInstance from '../utils/axiosInstance.js';
-import AppError from '../utils/AppError.js';
+import * as cheerio from "cheerio";
+import axiosWithLanguages from "../utils/axiosInstance.js";
+import AppError from "../utils/AppError.js";
 
 ////////////////////////////////////////////////////////
 //                     FUNCTION
@@ -18,17 +18,18 @@ import AppError from '../utils/AppError.js';
  * await fetcher('topic/Space-Physics'); // will return 'space physics' topic object
  * await fetcher('profile/Charlie-Cheever'); // will return object containing information about charlie cheever
  */
-const fetcher = async resourceStr => {
+const fetcher = async (resourceStr, lang) => {
   try {
+    const axiosInstance = axiosWithLanguages(lang);
     // as url might contain unescaped chars. so, encodeing it right away
     const res = await axiosInstance.get(encodeURIComponent(resourceStr));
 
     const $ = cheerio.load(res.data);
     let rawData;
-    $('body')
-      .children('script')
+    $("body")
+      .children("script")
       .each((i, el) => {
-        if ($(el).html().includes('window.setTimingData'))
+        if ($(el).html().includes("window.setTimingData"))
           rawData = $(el)
             .prev()
             .html()
@@ -41,10 +42,10 @@ const fetcher = async resourceStr => {
 
     return data;
   } catch (err) {
-    if (err.response?.status === 404) throw new AppError('Not found', 404);
+    if (err.response?.status === 404) throw new AppError("Not found", 404);
     else if (err.response?.status === 429)
       throw new AppError(
-        'Quora is rate limiting this instance. Consider hosting your own. Instructions are at Github',
+        "Quora is rate limiting this instance. Consider hosting your own. Instructions are at Github",
         503
       );
     else throw err;
