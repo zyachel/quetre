@@ -1,10 +1,6 @@
-FROM node:lts-bullseye
+FROM node:18-alpine
 WORKDIR /app
-RUN apt update -y && apt upgrade -y \
-    && apt install -y --no-install-recommends git \
-    && apt autoclean -y \
-    && apt autoremove -y \
-    && rm -rf /var/lib/apt/lists/* \
+RUN apk add --update --no-cache git openssh \
     && npm install -g pnpm \
     && git clone --depth=1 https://github.com/zyachel/quetre.git . \
     && pnpm install

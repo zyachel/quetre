@@ -5,7 +5,10 @@ services:
     image: ghcr.io/zyachel/quetre:latest
     restart: unless-stopped
     ports:
-      - "127.0.0.1:3000:3000" # Replace with "3000:3000" if you don't use a reverse proxy
+      - "127.0.0.1:3000:3000" 
     environment:
-      - "NODE_ENV=production"
-      - "PORT=3000"
+      - "NODE_ENV=production"  #if set to development, morgan middleware will log every request
+      - "PORT=3000" # if unset, defaults back to 3000
+      - "CACHE_PERIOD=1h"
+      # -AXIOS_USER_AGENT='axios/0.26.1'  #user agent that quora will see
+      # -AXIOS_ACCEPT='application/json, text/plain, */*'  #accept header that quora will see
