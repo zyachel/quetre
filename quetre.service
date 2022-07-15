@@ -1,0 +1,12 @@
+[Unit]
+Description=Frontend for quora
+[Service]
+WorkingDirectory=/home/quetre/quetre
+User=quetre
+ExecStart=/usr/bin/pnpm start
+RestartSec=5
+Restart=always
+KillMode=mixed
+
+[Install]
+WantedBy=default.target
