@@ -48,7 +48,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | Instance URL                                              | Region  | Provider | Notes                                                     |
 | --------------------------------------------------------- | ------- | -------- | --------------------------------------------------------- |
 | [quetre.herokuapp.com](https://quetre.herokuapp.com)      | Europe  | Heroku   | Official instance                                         |
-| [quora.vern.cc](https://quora.vern.cc) (Ratelimited)      | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                     |
+| [quora.vern.cc](https://quora.vern.cc)                    | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                     |
 | [quetre.pussthecat.org](https://quetre.pussthecat.org/)   | Germany | &ndash;  | Operated by [PussTheCat.org](https://pussthecat.org/)     |
 | [wuetre.herokuapp.com](https://wuetre.herokuapp.com/)     | Europe  | Heroku   | Operated by AnonymousZ                                    |
 | [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S.    | Heroku   | Operated by [toyboatcash](https://github.com/toyboatcash) |
