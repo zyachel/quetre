@@ -11,7 +11,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 - Privacy focused
 
-  All requests except for images are proxied which makes it impossible for Quora to collate meaningful data points about you.
+  All requests are proxied which makes it impossible for Quora to collate meaningful data points about you.
 
 - No ads or tracking
 
@@ -139,9 +139,9 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
   I'm working to implement them soon. Keep an eye on [To-Do list](#to-do).
 
-- Why is website connecting to '\*.quoracdn.net' and 'cdn.jsdelivr.net'?
+- Why is the website connecting to 'cdn.jsdelivr.net'?
 
-  For the moment, images aren't proxied but directly fetched from quora. Hence the connection to quoracdn. As for the connection to jsdelivr, it is for an open source library – [Mathjax](https://www.mathjax.org/) – which is used to display math eqations nicely. If I get enough time, I'll include it locally.
+  It is for an open source library – [Mathjax](https://www.mathjax.org/) – which is used to display math eqations nicely. If I get enough time, I'll include it locally.
 
 - Why are some math equations showing up weirdly?
 
