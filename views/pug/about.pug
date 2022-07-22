@@ -25,7 +25,7 @@ block content
         .features__feature 
           svg.features__feature-icon: use(href='/misc/sprite.svg#icon-spy')
           h3.heading.heading__tertiary.features__feature-heading Privacy focused
-          p.features__feature-text All requests except for images are proxied which makes it impossible for Quora to collate meaningful data points about you.
+          p.features__feature-text All requests are proxied which makes it impossible for Quora to collate meaningful data points about you.
         .features__feature 
           svg.features__feature-icon: use(href='/misc/sprite.svg#icon-fingerprint')
           h3.heading.heading__tertiary.features__feature-heading No ads or tracking
@@ -57,9 +57,9 @@ block content
             svg.faqs__icon: use(href='/misc/sprite.svg#icon-open')
           p.faqs__answer I'm working to implement them soon.
         details.faqs__faq
-          summary.faqs__question Why is website connecting to '*.quoracdn.net' and 'cdn.jsdelivr.net'?
+          summary.faqs__question Why is website connecting to 'cdn.jsdelivr.net'?
             svg.faqs__icon: use(href='/misc/sprite.svg#icon-open')
-          p.faqs__answer For the moment, images aren't proxied but directly fetched from quora. Hence the connection to quoracdn. As for the connection to jsdelivr, it is for an open source library &ndash;&nbsp;
+          p.faqs__answer It is for an open source library &ndash;&nbsp;
             a.about__link(href='https://www.mathjax.org/') Mathjax
             |&nbsp;&ndash; which is used to display math eqations nicely. If I get enough time, I'll include it locally.
         details.faqs__faq
