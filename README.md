@@ -1,13 +1,15 @@
 # Quetre
+<div align="center">
 
-[![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)](https://github.com/humanetech-community/awesome-humane-tech)
-[![GitHub issues](https://img.shields.io/github/issues/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/issues)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/zyachel/quetre?style=flat-square)
-[![GitHub forks](https://img.shields.io/github/forks/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/network)
-[![GitHub stars](https://img.shields.io/github/stars/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/stargazers)
-[![GitHub license](https://img.shields.io/github/license/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/blob/main/LICENSE)
-![GitHub contributors](https://img.shields.io/github/contributors/zyachel/quetre?style=flat-square)
+  [![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)]      (https://github.com/humanetech-community/awesome-humane-tech)
+  [![GitHub issues](https://img.shields.io/github/issues/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/issues)
+  ![GitHub pull requests](https://img.shields.io/github/issues-pr/zyachel/quetre?style=flat-square)
+  [![GitHub forks](https://img.shields.io/github/forks/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/network)
+  [![GitHub stars](https://img.shields.io/github/stars/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/stargazers)
+  [![GitHub license](https://img.shields.io/github/license/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/blob/main/LICENSE)
+  ![GitHub contributors](https://img.shields.io/github/contributors/zyachel/quetre?style=flat-square)
 
+</div>
 Quetre is an alternative front-end to Quora.
 It enables you to see answers without ads, trackers, and other such bloat.
 
