@@ -38,7 +38,7 @@ article.answer
         svg.answer__icon
           title verified
           use(href='/misc/sprite.svg#icon-verified')
-    img.answer__author-image(src=answerObj.author.avatar, alt=`${answerObj.author.name}'s profile photo`, loading='lazy')
+    img.answer__author-image(src=answerObj.author.avatar.replace('https://', "/api/v1/image/"), alt=`${answerObj.author.name}'s profile photo`, loading='lazy')
     p.answer__author-credentials(aria-label=`${answerObj.author.name}'s credentials`)= answerObj.author.credential || ''
 
   h3.answer__question.heading.heading__tertiary
@@ -51,7 +51,7 @@ article.answer
     //- putting paragraphs in semantically correct tags(to the extent possible)
     each para in answerObj.text
       -if(para.type==='image')
-        img.answer__para.answer__image(src=para.spans[0].modifiers.master_url, alt='User embedded image', loading='lazy')
+        img.answer__para.answer__image(src=para.spans[0].modifiers.master_url.replace('https://', "/api/v1/image/"), alt='User embedded image', loading='lazy')
       - else if (para.type==='code')
         pre.answer__para.answer__code: code
           +spansChecker(para.spans)

@@ -1,6 +1,7 @@
 ////////////////////////////////////////////////////////
 //                     IMPORTS
 ////////////////////////////////////////////////////////
+import axiosInstance from '../utils/axiosInstance.js';
 import catchAsyncErrors from '../utils/catchAsyncErrors.js';
 import getAnswers from '../fetchers/getAnswers.js';
 import getTopic from '../fetchers/getTopic.js';
@@ -32,3 +33,16 @@ export const unimplemented = (req, res, next) => {
     message: "This route isn't yet implemented. Check back sometime later!",
   });
 };
+
+export const image = catchAsyncErrors(async (req, res, next) => {
+  if (!req.params.domain.endsWith("quoracdn.net")) {
+    return res.status(403).json({
+      status: 'fail',
+      message: "Invalid domain",
+    });
+  }
+
+  const imageRes = await axiosInstance.get(`https://${req.params.domain}/${req.params.path}`, { responseType: 'arraybuffer' });
+  res.set('Content-Type', imageRes.headers['content-type'])
+  res.status(200).send(imageRes.data);
+});
