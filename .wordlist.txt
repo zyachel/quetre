@@ -65,3 +65,8 @@ seo
 cb
 favicon
 html
+Codeberg
+codeberg
+malinformed
+txt
+ba
