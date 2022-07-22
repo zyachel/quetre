@@ -1,7 +1,7 @@
 # Quetre
 <div align="center">
 
-  [![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)]      (https://github.com/humanetech-community/awesome-humane-tech)
+  [![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)](https://github.com/humanetech-community/awesome-humane-tech)
   [![GitHub issues](https://img.shields.io/github/issues/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/issues)
   ![GitHub pull requests](https://img.shields.io/github/issues-pr/zyachel/quetre?style=flat-square)
   [![GitHub forks](https://img.shields.io/github/forks/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/network)
