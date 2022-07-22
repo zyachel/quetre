@@ -1,9 +1,14 @@
-# [3.1.0](https://github.com/zyachel/quetre/compare/v3.0.0...v3.1.0) (2022-07-22)
+# [3.2.0](https://github.com/zyachel/quetre/compare/v3.0.0...v3.2.0) (2022-07-22)
 
 
 ### Features
 
 * proxy images ([fa0a5f1](https://github.com/zyachel/quetre/commit/fa0a5f1fa526d6350e3321a34f9c5b326fd6d9bb))
+
+
+### Reverts
+
+* Revert "Propose code of conduct (Contributor Covenant) (#1)" (#2) ([436d08d](https://github.com/zyachel/quetre/commit/436d08de6dee2ecdeb67f0b707842e004fe9accb)), closes [#1](https://github.com/zyachel/quetre/issues/1) [#2](https://github.com/zyachel/quetre/issues/2)
 
 
 
