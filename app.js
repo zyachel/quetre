@@ -23,7 +23,7 @@ app.use(
   helmet({
     contentSecurityPolicy: {
       directives: {
-        'img-src': ["'self'", '*.quoracdn.net'],
+        'img-src': ["'self'"],
         'script-src': ["'self'", 'cdn.jsdelivr.net'],
       },
     },

@@ -1,3 +1,12 @@
+# [3.1.0](https://github.com/zyachel/quetre/compare/v3.0.0...v3.1.0) (2022-07-22)
+
+
+### Features
+
+* proxy images ([fa0a5f1](https://github.com/zyachel/quetre/commit/fa0a5f1fa526d6350e3321a34f9c5b326fd6d9bb))
+
+
+
 # [3.0.0](https://github.com/zyachel/quetre/compare/v2.1.0...v3.0.0) (2022-06-24)
 
 
@@ -67,20 +76,6 @@ fix https://github.com/zyachel/quetre/issues/10
 ### BREAKING CHANGES
 
 * **fetcher:** old fetcher.js won't work as quora changed their html
-
-
-
-# [1.1.0](https://github.com/zyachel/quetre/compare/v1.0.3...v1.1.0) (2022-05-22)
-
-
-### Bug Fixes
-
-* fix a bug related to fetcher.js ([6ad2269](https://github.com/zyachel/quetre/commit/6ad2269951bb6c72a464f22b6aa428ce84622e94))
-
-
-### Features
-
-* **route:** add new route ([0a35cda](https://github.com/zyachel/quetre/commit/0a35cdaa157d22dac4ac7b58d8ba9b6cd2553b31))
 
 
 
