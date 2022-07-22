@@ -14,11 +14,9 @@ jobs:
        source_files: README.md CHANGELOG.md
        task_name: Markdown
        output_file: spellcheck-output.txt
-  upload_artifact: 
-   runs-on: ubuntu-latest
-   steps:
-   - uses: actions/checkout@v2
-   - uses: actions/upload-artifact@v3
-     with:
-      name: Spellcheck artifact
-      path: spellcheck-output.txt
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.0
+      with:
+      # Artifact name
+       name: Spellcheck-artifact
+       path: spellcheck-output.txt
