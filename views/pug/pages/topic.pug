@@ -1,11 +1,21 @@
-extends base
+//-//////////////////////////////////////////////////////
+//-                 INCLUDES/EXTENDS
+//-//////////////////////////////////////////////////////
+extends ../base
 
+//-//////////////////////////////////////////////////////
+//-                LOCAL HELPER MIXINS
+//-//////////////////////////////////////////////////////
+//- mixin to make number a bit more readable
 mixin formatNumber(number, ...classes)
   span(class=classes.join(' '))= new Intl.NumberFormat().format(number)
 
+//-//////////////////////////////////////////////////////
+//-                   MAIN CONTENT
+//-//////////////////////////////////////////////////////
 block content
   main#main.main.topic
-    //- all info related to the topic
+    //- TOPIC NAME AND METADATA
     .topic__stats.topic-stats
       h1.heading.heading__primary.topic__heading.topic-stats__heading= data.name
       img.topic-stats__image(src=data.image.replace('https://', "/api/v1/image/") alt=`image depicting ${data.name}`, loading='lazy')
@@ -28,7 +38,8 @@ block content
             span.topic-stats__metadata-data 18+
             span.topic-stats__metadata-text &nbsp;Adult Topic
         a.topic__link(href='https://www.quora.com' + data.url) View on Quora
-      
+    
+    //- AUTHORS RELATED TO THE TOPIC AND METADATA
     .topic__famous-authors.famous-authors
       h2.heading.heading__secondary.famous-authors__heading Most viewed authors
       .famous-authors__list
@@ -60,6 +71,7 @@ block content
                 +formatNumber(author.numAnswers, 'famous-authors__metadata-data')
                 span.famous-authors__metadata-text &nbsp;Answers
 
+    //- RELATED TOPICS
     .topic__related-topics.related-topics
       h2.heading.heading__secondary.related-topics__heading Related Topics
       .related-topics__list
@@ -72,4 +84,3 @@ block content
                 svg.icon.related-topics__icon: use(href='/misc/sprite.svg#icon-user')
                 +formatNumber(topic.numFollowers, 'related-topics__metadata-data')
                 span.topic-stats__metadata-text &nbsp;Followers
-

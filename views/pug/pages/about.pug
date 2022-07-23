@@ -1,5 +1,12 @@
-extends base
+//-//////////////////////////////////////////////////////
+//-                 INCLUDES/EXTENDS
+//-//////////////////////////////////////////////////////
+extends ../base
 
+//-//////////////////////////////////////////////////////
+//-                SECONDARY CONTENT
+//-//////////////////////////////////////////////////////
+//- this block adds nav bar to header
 block header__nav
   nav.header__nav-box(aria-label='Table of Contents'): ul.header__nav 
     li.header__nav-item
@@ -11,14 +18,22 @@ block header__nav
     li.header__nav-item
       a.header__link.header__nav-link(href="https://github.com/zyachel/quetre") Source
 
-
+//- this block makes header span full viewport and adds a one-liner hero text
 block header__info
   .header__info 
     h1.heading.heading__primary.header__hero A libre front-end for Quora
     a.header__link.header__down(href='#features', aria-label='go to features section'): svg.icon.icon__down: use(href='/misc/sprite.svg#icon-down')
 
+//- this block changes the footer a bit
+block prepend footer
+  p.footer__logo Quetre
+
+//-//////////////////////////////////////////////////////
+//-                   MAIN CONTENT
+//-//////////////////////////////////////////////////////
 block content 
   main#main.main.about
+    //- FEATURES
     section.about__features.features#features
       h2.heading.heading__secondary.about__heading-secondary.features__heading Key features
       .features__list 
@@ -49,6 +64,7 @@ block content
             code /api/v1/
             |&nbsp;after the domain name in the URL and get a JSON repsonse.
 
+    //- FAQs
     section.about__faqs.faqs#faqs
       h2.heading.heading__secondary.about__heading-secondary.faqs__heading FAQs
       .faqs__list
@@ -87,6 +103,7 @@ block content
             a.about__link(href="https://lingva.ml/en/la/questions%20and%20answers%0A") in Latin
             |.
 
+    //- CONTACT INFO
     section.about__contact#contact
       h2.heading.heading__secondary.about__heading-secondary.about__contact-heading Contact
       address.about__contact-text Reach me via&nbsp;
@@ -94,5 +111,3 @@ block content
         |&nbsp;or&nbsp;
         a.about__link(href="mailto:aricla@protonmail.com") Email
         |&nbsp;in case you got any suggestions or feedback, or if you just want to drop a hi :)
-block prepend footer
-  p.footer__logo Quetre

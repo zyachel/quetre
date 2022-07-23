@@ -47,8 +47,8 @@ const getAnswers = async slug => {
         credential: ansObj.node.answer.authorCredential?.translatedString,
         // additionalCredentials: ansObj.node.answer?.credibilityFacts.map(),
       },
-      OriginalQuestion: {
-        text: JSON.parse(ansObj.node.answer.question.title).sections[0],
+      originalQuestion: {
+        text: JSON.parse(ansObj.node.answer.question.title).sections,
         url: ansObj.node.answer.question.url,
         qid: ansObj.node.answer.question.qid,
         isDeleted: ansObj.node.answer.question.isDeleted,
@@ -58,7 +58,7 @@ const getAnswers = async slug => {
   // main data object to be returned
   const data = {
     question: {
-      text: JSON.parse(rawData.title).sections[0],
+      text: JSON.parse(rawData.title).sections,
       url: rawData.url,
       qid: rawData.qid,
       idDeleted: rawData.isDeleted,
@@ -76,7 +76,7 @@ const getAnswers = async slug => {
       questionObj => ({
         qid: questionObj.qid,
         url: questionObj.url,
-        text: JSON.parse(questionObj.title).sections[0],
+        text: JSON.parse(questionObj.title).sections,
       })
     ),
   };
