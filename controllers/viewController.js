@@ -39,7 +39,7 @@ export const answers = catchAsyncErrors(async (req, res, next) => {
   if (nonSlugRoutes.includes(slug)) return next();
 
   const answersData = await getAnswers(slug);
-  const title = answersData.question.text.section[0].spans
+  const title = answersData.question.text[0].spans
     .map(span => span.text)
     .join('');
 
