@@ -34,7 +34,7 @@ article.answer
   h3.answer__question.heading.heading__tertiary
     span Originally answered to&nbsp;
     a.answer__link.answers__link(href=answerObj.originalQuestion.url)
-      +formatText(answerObj.originalQuestion.text)
+      +spansChecker(answerObj.originalQuestion.text[0].spans)
 
   //- ANSWER
   .answer__text

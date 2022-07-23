@@ -13,7 +13,7 @@ block content
     //- THIS QUESTION AND METADATA
     .answers__question-box
       h1.heading.heading__primary.answers__question
-        +formatText(data.question.text)
+        +spansChecker(data.question.text[0].spans)
       .answers__metadata
         p.answers__answers-total= `${ data.numAnswers ? 'Total answers: ' + data.numAnswers : 'Unanswered'}`
         p.answers__answers-shown Viewable answers: #{data.answers.length}
@@ -39,5 +39,4 @@ block content
       ul.related__questions 
         each question in data.relatedQuestions
           li.related__question-item: a.related__question-link.answers__link(href=question.url)
-            +formatText(question.text)
-            
+            +spansChecker(question.text[0].spans)
