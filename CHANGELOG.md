@@ -1,3 +1,18 @@
+# [3.2.0](https://github.com/zyachel/quetre/compare/v3.1.1...v3.2.0) (2022-07-24)
+
+
+### Bug Fixes
+
+* fix a fatal bug in viewController.js ([33c90c1](https://github.com/zyachel/quetre/commit/33c90c17b12cf15eadde16d35fbba4cede10919b))
+* fix paragraph tag occuring inside heading tags ([65d14ba](https://github.com/zyachel/quetre/commit/65d14ba47c0d3bb1d2548972478a12a43f7e7500))
+
+
+### Features
+
+* add support for embedded content in answers ([bae2d7b](https://github.com/zyachel/quetre/commit/bae2d7b4f7f945d7eb55dddb4bd7e49ac21b2ae1))
+
+
+
 ## [3.1.1](https://github.com/zyachel/quetre/compare/v3.1.0...v3.1.1) (2022-07-22)
 
 
@@ -48,20 +63,6 @@ fix https://github.com/zyachel/quetre/issues/10
 * add link to redirect user to Quora in case of errors ([2dd4a03](https://github.com/zyachel/quetre/commit/2dd4a030d2b2abfff81d06df6ab51b71175b4dd1))
 * add meta tags for seo ([14eece7](https://github.com/zyachel/quetre/commit/14eece71a6e3f8179a98f6da14fd3aae0ba51dbf))
 * add theme sensitive theme-color meta tags ([719988c](https://github.com/zyachel/quetre/commit/719988c587443f73d9ce4a58e6d4adba4e877220))
-
-
-
-## [2.0.1](https://github.com/zyachel/quetre/compare/v2.0.0...v2.0.1) (2022-06-06)
-
-
-### Bug Fixes
-
-* **favicon:** change favicons to have transparent background ([2cb84f5](https://github.com/zyachel/quetre/commit/2cb84f5a6be5e23c570db5aebb580c7f1b3b2da7)), closes [#5](https://github.com/zyachel/quetre/issues/5)
-
-
-### Performance Improvements
-
-* implement caching for static assets ([475fc79](https://github.com/zyachel/quetre/commit/475fc79cec7f32b2fbce5bca19f84a6040958750))
 
 
 
