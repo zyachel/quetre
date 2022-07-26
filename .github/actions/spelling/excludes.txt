@@ -44,6 +44,7 @@ ignore$
 \.pug$
 \.scss$
 ^\quetre.service
+^\public/site.webmanifest
 ^\.env.example
 ^\.github/actions/spelling/
 ^\Q.github/workflows/spelling.yml\E$
