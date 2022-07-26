@@ -1,7 +1,17 @@
 # Quetre
+<div align="center">
 
-[![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)](https://github.com/humanetech-community/awesome-humane-tech)
+  [![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)](https://github.com/humanetech-community/awesome-humane-tech)
+  [![GitHub issues](https://img.shields.io/github/issues/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/issues)
+  ![GitHub pull requests](https://img.shields.io/github/issues-pr/zyachel/quetre?style=flat-square)
+  [![GitHub forks](https://img.shields.io/github/forks/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/network)
+  [![GitHub stars](https://img.shields.io/github/stars/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/stargazers)
+  [![GitHub license](https://img.shields.io/github/license/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/blob/main/LICENSE)
+  ![GitHub contributors](https://img.shields.io/github/contributors/zyachel/quetre?style=flat-square)
+  ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/zyachel/quetre?style=flat-square)
+  ![GitHub release (latest by date)](https://img.shields.io/github/v/release/zyachel/quetre?style=flat-square)
 
+</div>
 Quetre is an alternative front-end to Quora.
 It enables you to see answers without ads, trackers, and other such bloat.
 
@@ -31,7 +41,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 - Unofficial API support
 
-  just add `/api/v1/` after the domain name in the URL and get a JSON repsonse.
+  just add `/api/v1/` after the domain name in the URL and get a JSON repsonse.
 
 ---
 
@@ -80,7 +90,7 @@ URL for comparision: https://www.quora.com/How-does-the-Z-boson-decay
 
 ### Usability
 
-- Quora: You can't even see an answer(unless you do some hacks) if you're not signed in. They put a big banner in front of answers to sign you up/in forcefully.
+- Quora: You can't even see an answer (unless you do some hacks) if you're not signed in. They put a big banner in front of answers to sign you up/in forcefully.
 
 - Quetre: There is no accounts system. Just read whatever you want to read. Zero fuss.
 
@@ -131,7 +141,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 - Data collected by other services
 
-  If you're using the official instance(which is deployed on Heroku), Heroku might log your IP to prevent abuse. Also, as Quetre connects to '\*.quoracdn.net' and 'cdn.jsdelivr.net' for images and mathjax library respectively, both of these services might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
+  If you're using the official instance (which is deployed on Heroku), Heroku might log your IP to prevent abuse. Also, as Quetre connects to 'cdn.jsdelivr.net' for the mathjax library, this service might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
 
 ---
 
@@ -143,7 +153,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 - Why is the website connecting to 'cdn.jsdelivr.net'?
 
-  It is for an open source library – [Mathjax](https://www.mathjax.org/) – which is used to display math eqations nicely. If I get enough time, I'll include it locally.
+  It is for an open source library – [Mathjax](https://www.mathjax.org/) – which is used to display math eqations nicely. If I get enough time, I'll include it locally.
 
 - Why are some math equations showing up weirdly?
 
@@ -159,11 +169,11 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 - I have some ideas/want to help.
 
-  You're most welcome to do that. Just [contact me](#contact) or fork [the repo](https://github.com/zyachel/quetre/fork) and make a pull request. You can even help by correcting some typos or translating this README to other languages.
+  You're most welcome to do that. Just [contact me](#contact) or fork [the repo](https://github.com/zyachel/quetre/fork) and make a pull request. You can even help by correcting some typos or translating this README to other languages.
 
 - Why the name Quetre?
 
-  Quora is [supposedly](https://www.quora.com/Why-is-Quora-called-Quora-4) a portmanteau of 'Questions or answers'. In the same vein, Quetre is a portmanteau of 'Questions and answers', but [in Latin](https://lingva.ml/en/la/questions%20and%20answers%0A).
+  Quora is [supposedly](https://www.quora.com/Why-is-Quora-called-Quora-4) a portmanteau of 'Questions or answers'. In the same vein, Quetre is a portmanteau of 'Questions and answers', but [in Latin](https://lingva.ml/en/la/questions%20and%20answers%0A).
 
 ---
 
@@ -171,10 +181,10 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 - [ ] add missing routes like topics, profile, and search
 - [ ] use redis
-- [ ] serve images and other assets from Quetre
+- [x] serve images and other assets from Quetre
 - [x] implement a better installation method
 - [ ] implement other trivial routes like a specific answer, spaces, etc.
-- [ ] implement a way to get more answers(not a big priority as of now)
+- [ ] implement a way to get more answers (not a big priority as of now)
 
 ---
 
