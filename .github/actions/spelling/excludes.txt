@@ -43,5 +43,6 @@ ignore$
 \.yaml$
 \.pug$
 \.scss$
+^\.env.example
 ^\.github/actions/spelling/
 ^\Q.github/workflows/spelling.yml\E$
