@@ -1,7 +1,16 @@
 [Unit]
 Description=Frontend for quora
+
 [Service]
-WorkingDirectory=/home/quetre/quetre
+PrivateTmp=yes
+NoNewPrivileges=true
+PrivateDevices=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectSystem=strict
+RestrictSUIDSGID=true
+WorkingDirectory=/opt/quetre/quetre
 User=quetre
 ExecStart=/usr/bin/pnpm start
 RestartSec=5
