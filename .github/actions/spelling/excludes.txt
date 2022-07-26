@@ -37,5 +37,11 @@ ignore$
 \.wav$
 \.woff2?$
 \.zip$
+\.js$
+\.json$
+\.yml$
+\.yaml$
+\.pug$
+\.scss$
 ^\.github/actions/spelling/
 ^\Q.github/workflows/spelling.yml\E$
