@@ -25,7 +25,7 @@ quora
 Quora
 quoracdn
 redirector
-repsonse
+response
 Teddit
 tokhmi
 Tokhmi

@@ -1,14 +1,14 @@
 /* eslint-disable no-useless-catch */
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                      IMPORTS
-////////////////////////////////////////////////////////
-import * as cheerio from 'cheerio';
-import axiosInstance from '../utils/axiosInstance.js';
-import AppError from '../utils/AppError.js';
+/// /////////////////////////////////////////////////////
+import * as cheerio from 'cheerio'
+import axiosInstance from '../utils/axiosInstance.js'
+import AppError from '../utils/AppError.js'
 
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                     FUNCTION
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 /**
  *
  * @param {string} resourceStr a string after the baseURL
@@ -21,37 +21,37 @@ import AppError from '../utils/AppError.js';
 const fetcher = async resourceStr => {
   try {
     // as url might contain unescaped chars. so, encodeing it right away
-    const res = await axiosInstance.get(encodeURIComponent(resourceStr));
+    const res = await axiosInstance.get(encodeURIComponent(resourceStr))
 
-    const $ = cheerio.load(res.data);
-    let rawData;
+    const $ = cheerio.load(res.data)
+    let rawData
     $('body')
       .children('script')
       .each((i, el) => {
-        if ($(el).html().includes('window.setTimingData'))
+        if ($(el).html().includes('window.setTimingData')) {
           rawData = $(el)
             .prev()
             .html()
-            ?.match(/"\{.*\}"/m)?.[0];
-      });
-    if (!rawData || !Object.entries(rawData).length)
-      throw new AppError("couldn't retrieve data", 500);
+            ?.match(/"\{.*\}"/m)?.[0]
+        }
+      })
+    if (!rawData || !Object.entries(rawData).length) { throw new AppError("couldn't retrieve data", 500) }
 
-    const data = JSON.parse(rawData);
+    const data = JSON.parse(rawData)
 
-    return data;
+    return data
   } catch (err) {
-    if (err.response?.status === 404) throw new AppError('Not found', 404);
-    else if (err.response?.status === 429)
+    if (err.response?.status === 404) throw new AppError('Not found', 404)
+    else if (err.response?.status === 429) {
       throw new AppError(
         'Quora is rate limiting this instance. Consider hosting your own. Instructions are at Github',
         503
-      );
-    else throw err;
+      )
+    } else throw err
   }
-};
+}
 
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                     EXPORTS
-////////////////////////////////////////////////////////
-export default fetcher;
+/// /////////////////////////////////////////////////////
+export default fetcher

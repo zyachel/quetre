@@ -1,26 +1,27 @@
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                     IMPORTS
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 // import log from '../utils/log.js';
-import AppError from '../utils/AppError.js';
-import fetcher from './fetcher.js';
+import AppError from '../utils/AppError.js'
+import fetcher from './fetcher.js'
 
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                     FUNCTION
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 const getAnswers = async slug => {
   // getting data and destructuring it in case it exists
-  const res = await fetcher(slug);
+  const res = await fetcher(slug)
 
   const {
-    data: { question: rawData },
-  } = JSON.parse(res);
+    data: { question: rawData }
+  } = JSON.parse(res)
 
-  if (!rawData)
+  if (!rawData) {
     throw new AppError(
       "Answers couldn't be fetched. Recheck the URL, or resend the request if you believe the URL is correct.",
       404
-    );
+    )
+  }
 
   // array containing all the answers with metadata
   const ansArr = rawData.pagedListDataConnection.edges
@@ -44,16 +45,16 @@ const getAnswers = async slug => {
         isVerified: ansObj.node.answer.author.isVerified,
         profile: ansObj.node.answer.author.profileUrl,
         name: `${ansObj.node.answer.author.names[0].givenName} ${ansObj.node.answer.author.names[0].familyName}`,
-        credential: ansObj.node.answer.authorCredential?.translatedString,
+        credential: ansObj.node.answer.authorCredential?.translatedString
         // additionalCredentials: ansObj.node.answer?.credibilityFacts.map(),
       },
       originalQuestion: {
         text: JSON.parse(ansObj.node.answer.question.title).sections,
         url: ansObj.node.answer.question.url,
         qid: ansObj.node.answer.question.qid,
-        isDeleted: ansObj.node.answer.question.isDeleted,
-      },
-    }));
+        isDeleted: ansObj.node.answer.question.isDeleted
+      }
+    }))
 
   // main data object to be returned
   const data = {
@@ -63,28 +64,28 @@ const getAnswers = async slug => {
       qid: rawData.qid,
       idDeleted: rawData.isDeleted,
       isViewable: rawData.isVisibleToViewer,
-      askerUid: rawData.asker.uid,
+      askerUid: rawData.asker.uid
     },
     numAnswers: rawData.answerCount,
     answers: ansArr,
     topics: rawData.topics.map(topicObj => ({
       tid: topicObj.tid,
       name: topicObj.name,
-      url: topicObj.url,
+      url: topicObj.url
     })),
     relatedQuestions: rawData.bottomRelatedQuestionsInfo.relatedQuestions.map(
       questionObj => ({
         qid: questionObj.qid,
         url: questionObj.url,
-        text: JSON.parse(questionObj.title).sections,
+        text: JSON.parse(questionObj.title).sections
       })
-    ),
-  };
+    )
+  }
 
-  return data;
-};
+  return data
+}
 
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                     EXPORTS
-////////////////////////////////////////////////////////
-export default getAnswers;
+/// /////////////////////////////////////////////////////
+export default getAnswers

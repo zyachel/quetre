@@ -1,13 +1,13 @@
 /* eslint-disable no-param-reassign */
 
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                      IMPORTS
-////////////////////////////////////////////////////////
-import log from '../utils/log.js';
+/// /////////////////////////////////////////////////////
+import log from '../utils/log.js'
 
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                    FUNCTIONS
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 /**
  * @description function to send error responses to the client
  * @param {{}} err error object
@@ -17,33 +17,35 @@ import log from '../utils/log.js';
  */
 const sendErrorResponse = (err, req, res, devMode = false) => {
   // 1. FOR API
-  if (req.originalUrl.startsWith('/api/'))
+  if (req.originalUrl.startsWith('/api/')) {
     res.status(err.statusCode).json({
       status: err.status,
       message: err.message,
       // only if devMode is true, will this stack trace get sent. using es6 spreading and short circuiting
-      ...(devMode && { stack: err.stack }),
-    });
+      ...(devMode && { stack: err.stack })
+    })
+  }
   // 2. FOR WEBPAGES
-  else
+  else {
     res.status(err.statusCode).render('error', {
       data: {
         statusCode: err.statusCode,
         message: err.message,
-        ...(devMode && { stack: err.stack }),
+        ...(devMode && { stack: err.stack })
       },
       meta: {
         title: 'Error',
         url: `${req.urlObj.origin}${req.urlObj.pathname}`,
         imageUrl: `${req.urlObj.origin}/icon.svg`,
         urlObj: req.urlObj,
-        description: `ERROR: ${err.message}. Please try again later.`,
-      },
-    });
-};
+        description: `ERROR: ${err.message}. Please try again later.`
+      }
+    })
+  }
+}
 
 /**
- * @description function to handle all errors occuring in the app
+ * @description function to handle all errors occurring in the app
  * @param {{}} err object containing full error
  * @param {{}} req request object in express
  * @param {{}} res response object in express
@@ -52,20 +54,18 @@ const sendErrorResponse = (err, req, res, devMode = false) => {
 
 const globalErrorHandler = (err, req, res, next) => {
   // since not all errors will be an instance of AppError class(as not errors will be manually thrown by us), we have to set sensible defaults before dealing with those errors
-  err.statusCode = err.statusCode || 500;
-  err.status = err.status || 'error';
-  log(err, 'error');
+  err.statusCode = err.statusCode || 500
+  err.status = err.status || 'error'
+  log(err, 'error')
 
-  if (process.env.NODE_ENV === 'development')
-    sendErrorResponse(err, req, res, true);
-  else {
+  if (process.env.NODE_ENV === 'development') { sendErrorResponse(err, req, res, true) } else {
     // if error is not operational, sending a generic error message and not revealing full details in production mode
-    if (err.name !== 'OperationalError') err.message = 'something went wrong!';
-    sendErrorResponse(err, req, res);
+    if (err.name !== 'OperationalError') err.message = 'something went wrong!'
+    sendErrorResponse(err, req, res)
   }
-};
+}
 
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                     EXPORTS
-////////////////////////////////////////////////////////
-export default globalErrorHandler;
+/// /////////////////////////////////////////////////////
+export default globalErrorHandler

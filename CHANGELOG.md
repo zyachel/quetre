@@ -4,7 +4,7 @@
 ### Bug Fixes
 
 * fix a fatal bug in viewController.js ([33c90c1](https://github.com/zyachel/quetre/commit/33c90c17b12cf15eadde16d35fbba4cede10919b))
-* fix paragraph tag occuring inside heading tags ([65d14ba](https://github.com/zyachel/quetre/commit/65d14ba47c0d3bb1d2548972478a12a43f7e7500))
+* fix paragraph tag occurring inside heading tags ([65d14ba](https://github.com/zyachel/quetre/commit/65d14ba47c0d3bb1d2548972478a12a43f7e7500))
 
 
 ### Features
@@ -44,7 +44,7 @@
 
 * **fetcher:** Quora changed their HTML. Previous fetcher logic won't work!
 
-fix https://github.com/zyachel/quetre/issues/10
+fix <https://github.com/zyachel/quetre/issues/10>
 
 
 

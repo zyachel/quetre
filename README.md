@@ -31,30 +31,30 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 - Unofficial API support
 
-  just add `/api/v1/` after the domain name in the URL and get a JSON repsonse.
+  just add `/api/v1/` after the domain name in the URL and get a JSON response.
 
 ---
 
 ## Screenshots
 
 |                                                                  |                                                                 |
-| :--------------------------------------------------------------: | :-------------------------------------------------------------: |
+|:----------------------------------------------------------------:|:---------------------------------------------------------------:|
 | ![website in light mode on desktop](public/misc/img/preview.png) | ![website in dark mode on mobile](public/misc/img/preview2.png) |
 
 ---
 
 ## Instances
 
-| Instance URL                                              | Region  | Provider | Notes                                                     |
-| --------------------------------------------------------- | ------- | -------- | --------------------------------------------------------- |
-| [quetre.herokuapp.com](https://quetre.herokuapp.com)      | Europe  | Heroku   | Official instance                                         |
-| [quora.vern.cc](https://quora.vern.cc)                    | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                     |
-| [quetre.pussthecat.org](https://quetre.pussthecat.org/)   | Germany | &ndash;  | Operated by [PussTheCat.org](https://pussthecat.org/)     |
-| [wuetre.herokuapp.com](https://wuetre.herokuapp.com/)     | Europe  | Heroku   | Operated by AnonymousZ                                    |
-| [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S.    | Heroku   | Operated by [toyboatcash](https://github.com/toyboatcash) |
-| [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/)           | U.S.    | Oracle   | Operated by [Tokhmi](https://tokhmi.xyz)                  |
-| [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt/)| Europe | BuyVM    | Operated by [Project Segfault](https://projectsegfau.lt)  |
-| [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/)                    | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)                     |
+| Instance URL                                                | Region  | Provider | Notes                                                     |
+|-------------------------------------------------------------|---------|----------|-----------------------------------------------------------|
+| [quetre.herokuapp.com](https://quetre.herokuapp.com)        | Europe  | Heroku   | Official instance                                         |
+| [quora.vern.cc](https://quora.vern.cc)                      | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                     |
+| [quetre.pussthecat.org](https://quetre.pussthecat.org/)     | Germany | &ndash;  | Operated by [PussTheCat.org](https://pussthecat.org/)     |
+| [wuetre.herokuapp.com](https://wuetre.herokuapp.com/)       | Europe  | Heroku   | Operated by AnonymousZ                                    |
+| [quetreus.herokuapp.com](https://quetreus.herokuapp.com/)   | U.S.    | Heroku   | Operated by [toyboatcash](https://github.com/toyboatcash) |
+| [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/)             | U.S.    | Oracle   | Operated by [Tokhmi](https://tokhmi.xyz)                  |
+| [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt/) | Europe  | BuyVM    | Operated by [Project Segfault](https://projectsegfau.lt)  |
+| [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/)   | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)     |
 
 Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku.
 Click the button below to get started:  
@@ -62,17 +62,17 @@ Click the button below to get started:
 
 ---
 
-## Comparision
+## Comparison
 
 ### Speed
 
-URL for comparision: https://www.quora.com/How-does-the-Z-boson-decay
-| | Quora | Quetre |
-| :------------- | :---- | :------ |
-| No. of requests | 83* | 15 |
-| Load time | 6.76s | 4.61s |
-| Finish time | 2.44min* | 4.62s |
-| Data consumed | 3.49MB | 404.47KB |
+URL for comparison: <https://www.quora.com/How-does-the-Z-boson-decay>
+|                 | Quora    | Quetre   |
+|:----------------|:---------|:---------|
+| No. of requests | 83*      | 15       |
+| Load time       | 6.76s    | 4.61s    |
+| Finish time     | 2.44min* | 4.62s    |
+| Data consumed   | 3.49MB   | 404.47KB |
 
 \*the requests were ongoing even after 6 minutes
 
@@ -195,7 +195,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
    pnpm start
    ```
 
-Quetre will start running at http://localhost:3000.
+Quetre will start running at <http://localhost:3000>.
 
 ### Docker
 

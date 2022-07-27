@@ -1,25 +1,26 @@
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                     IMPORTS
-////////////////////////////////////////////////////////
-import AppError from '../utils/AppError.js';
-import fetcher from './fetcher.js';
+/// /////////////////////////////////////////////////////
+import AppError from '../utils/AppError.js'
+import fetcher from './fetcher.js'
 
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                     FUNCTION
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 const getTopic = async slug => {
   // getting data and destructuring it in case it exists, else throwing an error
-  const res = await fetcher(`topic/${slug}`);
+  const res = await fetcher(`topic/${slug}`)
 
   const {
-    data: { topic: rawData },
-  } = JSON.parse(res);
+    data: { topic: rawData }
+  } = JSON.parse(res)
 
-  if (!rawData)
+  if (!rawData) {
     throw new AppError(
       "Topic details couldn't be fetched. Recheck the URL, or resend the request if you believe the URL is correct.",
       404
-    );
+    )
+  }
 
   const data = {
     tid: rawData.tid,
@@ -41,21 +42,21 @@ const getTopic = async slug => {
       numFollowers: author.user.followerCount,
       numViews: author.numViews,
       numAnswers: author.numPublicMostViewedAnswers,
-      credential: author.user.bestCredential?.translatedString,
+      credential: author.user.bestCredential?.translatedString
     })),
     relatedTopics: rawData.relatedTopics.map(topic => ({
       tid: topic.tid,
       name: topic.name,
       url: topic.url,
       image: topic.photoUrl,
-      numFollowers: topic.numFollowers,
-    })),
-  };
+      numFollowers: topic.numFollowers
+    }))
+  }
 
-  return data;
-};
+  return data
+}
 
-////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////
 //                     EXPORTS
-////////////////////////////////////////////////////////
-export default getTopic;
+/// /////////////////////////////////////////////////////
+export default getTopic
