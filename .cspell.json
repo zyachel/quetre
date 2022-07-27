@@ -12,4 +12,12 @@
   "noConfigSearch": true,
   "words": [],
   "version": "0.2"
+  "dictionaryDefinitions": [
+    {
+      "name": "project-words",
+      "path": "./.github/workflows/project-words.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["project-words"],
 }
