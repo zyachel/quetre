@@ -7,7 +7,7 @@
     "megalinter",
     "package-lock.json",
     "report",
-    "/.github/**",
+    "**/.github/**",
     "pnpm-lock.yaml"
   ],
   "language": "en",
@@ -17,7 +17,7 @@
   "dictionaryDefinitions": [
     {
       "name": "project-words",
-      "path": "/.github/workflows/project-words.txt",
+      "path": "./.github/workflows/project-words.txt",
       "addWords": true
     }
   ],
