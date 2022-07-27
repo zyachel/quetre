@@ -9,5 +9,5 @@
     }
   ],
   "dictionaries": ["project-words"],
-  "ignorePaths": ["/.github/**", "/project-words.txt"]
+  "ignorePaths": [".github/**", "/project-words.txt"]
 }
