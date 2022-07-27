@@ -15,7 +15,7 @@
   "dictionaryDefinitions": [
     {
       "name": "project-words",
-      "path": "./.github/workflows/project-words.txt",
+      "path": "./project-words.txt",
       "addWords": true
     }
   ],
