@@ -5,10 +5,11 @@
     "**/.git/**",
     ".vscode",
     "megalinter",
-    "package-lock.json",
+    "/package-lock.json",
     "report",
     "**/.github/**",
-    "pnpm-lock.yaml"
+    "/pnpm-lock.yaml"
+    "/stylelintrc.json"
   ],
   "language": "en",
   "noConfigSearch": true,
