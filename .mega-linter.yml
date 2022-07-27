@@ -11,3 +11,4 @@ SHOW_ELAPSED_TIME: true
 FILEIO_REPORTER: false
 # DISABLE_ERRORS: true # Uncomment if you want MegaLinter to detect errors but not block CI to pass
 ENABLE: JAVASCRIPT,CSS,JSON,MARKDOWN,YAML,DOCKERFILE,SPELL,HTML
+SPELL_CSPELL_DISABLE_ERRORS: true
