@@ -4,6 +4,7 @@
     "version": "0.2",
     // language - current active spelling language
     "language": "en",
+    "ignorePaths": [".github/**"]
     // words - list of words to be always considered correct
     "ignoreWords": [
         "quetre",
@@ -13,5 +14,4 @@
         "vsmarketplacebadge",
         "visualstudio"
     ]
-   "ignorePaths": [".github/**"]
 }
