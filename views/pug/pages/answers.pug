@@ -1,39 +1,42 @@
-extends base
+//-//////////////////////////////////////////////////////
+//-                 INCLUDES/EXTENDS
+//-//////////////////////////////////////////////////////
+extends ../base
+include ../mixins/_formatText
 
-mixin checkMath(spans)
-  each span in spans 
-    -if(span.modifiers?.math)
-      span= `\\(${span.text}\\)`
-    -else
-      span= span.text
-
-block content 
+//-//////////////////////////////////////////////////////
+//-                   MAIN CONTENT
+//-//////////////////////////////////////////////////////
+block content
   main#main.main.answers
 
-    .answers__question-box 
+    //- THIS QUESTION AND METADATA
+    .answers__question-box
       h1.heading.heading__primary.answers__question
-        +checkMath(data.question.text.spans)
-      .answers__metadata 
+        +spansChecker(data.question.text[0].spans)
+      .answers__metadata
         p.answers__answers-total= `${ data.numAnswers ? 'Total answers: ' + data.numAnswers : 'Unanswered'}`
         p.answers__answers-shown Viewable answers: #{data.answers.length}
-        a.answers__question-link.answers__link(href='https://quora.com' + data.question.url) View on Quora 
+        a.answers__question-link.answers__link(href='https://www.quora.com' + data.question.url) View on Quora
 
+    //- ANSWERS TO THIS QUESTION
     .answers-box.answers__answers-box
       h2.heading.heading__secondary.answers__answers-box-heading Answers
       .answers-box__list
         each answerObj in data.answers 
-          include _answer
+          include ../layout/_answer
 
+    //- TOPICS TAGGED WITH THIS QUESTION
     aside.topics.answers__topics 
       h2.heading.heading__secondary.answers__topic-heading Tagged Topics
       ul.topics__list
         each topic in data.topics
           li.topics__item:  a.topics__link.answers__link(href=topic.url)= topic.name
 
-
+    //- RELATED QUESTIONS
     aside.related.answers__related
       h2.heading.heading__secondary.answers__related-heading Related Questions
       ul.related__questions 
         each question in data.relatedQuestions
           li.related__question-item: a.related__question-link.answers__link(href=question.url)
-            +checkMath(question.text.spans)
+            +spansChecker(question.text[0].spans)

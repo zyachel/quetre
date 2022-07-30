@@ -11,7 +11,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 - Privacy focused
 
-  All requests except for images are proxied which makes it impossible for Quora to collate meaningful data points about you.
+  All requests are proxied which makes it impossible for Quora to collate meaningful data points about you.
 
 - No ads or tracking
 
@@ -48,11 +48,13 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | Instance URL                                              | Region  | Provider | Notes                                                     |
 | --------------------------------------------------------- | ------- | -------- | --------------------------------------------------------- |
 | [quetre.herokuapp.com](https://quetre.herokuapp.com)      | Europe  | Heroku   | Official instance                                         |
-| [quora.vern.cc](https://quora.vern.cc) (Ratelimited)      | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                     |
+| [quora.vern.cc](https://quora.vern.cc)                    | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                     |
 | [quetre.pussthecat.org](https://quetre.pussthecat.org/)   | Germany | &ndash;  | Operated by [PussTheCat.org](https://pussthecat.org/)     |
 | [wuetre.herokuapp.com](https://wuetre.herokuapp.com/)     | Europe  | Heroku   | Operated by AnonymousZ                                    |
 | [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S.    | Heroku   | Operated by [toyboatcash](https://github.com/toyboatcash) |
 | [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/)           | U.S.    | Oracle   | Operated by [Tokhmi](https://tokhmi.xyz)                  |
+| [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt/)| Europe | BuyVM    | Operated by [Project Segfault](https://projectsegfau.lt)  |
+| [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/)                    | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)                     |
 
 Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku.
 Click the button below to get started:  
@@ -139,9 +141,9 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
   I'm working to implement them soon. Keep an eye on [To-Do list](#to-do).
 
-- Why is website connecting to '\*.quoracdn.net' and 'cdn.jsdelivr.net'?
+- Why is the website connecting to 'cdn.jsdelivr.net'?
 
-  For the moment, images aren't proxied but directly fetched from quora. Hence the connection to quoracdn. As for the connection to jsdelivr, it is for an open source library – [Mathjax](https://www.mathjax.org/) – which is used to display math eqations nicely. If I get enough time, I'll include it locally.
+  It is for an open source library – [Mathjax](https://www.mathjax.org/) – which is used to display math eqations nicely. If I get enough time, I'll include it locally.
 
 - Why are some math equations showing up weirdly?
 

@@ -1,0 +1,69 @@
+//-//////////////////////////////////////////////////////
+//-                LOCAL HELPER MIXINS
+//-//////////////////////////////////////////////////////
+//- this mixin handles a single paragraph
+mixin spansChecker(spans)
+  each span in spans
+    //- handle tex equations
+    - if(span.modifiers.math)
+      //- setting that var in the base.pug value to true here, so that mathjax library is loaded in the end
+      - someAnswerContainsMath = true;
+      span.answer__span-math= `\\(${span.text}\\)`
+    //- handle small code text
+    - else if (span.modifiers.code) 
+      code.answer__span-code= span.text
+    //- handle misc. embedded content
+    - else if (span.modifiers.embed)
+      a.answer__span-link.answers__link(href=span.modifiers.embed.url)= span.modifiers.embed.title || '(link to user embedded content)'
+    //- handle links
+    - else if (span.modifiers.link) //- removing quora.com from the link in case it is a quora.com link.
+      a.answer__span-link.answers__link(href=span.modifiers.link.url.split('https://www.quora.com')[1] || span.modifiers.link.url)=span.text
+    //- handle bold + italic text
+    - else if (!!span.modifiers.bold && !!span.modifiers.italic)
+      strong.answer__span-bold: em.answer__span-italic= span.text
+    //- handle bold text
+    - else if (!!span.modifiers.bold)
+      strong.answer__span-bold= span.text
+    //- handle italic text
+    - else if (!!span.modifiers.italic)
+      em.answer__span-italic= span.text
+    //- regular plain text
+    - else 
+      span.answer__span-plain= span.text 
+
+//-//////////////////////////////////////////////////////
+//-           MAIN MIXIN TO FORMAT ANY TEXT
+//-//////////////////////////////////////////////////////
+mixin formatText(text)
+  each para in text
+    //-  handle images
+    -if(para.type ==='image')
+      img.answer__para.answer__image(src=para.spans[0].modifiers.master_url.replace('https://', "/api/v1/image/"), alt='User embedded image', loading='lazy')
+    //- handle code blocks
+    - else if (para.type ==='code')
+      pre.answer__para.answer__code: code
+        +spansChecker(para.spans)
+    //- handle quotes
+    - else if(para.quoted)
+      blockquote.answer__para.answer__quote 
+        +spansChecker(para.spans)
+    //- handling lists
+    -else if(para.type.includes('-list'))
+      p(class=`answer__para answer__${para.type} answer__${para.type}--${para.indent}` role='listitem')
+        +spansChecker(para.spans)
+    //- handling horizontal rule
+    - else if(para.type === 'horizontal-rule')
+      hr.answer__para.answer__hr
+    //- handling embedded youtube video
+    - else if(para.type === 'yt-embed')
+        .answer__para.answer__embed
+          a.answer__span-link.answers__link(href=para.spans[0].modifiers.embed.url) (link to user-embedded YouTube video)
+    //- handling embedded tweet
+    - else if(para.type === 'tweet')
+        .answer__para.answer__embed.answer__embed-tweet
+          //- directly pasting raw HTML which pug will process just fine
+          | !{para.spans[0].modifiers.embed.html}
+    //- rest of the types that don't need/can't be put in a semantic html tag
+    - else
+      p(class=`answer__para answer__${para.type}`)
+        +spansChecker(para.spans)

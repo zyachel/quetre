@@ -1,14 +1,24 @@
-extends base
+//-//////////////////////////////////////////////////////
+//-                 INCLUDES/EXTENDS
+//-//////////////////////////////////////////////////////
+extends ../base
 
+//-//////////////////////////////////////////////////////
+//-                LOCAL HELPER MIXINS
+//-//////////////////////////////////////////////////////
+//- mixin to make number a bit more readable
 mixin formatNumber(number, ...classes)
   span(class=classes.join(' '))= new Intl.NumberFormat().format(number)
 
+//-//////////////////////////////////////////////////////
+//-                   MAIN CONTENT
+//-//////////////////////////////////////////////////////
 block content
   main#main.main.topic
-    //- all info related to the topic
+    //- TOPIC NAME AND METADATA
     .topic__stats.topic-stats
       h1.heading.heading__primary.topic__heading.topic-stats__heading= data.name
-      img.topic-stats__image(src=data.image alt=`image depicting ${data.name}`, loading='lazy')
+      img.topic-stats__image(src=data.image.replace('https://', "/api/v1/image/") alt=`image depicting ${data.name}`, loading='lazy')
       if data.aliases.length
         p.topic-stats__aliases
           span.topic-stats__aliases-text Also known as:&nbsp;
@@ -28,7 +38,8 @@ block content
             span.topic-stats__metadata-data 18+
             span.topic-stats__metadata-text &nbsp;Adult Topic
         a.topic__link(href='https://www.quora.com' + data.url) View on Quora
-      
+    
+    //- AUTHORS RELATED TO THE TOPIC AND METADATA
     .topic__famous-authors.famous-authors
       h2.heading.heading__secondary.famous-authors__heading Most viewed authors
       .famous-authors__list
@@ -43,7 +54,7 @@ block content
                 svg.famous-authors__icon
                   title verified
                   use(href='/misc/sprite.svg#icon-verified')
-            img.famous-authors__author-image(src=author.avatar, alt=`${author.name}'s profile photo`, loading='lazy')
+            img.famous-authors__author-image(src=author.avatar.replace('https://', "/api/v1/image/"), alt=`${author.name}'s profile photo`, loading='lazy')
             if author.credential
             p.famous-authors__author-credentials(aria-label=`${author.name}'s credentials`)= author.credential || ''
             .famous-authors__metadata
@@ -60,16 +71,16 @@ block content
                 +formatNumber(author.numAnswers, 'famous-authors__metadata-data')
                 span.famous-authors__metadata-text &nbsp;Answers
 
+    //- RELATED TOPICS
     .topic__related-topics.related-topics
       h2.heading.heading__secondary.related-topics__heading Related Topics
       .related-topics__list
         each topic in data.relatedTopics
           .related-topics__topic
             a.topic__link.related-topics__topic-name(href=topic.url)= topic.name
-            img.related-topics__image(src=topic.image alt=`image depicting ${topic.name}`, loading='lazy')
+            img.related-topics__image(src=topic.image.replace('https://', "/api/v1/image/") alt=`image depicting ${topic.name}`, loading='lazy')
             .related-topics__metadata
               p.related-topics__metadata-item
                 svg.icon.related-topics__icon: use(href='/misc/sprite.svg#icon-user')
                 +formatNumber(topic.numFollowers, 'related-topics__metadata-data')
                 span.topic-stats__metadata-text &nbsp;Followers
-

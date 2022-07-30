@@ -38,10 +38,12 @@ export const answers = catchAsyncErrors(async (req, res, next) => {
   // added this so that a request by browser to get favicon doesn't end up being interpreted as a slug
   if (nonSlugRoutes.includes(slug)) return next();
 
+
   const answersData = await getAnswers(slug, lang);
-  const title = answersData.question.text.spans
+  const title = answersData.question.text[0].spans
     .map((span) => span.text)
-    .join("");
+    .join('');
+
 
   res.status(200).render("answers", {
     data: answersData,

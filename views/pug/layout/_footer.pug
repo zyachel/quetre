@@ -1,6 +1,12 @@
+//-//////////////////////////////////////////////////////
+//-                   MAIN CONTENT
+//-//////////////////////////////////////////////////////
 footer.footer(class=`${meta.title ==='About' ? 'footer__about' : ''}`)
   block footer
-    //- more stuff will be prepended here on about page
+    
+    //- EXTRA STUFF GOES HERE IF THE PAGE IS ABOUT PAGE
+
+    //- NAVIGATION
     nav.footer__nav-box(aria-label='Primary navigation')
       ul.footer__nav 
         - if (meta.title !=='About') 
@@ -9,7 +15,8 @@ footer.footer(class=`${meta.title ==='About' ? 'footer__about' : ''}`)
         li.footer__nav-item: a.footer__nav-link.footer__link(href="https://github.com/zyachel/quetre") Source Code 
         li.footer__nav-item: a.footer__nav-link.footer__link(href="/privacy") Privacy
         li.footer__nav-item: a.footer__nav-link.footer__link(href="#") Back to top 
-
+    
+    //- LICENSE
     p.footer__license Licensed under&nbsp;
       a.footer__link(href="https://www.gnu.org/licenses/agpl-3.0.html") GNU AGPLv3
       | .

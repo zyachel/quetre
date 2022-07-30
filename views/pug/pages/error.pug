@@ -1,15 +1,23 @@
-extends base
+//-//////////////////////////////////////////////////////
+//-                 INCLUDES/EXTENDS
+//-//////////////////////////////////////////////////////
+extends ../base
 
+//-//////////////////////////////////////////////////////
+//-                   MAIN CONTENT
+//-//////////////////////////////////////////////////////
 block content 
   main#main.main.error
+    //- ABOUT ERROR
     p.error__code= data.statusCode
     p.error__message= data.message
 
-    //- will only apply in dev mode
+    //- ONLY FOR DEV MODE
     if data.stack
       .error__stack-box: pre.error__stack
         code.error__text= data.stack
 
+    //- CHOICES TO USER
     p.error__return Go back to the&nbsp;
       a.error__link(href="/") Home Page
       |.
