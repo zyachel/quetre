@@ -11,3 +11,35 @@ mixin formatNumber(number, className='')
 
 mixin proxifyImg(imgUrl)
   img(src=imgUrl.replace('https://', '/api/v1/image/'), loading='lazy')&attributes(attributes)
+
+mixin quetrefyUrl(url, text)
+  - 
+    let link;
+    const acceptedLanguages=['en','es','fr','de','it','ja','id','pt','hi','nl','da','fi','nb','sv','mr','bn','ta','ar','he','gu','kn','ml','te','po',];
+    try {
+      link = new URL(url);
+      const subdomain = link.hostname.split('.')[0];
+      if (!link.hostname.includes('quora.com')) link = url; 
+      else if (subdomain === 'www') return link.pathname;
+      else if (acceptedLanguages.includes(subdomain)) link = `${link.pathname}?lang=${subdomain}`;
+      else link = `/space/${subdomain}${link.pathname}`;
+    } catch {
+      link = url;
+    }
+  
+  a(href=link)&attributes(attributes)= text
+
+mixin quorafyUrl(url)
+  -
+    const link = new URL(url, 'https://www.quora.com');
+    const lang = link.searchParams.get('lang');
+    const match = /(?<=^\/space\/)([^\/]+)\/(.*)$/.exec(link.pathname); // taking space name and rest of pathname out.
+    if(lang) {
+      link.hostname = `${lang}.quora.com`;
+      link.searchParams.delete('lang');
+    } else if(match) {
+      link.hostname = `${match[1]}.quora.com`;
+      link.pathname = match[2];
+    }
+  
+  a(href=link.href, rel='noreferrer', target='_blank')&attributes(attributes) View on Quora

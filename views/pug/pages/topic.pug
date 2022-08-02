@@ -24,7 +24,7 @@ block content
         +addMetadataSecondary('question','Questions', data.numQuestions)
         if data.isAdult
           +addMetadataSecondary('danger', 'Adult Topic', '18+', true)
-        a.link(href='https://www.quora.com' + data.url) View on Quora
+        +quorafyUrl(data.url)(class='link')
 
     //- AUTHORS RELATED TO THE TOPIC AND METADATA
     .topic__famous-authors.famous-authors

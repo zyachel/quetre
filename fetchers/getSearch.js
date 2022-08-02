@@ -3,13 +3,14 @@
 ////////////////////////////////////////////////////////
 import AppError from '../utils/AppError.js';
 import fetcher from './fetcher.js';
+import { quetrefy } from '../utils/urlModifiers.js';
 
 ////////////////////////////////////////////////////////
 //                  HELPER FUNCTIONS
 ////////////////////////////////////////////////////////
 const topicCleaner = topic => ({
   type: 'topic',
-  url: topic.url,
+  url: quetrefy(topic.url),
   name: topic.name,
   numFollowers: topic.numFollowers,
   image: topic.photoUrl,
@@ -18,7 +19,7 @@ const topicCleaner = topic => ({
 const spaceCleaner = space => ({
   type: 'space',
   numUsers: space.tribeUserCount,
-  url: space.url,
+  url: quetrefy(space.url),
   name: space.nameString,
   description: space.descriptionString,
   image: space.iconRetinaUrl,
@@ -29,7 +30,7 @@ const profileCleaner = profile => ({
   credential: profile.bestCredential?.translatedString,
   isAnon: profile.isAnon,
   name: `${profile.names[0]?.givenName} ${profile.names[0]?.familyName}`,
-  url: profile.profileUrl,
+  url: quetrefy(profile.profileUrl),
   image: profile.profileImageUrl,
   numFollowers: profile.followerCount,
   isVerified: profile.isVerified,
@@ -39,7 +40,7 @@ const profileCleaner = profile => ({
 const questionCleaner = question => ({
   type: 'question',
   text: JSON.parse(question.title).sections,
-  url: question.url,
+  url: quetrefy(question.url),
   isDeleted: question.isDeleted,
   numFollowers: question.followerCount,
   creationTime: question.creationTime,
@@ -55,7 +56,7 @@ const answerCleaner = ({ question, previewAnswer: answer }) => ({
     originalQuestion: {
       text: JSON.parse(answer.originalQuestionIfDifferent.question.title)
         .sections,
-      url: answer.originalQuestionIfDifferent.question.url,
+      url: quetrefy(answer.originalQuestionIfDifferent.question.url),
       qid: answer.originalQuestionIfDifferent.question.qid,
     },
   }),
@@ -69,7 +70,7 @@ const answerCleaner = ({ question, previewAnswer: answer }) => ({
   numShares: answer.numSharers,
   numAnswerRequests: answer.numRequesters,
   isBusinessAnswer: answer.businessAnswer,
-  url: answer.url,
+  url: quetrefy(answer.url),
   isSensitive: answer.isSensitive,
   author: {
     uid: answer.author.uid,
@@ -77,7 +78,7 @@ const answerCleaner = ({ question, previewAnswer: answer }) => ({
     image: answer.author.profileImageUrl,
     isVerified: answer.author.isVerified,
     isPlusUser: answer.author.consumerBundleActive,
-    url: answer.author.profileUrl,
+    url: quetrefy(answer.author.profileUrl),
     name: `${answer.author.names[0].givenName} ${answer.author.names[0].familyName}`,
     credential: answer.authorCredential?.translatedString,
   },
@@ -86,7 +87,7 @@ const postCleaner = post => ({
   type: 'post',
   pid: post.pid,
   isViewable: post.viewerHasAccess,
-  url: post.url,
+  url: quetrefy(post.url),
   title: JSON.parse(post.title).sections,
   isDeleted: post.isDeleted,
   isSensitive: post.isSensitive,
@@ -103,7 +104,7 @@ const postCleaner = post => ({
     image: post.author.profileImageUrl,
     isVerified: post.author.isVerified,
     isPlusUser: post.author.consumerBundleActive,
-    url: post.author.profileUrl,
+    url: quetrefy(post.author.profileUrl),
     name: `${post.author.names[0].givenName} ${post.author.names[0].familyName}`,
     credential: post.authorCredential?.translatedString,
   },
@@ -111,7 +112,7 @@ const postCleaner = post => ({
     space: {
       isSensitive: post.tribeItem.tribe.isSensitive,
       name: post.tribeItem.tribe.nameString,
-      url: post.tribeItem.tribe.url,
+      url: quetrefy(post.tribeItem.tribe.url),
       image: post.tribeItem.tribe.iconRetinaUrl,
       description: post.tribeItem.descriptionString,
       numFollowers: post.tribeItem.tribe.numFollowers,
@@ -139,11 +140,14 @@ const resultsCleaner = results => {
 ////////////////////////////////////////////////////////
 //                     FUNCTION
 ////////////////////////////////////////////////////////
-const getSearch = async querySlug => {
-  const res = await fetcher(`search/${querySlug}`, 'searchConnection', false);
+const KEYWORD = 'searchConnection';
+
+const getSearch = async (querySlug, lang) => {
+  const options = { keyword: KEYWORD, lang, toEncode: false };
+  const res = await fetcher(`search/${querySlug}`, options);
 
   const {
-    data: { searchConnection: rawData },
+    data: { [KEYWORD]: rawData },
   } = JSON.parse(res);
 
   if (!rawData)

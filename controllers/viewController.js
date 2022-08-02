@@ -37,12 +37,14 @@ export const privacy = (req, res, next) => {
 
 export const answers = catchAsyncErrors(async (req, res, next) => {
   const { slug } = req.params;
+  const { lang } = req.query;
+
   // added this so that a request by browser to get favicon doesn't end up being interpreted as a slug
   if (nonSlugRoutes.includes(slug)) return next();
 
-  const answersData = await getAnswers(slug);
+  const answersData = await getAnswers(slug, lang);
   const title = answersData.question.text[0].spans
-    .map(span => span.text)
+    .map((span) => span.text)
     .join('');
 
   return res.status(200).render('answers', {
@@ -57,7 +59,10 @@ export const answers = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const topic = catchAsyncErrors(async (req, res, next) => {
-  const topicData = await getTopic(req.params.slug);
+  const { slug } = req.params;
+  const { lang } = req.query;
+
+  const topicData = await getTopic(slug, lang);
 
   res.status(200).render('topic', {
     data: topicData,
@@ -71,7 +76,9 @@ export const topic = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const profile = catchAsyncErrors(async (req, res, next) => {
-  const profileData = await getProfile(req.params.name);
+  const { name } = req.params;
+  const { lang } = req.query;
+  const profileData = await getProfile(name, lang);
 
   res.status(200).render('profile', {
     data: profileData,
@@ -86,9 +93,9 @@ export const profile = catchAsyncErrors(async (req, res, next) => {
 
 export const search = catchAsyncErrors(async (req, res, next) => {
   const searchText = req.urlObj.searchParams.get('q')?.trim();
-
+  const { lang } = req.query;
   let searchData = null;
-  if (searchText) searchData = await getSearch(req.urlObj.search);
+  if (searchText) searchData = await getSearch(req.urlObj.search, lang);
 
   res.status(200).render('search', {
     data: searchData,

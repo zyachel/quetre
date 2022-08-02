@@ -3,17 +3,20 @@
 ////////////////////////////////////////////////////////
 // import log from '../utils/log.js';
 import AppError from '../utils/AppError.js';
+import { quetrefy } from '../utils/urlModifiers.js';
 import fetcher from './fetcher.js';
 
 ////////////////////////////////////////////////////////
 //                     FUNCTION
 ////////////////////////////////////////////////////////
-const getAnswers = async slug => {
+const KEYWORD = 'question';
+
+const getAnswers = async (slug, lang) => {
   // getting data and destructuring it in case it exists
-  const res = await fetcher(slug, 'question');
+  const res = await fetcher(slug, { keyword: KEYWORD, lang });
 
   const {
-    data: { question: rawData },
+    data: { [KEYWORD]: rawData },
   } = JSON.parse(res);
 
   if (!rawData)
@@ -42,14 +45,14 @@ const getAnswers = async slug => {
         isAnon: ansObj.node.answer.author.isAnon,
         image: ansObj.node.answer.author.profileImageUrl,
         isVerified: ansObj.node.answer.author.isVerified,
-        url: ansObj.node.answer.author.profileUrl,
+        url: quetrefy(ansObj.node.answer.author.profileUrl),
         name: `${ansObj.node.answer.author.names[0].givenName} ${ansObj.node.answer.author.names[0].familyName}`,
         credential: ansObj.node.answer.authorCredential?.translatedString,
         // additionalCredentials: ansObj.node.answer?.credibilityFacts.map(),
       },
       originalQuestion: {
         text: JSON.parse(ansObj.node.answer.question.title).sections,
-        url: ansObj.node.answer.question.url,
+        url: quetrefy(ansObj.node.answer.question.url),
         qid: ansObj.node.answer.question.qid,
         isDeleted: ansObj.node.answer.question.isDeleted,
       },
@@ -59,7 +62,7 @@ const getAnswers = async slug => {
   const data = {
     question: {
       text: JSON.parse(rawData.title).sections,
-      url: rawData.url,
+      url: quetrefy(rawData.url),
       qid: rawData.qid,
       idDeleted: rawData.isDeleted,
       isViewable: rawData.isVisibleToViewer,
@@ -70,12 +73,12 @@ const getAnswers = async slug => {
     topics: rawData.topics.map(topicObj => ({
       tid: topicObj.tid,
       name: topicObj.name,
-      url: topicObj.url,
+      url: quetrefy(topicObj.url),
     })),
     relatedQuestions: rawData.bottomRelatedQuestionsInfo.relatedQuestions.map(
       questionObj => ({
         qid: questionObj.qid,
-        url: questionObj.url,
+        url: quetrefy(questionObj.url),
         text: JSON.parse(questionObj.title).sections,
       })
     ),
