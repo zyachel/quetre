@@ -8,7 +8,7 @@ import axios from 'axios';
 ////////////////////////////////////////////////////////
 /**
  * @description an axios instance having base url already set
- * @param {string} lang language to use. default is english. 
+ * @param {string} lang language to use. default is english.
  * @returns AxiosInstance
  */
 const getAxiosInstance = (subdomain = 'www') =>
