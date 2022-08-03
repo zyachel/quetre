@@ -446,3 +446,64 @@
     gap: var(--space-100);
   }
 }
+
+////////////////////////////////////////////////////////
+//               PROFILE PAGE COMPONENTS
+////////////////////////////////////////////////////////
+.profile-meta {
+  --img-dim: var(--fs-1000);
+
+  display: grid;
+  gap: var(--space-300);
+
+  &__basic,
+  &__description {
+    display: grid;
+    gap: var(--space-100);
+  }
+
+  &__icon {
+    height: 1em;
+    width: 1em;
+  }
+}
+
+.profile-highlights,
+.profile-credentials {
+  display: grid;
+  gap: var(--space-200);
+
+  &__item {
+    display: flex;
+    gap: var(--space-050);
+  }
+
+  &__list {
+    display: grid;
+    gap: var(--space-100);
+  }
+}
+
+.profile-spaces,
+.profile-topics {
+  --img-dim: var(--fs-500);
+
+  display: grid;
+  gap: var(--space-200);
+
+  &__list {
+    display: grid;
+    gap: var(--space-200);
+  }
+}
+.profile-feed {
+  --img-dim: var(--fs-600);
+
+  display: grid;
+  gap: var(--space-200);
+
+  &__container {
+    display: grid;
+    gap: var(--space-800);
+  }
+}
