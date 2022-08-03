@@ -1,0 +1,50 @@
+//-//////////////////////////////////////////////////////
+//-                 INCLUDES/EXTENDS
+//-//////////////////////////////////////////////////////
+include ../mixins/_formatText
+include ../mixins/_metadata
+include ../mixins/_utils
+
+//-//////////////////////////////////////////////////////
+//-                 MAIN CONTENT
+//-//////////////////////////////////////////////////////
+mixin addAnswer(answer)
+  article.answer
+    //- ABOUT AUTHOR
+    figure.metadata-primary
+      figcaption.metadata-primary__heading
+        if answer.author.isAnon
+          span Anonymous
+        else
+          a.link.metadata-primary__link(href=answer.author.url)= answer.author.name
+        if answer.author.isVerified
+          svg.icon.metadata-primary__icon
+            title verified
+            use(href='/misc/sprite.svg#icon-verified')
+      img.metadata-primary__image(src=answer.author.image.replace('https://', "/api/v1/image/"), alt=`${answer.author.name}'s profile photo`, loading='lazy')
+      p.metadata-primary__misc(aria-label=`${answer.author.name}'s credentials`)= answer.author.credential || ''
+
+    //- ORIGINAL QUESTION
+    h3.answer__question.heading.heading__tertiary
+      span Originally answered to&nbsp;
+      a.answer__link.answers__link(href=answer.originalQuestion.url)
+        +spansChecker(answer.originalQuestion.text[0].spans)
+
+    //- ANSWER
+    section.answer__text.text__container
+      +formatText(answer.text)
+      //- for quora plus answers. since quora only shows half answer, we gotta warn viewer.
+      unless answer.isViewable
+        p.answer__unviewable
+          svg.icon.answer__icon: use(href='/misc/sprite.svg#icon-danger')
+          | This is a Quora plus answer and hence full answer is not viewable.
+
+    //- ANSWER METADATA
+    section.answer__metadata-secondary.metadata-secondary
+      +addMetadataSecondary('clock', 'Answered', answer.creationTime, 'date')
+      if answer.updatedTime
+        +addMetadataSecondary('clock-edit', 'Updated', answer.updatedTime, 'date')
+      +addMetadataSecondary('eye', 'Views', answer.numViews)
+      +addMetadataSecondary('arrow-up', 'Upvotes', answer.numUpvotes)
+      +addMetadataSecondary('comments', 'Comments', answer.numComments)
+      +addMetadataSecondary('share', 'Shares', answer.numShares)

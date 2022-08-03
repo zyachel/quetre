@@ -202,9 +202,8 @@
 }
 
 ////////////////////////////////////////////////////////
-//                     ANSWERED
+//                     ANSWERS
 ////////////////////////////////////////////////////////
-
 .answers {
   // justify-self: center;
   padding: var(--space-800);
@@ -285,7 +284,6 @@
 //                     TOPIC
 ////////////////////////////////////////////////////////
 .topic {
-  // justify-self: center;
   padding: var(--space-800);
 
   display: grid;
@@ -295,11 +293,7 @@
   align-items: start;
   gap: var(--space-800);
 
-  &__stats {
-    grid-column: 1 / -1;
-  }
-
-  &__heading {
+  &__name {
     font-size: var(--fs-300);
 
     @include respond-to(bp-550) {
@@ -307,14 +301,13 @@
     }
   }
 
-  &__link {
-    @include format-link(var(--clr-base-link), var(--clr-base-link-alt-alpha));
+  &__stats {
+    grid-column: 1 / -1;
   }
 
   @include respond-to(bp-1200) {
     display: flex;
     flex-direction: column;
-    // gap: var(--space-800);
   }
 
   @include respond-to(bp-900) {

@@ -3,6 +3,7 @@
 //-//////////////////////////////////////////////////////
 extends ../base
 include ../mixins/_formatText
+include ../mixins/_answer
 
 //-//////////////////////////////////////////////////////
 //-                   MAIN CONTENT
@@ -23,8 +24,8 @@ block content
     .answers-box.answers__answers-box
       h2.heading.heading__secondary.answers__answers-box-heading Answers
       .answers-box__list
-        each answerObj in data.answers 
-          include ../layout/_answer
+        each answer in data.answers
+          +addAnswer(answer) 
 
     //- TOPICS TAGGED WITH THIS QUESTION
     aside.topics.answers__topics 
