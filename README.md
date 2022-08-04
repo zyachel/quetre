@@ -58,7 +58,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 **Cloudflare: Cloudflare is a reverse proxy that protects a website from DDoS attacks, however, due to the way it works, it allows Cloudflare to have access to plain text (not-encrypted) data, this degrades your privacy substantially so we discourage anyone not to use an instance with cloudflare.*
 
-centralization is bad. Deploy your own instance if you can. It's easy and free with heroku.
+Centralization is bad. Deploy your own instance if you can. It's easy and free with heroku.
 Click the button below to get started:  
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zyachel/quetre)
 
@@ -82,7 +82,7 @@ URL for comparison: https://www.quora.com/How-does-the-Z-boson-decay
 
 ### Usability
 
-- Quora: You can't even see an answer(unless you do some hacks) if you're not signed in. They put a big banner in front of answers to sign you up/in forcefully.
+- Quora: You can't even see an answer (unless you do some hacks) if you're not signed in. They put a big banner in front of answers to sign you up/in forcefully.
 
 - Quetre: There is no accounts system. Just read whatever you want to read. Zero fuss.
 
@@ -90,7 +90,7 @@ URL for comparison: https://www.quora.com/How-does-the-Z-boson-decay
 
 ### Privacy
 
-#### Quora(when browsing anonymously)
+#### Quora (when browsing anonymously)
 
 From [their privacy policy](https://www.quora.com/about/privacy)
 
