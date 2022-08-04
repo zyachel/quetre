@@ -10,63 +10,65 @@ It enables you to see answers without ads, trackers, and other such bloat.
 ## Key Features
 
 - Privacy focused
-
+  
   All requests are proxied which makes it impossible for Quora to collate meaningful data points about you.
 
 - No ads or tracking
-
+  
   Absolutely no ads, no tracking, no browser fingerprinting, and no telemetry of any kind.
 
 - Fully responsive layout
-
+  
   Utilises modern CSS features like CSS Grid and Flexbox to make the website fully responsive for all screen sizes.
 
 - Lightweight and fast
-
+  
   As the website contains no bloat, pages load in a jiffy and request sizes are tiny.
 
 - Dark and light themes
-
-  Whether you're a nightowl or bright screen lover, you'll enjoy curated color scheme for your taste.
+  
+  Whether you're a night owl or bright screen lover, you'll enjoy curated color scheme for your taste.
 
 - Unofficial API support
-
-  just add `/api/v1/` after the domain name in the URL and get a JSON repsonse.
+  
+  just add `/api/v1/` after the domain name in the URL and get a JSON response.
 
 ---
 
 ## Screenshots
 
 |                                                                  |                                                                 |
-| :--------------------------------------------------------------: | :-------------------------------------------------------------: |
+|:----------------------------------------------------------------:|:---------------------------------------------------------------:|
 | ![website in light mode on desktop](public/misc/img/preview.png) | ![website in dark mode on mobile](public/misc/img/preview2.png) |
 
 ---
 
 ## Instances
 
-| Instance URL                                              | Region  | Provider | Notes                                                     |
-| --------------------------------------------------------- | ------- | -------- | --------------------------------------------------------- |
-| [quetre.herokuapp.com](https://quetre.herokuapp.com)      | Europe  | Heroku   | Official instance                                         |
-| [quora.vern.cc](https://quora.vern.cc)                    | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                     |
-| [quetre.pussthecat.org](https://quetre.pussthecat.org/)   | Germany | &ndash;  | Operated by [PussTheCat.org](https://pussthecat.org/)     |
-| [wuetre.herokuapp.com](https://wuetre.herokuapp.com/)     | Europe  | Heroku   | Operated by AnonymousZ                                    |
-| [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S.    | Heroku   | Operated by [toyboatcash](https://github.com/toyboatcash) |
-| [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/)           | U.S.    | Oracle   | Operated by [Tokhmi](https://tokhmi.xyz)                  |
-| [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt/)| Europe | BuyVM    | Operated by [Project Segfault](https://projectsegfau.lt)  |
-| [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/)                    | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)                     |
+| Instance URL                                                | Region  | Provider | Notes                                                     | Cloudflare* |
+| ----------------------------------------------------------- | ------- | -------- | --------------------------------------------------------- |:-----------:|
+| [quetre.herokuapp.com](https://quetre.herokuapp.com)        | Europe  | Heroku   | Official instance                                         | **No**      |
+| [quora.vern.cc](https://quora.vern.cc)                      | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                     | **No**      |
+| [quetre.pussthecat.org](https://quetre.pussthecat.org/)     | Germany | &ndash;  | Operated by [PussTheCat.org](https://pussthecat.org/)     | **No**      |
+| [wuetre.herokuapp.com](https://wuetre.herokuapp.com/)       | Europe  | Heroku   | Operated by AnonymousZ                                    | **No**      |
+| [quetreus.herokuapp.com](https://quetreus.herokuapp.com/)   | U.S.    | Heroku   | Operated by [toyboatcash](https://github.com/toyboatcash) | **No**      |
+| [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/)             | U.S.    | Oracle   | Operated by [Tokhmi](https://tokhmi.xyz)                  | **No**      |
+| [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt/) | Europe  | BuyVM    | Operated by [Project Segfault](https://projectsegfau.lt)  | **No**      |
+| [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/)   | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)     | **No**      |
 
-Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku.
+**Cloudflare: Cloudflare is a reverse proxy that protects a website from DDoS attacks, however, due to the way it works, it allows Cloudflare to have access to plain text (not-encrypted) data, this degrades your privacy substantially so we discourage anyone not to use an instance with cloudflare.*
+
+centralization is bad. Deploy your own instance if you can. It's easy and free with heroku.
 Click the button below to get started:  
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zyachel/quetre)
 
 ---
 
-## Comparision
+## Comparison
 
 ### Speed
 
-URL for comparision: https://www.quora.com/How-does-the-Z-boson-decay
+URL for comparison: https://www.quora.com/How-does-the-Z-boson-decay
 | | Quora | Quetre |
 | :------------- | :---- | :------ |
 | No. of requests | 83* | 15 |
@@ -118,19 +120,19 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 #### Quetre
 
 - Data actively collected by Quetre
-
+  
   None.
 
 - Data passively collected by Quetre
-
-  Whenever you hit some error page, an error object is logged to the console on the server. That error object contains the resource url you were trying to access, and the usual stack trace. That's it.
+  
+  Whenever you hit some error page, an error object is logged to the console on the server. That error object contains the resource URL you were trying to access, and the usual stack trace. That's it.
 
 - Data stored locally in your browser
-
-  A key called 'theme' is stored in local storage provided by your browser to store your theme preference should you override the default theme. To prevent this behaviour, either disable JavaScript or local storage for Quetre.
+  
+  A key called 'theme' is stored in local storage provided by your browser to store your theme preference should you override the default theme. To prevent this behavior, either disable JavaScript or local storage for Quetre.
 
 - Data collected by other services
-
+  
   If you're using the official instance(which is deployed on Heroku), Heroku might log your IP to prevent abuse. Also, as Quetre connects to 'cdn.jsdelivr.net' for MathJax library respectively, this services might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
 
 ---
@@ -138,37 +140,36 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 ## FAQs
 
 - There are some unreachable routes.
-
+  
   I'm working to implement them soon. Keep an eye on [To-Do list](#to-do).
 
 - Why is the website connecting to 'cdn.jsdelivr.net'?
-
-  It is for an open source library – [Mathjax](https://www.mathjax.org/) – which is used to display math eqations nicely. If I get enough time, I'll include it locally.
+  
+  It is for an open source library – [Mathjax](https://www.mathjax.org/) – which is used to display math equations nicely. If I get enough time, I'll include it locally.
 
 - Why are some math equations showing up weirdly?
-
+  
   If you're browsing with JavaScript disabled, then the Mathjax library isn't able to load and format tex equations. I'd recommend to enable JavaScript for it since there's no other way to show them in the browser. Even Quora uses Mathjax.
 
 - Why can I only view a couple of answers?
-
+  
   Quora doesn't show all answers at once. It only loads more answers as the user scrolls down. Furthermore, it uses many unique IDs to send ajax requests to fetch those answers. So, all in all, getting more answers isn't impossible but quite difficult requiring some serious amount of time on their website in order to figure out how it all happens. I'm short on time for now.
 
 - Why am I getting a _Recheck the URL_ error?
-
+  
   Sometimes Quora doesn't populate the answer page HTML, and hence, Quetre is unable to extract data from it. If that happens, you can refresh the page a couple of times to get the answers.
 
 - I have some ideas/want to help.
-
+  
   You're most welcome to do that. Just [contact me](#contact) or fork [the repo](https://github.com/zyachel/quetre/fork) and make a pull request. You can even help by correcting some typos or translating this README to other languages.
 
 - Why the name Quetre?
-
+  
   Quora is [supposedly](https://www.quora.com/Why-is-Quora-called-Quora-4) a portmanteau of 'Questions or answers'. In the same vein, Quetre is a portmanteau of 'Questions and answers', but [in Latin](https://lingva.ml/en/la/questions%20and%20answers%0A).
 
 - I cannot view the comments. Will you add that feature?
-
+  
   See [this issue](https://codeberg.org/zyachel/quetre/issues/11)
-
 
 ---
 
@@ -190,7 +191,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 1. Install [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/). Instructions are on their websites.
 
 2. Clone and set up the repository.
-
+   
    ```bash
    git clone https://github.com/zyachel/quetre.git # replace github.com with codeberg.org if you're cloning from there
    cd quetre
@@ -217,7 +218,7 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
 - [redirector](https://github.com/einaregilsson/Redirector)  
   You can manually add any redirect.
   Below is a basic config of Quora to Quetre. Replace `quetre.herokuapp.com` in `Redirect to` to any instance of your choice.
-
+  
   ```
   Description: Quora to Quetre
   Example URL: https://www.quora.com/What-is-Linux-4?share=1
@@ -226,7 +227,7 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
   Pattern type: Regular Expression
   Pattern description: redirects all Quora urls(excluding language-specific and spaces) to Quetre
   ```
-
+  
   This config should output:  
   `Example result: https://quetre.herokuapp.com/What-is-Linux-4`
 
@@ -247,7 +248,7 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
 - [JavaScript](https://www.ecma-international.org/technical-committees/tc39/): programming language
 - [Sass](https://sass-lang.com/): CSS preprocessor
 - [Pug](https://pugjs.org/): Template engine
-- [Node.js](https://nodejs.org/en/): JS runtime environmen
+- [Node.js](https://nodejs.org/en/): JS runtime environment
 - [Express](http://expressjs.com/): Application framework for Node.js
 
 ### Resources
