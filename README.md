@@ -55,6 +55,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/)           | U.S.    | Oracle   | Operated by [Tokhmi](https://tokhmi.xyz)                  |
 | [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt/)| Europe | BuyVM    | Operated by [Project Segfault](https://projectsegfau.lt)  |
 | [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/)                    | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)                     |
+| [quetre.lqs5fjmajyp7rvp4qvyubwofzi6d4imua7vs237rkc4m5qogitqwrgyd.onion](http://quetre.lqs5fjmajyp7rvp4qvyubwofzi6d4imua7vs237rkc4m5qogitqwrgyd.onion)                    | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)                     |
 
 Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku.
 Click the button below to get started:  
