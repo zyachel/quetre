@@ -1,0 +1,62 @@
+//-//////////////////////////////////////////////////////
+//-                 INCLUDES/EXTENDS
+//-//////////////////////////////////////////////////////
+extends ../base
+include ../mixins/_metadata
+include ../mixins/_utils
+
+//-//////////////////////////////////////////////////////
+//-                   MAIN CONTENT
+//-//////////////////////////////////////////////////////
+block content
+  main#main.main.topic
+    //- TOPIC NAME AND METADATA
+    section.topic__stats.topic-stats
+      .metadata-primary
+        h1.heading.heading__primary.metadata-primary__heading.topic__name= data.name
+        img.metadata-primary__image(src=data.image.replace('https://', "/api/v1/image/") alt=`cover photo of '${data.name}' topic`, loading='lazy')
+        p.metadata-primary__misc
+          if data.aliases.length
+            span Also known as:&nbsp;
+            span= data.aliases.join(', ')
+      .metadata-secondary
+        +addMetadataSecondary('user','Followers', data.numFollowers)
+        +addMetadataSecondary('question','Questions', data.numQuestions)
+        if data.isAdult
+          +addMetadataSecondary('danger', 'Adult Topic', '18+', true)
+        a.link(href='https://www.quora.com' + data.url) View on Quora
+
+    //- AUTHORS RELATED TO THE TOPIC AND METADATA
+    .topic__famous-authors.famous-authors
+      h2.heading.heading__secondary Most viewed authors
+      .famous-authors__list
+        each author in data.mostViewedAuthors
+          .famous-authors__item
+            figure.metadata-primary
+              figcaption.metadata-primary__heading
+                if author.isAnon
+                  span Anonymous
+                else
+                  a.link(href=author.profile)= author.name 
+                if author.isVerified
+                  svg.icon.metadata-primary__icon
+                    title verified
+                    use(href='/misc/sprite.svg#icon-verified')
+              img.metadata-primary__image(src=author.image.replace('https://', "/api/v1/image/"), alt=`${author.name}'s profile photo`, loading='lazy')
+              p.metadata-primary__misc(aria-label=`${author.name}'s credentials`)= author.credential || ''
+            .metadata-secondary
+              +addMetadataSecondary('user', 'Followers', author.numFollowers)
+              +addMetadataSecondary('eye', 'Views', author.numViews)
+              +addMetadataSecondary('comments', 'Answers', author.numAnswers)
+
+    //- RELATED TOPICS
+    .topic__related-topics.related-topics
+      h2.heading.heading__secondary Related Topics
+      .related-topics__list
+        each topic in data.relatedTopics
+          .metadata-primary
+            a.link.metadata-primary__heading(href=topic.url)= topic.name
+            img.metadata-primary__image(src=topic.image.replace('https://', "/api/v1/image/") alt=`cover photo of '${topic.name}' topic`, loading='lazy')
+            p.metadata-primary__misc
+              +formatNumber(topic.numFollowers)
+              |&nbsp;Followers

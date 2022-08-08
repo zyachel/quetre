@@ -6,7 +6,6 @@
 ////////////////////////////////////////////////////////
 //                     HEADER
 ////////////////////////////////////////////////////////
-
 .header {
   background-color: var(--clr-hf-bg);
 
@@ -177,5 +176,139 @@
   @include respond-to(bp-450) {
     padding: var(--space-300);
     gap: var(--space-200);
+  }
+}
+
+////////////////////////////////////////////////////////
+//                      TEXT
+////////////////////////////////////////////////////////
+.text {
+  // main text formatting
+  &__container {
+    border-block: 1px solid var(--clr-base-icon-alt-alpha);
+    padding: var(--space-100);
+
+    // lobotomised owl selector. equivalent to '> *:not(:first-of-type)' but has no/lowest specificity, and hence better for cascading. who says css isn't a programming language :p
+    > * + * {
+      // every direct child except first will have padding-top
+      margin-top: 1em;
+    }
+
+    // some math eqations will overflow.
+    // in mathjax v3, they can't be broken as of now. this is the best solution i could come up with.
+    overflow-x: auto;
+  }
+
+  // paragraphs
+  &__para {
+    line-height: 1.4;
+    overflow-wrap: anywhere; //breaks long words without hyphens
+  }
+
+  &__image {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin-inline: auto;
+  }
+
+  &__quote {
+    padding-left: 1em;
+    border-left: 3px solid var(--clr-base-icon-alt-alpha);
+    color: var(--clr-base-text-alt-alpha);
+  }
+
+  &__unordered-list,
+  &__ordered-list {
+    display: list-item;
+    margin-left: 1em;
+    list-style-position: inside;
+
+    &--1 {
+      margin-left: 2em;
+    }
+    &--2 {
+      margin-left: 3em;
+    }
+  }
+
+  &__unordered-list {
+    &--1 {
+      list-style-type: circle;
+    }
+
+    &--2 {
+      list-style-type: square;
+    }
+  }
+
+  &__ordered-list {
+    list-style-type: decimal;
+    padding-top: 0.7em;
+
+    &--1 {
+      list-style-type: lower-alpha;
+    }
+
+    &--2 {
+      list-style-type: lower-roman;
+    }
+  }
+
+  &__code {
+    margin-top: 0;
+    white-space: pre-wrap;
+    background: var(--clr-code-bg);
+    color: var(--clr-code-text);
+    padding: 0 1em;
+  }
+
+  &__hr {
+    margin: 2em auto 1em auto;
+    width: 30%;
+    border: 1px solid var(--clr-base-icon-alt-alpha);
+    text-align: center;
+  }
+
+  &__embed {
+    padding: 1em;
+
+    &-tweet {
+      border: 1px solid var(--clr-base-icon-alt-alpha);
+      background-color: var(--clr-code-bg);
+
+      // for links in tweet
+      a {
+        @include format-link(
+          var(--clr-base-link),
+          var(--clr-base-link-alt-alpha),
+          true
+        );
+      }
+    }
+  }
+
+  // spans
+  &__span-math {
+  }
+
+  &__span-code {
+    white-space: pre-wrap;
+  }
+  &__span-bold {
+    font-weight: 600;
+  }
+  &__span-italic {
+    font-style: italic;
+  }
+
+  &__span-link,
+  &__link {
+    @include format-link(
+      var(--clr-base-link),
+      var(--clr-base-link-alt-alpha),
+      true
+    );
   }
 }

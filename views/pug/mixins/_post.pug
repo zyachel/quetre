@@ -1,0 +1,56 @@
+//-//////////////////////////////////////////////////////
+//-                 INCLUDES/EXTENDS
+//-//////////////////////////////////////////////////////
+include ../mixins/_formatText
+include ../mixins/_metadata
+include ../mixins/_utils
+
+//-//////////////////////////////////////////////////////
+//-                 MAIN CONTENT
+//-//////////////////////////////////////////////////////
+mixin addPost(post)
+  article.answer
+    //- ABOUT AUTHOR
+    if post.space
+      figure.answer__metdata-primary.metadata-primary
+        figcaption.metadata-primary__heading
+          a.answers__link(href=post.space.url)= post.space.name
+        img.metadata-primary__image(src=post.space.image.replace('https://', "/api/v1/image/"), alt=`cover photo of ${post.space.name} space`, loading='lazy')
+        p.metadata-primary__misc= post.space.description
+    else
+      figure.answer__metdata-primary.metadata-primary
+        figcaption.metadata-primary__heading
+          if post.author.isAnon
+            span Anonymous
+          else
+            a.answers__link(href=post.author.url)= post.author.name
+          if post.author.isVerified
+            svg.metadata-primary__icon
+              title verified
+              use(href='/misc/sprite.svg#icon-verified')
+        img.metadata-primary__image(src=post.author.image.replace('https://', "/api/v1/image/"), alt=`${post.author.name}'s profile photo`, loading='lazy')
+        p.metadata-primary__misc(aria-label=`${post.author.name}'s credentials`)= post.author.credential || ''
+
+    //- POST HEADING
+    if post.title[0].spans[0].text
+      .answer__question.heading.heading__tertiary
+        +formatText(post.title)
+
+    //- POST CONTENT
+    section.answer__text.text__container
+      +formatText(post.text)
+      //- for quora plus answers. since quora only shows half answer, we gotta warn viewer.
+      unless post.isViewable
+        p.answer__unviewable
+          svg.answer__icon: use(href='/misc/sprite.svg#icon-danger')
+          | This is a Quora plus answer and hence full answer is not viewable.
+
+    //- POST METADATA
+    section.answer__metadata-secondary.metadata-secondary
+      +addMetadataSecondary('clock', 'Answered', post.creationTime, 'date')
+      if post.updatedTime
+        +addMetadataSecondary('clock-edit', 'Updated', post.updatedTime, 'date')
+      +addMetadataSecondary('eye', 'Views', post.numViews)
+      +addMetadataSecondary('arrow-up', 'Upvotes', post.numUpvotes)
+      +addMetadataSecondary('comments', 'Comments', post.numComments)
+      +addMetadataSecondary('share', 'Shares', post.numShares)

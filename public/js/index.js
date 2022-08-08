@@ -13,7 +13,7 @@ const btnTheme = document.querySelector('.theme-changer');
 ////////////////////////////////////////////////////////
 // gets theme prefered by browser
 const browserPrefersDarkTheme = window.matchMedia(
-  'prefers-color-scheme: dark'
+  '(prefers-color-scheme: dark)'
 ).matches;
 // gets theme prefered by user(stored in local storage)
 const userPrefersTheme = localStorage?.getItem('theme');
@@ -45,6 +45,6 @@ btnTheme.addEventListener('click', () => {
   metaThemeEl.removeAttribute('media');
   tempMetaThemeEl.remove();
   // applying theme preferences in case they exist
-  if (browserPrefersDarkTheme) setTheme('dark');
-  else if (userPrefersTheme) setTheme(userPrefersTheme);
+  if (userPrefersTheme) setTheme(userPrefersTheme);
+  else if (browserPrefersDarkTheme) setTheme('dark');
 })();
