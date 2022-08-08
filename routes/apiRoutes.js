@@ -4,7 +4,8 @@ import {
   unimplemented,
   answers,
   topic,
-  image
+  image,
+  profile,
 } from '../controllers/apiController.js';
 
 const apiRouter = express.Router();
@@ -12,7 +13,7 @@ const apiRouter = express.Router();
 apiRouter.get('/', about);
 apiRouter.get('/search', unimplemented);
 apiRouter.get('/image/:domain/:path', image);
-apiRouter.get('/profile/:name', unimplemented);
+apiRouter.get('/profile/:name', profile);
 apiRouter.get('/topic/:slug', topic);
 apiRouter.get('/unanswered/:slug', answers);
 apiRouter.get('/:slug', answers);

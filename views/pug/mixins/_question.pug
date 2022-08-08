@@ -1,0 +1,23 @@
+//-//////////////////////////////////////////////////////
+//-                 INCLUDES/EXTENDS
+//-//////////////////////////////////////////////////////
+include ../mixins/_formatText
+include ../mixins/_metadata
+include ../mixins/_utils
+
+//-//////////////////////////////////////////////////////
+//-                 MAIN CONTENT
+//-//////////////////////////////////////////////////////
+mixin addQuestion(question)
+  article.answer
+    h3.answer__question.heading.heading__tertiary
+      a.answer__link.answers__link(href=question.url)
+        +spansChecker(question.text[0].spans)
+
+    .metadata-secondary
+      +addMetadataSecondary('clock', 'Asked', question.creationTime, 'date')
+      if question.lastFollowTime
+        +addMetadataSecondary('clock-edit', 'Last followed', question.lastFollowTime, 'date')
+      +addMetadataSecondary('users', 'Followers', question.numFollowers)
+      +addMetadataSecondary('answers', 'Answers', question.numAnswers)
+      +addMetadataSecondary('comments', 'Comments', question.numComments)
