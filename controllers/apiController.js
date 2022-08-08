@@ -5,6 +5,7 @@ import axiosInstance from '../utils/axiosInstance.js';
 import catchAsyncErrors from '../utils/catchAsyncErrors.js';
 import getAnswers from '../fetchers/getAnswers.js';
 import getTopic from '../fetchers/getTopic.js';
+import getProfile from '../fetchers/getProfile.js';
 
 ////////////////////////////////////////////////////////
 //                     EXPORTS
@@ -27,6 +28,11 @@ export const topic = catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({ status: 'success', data });
 });
 
+export const profile = catchAsyncErrors(async (req, res, next) => {
+  const data = await getProfile(req.params.name);
+  res.status(200).json({ status: 'success', data });
+});
+
 export const unimplemented = (req, res, next) => {
   res.status(501).json({
     status: 'fail',
@@ -35,14 +41,17 @@ export const unimplemented = (req, res, next) => {
 };
 
 export const image = catchAsyncErrors(async (req, res, next) => {
-  if (!req.params.domain.endsWith("quoracdn.net")) {
+  if (!req.params.domain.endsWith('quoracdn.net')) {
     return res.status(403).json({
       status: 'fail',
-      message: "Invalid domain",
+      message: 'Invalid domain',
     });
   }
 
-  const imageRes = await axiosInstance.get(`https://${req.params.domain}/${req.params.path}`, { responseType: 'arraybuffer' });
-  res.set('Content-Type', imageRes.headers['content-type'])
+  const imageRes = await axiosInstance.get(
+    `https://${req.params.domain}/${req.params.path}`,
+    { responseType: 'arraybuffer' }
+  );
+  res.set('Content-Type', imageRes.headers['content-type']);
   res.status(200).send(imageRes.data);
 });
