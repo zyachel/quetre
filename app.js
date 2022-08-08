@@ -23,7 +23,6 @@ app.use(
   helmet({
     contentSecurityPolicy: {
       directives: {
-        'img-src': ["'self'"],
         'script-src': ["'self'", 'cdn.jsdelivr.net'],
       },
     },
@@ -33,7 +32,9 @@ app.use(
 
 // 2. SETTING VIEW ENGINE AND PATH TO STATIC ASSETS
 app.set('view engine', 'pug');
-const pathToViews = fileURLToPath(new URL('./views/pug', import.meta.url));
+const pathToViews = fileURLToPath(
+  new URL('./views/pug/pages', import.meta.url)
+);
 app.set('views', pathToViews);
 const pathToPublicDirectory = fileURLToPath(
   new URL('./public', import.meta.url)

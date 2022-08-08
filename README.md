@@ -64,6 +64,8 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S.    | Heroku   | Operated by [toyboatcash](https://github.com/toyboatcash) |
 | [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/)           | U.S.    | Oracle   | Operated by [Tokhmi](https://tokhmi.xyz)                  |
 | [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt/)| Europe | BuyVM    | Operated by [Project Segfault](https://projectsegfau.lt)  |
+| [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/)                    | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)                     |
+| [quetre.lqs5fjmajyp7rvp4qvyubwofzi6d4imua7vs237rkc4m5qogitqwrgyd.onion](http://quetre.lqs5fjmajyp7rvp4qvyubwofzi6d4imua7vs237rkc4m5qogitqwrgyd.onion)                    | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)                     |
 
 Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku.
 Click the button below to get started:  
@@ -140,7 +142,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 - Data collected by other services
 
-  If you're using the official instance (which is deployed on Heroku), Heroku might log your IP to prevent abuse. Also, as Quetre connects to 'cdn.jsdelivr.net' for the mathjax library, this service might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
+  If you're using the official instance (which is deployed on Heroku), Heroku might log your IP to prevent abuse. Also, as Quetre connects to 'cdn.jsdelivr.net' for the MathJax library, this service might log some data. So, follow due precaution. Using a VPN/Tor might be a good idea. Or even better, consider hosting your own instance.
 
 ---
 
@@ -173,6 +175,11 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 - Why the name Quetre?
 
   Quora is [supposedly](https://www.quora.com/Why-is-Quora-called-Quora-4) a portmanteau of 'Questions or answers'. In the same vein, Quetre is a portmanteau of 'Questions and answers', but [in Latin](https://lingva.ml/en/la/questions%20and%20answers%0A).
+
+- I cannot view the comments. Will you add that feature?
+
+  See [this issue](https://codeberg.org/zyachel/quetre/issues/11)
+
 
 ---
 

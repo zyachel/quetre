@@ -40,11 +40,12 @@ html(lang='en')
   body.body
     -if (title !=='About')
       a.skip-link(href="#main") Skip to main content
-    //- stuff that's visible on page goes here
-    include _header
+
+    //- MAIN CONTENT GOES HERE
+    include layout/_header
     block content 
       p placeholder text 
-    include _footer
+    include layout/_footer
 
     //- including mathjax script only when some answer has math expressions(using the var from above)
     if someAnswerContainsMath
