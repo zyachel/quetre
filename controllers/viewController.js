@@ -6,6 +6,7 @@ import catchAsyncErrors from '../utils/catchAsyncErrors.js';
 import getAnswers from '../fetchers/getAnswers.js';
 import getTopic from '../fetchers/getTopic.js';
 import { nonSlugRoutes } from '../utils/constants.js';
+import getProfile from '../fetchers/getProfile.js';
 
 ////////////////////////////////////////////////////////
 //                     EXPORTS
@@ -39,9 +40,11 @@ export const answers = catchAsyncErrors(async (req, res, next) => {
   if (nonSlugRoutes.includes(slug)) return next();
 
   const answersData = await getAnswers(slug);
-  const title = answersData.question.text.spans.map(span => span.text).join('');
+  const title = answersData.question.text[0].spans
+    .map(span => span.text)
+    .join('');
 
-  res.status(200).render('answers', {
+  return res.status(200).render('answers', {
     data: answersData,
     meta: {
       title,
@@ -62,6 +65,20 @@ export const topic = catchAsyncErrors(async (req, res, next) => {
       url: `${req.urlObj.origin}${req.urlObj.pathname}`,
       imageUrl: `${req.urlObj.origin}/icon.svg`,
       description: `Information about ${topicData.name} topic.`,
+    },
+  });
+});
+
+export const profile = catchAsyncErrors(async (req, res, next) => {
+  const profileData = await getProfile(req.params.name);
+
+  res.status(200).render('profile', {
+    data: profileData,
+    meta: {
+      title: profileData.basic.name,
+      url: `${req.urlObj.origin}${req.urlObj.pathname}`,
+      imageUrl: `${req.urlObj.origin}/icon.svg`,
+      description: `${profileData.basic.name}'s profile.`,
     },
   });
 });

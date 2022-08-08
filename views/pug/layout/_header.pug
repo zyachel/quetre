@@ -1,13 +1,17 @@
+//-//////////////////////////////////////////////////////
+//-                   MAIN CONTENT
+//-//////////////////////////////////////////////////////
 header.header(class=`${meta.title === 'About' ? 'header__about': ''}`)
+  //- BAR INCLUDES BOTH LOGO AND NAV(WHICH'LL BE THERE ONLY ON ABOUT PAGE)
   .header__bar 
     a.header__link.header__logo(href='/') Quetre
-
     //- for nav on about page
     block header__nav
-
+    
+    //- BUTTON FOR CHANGING THEME
     button.button.theme-changer.header__theme(aria-label='Change Theme')
       svg.icon.icon__theme.theme-changer__icon.theme-changer__icon--sun: use(href='/misc/sprite.svg#icon-sun')
       svg.icon.icon__theme.theme-changer__icon.theme-changer__icon--moon: use(href='/misc/sprite.svg#icon-moon')
 
-  //- for info line on about page
+  //- IF THE PAGE IS ABOUT PAGE, THE BLOCK BELOW WILL GET POPULATED
   block header__info
