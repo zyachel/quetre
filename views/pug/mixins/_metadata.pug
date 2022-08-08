@@ -1,0 +1,19 @@
+//-//////////////////////////////////////////////////////
+//-                 INCLUDES/EXTENDS
+//-//////////////////////////////////////////////////////
+include ../mixins/_formatText
+include ../mixins/_utils
+
+mixin addMetadataSecondary(iconName, name, number, numberType='number')
+  p.metadata-secondary__item
+    svg.icon.metadata-secondary__icon: use(href=`/misc/sprite.svg#icon-${iconName}`)
+    case numberType
+      when 'number'
+        +formatNumber(number, 'metadata-secondary__data')
+      when 'date'
+        +addDate(number)
+      when 'empty'
+        span
+      default
+        span= number
+    span.metadata-secondary__text= name

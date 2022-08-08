@@ -35,7 +35,7 @@ const getTopic = async slug => {
       uid: author.user.uid,
       name: `${author.user.names[0].givenName} ${author.user.names[0].familyName}`,
       profile: author.user.profileUrl,
-      avatar: author.user.profileImageUrl,
+      image: author.user.profileImageUrl,
       isAnon: author.user.isAnon,
       isVerified: author.user.isVerified,
       numFollowers: author.user.followerCount,
