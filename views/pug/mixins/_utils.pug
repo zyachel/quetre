@@ -1,0 +1,10 @@
+//-//////////////////////////////////////////////////////
+//-        SMALL MIXINS THAT ARE USED IN MANY PLACES
+//-//////////////////////////////////////////////////////
+
+mixin addDate(date, className='')
+  - const dateObj = new Date(date / 1000);
+    time(class= className, datetime= dateObj.toISOString(), title=dateObj.toUTCString())= Intl.DateTimeFormat('en-US', {year: '2-digit', month: 'short', day: 'numeric' }).format(dateObj)
+
+mixin formatNumber(number, className='')
+  span(class=className)= new Intl.NumberFormat().format(number)

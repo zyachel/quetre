@@ -40,9 +40,9 @@ const getAnswers = async slug => {
       author: {
         uid: ansObj.node.answer.author.uid,
         isAnon: ansObj.node.answer.author.isAnon,
-        avatar: ansObj.node.answer.author.profileImageUrl,
+        image: ansObj.node.answer.author.profileImageUrl,
         isVerified: ansObj.node.answer.author.isVerified,
-        profile: ansObj.node.answer.author.profileUrl,
+        url: ansObj.node.answer.author.profileUrl,
         name: `${ansObj.node.answer.author.names[0].givenName} ${ansObj.node.answer.author.names[0].familyName}`,
         credential: ansObj.node.answer.authorCredential?.translatedString,
         // additionalCredentials: ansObj.node.answer?.credibilityFacts.map(),

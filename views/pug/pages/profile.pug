@@ -1,0 +1,192 @@
+//-//////////////////////////////////////////////////////
+//-                 INCLUDES/EXTENDS
+//-//////////////////////////////////////////////////////
+extends ../base
+include ../mixins/_formatText
+include ../mixins/_utils
+include ../mixins/_answer
+include ../mixins/_question
+include ../mixins/_post
+include ../mixins/_metadata
+
+//-//////////////////////////////////////////////////////
+//-                 LOCAL HELPER MIXINS
+//-//////////////////////////////////////////////////////
+mixin addNumericStats(number, name, iconName)
+  li.profile-highlights__item
+    svg.icon.metadata-primary__icon.profile-stats__icon
+      use(href=`/misc/sprite.svg#icon-${iconName}`)
+    p
+      +formatNumber(number)
+      |&nbsp;#{name}
+
+mixin addTimeRange(start, end)
+  - if (!start && (!end || end < 0))
+    span
+  - else if (start && (end < 0 || end === start))
+    span &nbsp;(#{start}-present)
+  - else
+    span &nbsp;(#{start}-#{end})
+
+//-//////////////////////////////////////////////////////
+//-                   MAIN CONTENT
+//-//////////////////////////////////////////////////////
+block content
+  main#main.main.profile
+    section.profile__meta.profile-meta
+      .profile-meta__basic
+        .metadata-primary.profile-meta__about
+          img.metadata-primary__image.profile-meta__image(src=data.basic.image.replace('https://', "/api/v1/image/"), alt=`${data.basic.name}'s profile photo`, loading='lazy')
+          h1.heading.heading__primary.metadata-primary__heading.profile-meta__heading-name.profile__name= data.basic.name
+            if data.basic.isVerified
+              svg.icon.metadata-primary__icon.profile-meta__icon
+                title verified
+                use(href='/misc/sprite.svg#icon-verified')
+            if data.basic.isPlusUser
+              svg.icon.metadata-primary__icon.profile-meta__icon
+                title Quora+ user
+                use(href='/misc/sprite.svg#icon-quoraplus')
+          p.metadata-primary__misc.profile-meta__credential= data.credentials.mainCredential
+        .metadata-secondary
+          if data.basic.isBanned
+            +addMetadataSecondary('user-remove', 'Banned', '', 'empty')
+          if data.basic.isBot
+            +addMetadataSecondary('danger', 'Bot', '', 'empty')
+          if data.basic.isDeactivated
+            +addMetadataSecondary('user-remove', 'Deactivated', '', 'empty')
+          if data.basic.isDeleted
+            +addMetadataSecondary('user-remove', 'Deleted', '', 'empty')
+          if data.basic.isDeceased
+            +addMetadataSecondary('flower', 'Deceased', '', 'empty')
+          if data.basic.isBusiness
+            +addMetadataSecondary('briefcase', 'Business', '', 'empty')
+          a.link(href='https://www.quora.com' + data.basic.profile) View on Quora
+
+      if data.profileFeed.description[0].spans[0].text
+        .profile-meta__description
+          h2.heading.heading__secondary.profile-meta__heading-description Self description
+          .text__container
+            +formatText(data.profileFeed.description)
+
+    .profile__stats.profile-stats
+      section.profile__highlights.profile-highlights
+        h2.heading.heading__secondary.profile-highlights__heading Highlights
+        ul.profile-highlights__list
+          +addNumericStats(data.basic.numFollowers, 'Followers', 'users')
+          +addNumericStats(data.basic.numFollowing, 'Following', 'users')
+          +addNumericStats(data.basic.numAnswers, 'Answers', 'answers')
+          +addNumericStats(data.basic.numQuestions, 'Questions', 'question')
+          +addNumericStats(data.basic.numPosts, 'Posts', 'post')
+          +addNumericStats(data.highlights.numAnswerViews, 'Answer views', 'eye')
+          +addNumericStats(data.highlights.numLastMonthAnswerViews, 'Answer views this month', 'eye')
+          - if(data.highlights.topWriterYears)  
+            li.profile-highlights__item
+              svg.icon.metadata-primary__icon.profile-stats__icon
+                use(href='/misc/sprite.svg#icon-pen')
+              span Top Writer #{data.highlights.topWriterYears}
+          - if(data.highlights.publishedWriterIn)  
+            li.profile-highlights__item
+              svg.icon.metadata-primary__icon.profile-stats__icon
+                use(href='/misc/sprite.svg#icon-pen')
+              span Published Writer in #{data.highlights.publishedWriterIn}
+          - if(data.highlights.topAskerYears)  
+            li.profile-highlights__item
+              svg.icon.metadata-primary__icon.profile-stats__icon
+                use(href='/misc/sprite.svg#icon-question')
+              span Top Question asker #{data.highlights.topAskerYears}
+          - if(data.basic.twitterUsername)
+            li.profile-highlights__item
+              svg.icon.metadata-primary__icon.profile-stats__icon
+                use(href='/misc/sprite.svg#icon-twitter')
+              span Twitter username: #{data.basic.twitterUsername}
+          li.profile-highlights__item
+            svg.icon.metadata-primary__icon.profile-stats__icon
+              use(href='/misc/sprite.svg#icon-user-clock')
+            p Joined&nbsp;
+              +addDate(data.highlights.creationTime)
+
+      section.profile__credentials.profile-credentials
+        h2.heading.heading__secondary.profile-credentials__heading Credentials
+        ul.profile-credentials__list
+          -if (data.credentials.languageCredential)
+            li.profile-credentials__item
+              svg.icon.metadata-primary__icon.profile-stats__icon
+                title Language
+                use(href='/misc/sprite.svg#icon-globe')
+              span Knows #{data.credentials.languageCredential}
+          -if (data.credentials.workCredential)
+            li.profile-credentials__item
+              svg.icon.metadata-primary__icon.profile-stats__icon
+                title Work
+                use(href='/misc/sprite.svg#icon-briefcase')
+              p
+                span= data.credentials.workCredential.position
+                span= ` at ${data.credentials.workCredential.company || '-'} `
+                +addTimeRange(data.credentials.workCredential.startYear, data.credentials.workCredential.startYear)
+          -if (data.credentials.schoolCredential)
+            li.profile-credentials__item
+              svg.icon.metadata-primary__icon.profile-stats__icon
+                title School
+                use(href='/misc/sprite.svg#icon-degree')
+              p
+                span= data.credentials.schoolCredential.degree
+                span= ` in ${data.credentials.schoolCredential.major || '-'}`
+                span= ` from ${data.credentials.schoolCredential.school || '-'}`
+
+          -if (data.credentials.locationCredential)
+            li.profile-credentials__item 
+              svg.icon.metadata-primary__icon.profile-stats__icon
+                title Location
+                use(href='/misc/sprite.svg#icon-location')
+              p Lives
+                span= ` in ${data.credentials.locationCredential.location || '-'}`
+                +addTimeRange(data.credentials.locationCredential.startYear, data.credentials.locationCredential.startYear)
+
+      section.profile__spaces.profile-spaces
+        h2.heading.heading__secondary Spaces   
+        p.profile-spaces__info
+          span.profile-spaces__item Active in #{data.spaces.numActiveInSpaces},&nbsp;
+          span.profile-spaces__item following #{data.spaces.numFollowingSpaces} spaces
+        ul.profile-spaces__list
+          each space in data.spaces.spaces
+            li.metadata-primary.profile-spaces__list-item
+              img.metadata-primary__image(src=space.image.replace('https://', '/api/v1/image/'), alt=`dedicated photo of ${space.name} space`)
+              a.link.metadata-primary__heading(href=space.url)= space.name
+              p.metadata-primary__misc
+                +formatNumber(space.numItems)
+                |&nbsp;items
+                //- if space.isSensitive
+                  svg.answer__icon: use(href='/misc/sprite.svg#icon-arrow-up')
+                  span sensitive space
+
+      section.profile__topics.profile-topics
+        h2.heading.heading__secondary.profile-topics__heading Topics     
+        p.profile-topics__info
+          span.profile-topics__item Following #{data.topics.numFollowingTopics} topics
+        ul.profile-topics__list
+          each topic in data.topics.topics
+            li.metadata-primary.profile-topics__list-item
+              img.metadata-primary__image.profile-topics__img(src=topic.image.replace('https://', '/api/v1/image/'), alt=`image depicting ${topic.name} topic`)
+              a.link.metadata-primary__heading(href=topic.url)= topic.name
+              p.metadata-primary__misc
+                +formatNumber(topic.numAnswers)
+                |&nbsp;Answers
+                //- if topic.isSensitive
+                  svg.icon.metadata-primary__icon: use(href='/misc/sprite.svg#icon-arrow-up')
+                  span sensitive topic
+
+    section.profile__feed.profile-feed
+      h2.heading.heading__secondary Feed
+      .profile-feed__container
+        each item in data.profileFeed.feed
+          .profile-feed__item
+            //- -if(item.isPinned)
+            //-   p.profile-feed__pinned
+            //-     svg.icon.profile__icon: use(href='/misc/sprite.svg#icon-verified')
+            //-     span pinned
+            - if (item.type === 'answer')
+              +addAnswer(item)
+            - else if (item.type === 'question')
+              +addQuestion(item)
+            - else if (item.type === 'post')
+              +addPost(item)
