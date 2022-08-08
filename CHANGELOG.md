@@ -1,3 +1,12 @@
+# [3.3.0](https://github.com/zyachel/quetre/compare/v3.2.0...v3.3.0) (2022-08-03)
+
+
+### Features
+
+* add profile route ([49f5a3e](https://github.com/zyachel/quetre/commit/49f5a3e74e1c5cfd058ab2a1cc12bf5d9799a1c7))
+
+
+
 # [3.2.0](https://github.com/zyachel/quetre/compare/v3.1.1...v3.2.0) (2022-07-24)
 
 
@@ -45,24 +54,6 @@
 * **fetcher:** Quora changed their HTML. Previous fetcher logic won't work!
 
 fix https://github.com/zyachel/quetre/issues/10
-
-
-
-# [2.1.0](https://github.com/zyachel/quetre/compare/v2.0.1...v2.1.0) (2022-06-20)
-
-
-### Bug Fixes
-
-* change the code so as to compress static resources as well ([ad01448](https://github.com/zyachel/quetre/commit/ad014480ea648ec69a5d2ab3abbe8f133bd7a0c7))
-* fix errors in fetchers ([b9d65e8](https://github.com/zyachel/quetre/commit/b9d65e89f0daefffc4656c7347842402633c51a2))
-* fix footer styles in about page ([53c708a](https://github.com/zyachel/quetre/commit/53c708a1660b94f39e87f0d0e40584282964b850))
-
-
-### Features
-
-* add link to redirect user to Quora in case of errors ([2dd4a03](https://github.com/zyachel/quetre/commit/2dd4a030d2b2abfff81d06df6ab51b71175b4dd1))
-* add meta tags for seo ([14eece7](https://github.com/zyachel/quetre/commit/14eece71a6e3f8179a98f6da14fd3aae0ba51dbf))
-* add theme sensitive theme-color meta tags ([719988c](https://github.com/zyachel/quetre/commit/719988c587443f73d9ce4a58e6d4adba4e877220))
 
 
 
