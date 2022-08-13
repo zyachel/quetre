@@ -196,7 +196,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
    git clone https://github.com/zyachel/quetre.git # replace github.com with codeberg.org if you're cloning from there
    cd quetre
    cp .env.example .env # you can make any changes here
-   # change `pnpm` to `npm run` here as well as in package.json if you use `npm`
+   sudo npm install -g pnpm
    pnpm install
    pnpm start
    ```
