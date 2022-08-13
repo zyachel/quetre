@@ -4,4 +4,5 @@
 2. Before opening an issue or Pull Request, please, verify that there are no other duplicated issues or PR's, this removes a lot of load from the team
 and we will apreciate it.
 3. If you think is apropiate or necessary, you can talk to @zyachel on [Matrix](https://matrix.to/#/@ninal:matrix.org) or [Email](mailto:aricla@protonmail.com)
-4. If you are going to add an instance, please make sure that you fill the "Cloudflare yes or no column"
+4. If you are going to add an instance, please make sure that you fill the 'Cloudflare yes or no column', if your instance does use Cloudflare (although it shouldn't), please mark 'Yes' in the appropiate column.
+4.2. If the instance is a tor instance (with .onion domain) you can put 'No/DA' (Doesn't apply).
