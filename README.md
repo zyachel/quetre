@@ -31,7 +31,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 - Unofficial API support
 
-  just add `/api/v1/` after the domain name in the URL and get a JSON repsonse.
+  just add `/api/v1/` after the domain name in the URL and get a JSON response.
 
 ---
 
