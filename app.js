@@ -20,13 +20,11 @@ const app = express();
 // 1. IMPORTANT MIDDLWARES
 app.use(compression()); // compressing responses
 app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        'script-src': ["'self'", 'cdn.jsdelivr.net'],
-      },
+  helmet.contentSecurityPolicy({
+    useDefaults: false,
+    directives: {
+      defaultSrc: ["'self'", "cdn.jsdelivr.net"],
     },
-    crossOriginEmbedderPolicy: false,
   })
 ); // using sane headers on response
 
