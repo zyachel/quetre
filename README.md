@@ -48,7 +48,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | Instance URL                                              | Region  | Provider | Notes                                                     |
 | --------------------------------------------------------- | ------- | -------- | --------------------------------------------------------- |
 | [quetre.herokuapp.com](https://quetre.herokuapp.com)      | Europe  | Heroku   | Official instance                                         |
-| [quora.vern.cc](https://quora.vern.cc)                    | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                     |
+| [quora.vern.cc](https://qr.vern.cc)                    | Canada  | OVHCloud | Operated by [~vern](https://vern.cc/)                     |
 | [quetre.pussthecat.org](https://quetre.pussthecat.org/)   | Germany | &ndash;  | Operated by [PussTheCat.org](https://pussthecat.org/)     |
 | [wuetre.herokuapp.com](https://wuetre.herokuapp.com/)     | Europe  | Heroku   | Operated by AnonymousZ                                    |
 | [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S.    | Heroku   | Operated by [toyboatcash](https://github.com/toyboatcash) |
@@ -56,6 +56,8 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt/)| Europe | BuyVM    | Operated by [Project Segfault](https://projectsegfau.lt)  |
 | [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/)                    | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)                     |
 | [quetre.lqs5fjmajyp7rvp4qvyubwofzi6d4imua7vs237rkc4m5qogitqwrgyd.onion](http://quetre.lqs5fjmajyp7rvp4qvyubwofzi6d4imua7vs237rkc4m5qogitqwrgyd.onion)                    | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)                     |
+| [http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
+| [http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
 
 Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku.
 Click the button below to get started:  
