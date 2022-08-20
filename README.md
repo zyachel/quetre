@@ -57,7 +57,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/)                    | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)                     |
 | [quetre.lqs5fjmajyp7rvp4qvyubwofzi6d4imua7vs237rkc4m5qogitqwrgyd.onion](http://quetre.lqs5fjmajyp7rvp4qvyubwofzi6d4imua7vs237rkc4m5qogitqwrgyd.onion)                    | Canada  | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/)                     |
 | [http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
-| [http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
+| [http://qr.vern.i2p/](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
 
 Centralisation is bad. Deploy your own instance if you can. It's easy and free with heroku.
 Click the button below to get started:  
