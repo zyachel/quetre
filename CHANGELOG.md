@@ -1,3 +1,12 @@
+## [3.3.1](https://github.com/zyachel/quetre/compare/v3.3.0...v3.3.1) (2022-09-12)
+
+
+### Bug Fixes
+
+* broken layout on Tor instances ([dfec2b5](https://github.com/zyachel/quetre/commit/dfec2b5ebd0413606f64cd9f67a370aaf3d809fa))
+
+
+
 # [3.3.0](https://github.com/zyachel/quetre/compare/v3.2.0...v3.3.0) (2022-08-03)
 
 
@@ -37,23 +46,6 @@
 ### Features
 
 * proxy images ([fa0a5f1](https://github.com/zyachel/quetre/commit/fa0a5f1fa526d6350e3321a34f9c5b326fd6d9bb))
-
-
-
-# [3.0.0](https://github.com/zyachel/quetre/compare/v2.1.0...v3.0.0) (2022-06-24)
-
-
-### Bug Fixes
-
-* **fetcher:** fix fetcher logic ([fb7d803](https://github.com/zyachel/quetre/commit/fb7d8034fe98b21c69e1bf5eee4f3c85a2f94215))
-* send a meaningful error response in case an answer/topic can't be fetched ([e7c83bd](https://github.com/zyachel/quetre/commit/e7c83bd06e9398575a46f1a3893f355f2147c157))
-
-
-### BREAKING CHANGES
-
-* **fetcher:** Quora changed their HTML. Previous fetcher logic won't work!
-
-fix https://github.com/zyachel/quetre/issues/10
 
 
 
