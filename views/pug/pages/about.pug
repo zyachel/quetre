@@ -69,6 +69,20 @@ block content
       h2.heading.heading__secondary.about__heading-secondary.faqs__heading FAQs
       .faqs__list
         details.faqs__faq
+          summary.faqs__question How do I use this?
+            svg.faqs__icon: use(href='/misc/sprite.svg#icon-open')
+          p.faqs__answer Replace 'www.quora.com' in any URL with 'quetre.iket.me'. So,&nbsp;
+            a.about__link(href='https://www.quora.com/Are-Nubians-nilotes') www.quora.com/Are-Nubians-nilotes
+            |&nbsp;becomes&nbsp;
+            a.about__link(href='https://quetre.iket.me/Are-Nubians-nilotes') quetre.iket.me/Are-Nubians-nilotes
+            |.
+        details.faqs__faq
+          summary.faqs__question I don't want to edit the URLs manually!
+            svg.faqs__icon: use(href='/misc/sprite.svg#icon-open')
+          p.faqs__answer You can use&nbsp;
+            a.about__link(href='https://github.com/zyachel/quetre#automatic-redirection') automatic redirectors
+            |&nbsp;for that.
+        details.faqs__faq
           summary.faqs__question There are some unreachable routes.
             svg.faqs__icon: use(href='/misc/sprite.svg#icon-open')
           p.faqs__answer I'm working to implement them soon.

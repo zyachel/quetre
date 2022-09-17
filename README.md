@@ -142,6 +142,14 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 ## FAQs
 
+- How do I use this?
+
+  Replace 'www.quora.com' in any URL with 'quetre.iket.me'. So, 'https://www.quora.com/Are-Nubians-nilotes' becomes 'https://quetre.iket.me/Are-Nubians-nilotes'.
+
+- I don't want to edit the URLs manually!
+
+  There are [a couple of solutions](#automatic-redirection) for that.
+
 - There are some unreachable routes.
 
   I'm working to implement them soon. Keep an eye on [To-Do list](#to-do).
