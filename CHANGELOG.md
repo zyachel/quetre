@@ -1,3 +1,28 @@
+# [4.0.0](https://github.com/zyachel/quetre/compare/v3.3.1...v4.0.0) (2022-09-22)
+
+
+### Bug Fixes
+
+* fix fetcher.js ([bf266a9](https://github.com/zyachel/quetre/commit/bf266a9a8971b55400f934a1e2338e83d8fd4d38))
+
+
+### BREAKING CHANGES
+
+* previous fetcher.js won't work as Quora again changed their HTML
+
+closes https://github.com/zyachel/quetre/issues/68
+
+
+
+## [3.3.1](https://github.com/zyachel/quetre/compare/v3.3.0...v3.3.1) (2022-09-12)
+
+
+### Bug Fixes
+
+* broken layout on Tor instances ([dfec2b5](https://github.com/zyachel/quetre/commit/dfec2b5ebd0413606f64cd9f67a370aaf3d809fa))
+
+
+
 # [3.3.0](https://github.com/zyachel/quetre/compare/v3.2.0...v3.3.0) (2022-08-03)
 
 
@@ -28,32 +53,6 @@
 ### Bug Fixes
 
 * browser theme preference not being respected when js is enabled ([40668b9](https://github.com/zyachel/quetre/commit/40668b92b5aa5c1b10cb265dc781066320cccce8))
-
-
-
-# [3.1.0](https://github.com/zyachel/quetre/compare/v3.0.0...v3.1.0) (2022-07-22)
-
-
-### Features
-
-* proxy images ([fa0a5f1](https://github.com/zyachel/quetre/commit/fa0a5f1fa526d6350e3321a34f9c5b326fd6d9bb))
-
-
-
-# [3.0.0](https://github.com/zyachel/quetre/compare/v2.1.0...v3.0.0) (2022-06-24)
-
-
-### Bug Fixes
-
-* **fetcher:** fix fetcher logic ([fb7d803](https://github.com/zyachel/quetre/commit/fb7d8034fe98b21c69e1bf5eee4f3c85a2f94215))
-* send a meaningful error response in case an answer/topic can't be fetched ([e7c83bd](https://github.com/zyachel/quetre/commit/e7c83bd06e9398575a46f1a3893f355f2147c157))
-
-
-### BREAKING CHANGES
-
-* **fetcher:** Quora changed their HTML. Previous fetcher logic won't work!
-
-fix https://github.com/zyachel/quetre/issues/10
 
 
 

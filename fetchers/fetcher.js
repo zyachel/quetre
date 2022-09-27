@@ -24,16 +24,13 @@ const fetcher = async resourceStr => {
     const res = await axiosInstance.get(encodeURIComponent(resourceStr));
 
     const $ = cheerio.load(res.data);
-    let rawData;
-    $('body')
-      .children('script')
-      .each((i, el) => {
-        if ($(el).html().includes('window.setTimingData'))
-          rawData = $(el)
-            .prev()
-            .html()
-            ?.match(/"\{.*\}"/m)?.[0];
-      });
+
+    // this logic is prone to breakage as Quora changes position of the script that includes answers.
+    // Cur position: 4th from bottom.
+    const rawData = $('body script:nth-last-child(4)')
+      .html()
+      ?.match(/"\{.*\}"/m)?.[0];
+
     if (!rawData || !Object.entries(rawData).length)
       throw new AppError("couldn't retrieve data", 500);
 
