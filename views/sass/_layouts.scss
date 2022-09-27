@@ -302,6 +302,9 @@
   &__span-italic {
     font-style: italic;
   }
+  &__span-highlight {
+	color: var(--clr-focus);
+}
 
   &__span-link,
   &__link {

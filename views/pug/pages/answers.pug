@@ -39,4 +39,5 @@ block content
       h2.heading.heading__secondary.answers__related-heading Related Questions
       ul.related__questions 
         each question in data.relatedQuestions
-          li.related__question-item: a.related__question-link.answers__link(href=question.url) #{question.url.slice(0, 12) == '/unanswered/' ? "[Unanswered]" : ""} #{question.text[0].spans[0].text}
+          li.related__question-item: a.related__question-link.answers__link(href=question.url)
+            +spansChecker([{text: question.url.slice(0, 12) == '/unanswered/' ? "[Unanswered] " : " ", modifiers: {highlight: true}}, ...question.text[0].spans])
