@@ -136,7 +136,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 - Data collected by other services
 
-  If you're using the official instance(which is deployed on Heroku), Heroku might log your IP to prevent abuse. Also, as Quetre connects to 'cdn.jsdelivr.net' for MathJax library respectively, this services might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
+  As Quetre connects to 'cdn.jsdelivr.net' for MathJax library, jsdelivr might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
 
 ---
 
@@ -188,7 +188,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 - [ ] add missing routes like topics, profile, and search
 - [ ] use redis
-- [ ] serve images and other assets from Quetre
+- [x] serve images and other assets from Quetre
 - [x] implement a better installation method
 - [ ] implement other trivial routes like a specific answer, spaces, etc.
 - [ ] implement a way to get more answers(not a big priority as of now)
@@ -228,19 +228,19 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
 
 - [redirector](https://github.com/einaregilsson/Redirector)  
   You can manually add any redirect.
-  Below is a basic config of Quora to Quetre. Replace `quetre.herokuapp.com` in `Redirect to` to any instance of your choice.
+  Below is a basic config of Quora to Quetre. Replace `quetre.iket.me` in `Redirect to` to any instance of your choice.
 
   ```
   Description: Quora to Quetre
   Example URL: https://www.quora.com/What-is-Linux-4?share=1
   Include pattern: https?:\/\/(www\.)?quora\.com\/([^\?]*)
-  Redirect to: https://quetre.herokuapp.com/$2
+  Redirect to: https://quetre.iket.me/$2
   Pattern type: Regular Expression
   Pattern description: redirects all Quora urls(excluding language-specific and spaces) to Quetre
   ```
 
   This config should output:  
-  `Example result: https://quetre.herokuapp.com/What-is-Linux-4`
+  `Example result: https://quetre.iket.me/What-is-Linux-4`
 
 - [LibRedirect](https://github.com/libredirect/libredirect/)  
   Redirects many popular services to their alternative front-ends. Has a ton of features and an active community. Quetre is supported by default. So, no need to do anything.
