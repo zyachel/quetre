@@ -220,6 +220,12 @@ There is a [docker image](https://github.com/PussTheCat-org/docker-quetre-quay) 
 
 ---
 
+## Contributing
+
+The development may seem slow as I don't have lots of free time. And whenever I do, it gets split between this service and [libremdb](https://github.com/zyachel/libremdb/).  
+If you believe you can help furthering this project in any way(be it maintaining, fixing issues, or adding features), please [get in touch](#contact).  
+Regardless, any type of contribution is always welcome.
+
 ## Misc
 
 ### Automatic redirection
