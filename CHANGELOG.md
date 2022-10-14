@@ -1,3 +1,19 @@
+# [5.0.0](https://github.com/zyachel/quetre/compare/v4.0.0...v5.0.0) (2022-10-14)
+
+
+### Bug Fixes
+
+* **fetcher.js:** fix broken data fetching logic ([5e1d605](https://github.com/zyachel/quetre/commit/5e1d60525ed04d22cbc71c101fbbb96f4e200b73))
+
+
+### BREAKING CHANGES
+
+* **fetcher.js:** previous versions won't work
+
+fix https://github.com/zyachel/quetre/issues/72
+
+
+
 # [4.0.0](https://github.com/zyachel/quetre/compare/v3.3.1...v4.0.0) (2022-09-22)
 
 
@@ -44,15 +60,6 @@ closes https://github.com/zyachel/quetre/issues/68
 ### Features
 
 * add support for embedded content in answers ([bae2d7b](https://github.com/zyachel/quetre/commit/bae2d7b4f7f945d7eb55dddb4bd7e49ac21b2ae1))
-
-
-
-## [3.1.1](https://github.com/zyachel/quetre/compare/v3.1.0...v3.1.1) (2022-07-22)
-
-
-### Bug Fixes
-
-* browser theme preference not being respected when js is enabled ([40668b9](https://github.com/zyachel/quetre/commit/40668b92b5aa5c1b10cb265dc781066320cccce8))
 
 
 
