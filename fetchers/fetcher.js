@@ -27,7 +27,7 @@ const fetcher = async resourceStr => {
 
     // this logic is prone to breakage as Quora changes position of the script that includes answers.
     // Cur position: 4th from bottom.
-    const rawData = $('body script:nth-last-child(4)')
+    const rawData = $('body script:nth-last-child(3)')
       .html()
       ?.match(/"\{.*\}"/m)?.[0];
 
