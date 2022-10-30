@@ -8,3 +8,6 @@ mixin addDate(date, className='')
 
 mixin formatNumber(number, className='')
   span(class=className)= new Intl.NumberFormat().format(number)
+
+mixin proxifyImg(imgUrl)
+  img(src=imgUrl.replace('https://', '/api/v1/image/'), loading='lazy')&attributes(attributes)
