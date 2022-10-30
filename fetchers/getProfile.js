@@ -33,7 +33,7 @@ const feedAnswerCleaner = answer => ({
     credential: answer.authorCredential?.translatedString,
     // additionalCredentials: answer?.credibilityFacts.map(),
   },
-  originalQuestion: {
+  question: {
     text: JSON.parse(answer.question.title).sections,
     url: answer.question.url,
     qid: answer.question.qid,
@@ -107,7 +107,7 @@ const feedCleaner = feed => {
 ////////////////////////////////////////////////////////
 const getProfile = async slug => {
   // getting data and destructuring it in case it exists
-  const res = await fetcher(`profile/${slug}`);
+  const res = await fetcher(`profile/${slug}`, 'user');
 
   const {
     data: { user: rawData },
