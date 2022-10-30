@@ -43,6 +43,8 @@ body {
 //                   BASE STYLING
 ////////////////////////////////////////////////////////
 :root {
+  color-scheme: light dark;
+
   // normal vars
   @include get-misc-vars;
   // themed vars(default:light)
@@ -64,6 +66,7 @@ body {
 }
 
 .body {
+  color-scheme: var(--color-scheme);
   font-size: var(--fs-160);
   font-family: var(--ff-primary);
   background-color: var(--clr-base-bg);
@@ -126,8 +129,7 @@ body {
 //                 KEYBOARD NAVIGATION
 ////////////////////////////////////////////////////////
 :focus {
-  outline: 3px solid var(--clr-focus);
-  outline-offset: 0.2em;
+  @include focus-rules;
 }
 
 @supports selector(:focus-visible) {
@@ -136,8 +138,7 @@ body {
   }
 
   :focus-visible {
-    outline: 3px solid var(--clr-focus);
-    outline-offset: 0.2em;
+    @include focus-rules;
   }
 }
 

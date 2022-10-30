@@ -7,11 +7,14 @@ header.header(class=`${meta.title === 'About' ? 'header__about': ''}`)
     a.header__link.header__logo(href='/') Quetre
     //- for nav on about page
     block header__nav
-    
+
     //- BUTTON FOR CHANGING THEME
-    button.button.theme-changer.header__theme(aria-label='Change Theme')
-      svg.icon.icon__theme.theme-changer__icon.theme-changer__icon--sun: use(href='/misc/sprite.svg#icon-sun')
-      svg.icon.icon__theme.theme-changer__icon.theme-changer__icon--moon: use(href='/misc/sprite.svg#icon-moon')
+    .header__misc
+      a.link.header__search(href="/search", aria-label='search page')
+        svg.icon: use(href='/misc/sprite.svg#icon-search')
+      button.button.theme-changer.header__theme(aria-label='Change Theme')
+        svg.icon.icon__theme.theme-changer__icon.theme-changer__icon--sun: use(href='/misc/sprite.svg#icon-sun')
+        svg.icon.icon__theme.theme-changer__icon.theme-changer__icon--moon: use(href='/misc/sprite.svg#icon-moon')
 
   //- IF THE PAGE IS ABOUT PAGE, THE BLOCK BELOW WILL GET POPULATED
   block header__info

@@ -7,6 +7,7 @@ import getAnswers from '../fetchers/getAnswers.js';
 import getTopic from '../fetchers/getTopic.js';
 import { nonSlugRoutes } from '../utils/constants.js';
 import getProfile from '../fetchers/getProfile.js';
+import getSearch from '../fetchers/getSearch.js';
 
 ////////////////////////////////////////////////////////
 //                     EXPORTS
@@ -83,20 +84,37 @@ export const profile = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-export const unimplemented = (req, res, next) => {
-  const message =
-    "This route isn't yet implemented. Check back sometime later!";
-  res.status(501).render('error', {
-    data: {
-      statusCode: 501,
-      message,
+export const search = catchAsyncErrors(async (req, res, next) => {
+  const searchText = req.urlObj.searchParams.get('q')?.trim();
+
+  let searchData = null;
+  if (searchText) searchData = await getSearch(req.urlObj.search);
+
+  res.status(200).render('search', {
+    data: searchData,
+    meta: {
+      title: searchText || 'Search',
+      url: req.urlObj.href,
+      imageUrl: `${req.urlObj.origin}/icon.svg`,
+      description: searchText ? `results for '${searchText}'` : 'search page',
     },
+  });
+});
+
+export const unimplemented = (req, res, next) => {
+  const data = {
+    message: "This route isn't yet implemented. Check back sometime later!",
+    statusCode: 501,
+  };
+
+  res.status(data.statusCode).render('error', {
+    data,
     meta: {
       title: 'Not yet implemented',
       url: `${req.urlObj.origin}${req.urlObj.pathname}`,
       imageUrl: `${req.urlObj.origin}/icon.svg`,
       urlObj: req.urlObj,
-      description: message,
+      description: data.message,
     },
   });
 };

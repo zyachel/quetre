@@ -6,12 +6,13 @@ import {
   topic,
   image,
   profile,
+  search,
 } from '../controllers/apiController.js';
 
 const apiRouter = express.Router();
 
-apiRouter.get('/', about);
-apiRouter.get('/search', unimplemented);
+apiRouter.get('/(|search)', search);
+apiRouter.get('/about', about);
 apiRouter.get('/image/:domain/:path', image);
 apiRouter.get('/profile/:name', profile);
 apiRouter.get('/topic/:slug', topic);
