@@ -1,3 +1,12 @@
+## [5.1.1](https://github.com/zyachel/quetre/compare/v5.1.0...v5.1.1) (2022-10-30)
+
+
+### Bug Fixes
+
+* fix accidental console.log statement in template ([f719b3c](https://github.com/zyachel/quetre/commit/f719b3c4c91c504db35d1077bd05aa149b0f42db))
+
+
+
 # [5.1.0](https://github.com/zyachel/quetre/compare/v5.0.0...v5.1.0) (2022-10-30)
 
 
@@ -46,15 +55,6 @@ closes https://github.com/zyachel/quetre/issues/68
 ### Bug Fixes
 
 * broken layout on Tor instances ([dfec2b5](https://github.com/zyachel/quetre/commit/dfec2b5ebd0413606f64cd9f67a370aaf3d809fa))
-
-
-
-# [3.3.0](https://github.com/zyachel/quetre/compare/v3.2.0...v3.3.0) (2022-08-03)
-
-
-### Features
-
-* add profile route ([49f5a3e](https://github.com/zyachel/quetre/commit/49f5a3e74e1c5cfd058ab2a1cc12bf5d9799a1c7))
 
 
 
