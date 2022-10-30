@@ -75,7 +75,6 @@ block content
         - else
           .search-results__container
             each item in data.results
-              - console.log(item.type) // temporary
               .search-results__item
                 - if (item.type === 'answer')
                   +addAnswer(item, true)
