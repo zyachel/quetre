@@ -45,6 +45,10 @@ $misc-vars: (
 );
 
 $themed-vars: (
+  color-scheme: (
+    light: 'light',
+    dark: 'dark',
+  ),
   // base
   clr-base-bg:
     (
@@ -152,5 +156,5 @@ $themed-vars: (
   clr-focus: (
     light: color.scale($clr-highlight, $lightness: 0%, $saturation: 0%),
     dark: color.scale($clr-highlight),
-  )
+  ),
 );

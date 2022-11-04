@@ -12,36 +12,45 @@ import AppError from '../utils/AppError.js';
 /**
  *
  * @param {string} resourceStr a string after the baseURL
+ * @param {string} keyword
+ * @param {boolean}} toEncode
  * @returns JSON containing the result
  * @description makes a call to quora.com(with the resourceStr appended) and returns parsed JSON containing the data about the resource requested.
  * @example await fetcher('What-is-free-and-open-software'); // will return object containing answers
  * await fetcher('topic/Space-Physics'); // will return 'space physics' topic object
  * await fetcher('profile/Charlie-Cheever'); // will return object containing information about charlie cheever
  */
-const fetcher = async resourceStr => {
+const fetcher = async (resourceStr, keyword = '', toEncode = true) => {
   try {
-    // as url might contain unescaped chars. so, encodeing it right away
-    const res = await axiosInstance.get(encodeURIComponent(resourceStr));
+    // as url might contain unescaped chars. so, encoding it right away
+    const str = toEncode ? encodeURIComponent(resourceStr) : resourceStr;
+    const res = await axiosInstance.get(str);
 
     const $ = cheerio.load(res.data);
 
-    // this logic is prone to breakage as Quora changes position of the script that includes answers.
-    // Cur position: 4th from bottom.
-    const rawData = $('body script:nth-last-child(4)')
-      .html()
-      ?.match(/"\{.*\}"/m)?.[0];
+    const regex = new RegExp(`"{\\\\"data\\\\":\\{\\\\"${keyword}.*\\}"`); // equivalent to /"\{\\"data\\":\{\\"searchConnection.*\}"/
+
+    let rawData;
+    $('body script').each((i, el) => {
+      const extractedVal = $(el).html().match(regex)?.[0];
+
+      if (extractedVal) {
+        rawData = extractedVal;
+        return false; // breaks loop
+      }
+      return true;
+    });
 
     if (!rawData || !Object.entries(rawData).length)
       throw new AppError("couldn't retrieve data", 500);
 
-    const data = JSON.parse(rawData);
-
-    return data;
+    return JSON.parse(rawData);
   } catch (err) {
-    if (err.response?.status === 404) throw new AppError('Not found', 404);
-    else if (err.response?.status === 429)
+    const statusCode = err.response?.status;
+    if (statusCode === 404) throw new AppError('Not found', 404);
+    else if (statusCode === 429 || statusCode === 403)
       throw new AppError(
-        'Quora is rate limiting this instance. Consider hosting your own. Instructions are at Github',
+        'Quora is rate limiting this instance. Try another or host your own.',
         503
       );
     else throw err;

@@ -6,13 +6,14 @@ import {
   topic,
   unimplemented,
   profile,
+  search,
 } from '../controllers/viewController.js';
 
 const viewRouter = express.Router();
 
-viewRouter.get('/', about);
+viewRouter.get('/(|search)', search); // search on / or /search
+viewRouter.get('/about', about);
 viewRouter.get('/privacy', privacy);
-viewRouter.get('/search', unimplemented);
 viewRouter.get('/profile/:name', profile);
 viewRouter.get('/topic/:slug', topic);
 viewRouter.get('/unanswered/:slug', answers);

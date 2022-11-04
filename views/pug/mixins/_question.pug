@@ -1,9 +1,9 @@
 //-//////////////////////////////////////////////////////
 //-                 INCLUDES/EXTENDS
 //-//////////////////////////////////////////////////////
-include ../mixins/_formatText
-include ../mixins/_metadata
-include ../mixins/_utils
+include _formatText
+include _metadata
+include _utils
 
 //-//////////////////////////////////////////////////////
 //-                 MAIN CONTENT
@@ -19,5 +19,6 @@ mixin addQuestion(question)
       if question.lastFollowTime
         +addMetadataSecondary('clock-edit', 'Last followed', question.lastFollowTime, 'date')
       +addMetadataSecondary('users', 'Followers', question.numFollowers)
-      +addMetadataSecondary('answers', 'Answers', question.numAnswers)
+      if question.numAnswers
+        +addMetadataSecondary('answers', 'Answers', question.numAnswers)
       +addMetadataSecondary('comments', 'Comments', question.numComments)

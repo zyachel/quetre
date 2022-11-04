@@ -52,15 +52,17 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.iket.me](https://quetre.iket.me/) | Canada | OVHCloud | Official instance |
 | [quora.vern.cc](https://qr.vern.cc) | Canada | OVHCloud | Operated by [~vern](https://vern.cc/) |
 | [quetre.pussthecat.org](https://quetre.pussthecat.org/) | Germany | &ndash; | Operated by [PussTheCat.org](https://pussthecat.org/) |
-| [wuetre.herokuapp.com](https://wuetre.herokuapp.com/) | Europe | Heroku | Operated by AnonymousZ |
 | [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S. | Heroku | Operated by [toyboatcash](https://github.com/toyboatcash) |
 | [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/) | U.S. | Oracle | Operated by [Tokhmi](https://tokhmi.xyz) |
 | [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt/) | Europe | BuyVM | Operated by [Project Segfault](https://projectsegfau.lt) |
 | [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
 | [quetre.odyssey346.dev](https://quetre.odyssey346.dev) | Poland | OVHCloud | Operated by [Odyssey346](https://odyssey346.dev/) |
+| [quetre.privacydev.net](https://quetre.privacydev.net) | U.S. | BuyVM | Operated by [PrivacyDev](https://privacydev.net/) |
+| [ask.habedieeh.re](https://ask.habedieeh.re) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
 | 2. Onion | | | |
 | [quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion](http://quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
 | [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
+| [ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion](http://ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion/) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
 | 3. I2P | | | |
 | [http://qr.vern.i2p/](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
 
@@ -136,7 +138,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 - Data collected by other services
 
-  If you're using the official instance(which is deployed on Heroku), Heroku might log your IP to prevent abuse. Also, as Quetre connects to 'cdn.jsdelivr.net' for MathJax library respectively, this services might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
+  As Quetre connects to 'cdn.jsdelivr.net' for MathJax library, jsdelivr might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
 
 ---
 
@@ -186,9 +188,9 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 ## To-Do
 
-- [ ] add missing routes like topics, profile, and search
+- [x] add missing routes like topics, profile, and search
 - [ ] use redis
-- [ ] serve images and other assets from Quetre
+- [x] serve images and other assets from Quetre
 - [x] implement a better installation method
 - [ ] implement other trivial routes like a specific answer, spaces, etc.
 - [ ] implement a way to get more answers(not a big priority as of now)
@@ -220,6 +222,12 @@ There is a [docker image](https://github.com/PussTheCat-org/docker-quetre-quay) 
 
 ---
 
+## Contributing
+
+The development may seem slow as I don't have lots of free time. And whenever I do, it gets split between this service and [libremdb](https://github.com/zyachel/libremdb/).  
+If you believe you can help furthering this project in any way(be it maintaining, fixing issues, or adding features), please [get in touch](#contact).  
+Regardless, any type of contribution is always welcome.
+
 ## Misc
 
 ### Automatic redirection
@@ -228,19 +236,19 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
 
 - [redirector](https://github.com/einaregilsson/Redirector)  
   You can manually add any redirect.
-  Below is a basic config of Quora to Quetre. Replace `quetre.herokuapp.com` in `Redirect to` to any instance of your choice.
+  Below is a basic config of Quora to Quetre. Replace `quetre.iket.me` in `Redirect to` to any instance of your choice.
 
   ```
   Description: Quora to Quetre
   Example URL: https://www.quora.com/What-is-Linux-4?share=1
   Include pattern: https?:\/\/(www\.)?quora\.com\/([^\?]*)
-  Redirect to: https://quetre.herokuapp.com/$2
+  Redirect to: https://quetre.iket.me/$2
   Pattern type: Regular Expression
   Pattern description: redirects all Quora urls(excluding language-specific and spaces) to Quetre
   ```
 
   This config should output:  
-  `Example result: https://quetre.herokuapp.com/What-is-Linux-4`
+  `Example result: https://quetre.iket.me/What-is-Linux-4`
 
 - [LibRedirect](https://github.com/libredirect/libredirect/)  
   Redirects many popular services to their alternative front-ends. Has a ton of features and an active community. Quetre is supported by default. So, no need to do anything.

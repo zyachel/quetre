@@ -10,7 +10,7 @@ import fetcher from './fetcher.js';
 ////////////////////////////////////////////////////////
 const getAnswers = async slug => {
   // getting data and destructuring it in case it exists
-  const res = await fetcher(slug);
+  const res = await fetcher(slug, 'question');
 
   const {
     data: { question: rawData },

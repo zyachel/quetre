@@ -1,3 +1,38 @@
+## [5.1.1](https://github.com/zyachel/quetre/compare/v5.1.0...v5.1.1) (2022-10-30)
+
+
+### Bug Fixes
+
+* fix accidental console.log statement in template ([f719b3c](https://github.com/zyachel/quetre/commit/f719b3c4c91c504db35d1077bd05aa149b0f42db))
+
+
+
+# [5.1.0](https://github.com/zyachel/quetre/compare/v5.0.0...v5.1.0) (2022-10-30)
+
+
+### Features
+
+* add search functionality ([1cdafe0](https://github.com/zyachel/quetre/commit/1cdafe0380df6e00285777f757c0b2c76b78b371))
+* improve data fetching logic ([86df583](https://github.com/zyachel/quetre/commit/86df58367a147939ebd4057071d5450556737eac))
+
+
+
+# [5.0.0](https://github.com/zyachel/quetre/compare/v4.0.0...v5.0.0) (2022-10-14)
+
+
+### Bug Fixes
+
+* **fetcher.js:** fix broken data fetching logic ([5e1d605](https://github.com/zyachel/quetre/commit/5e1d60525ed04d22cbc71c101fbbb96f4e200b73))
+
+
+### BREAKING CHANGES
+
+* **fetcher.js:** previous versions won't work
+
+fix https://github.com/zyachel/quetre/issues/72
+
+
+
 # [4.0.0](https://github.com/zyachel/quetre/compare/v3.3.1...v4.0.0) (2022-09-22)
 
 
@@ -20,39 +55,6 @@ closes https://github.com/zyachel/quetre/issues/68
 ### Bug Fixes
 
 * broken layout on Tor instances ([dfec2b5](https://github.com/zyachel/quetre/commit/dfec2b5ebd0413606f64cd9f67a370aaf3d809fa))
-
-
-
-# [3.3.0](https://github.com/zyachel/quetre/compare/v3.2.0...v3.3.0) (2022-08-03)
-
-
-### Features
-
-* add profile route ([49f5a3e](https://github.com/zyachel/quetre/commit/49f5a3e74e1c5cfd058ab2a1cc12bf5d9799a1c7))
-
-
-
-# [3.2.0](https://github.com/zyachel/quetre/compare/v3.1.1...v3.2.0) (2022-07-24)
-
-
-### Bug Fixes
-
-* fix a fatal bug in viewController.js ([33c90c1](https://github.com/zyachel/quetre/commit/33c90c17b12cf15eadde16d35fbba4cede10919b))
-* fix paragraph tag occuring inside heading tags ([65d14ba](https://github.com/zyachel/quetre/commit/65d14ba47c0d3bb1d2548972478a12a43f7e7500))
-
-
-### Features
-
-* add support for embedded content in answers ([bae2d7b](https://github.com/zyachel/quetre/commit/bae2d7b4f7f945d7eb55dddb4bd7e49ac21b2ae1))
-
-
-
-## [3.1.1](https://github.com/zyachel/quetre/compare/v3.1.0...v3.1.1) (2022-07-22)
-
-
-### Bug Fixes
-
-* browser theme preference not being respected when js is enabled ([40668b9](https://github.com/zyachel/quetre/commit/40668b92b5aa5c1b10cb265dc781066320cccce8))
 
 
 
