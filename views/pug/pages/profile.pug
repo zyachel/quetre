@@ -36,7 +36,7 @@ block content
     section.profile__meta.profile-meta
       .profile-meta__basic
         .metadata-primary.profile-meta__about
-          img.metadata-primary__image.profile-meta__image(src=data.basic.image.replace('https://', "/api/v1/image/"), alt=`${data.basic.name}'s profile photo`, loading='lazy')
+          +proxifyImg(data.basic.image)(class='metadata-primary__image profile-meta__image', alt='', aria-hidden='true')
           h1.heading.heading__primary.metadata-primary__heading.profile-meta__heading-name.profile__name= data.basic.name
             if data.basic.isVerified
               svg.icon.metadata-primary__icon.profile-meta__icon
@@ -150,7 +150,7 @@ block content
         ul.profile-spaces__list
           each space in data.spaces.spaces
             li.metadata-primary.profile-spaces__list-item
-              img.metadata-primary__image(src=space.image.replace('https://', '/api/v1/image/'), alt=`dedicated photo of ${space.name} space`)
+              +proxifyImg(space.image)(class='metadata-primary__image', alt='', aria-hidden='true')
               a.link.metadata-primary__heading(href=space.url)= space.name
               p.metadata-primary__misc
                 +formatNumber(space.numItems)
@@ -166,7 +166,7 @@ block content
         ul.profile-topics__list
           each topic in data.topics.topics
             li.metadata-primary.profile-topics__list-item
-              img.metadata-primary__image.profile-topics__img(src=topic.image.replace('https://', '/api/v1/image/'), alt=`image depicting ${topic.name} topic`)
+              +proxifyImg(topic.image)(class='metadata-primary__image profile-topics__img', alt='', aria-hidden='true')
               a.link.metadata-primary__heading(href=topic.url)= topic.name
               p.metadata-primary__misc
                 +formatNumber(topic.numAnswers)
@@ -185,7 +185,7 @@ block content
             //-     svg.icon.profile__icon: use(href='/misc/sprite.svg#icon-verified')
             //-     span pinned
             - if (item.type === 'answer')
-              +addAnswer(item)
+              +addAnswer(item, true)
             - else if (item.type === 'question')
               +addQuestion(item)
             - else if (item.type === 'post')

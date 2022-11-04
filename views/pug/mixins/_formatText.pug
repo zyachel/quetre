@@ -39,7 +39,7 @@ mixin formatText(text)
     //-  handle images
     -if(para.type ==='image')
       .text__para.text__image-container
-        img.text__image(src=para.spans[0].modifiers.master_url.replace('https://', "/api/v1/image/"), alt='User embedded image', loading='lazy')
+        +proxifyImg(para.spans[0].modifiers.master_url)(class='text__image', alt='User embedded image')
     //- handle code blocks
     - else if (para.type ==='code')
       pre.text__para.text__code: code
@@ -57,13 +57,13 @@ mixin formatText(text)
       hr.text__para.text__hr
     //- handling embedded youtube video
     - else if(para.type === 'yt-embed')
-        .text__para.text__embed
-          a.text__span-link.text__link(href=para.spans[0].modifiers.embed.url) (link to user-embedded YouTube video)
+      .text__para.text__embed
+        a.text__span-link.text__link(href=para.spans[0].modifiers.embed.url) (link to user-embedded YouTube video)
     //- handling embedded tweet
     - else if(para.type === 'tweet')
-        .text__para.text__embed.text__embed-tweet
-          //- directly pasting raw HTML which pug will process just fine
-          | !{para.spans[0].modifiers.embed.html}
+      .text__para.text__embed.text__embed-tweet
+        //- directly pasting raw HTML which pug will process just fine
+        | !{para.spans[0].modifiers.embed.html}
     //- rest of the types that don't need/can't be put in a semantic html tag
     - else
       p(class=`text__para text__${para.type}`)

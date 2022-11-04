@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 ////////////////////////////////////////////////////////
 //                     IMPORTS
 ////////////////////////////////////////////////////////
@@ -6,6 +7,7 @@ import catchAsyncErrors from '../utils/catchAsyncErrors.js';
 import getAnswers from '../fetchers/getAnswers.js';
 import getTopic from '../fetchers/getTopic.js';
 import getProfile from '../fetchers/getProfile.js';
+import getSearch from '../fetchers/getSearch.js';
 
 ////////////////////////////////////////////////////////
 //                     EXPORTS
@@ -31,6 +33,15 @@ export const topic = catchAsyncErrors(async (req, res, next) => {
 export const profile = catchAsyncErrors(async (req, res, next) => {
   const data = await getProfile(req.params.name);
   res.status(200).json({ status: 'success', data });
+});
+
+export const search = catchAsyncErrors(async (req, res, next) => {
+  const searchText = req.urlObj.searchParams.get('q')?.trim(); // no search to perform if there isn't any query
+
+  let searchData = null;
+  if (searchText) searchData = await getSearch(req.urlObj.search);
+
+  res.status(200).json({ status: 'success', data: searchData });
 });
 
 export const unimplemented = (req, res, next) => {
