@@ -59,6 +59,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.odyssey346.dev](https://quetre.odyssey346.dev) | Poland | OVHCloud | Operated by [Odyssey346](https://odyssey346.dev/) |
 | [quetre.privacydev.net](https://quetre.privacydev.net) | U.S. | BuyVM | Operated by [PrivacyDev](https://privacydev.net/) |
 | [ask.habedieeh.re](https://ask.habedieeh.re) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
+| [quetre.marcopisco.com](https://quetre.marcopisco.com) | Portugal | Vodafone Portugal (Cloudflare) | Operated by [marcopisco.com](https://www.marcopisco.com) |
 | 2. Onion | | | |
 | [quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion](http://quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
 | [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
