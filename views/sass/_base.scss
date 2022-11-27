@@ -141,26 +141,3 @@ body {
     @include focus-rules;
   }
 }
-
-////////////////////////////////////////////////////////
-//                   FOR MATHJAX
-////////////////////////////////////////////////////////
-mjx-container.MathJax {
-  pointer-events: none;
-}
-/*
-.CtxtMenu_ContextMenu,
-.CtxtMenu_Info {
-  background-color: var(--clr-base-bg) !important;
-  font-family: inherit !important;
-  color: inherit !important;
-}
-.CtxtMenu_InfoTitle,
-.CtxtMenu_InfoSignature,
-.CtxtMenu_MenuClose .CtxtMenu_InfoClose,
-.CtxtMenu_InfoContent {
-  font-family: inherit !important;
-  background: inherit !important;
-  color: inherit !important;
-}
-*/

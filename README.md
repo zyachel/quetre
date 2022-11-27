@@ -136,10 +136,6 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
   A key called 'theme' is stored in local storage provided by your browser to store your theme preference should you override the default theme. To prevent this behaviour, either disable JavaScript or local storage for Quetre.
 
-- Data collected by other services
-
-  As Quetre connects to 'cdn.jsdelivr.net' for MathJax library, jsdelivr might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
-
 ---
 
 ## FAQs
@@ -155,10 +151,6 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 - There are some unreachable routes.
 
   I'm working to implement them soon. Keep an eye on [To-Do list](#to-do).
-
-- Why is the website connecting to 'cdn.jsdelivr.net'?
-
-  It is for an open source library – [Mathjax](https://www.mathjax.org/) – which is used to display math eqations nicely. If I get enough time, I'll include it locally.
 
 - Why are some math equations showing up weirdly?
 
