@@ -1,3 +1,12 @@
+# [5.2.0](https://github.com/zyachel/quetre/compare/v5.1.1...v5.2.0) (2022-11-27)
+
+
+### Features
+
+* self hosted mathjax ([30d06dc](https://github.com/zyachel/quetre/commit/30d06dc0ffa1b0b362952a16ebdccc9ec2b804b9))
+
+
+
 ## [5.1.1](https://github.com/zyachel/quetre/compare/v5.1.0...v5.1.1) (2022-10-30)
 
 
@@ -46,15 +55,6 @@ fix https://github.com/zyachel/quetre/issues/72
 * previous fetcher.js won't work as Quora again changed their HTML
 
 closes https://github.com/zyachel/quetre/issues/68
-
-
-
-## [3.3.1](https://github.com/zyachel/quetre/compare/v3.3.0...v3.3.1) (2022-09-12)
-
-
-### Bug Fixes
-
-* broken layout on Tor instances ([dfec2b5](https://github.com/zyachel/quetre/commit/dfec2b5ebd0413606f64cd9f67a370aaf3d809fa))
 
 
 
