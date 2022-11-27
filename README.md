@@ -50,7 +50,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | -------- | ------ | -------- | ----- |
 | 1. Clearnet | | | |
 | [quetre.iket.me](https://quetre.iket.me/) | Canada | OVHCloud | Official instance |
-| [quora.vern.cc](https://qr.vern.cc) | Canada | OVHCloud | Operated by [~vern](https://vern.cc/) |
+| [quora.vern.cc](https://qr.vern.cc) | US | Hetzner | Operated by [~vern](https://vern.cc/) |
 | [quetre.pussthecat.org](https://quetre.pussthecat.org/) | Germany | &ndash; | Operated by [PussTheCat.org](https://pussthecat.org/) |
 | [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S. | Heroku | Operated by [toyboatcash](https://github.com/toyboatcash) |
 | [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/) | U.S. | Oracle | Operated by [Tokhmi](https://tokhmi.xyz) |
@@ -62,10 +62,10 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.marcopisco.com](https://quetre.marcopisco.com) | Portugal | Vodafone Portugal (Cloudflare) | Operated by [marcopisco.com](https://www.marcopisco.com) |
 | 2. Onion | | | |
 | [quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion](http://quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
-| [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
+| [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
 | [ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion](http://ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion/) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
 | 3. I2P | | | |
-| [http://qr.vern.i2p/](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
+| [http://qr.vern.i2p/](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
 
 ---
 
