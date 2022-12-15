@@ -52,7 +52,6 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.iket.me](https://quetre.iket.me/) | Canada | OVHCloud | Official instance |
 | [quora.vern.cc](https://qr.vern.cc) | US | Hetzner | Operated by [~vern](https://vern.cc/) |
 | [quetre.pussthecat.org](https://quetre.pussthecat.org/) | Germany | &ndash; | Operated by [PussTheCat.org](https://pussthecat.org/) |
-| [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S. | Heroku | Operated by [toyboatcash](https://github.com/toyboatcash) |
 | [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/) | U.S. | Oracle | Operated by [Tokhmi](https://tokhmi.xyz) |
 | [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt/) | Europe | BuyVM | Operated by [Project Segfault](https://projectsegfau.lt) |
 | [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
