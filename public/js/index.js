@@ -48,3 +48,8 @@ btnTheme.addEventListener('click', () => {
   if (userPrefersTheme) setTheme(userPrefersTheme);
   else if (browserPrefersDarkTheme) setTheme('dark');
 })();
+
+////////////////////////////////////////////////////////
+//                   MATHJAX CONFIG
+////////////////////////////////////////////////////////
+window.MathJax = { options: { enableMenu: false } };
