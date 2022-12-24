@@ -213,7 +213,8 @@ Quetre will start running at http://localhost:3000.
 
 ### Docker
 
-There is a [docker image](https://github.com/PussTheCat-org/docker-quetre-quay) made by [@TheFrenchGhosty](https://github.com/TheFrenchGhosty) for [PussTheCat.org](https://pussthecat.org/)'s [instance](https://quetre.pussthecat.org/). You can check that out case you want to go the docker way.
+There is a [docker image](https://github.com/PussTheCat-org/docker-quetre-quay) made by [@TheFrenchGhosty](https://github.com/TheFrenchGhosty) for [PussTheCat.org](https://pussthecat.org/)'s [instance](https://quetre.pussthecat.org/).  
+If you want a leaner one, you can checkout [@video-prize-ranch](https://codeberg.org/video-prize-ranch)'s [docker image](https://codeberg.org/video-prize-ranch/-/packages/container/quetre/latest).
 
 ---
 
