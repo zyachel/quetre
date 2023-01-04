@@ -62,6 +62,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.blackdrgn.nl](https://quetre.blackdrgn.nl) | Germany | Contabo | Operated by [blackdrgn.nl](https://blackdrgn.nl) |
 | [quetre.pufe.org](https://quetre.pufe.org) | New Zealand | - | Operated by pufe.org |
 | [quetre.lunar.icu](https://quetre.lunar.icu) | - | - | Operated by [lunar.icu](https://lunar.icu/) |
+| [que.wilbvr.me](https://que.wilbvr.me) | Netherlands | Liga Hosting | Operated by [Wilbvr](https://wilbvr.me) |
 | 2. Onion | | | |
 | [quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion](http://quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
 | [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
