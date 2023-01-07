@@ -1,3 +1,17 @@
+# [5.4.0](https://github.com/zyachel/quetre/compare/v5.3.0...v5.4.0) (2023-01-07)
+
+
+### Bug Fixes
+
+* **routes:** add unimplemented error message to `space` route ([8820f36](https://github.com/zyachel/quetre/commit/8820f36af80f29d861a47526538293357e7c32f3))
+
+
+### Features
+
+* **lang:** add ability to choose language in search route ([cca6f69](https://github.com/zyachel/quetre/commit/cca6f69deda235fa87416e28a4dd557698974e3d))
+
+
+
 # [5.3.0](https://github.com/zyachel/quetre/compare/v5.2.0...v5.3.0) (2023-01-07)
 
 
@@ -32,22 +46,6 @@
 
 * add search functionality ([1cdafe0](https://github.com/zyachel/quetre/commit/1cdafe0380df6e00285777f757c0b2c76b78b371))
 * improve data fetching logic ([86df583](https://github.com/zyachel/quetre/commit/86df58367a147939ebd4057071d5450556737eac))
-
-
-
-# [5.0.0](https://github.com/zyachel/quetre/compare/v4.0.0...v5.0.0) (2022-10-14)
-
-
-### Bug Fixes
-
-* **fetcher.js:** fix broken data fetching logic ([5e1d605](https://github.com/zyachel/quetre/commit/5e1d60525ed04d22cbc71c101fbbb96f4e200b73))
-
-
-### BREAKING CHANGES
-
-* **fetcher.js:** previous versions won't work
-
-fix https://github.com/zyachel/quetre/issues/72
 
 
 
