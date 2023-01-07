@@ -2,7 +2,7 @@
 ////////////////////////////////////////////////////////
 //                     IMPORTS
 ////////////////////////////////////////////////////////
-import axiosInstance from '../utils/axiosInstance.js';
+import getAxiosInstance from '../utils/getAxiosInstance.js';
 import catchAsyncErrors from '../utils/catchAsyncErrors.js';
 import getAnswers from '../fetchers/getAnswers.js';
 import getTopic from '../fetchers/getTopic.js';
@@ -15,18 +15,24 @@ import getSearch from '../fetchers/getSearch.js';
 export const about = (req, res, next) => {
   res.status(200).json({
     status: 'success',
-    message:
-      "make a request. available endpoints are: '/some-slug', '/unanswered/some-slug'",
+    message: `make a request. 
+    available endpoints are: '/slug', '/unanswered/slug', '/topic/slug', '/profile/slug', '/search?q=query', /?q=query.`,
   });
 };
 
 export const answers = catchAsyncErrors(async (req, res, next) => {
-  const data = await getAnswers(req.params.slug);
+	const { slug } = req.params;
+	const { lang } = req.query;
+
+  const data = await getAnswers(slug, lang);
   res.status(200).json({ status: 'success', data });
 });
 
 export const topic = catchAsyncErrors(async (req, res, next) => {
-  const data = await getTopic(req.params.slug);
+	const { slug } = req.params;
+	const { lang } = req.query;
+
+  const data = await getTopic(slug, lang);
   res.status(200).json({ status: 'success', data });
 });
 
@@ -52,17 +58,19 @@ export const unimplemented = (req, res, next) => {
 };
 
 export const image = catchAsyncErrors(async (req, res, next) => {
-  if (!req.params.domain.endsWith('quoracdn.net')) {
+  const { domain, path } = req.params;
+  if (!domain.endsWith('quoracdn.net')) {
     return res.status(403).json({
       status: 'fail',
       message: 'Invalid domain',
     });
   }
+  // changing defaults for this particular endpoint
+  const axiosInstance = getAxiosInstance();
+  axiosInstance.defaults.baseURL = `https://${domain}/`;
 
-  const imageRes = await axiosInstance.get(
-    `https://${req.params.domain}/${req.params.path}`,
-    { responseType: 'arraybuffer' }
-  );
+  const imageRes = await axiosInstance.get(path, { responseType: 'stream' });
+
   res.set('Content-Type', imageRes.headers['content-type']);
-  res.status(200).send(imageRes.data);
+  return imageRes.data.pipe(res);
 });

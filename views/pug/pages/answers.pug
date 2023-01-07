@@ -18,7 +18,7 @@ block content
       .answers__metadata
         p.answers__answers-total= `${ data.numAnswers ? 'Total answers: ' + data.numAnswers : 'Unanswered'}`
         p.answers__answers-shown Viewable answers: #{data.answers.length}
-        a.answers__question-link.answers__link(href='https://www.quora.com' + data.question.url) View on Quora
+        +quorafyUrl(data.question.url)(class='answers__question-link answers__link')
 
     //- ANSWERS TO THIS QUESTION
     .answers-box.answers__answers-box

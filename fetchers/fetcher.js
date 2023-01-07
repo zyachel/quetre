@@ -3,29 +3,31 @@
 //                      IMPORTS
 ////////////////////////////////////////////////////////
 import * as cheerio from 'cheerio';
-import axiosInstance from '../utils/axiosInstance.js';
+import getAxiosInstance from '../utils/getAxiosInstance.js';
 import AppError from '../utils/AppError.js';
 
 ////////////////////////////////////////////////////////
 //                     FUNCTION
 ////////////////////////////////////////////////////////
 /**
- *
+ * makes a call to quora.com(with the resourceStr appended) and returns parsed JSON containing the data about the resource requested.
  * @param {string} resourceStr a string after the baseURL
- * @param {string} keyword
- * @param {boolean}} toEncode
+ * @param {{keyword: string, lang?: string, toEncode?: boolean}} options additional options
  * @returns JSON containing the result
- * @description makes a call to quora.com(with the resourceStr appended) and returns parsed JSON containing the data about the resource requested.
  * @example await fetcher('What-is-free-and-open-software'); // will return object containing answers
  * await fetcher('topic/Space-Physics'); // will return 'space physics' topic object
  * await fetcher('profile/Charlie-Cheever'); // will return object containing information about charlie cheever
  */
-const fetcher = async (resourceStr, keyword = '', toEncode = true) => {
+const fetcher = async (
+  resourceStr,
+  { keyword, lang, toEncode = true }
+) => {
   try {
     // as url might contain unescaped chars. so, encoding it right away
     const str = toEncode ? encodeURIComponent(resourceStr) : resourceStr;
+    const axiosInstance = getAxiosInstance(lang);
     const res = await axiosInstance.get(str);
-
+    
     const $ = cheerio.load(res.data);
 
     const regex = new RegExp(`"{\\\\"data\\\\":\\{\\\\"${keyword}.*\\}"`); // equivalent to /"\{\\"data\\":\{\\"searchConnection.*\}"/

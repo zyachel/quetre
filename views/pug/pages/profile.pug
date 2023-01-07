@@ -60,7 +60,7 @@ block content
             +addMetadataSecondary('flower', 'Deceased', '', 'empty')
           if data.basic.isBusiness
             +addMetadataSecondary('briefcase', 'Business', '', 'empty')
-          a.link(href='https://www.quora.com' + data.basic.profile) View on Quora
+          +quorafyUrl(data.basic.profile)(class='link')
 
       if data.profileFeed.description[0].spans[0].text
         .profile-meta__description

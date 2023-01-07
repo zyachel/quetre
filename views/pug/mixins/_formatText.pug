@@ -17,7 +17,7 @@ mixin spansChecker(spans)
       a.text__span-link.text__link(href=span.modifiers.embed.url)= span.modifiers.embed.title || '(link to user embedded content)'
     //- handle links
     - else if (span.modifiers.link) //- removing quora.com from the link in case it is a quora.com link.
-      a.text__span-link.text__link(href=span.modifiers.link.url.split('https://www.quora.com')[1] || span.modifiers.link.url)=span.text
+      +quetrefyUrl(span.modifiers.link.url, span.text)(class='text__span-link text__link')
     //- handle bold + italic text
     - else if (!!span.modifiers.bold && !!span.modifiers.italic)
       strong.text__span-bold: em.text__span-italic= span.text

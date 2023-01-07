@@ -2,6 +2,7 @@
 //                     IMPORTS
 ////////////////////////////////////////////////////////
 import AppError from '../utils/AppError.js';
+import { quetrefy } from '../utils/urlModifiers.js';
 import fetcher from './fetcher.js';
 
 ////////////////////////////////////////////////////////
@@ -28,14 +29,14 @@ const feedAnswerCleaner = answer => ({
     isAnon: answer.author.isAnon,
     image: answer.author.profileImageUrl,
     isVerified: answer.author.isVerified,
-    url: answer.author.profileUrl,
+    url: quetrefy(answer.author.profileUrl),
     name: `${answer.author.names[0].givenName} ${answer.author.names[0].familyName}`,
     credential: answer.authorCredential?.translatedString,
     // additionalCredentials: answer?.credibilityFacts.map(),
   },
   question: {
     text: JSON.parse(answer.question.title).sections,
-    url: answer.question.url,
+    url: quetrefy(answer.question.url),
     qid: answer.question.qid,
     isDeleted: answer.question.isDeleted,
   },
@@ -45,7 +46,7 @@ const feedPostCleaner = post => ({
   isPinned: post.isPinned,
   pid: post.pid,
   isViewable: post.viewerHasAccess,
-  url: post.url,
+  url: quetrefy(post.url),
   title: JSON.parse(post.title).sections,
   isDeleted: post.isDeleted,
   text: JSON.parse(post.content).sections,
@@ -61,14 +62,14 @@ const feedPostCleaner = post => ({
     image: post.author.profileImageUrl,
     isVerified: post.author.isVerified,
     isPlusUser: post.author.consumerBundleActive,
-    url: post.author.profileUrl,
+    url: quetrefy(post.author.profileUrl),
     name: `${post.author.names[0].givenName} ${post.author.names[0].familyName}`,
     credential: post.authorCredential?.translatedString,
   },
   ...(post.tribeItem && {
     space: {
       name: post.tribeItem.tribe.nameString,
-      url: post.tribeItem.tribe.url,
+      url: quetrefy(post.tribeItem.tribe.url),
       image: post.tribeItem.tribe.iconRetinaUrl,
       description: post.tribeItem.descriptionString,
       numFollowers: post.tribeItem.tribe.numFollowers,
@@ -79,7 +80,7 @@ const feedQuestionCleaner = question => ({
   type: 'question',
   text: JSON.parse(question.title).sections,
   qid: question.qid,
-  url: question.url,
+  url: quetrefy(question.url),
   isDeleted: question.isDeleted,
   numFollowers: question.followerCount,
   creationTime: question.creationTime,
@@ -105,12 +106,14 @@ const feedCleaner = feed => {
 ////////////////////////////////////////////////////////
 //                     FUNCTION
 ////////////////////////////////////////////////////////
-const getProfile = async slug => {
+const KEYWORD = 'user';
+
+const getProfile = async (slug, lang) => {
   // getting data and destructuring it in case it exists
-  const res = await fetcher(`profile/${slug}`, 'user');
+  const res = await fetcher(`profile/${slug}`, { keyword: KEYWORD, lang });
 
   const {
-    data: { user: rawData },
+    data: { [KEYWORD]: rawData },
   } = JSON.parse(res);
 
   if (!rawData)
@@ -125,7 +128,7 @@ const getProfile = async slug => {
       uid: rawData.uid,
       image: rawData.profileImageUrl,
       name: `${rawData.names[0].givenName} ${rawData.names[0].familyName}`,
-      profile: rawData.profileUrl,
+      profile: quetrefy(rawData.profileUrl),
       isDeceased: rawData.isDeceased,
       isBusiness: rawData.businessStatus,
       isBot: rawData.isUserBot,
@@ -184,7 +187,7 @@ const getProfile = async slug => {
       numFollowingSpaces: rawData.numFollowedTribes,
       spaces: rawData.followingTribesConnection.edges.map(space => ({
         numItems: space.node.numItemsOfUser,
-        url: space.node.url,
+        url: quetrefy(space.node.url),
         name: space.node.nameString,
         image: space.node.iconRetinaUrl,
         isSensitive: space.node.isSensitive,
@@ -194,7 +197,7 @@ const getProfile = async slug => {
       numFollowingTopics: rawData.numFollowedTopics,
       topics: rawData.expertiseTopicsConnection.edges.map(topic => ({
         name: topic.node.name,
-        url: topic.node.url,
+        url: quetrefy(topic.node.url),
         isSensitive: topic.node.isSensitive,
         numFollowers: topic.node.numFollowers,
         image: topic.node.photoUrl,
