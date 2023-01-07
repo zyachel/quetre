@@ -1,3 +1,12 @@
+# [5.3.0](https://github.com/zyachel/quetre/compare/v5.2.0...v5.3.0) (2023-01-07)
+
+
+### Features
+
+* add support for other languages ([d16ae48](https://github.com/zyachel/quetre/commit/d16ae48dcb762af6d0888b6fc556a04a4c954549))
+
+
+
 # [5.2.0](https://github.com/zyachel/quetre/compare/v5.1.1...v5.2.0) (2022-11-27)
 
 
@@ -39,22 +48,6 @@
 * **fetcher.js:** previous versions won't work
 
 fix https://github.com/zyachel/quetre/issues/72
-
-
-
-# [4.0.0](https://github.com/zyachel/quetre/compare/v3.3.1...v4.0.0) (2022-09-22)
-
-
-### Bug Fixes
-
-* fix fetcher.js ([bf266a9](https://github.com/zyachel/quetre/commit/bf266a9a8971b55400f934a1e2338e83d8fd4d38))
-
-
-### BREAKING CHANGES
-
-* previous fetcher.js won't work as Quora again changed their HTML
-
-closes https://github.com/zyachel/quetre/issues/68
 
 
 
