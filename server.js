@@ -1,6 +1,7 @@
 ////////////////////////////////////////////////////////
 //                      IMPORTS
 ////////////////////////////////////////////////////////
+// eslint-disable-next-line no-unused-vars
 import dotenv from 'dotenv/config'; // importing .env vars
 import app from './app.js';
 import log from './utils/log.js';

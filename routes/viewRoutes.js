@@ -17,6 +17,8 @@ viewRouter.get('/privacy', privacy);
 viewRouter.get('/profile/:name', profile);
 viewRouter.get('/topic/:slug', topic);
 viewRouter.get('/unanswered/:slug', answers);
+viewRouter.get('/space/:name', unimplemented);
+viewRouter.get('/space/:name/:slug', unimplemented);
 viewRouter.get('/:slug', answers);
 
 export default viewRouter;
