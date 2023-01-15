@@ -63,6 +63,12 @@ body {
       @include get-themed-vars(dark);
     }
   }
+
+  // disabling fonts for webkit
+  @include fix-for-safari {
+    --ff-primary: var(--ff-default);
+    --ff-alt-alpha: var(--ff-default);
+  }
 }
 
 .body {

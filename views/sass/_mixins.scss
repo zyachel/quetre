@@ -109,3 +109,13 @@ $breakpoints: (
     @content;
   }
 }
+
+////////////////////////////////////////////////////////////////
+//           CHECK IF BROWSER IS SAFARI(it's the new IE)
+////////////////////////////////////////////////////////////////
+
+@mixin fix-for-safari {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    @content;
+  }
+}

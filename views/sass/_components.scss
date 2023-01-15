@@ -302,6 +302,11 @@
     list-style-type: none;
 
     cursor: pointer;
+
+    // for hinding triangle on webkit
+     &::-webkit-details-marker {
+      display: none;
+    }
   }
   &__icon {
     height: 1em;
@@ -559,6 +564,12 @@
     background-color: transparent;
     font: inherit;
     caret-color: var(--clr-base-icon);
+
+    // fix for browsers with non-standard properties. yes, webkit and blink suck.
+    -webkit-appearance: none;
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
   }
 
   &__button {
