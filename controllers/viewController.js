@@ -108,6 +108,25 @@ export const search = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+const regex = /^https:\/\/(.{2,})\.quora\.com(\/.*)$/; // local helper constant
+export const redirect = (req, res, next) => {
+  const url = req.originalUrl.replace('/redirect/', ''); // removing `/redirect/` part.
+  const match = regex.exec(url);
+
+  if (!match) return res.redirect('/');
+
+  const [_, subdomain, rest] = match; // eg: subdomain: 'es', rest: '/topic/linux?share=1'
+  let link;
+
+  if (acceptedLanguages.includes(subdomain))
+    // adding lang param
+    link = `${rest}${rest.includes('?') ? '&' : '?'}lang=${subdomain}`;
+  else if (subdomain === 'www') link = rest; // doing nothing
+  else link = `/space/${subdomain}${rest}`; // gotta be a space url.
+
+  return res.redirect(link);
+};
+
 export const unimplemented = (req, res, next) => {
   const data = {
     message: "This route isn't yet implemented. Check back sometime later!",

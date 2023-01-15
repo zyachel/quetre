@@ -147,7 +147,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 - How do I use this?
 
-  Replace 'www.quora.com' in any URL with 'quetre.iket.me'. So, 'https://www.quora.com/Are-Nubians-nilotes' becomes 'https://quetre.iket.me/Are-Nubians-nilotes'.
+  Replace 'www.quora.com' in any URL with 'quetre.iket.me'(or any other instance). So, 'https://www.quora.com/Are-Nubians-nilotes' becomes 'https://quetre.iket.me/Are-Nubians-nilotes'.
 
 - I don't want to edit the URLs manually!
 
@@ -239,10 +239,10 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
   ```
   Description: Quora to Quetre
   Example URL: https://www.quora.com/What-is-Linux-4?share=1
-  Include pattern: https?:\/\/(www\.)?quora\.com\/([^\?]*)
-  Redirect to: https://quetre.iket.me/$2
+  Include pattern: (https:\/\/.{2,}\.quora\.com\/.*)
+  Redirect to: https://quetre.iket.me/redirect/$1
   Pattern type: Regular Expression
-  Pattern description: redirects all Quora urls(excluding language-specific and spaces) to Quetre
+  Pattern description: redirects all Quora urls to Quetre
   ```
 
   This config should output:  
@@ -250,6 +250,13 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
 
 - [LibRedirect](https://github.com/libredirect/libredirect/)  
   Redirects many popular services to their alternative front-ends. Has a ton of features and an active community. Quetre is supported by default. So, no need to do anything.
+
+- [Privacy Redirector](https://github.com/dybdeskarphet/privacy-redirector)  
+  A userscript that redirects popular social media platforms to their privacy respecting frontends.
+
+- Other addons with similar functionality:  
+  - [Dynamic Privacy Redirect](https://github.com/PrivacyDevel/DPR-addon)
+  - [Alter](https://github.com/w3bdev1/alter)
 
 ### Other alternative front-ends
 
