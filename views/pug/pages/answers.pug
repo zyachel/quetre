@@ -4,6 +4,7 @@
 extends ../base
 include ../mixins/_formatText
 include ../mixins/_answer
+include ../mixins/_utils
 
 //-//////////////////////////////////////////////////////
 //-                   MAIN CONTENT
@@ -18,7 +19,7 @@ block content
       .answers__metadata
         p.answers__answers-total= `${ data.numAnswers ? 'Total answers: ' + data.numAnswers : 'Unanswered'}`
         p.answers__answers-shown Viewable answers: #{data.answers.length}
-        +quorafyUrl(data.question.url)(class='answers__question-link answers__link')
+        +quorafyUrl(meta.url)(class='answers__question-link answers__link')
 
     //- ANSWERS TO THIS QUESTION
     .answers-box.answers__answers-box

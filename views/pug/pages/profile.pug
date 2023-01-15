@@ -60,7 +60,7 @@ block content
             +addMetadataSecondary('flower', 'Deceased', '', 'empty')
           if data.basic.isBusiness
             +addMetadataSecondary('briefcase', 'Business', '', 'empty')
-          +quorafyUrl(data.basic.profile)(class='link')
+          +quorafyUrl(meta.url)(class='link')
 
       if data.profileFeed.description[0].spans[0].text
         .profile-meta__description

@@ -2,6 +2,7 @@
 //-                 INCLUDES/EXTENDS
 //-//////////////////////////////////////////////////////
 extends ../base
+include ../mixins/_utils
 
 //-//////////////////////////////////////////////////////
 //-                   MAIN CONTENT
@@ -22,5 +23,5 @@ block content
       a.error__link(href="/") Home Page
       |.
     p.error__return Or view this route&nbsp;
-      a.error__link(href="https://www.quora.com" + meta.urlObj.pathname) on Quora
+      +quorafyUrl(meta.url, 'on Quora')(class='error__link')
       |.

@@ -43,8 +43,7 @@ const fetcher = async (
       return true;
     });
 
-    if (!rawData || !Object.entries(rawData).length)
-      throw new AppError("couldn't retrieve data", 500);
+    if (!rawData) throw new AppError("couldn't retrieve data", 500);
 
     return JSON.parse(rawData);
   } catch (err) {

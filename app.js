@@ -50,9 +50,7 @@ app.use(
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev')); // for logging during development
 // middleware to add baseUrl to req object
 app.use((req, res, next) => {
-  req.urlObj = new URL(
-    `${req.protocol}://${req.get('host')}${req.originalUrl}`
-  );
+  req.urlObj = new URL(req.originalUrl, `${req.protocol}://${req.get('host')}`);
   next();
 });
 
