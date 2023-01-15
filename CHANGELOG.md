@@ -1,3 +1,18 @@
+# [5.5.0](https://github.com/zyachel/quetre/compare/v5.4.0...v5.5.0) (2023-01-15)
+
+
+### Bug Fixes
+
+* fix outgoing url on error page ([595b720](https://github.com/zyachel/quetre/commit/595b720ee12b234a9454e470139a3a40b4ad600f))
+* ui fixes for webkit-based browsers ([44229f8](https://github.com/zyachel/quetre/commit/44229f87027b1b15d38c2739b9d85bec40a36bd8))
+
+
+### Features
+
+* add redirection route ([4199bb3](https://github.com/zyachel/quetre/commit/4199bb38c379fa5e6c2c5e58098c63534c1743b5))
+
+
+
 # [5.4.0](https://github.com/zyachel/quetre/compare/v5.3.0...v5.4.0) (2023-01-07)
 
 
@@ -36,16 +51,6 @@
 ### Bug Fixes
 
 * fix accidental console.log statement in template ([f719b3c](https://github.com/zyachel/quetre/commit/f719b3c4c91c504db35d1077bd05aa149b0f42db))
-
-
-
-# [5.1.0](https://github.com/zyachel/quetre/compare/v5.0.0...v5.1.0) (2022-10-30)
-
-
-### Features
-
-* add search functionality ([1cdafe0](https://github.com/zyachel/quetre/commit/1cdafe0380df6e00285777f757c0b2c76b78b371))
-* improve data fetching logic ([86df583](https://github.com/zyachel/quetre/commit/86df58367a147939ebd4057071d5450556737eac))
 
 
 
