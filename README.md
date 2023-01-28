@@ -239,6 +239,8 @@ The development may seem slow as I don't have lots of free time. And whenever I 
 If you believe you can help furthering this project in any way(be it maintaining, fixing issues, or adding features), please [get in touch](#contact).  
 Regardless, any type of contribution is always welcome.
 
+**If you plan on contributing, please read our [CONTRIBUTING.md](/CONTRIBUTING.md) file.**
+
 ## Misc
 
 ### Automatic redirection
