@@ -248,7 +248,7 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
   ```
 
   This config should output:  
-  `Example result: https://quetre.iket.me/What-is-Linux-4`
+  `Example result: https://quetre.iket.me/redirect/https://www.quora.com/What-is-Linux-4?share=1`
 
 - [LibRedirect](https://github.com/libredirect/libredirect/)  
   Redirects many popular services to their alternative front-ends. Has a ton of features and an active community. Quetre is supported by default. So, no need to do anything.
