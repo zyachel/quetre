@@ -13,6 +13,7 @@ Here are some nice tips for helpful issues:
 - **Use a good title**
 
   Issue titles are important since we use them to organize the issue board, therefore, please choose titles that are short and describe the issue in detail.
+  
 - **Include every detail you can think of**
 
   This means logs, tracebacks, use cases (if the issue is about a feature)...
