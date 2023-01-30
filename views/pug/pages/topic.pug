@@ -14,7 +14,7 @@ block content
     section.topic__stats.topic-stats
       .metadata-primary
         h1.heading.heading__primary.metadata-primary__heading.topic__name= data.name
-        img.metadata-primary__image(src=data.image.replace('https://', "/api/v1/image/") alt=`cover photo of '${data.name}' topic`, loading='lazy')
+        +proxifyImg(data.image)(class='metadata-primary__image', alt='', aria-hidden='true')
         p.metadata-primary__misc
           if data.aliases.length
             span Also known as:&nbsp;
@@ -24,7 +24,7 @@ block content
         +addMetadataSecondary('question','Questions', data.numQuestions)
         if data.isAdult
           +addMetadataSecondary('danger', 'Adult Topic', '18+', true)
-        a.link(href='https://www.quora.com' + data.url) View on Quora
+        +quorafyUrl(meta.url)(class='link')
 
     //- AUTHORS RELATED TO THE TOPIC AND METADATA
     .topic__famous-authors.famous-authors
@@ -32,8 +32,8 @@ block content
       .famous-authors__list
         each author in data.mostViewedAuthors
           .famous-authors__item
-            figure.metadata-primary
-              figcaption.metadata-primary__heading
+            .metadata-primary
+              p.metadata-primary__heading
                 if author.isAnon
                   span Anonymous
                 else
@@ -42,7 +42,7 @@ block content
                   svg.icon.metadata-primary__icon
                     title verified
                     use(href='/misc/sprite.svg#icon-verified')
-              img.metadata-primary__image(src=author.image.replace('https://', "/api/v1/image/"), alt=`${author.name}'s profile photo`, loading='lazy')
+              +proxifyImg(author.image)(class='metadata-primary__image', alt='', aria-hidden='true')
               p.metadata-primary__misc(aria-label=`${author.name}'s credentials`)= author.credential || ''
             .metadata-secondary
               +addMetadataSecondary('user', 'Followers', author.numFollowers)
@@ -56,7 +56,7 @@ block content
         each topic in data.relatedTopics
           .metadata-primary
             a.link.metadata-primary__heading(href=topic.url)= topic.name
-            img.metadata-primary__image(src=topic.image.replace('https://', "/api/v1/image/") alt=`cover photo of '${topic.name}' topic`, loading='lazy')
+            +proxifyImg(topic.image)(class='metadata-primary__image', aria-hidden='true', alt='')
             p.metadata-primary__misc
               +formatNumber(topic.numFollowers)
               |&nbsp;Followers

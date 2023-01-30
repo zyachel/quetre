@@ -2,17 +2,21 @@
 //                     IMPORTS
 ////////////////////////////////////////////////////////
 import AppError from '../utils/AppError.js';
+import { quetrefy } from '../utils/urlModifiers.js';
 import fetcher from './fetcher.js';
 
 ////////////////////////////////////////////////////////
 //                     FUNCTION
 ////////////////////////////////////////////////////////
-const getTopic = async slug => {
+
+const KEYWORD = 'topic';
+
+const getTopic = async (slug, lang) => {
   // getting data and destructuring it in case it exists, else throwing an error
-  const res = await fetcher(`topic/${slug}`);
+  const res = await fetcher(`topic/${slug}`, { keyword: KEYWORD, lang });
 
   const {
-    data: { topic: rawData },
+    data: { [KEYWORD]: rawData },
   } = JSON.parse(res);
 
   if (!rawData)
@@ -24,7 +28,7 @@ const getTopic = async slug => {
   const data = {
     tid: rawData.tid,
     name: rawData.name,
-    url: rawData.url,
+    url: quetrefy(rawData.url),
     image: rawData.photoUrl,
     aliases: rawData.aliases,
     numFollowers: rawData.numFollowers,
@@ -34,7 +38,7 @@ const getTopic = async slug => {
     mostViewedAuthors: rawData.mostViewedAuthors.map(author => ({
       uid: author.user.uid,
       name: `${author.user.names[0].givenName} ${author.user.names[0].familyName}`,
-      profile: author.user.profileUrl,
+      profile: quetrefy(author.user.profileUrl),
       image: author.user.profileImageUrl,
       isAnon: author.user.isAnon,
       isVerified: author.user.isVerified,
@@ -46,7 +50,7 @@ const getTopic = async slug => {
     relatedTopics: rawData.relatedTopics.map(topic => ({
       tid: topic.tid,
       name: topic.name,
-      url: topic.url,
+      url: quetrefy(topic.url),
       image: topic.photoUrl,
       numFollowers: topic.numFollowers,
     })),

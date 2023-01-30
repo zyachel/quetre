@@ -1,6 +1,22 @@
+<div align="center">
+
 # Quetre
 
-[![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)](https://github.com/humanetech-community/awesome-humane-tech)
+</div>
+
+<div align="center">
+
+  [![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)](https://github.com/humanetech-community/awesome-humane-tech)
+  [![GitHub issues](https://img.shields.io/github/issues/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/issues)
+  ![GitHub pull requests](https://img.shields.io/github/issues-pr/zyachel/quetre?style=flat-square)
+  [![GitHub forks](https://img.shields.io/github/forks/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/network)
+  [![GitHub stars](https://img.shields.io/github/stars/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/stargazers)
+  [![GitHub license](https://img.shields.io/github/license/zyachel/quetre?style=flat-square)](https://github.com/zyachel/quetre/blob/main/LICENSE)
+  ![GitHub contributors](https://img.shields.io/github/contributors/zyachel/quetre?style=flat-square)
+  ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/zyachel/quetre?style=flat-square)
+  ![GitHub release (latest by date)](https://img.shields.io/github/v/release/zyachel/quetre?style=flat-square)
+
+</div>
 
 Quetre is an alternative front-end to Quora.
 It enables you to see answers without ads, trackers, and other such bloat.
@@ -9,29 +25,30 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 ## Key Features
 
-- Privacy focused
+- **Privacy focused**
 
   All requests are proxied which makes it impossible for Quora to collate meaningful data points about you.
 
-- No ads or tracking
+- **No ads or tracking**
 
   Absolutely no ads, no tracking, no browser fingerprinting, and no telemetry of any kind.
 
-- Fully responsive layout
+- **Fully responsive layout**
 
   Utilises modern CSS features like CSS Grid and Flexbox to make the website fully responsive for all screen sizes.
 
-- Lightweight and fast
+- **Lightweight and fast**
 
   As the website contains no bloat, pages load in a jiffy and request sizes are tiny.
 
-- Dark and light themes
+- **Dark and light themes**
 
   Whether you're a nightowl or bright screen lover, you'll enjoy curated color scheme for your taste.
 
-- Unofficial API support
+- **Unofficial API support**
 
-  just add `/api/v1/` after the domain name in the URL and get a JSON response.
+  just add `/api/v1/` after the domain name in the URL and get a JSON response.
+
 
 ---
 
@@ -48,29 +65,38 @@ It enables you to see answers without ads, trackers, and other such bloat.
 <!-- prettier-ignore -->
 | Instance | Region | Provider | Notes |
 | -------- | ------ | -------- | ----- |
-| 1. Clearnet | | | |
-| [quetre.iket.me](https://quetre.iket.me/) | Canada | OVHCloud | Official instance |
-| [quora.vern.cc](https://qr.vern.cc) | Canada | OVHCloud | Operated by [~vern](https://vern.cc/) |
-| [quetre.pussthecat.org](https://quetre.pussthecat.org/) | Germany | &ndash; | Operated by [PussTheCat.org](https://pussthecat.org/) |
-| [wuetre.herokuapp.com](https://wuetre.herokuapp.com/) | Europe | Heroku | Operated by AnonymousZ |
-| [quetreus.herokuapp.com](https://quetreus.herokuapp.com/) | U.S. | Heroku | Operated by [toyboatcash](https://github.com/toyboatcash) |
+| **1. Clearnet** | | | |
+| [quetre.iket.me](https://quetre.iket.me) | Canada | OVHCloud | Official instance |
+| [quora.vern.cc](https://qr.vern.cc) | US | Hetzner | Operated by [~vern](https://vern.cc/) |
+| [quetre.pussthecat.org](https://quetre.pussthecat.org) | Germany | &ndash; | Operated by [PussTheCat.org](https://pussthecat.org/) |
 | [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/) | U.S. | Oracle | Operated by [Tokhmi](https://tokhmi.xyz) |
-| [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt/) | Europe | BuyVM | Operated by [Project Segfault](https://projectsegfau.lt) |
-| [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz/) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
+| [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt) | Europe | BuyVM | Operated by [Project Segfault](https://projectsegfau.lt) |
+| [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
 | [quetre.odyssey346.dev](https://quetre.odyssey346.dev) | Poland | OVHCloud | Operated by [Odyssey346](https://odyssey346.dev/) |
-| 2. Onion | | | |
+| [quetre.privacydev.net](https://quetre.privacydev.net) | U.S. | BuyVM | Operated by [PrivacyDev](https://privacydev.net/) |
+| [ask.habedieeh.re](https://ask.habedieeh.re) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
+| [quetre.marcopisco.com](https://quetre.marcopisco.com) | Portugal | Vodafone Portugal (Cloudflare) | Operated by [marcopisco.com](https://www.marcopisco.com) |
+| [quetre.blackdrgn.nl](https://quetre.blackdrgn.nl) | Germany | Contabo | Operated by [blackdrgn.nl](https://blackdrgn.nl) |
+| [quetre.pufe.org](https://quetre.pufe.org) | New Zealand | - | Operated by pufe.org |
+| [quetre.lunar.icu](https://quetre.lunar.icu) | Germany | Cloudflare | Operated by [lunar.icu](https://lunar.icu/) |
+| [que.wilbvr.me](https://que.wilbvr.me) | Netherlands | Liga Hosting | Operated by [Wilbvr](https://wilbvr.me) |
+| [quora.femboy.hu](https://quora.femboy.hu) | Hungary | N/A (Self-hosted) | Operated by [hnhx](https://femboy.hu) |
+| **2. Onion** | | | |
 | [quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion](http://quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
-| [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
-| 3. I2P | | | |
-| [http://qr.vern.i2p/](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | Canada | OVHCloud | Operated by [~vern](https://vern.cc) |
+| [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
+| [ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion](http://ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion/) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
+| [quetre.g4c3eya4clenolymqbpgwz3q3tawoxw56yhzk4vugqrl6dtu3ejvhjid.onion](http://quetre.g4c3eya4clenolymqbpgwz3q3tawoxw56yhzk4vugqrl6dtu3ejvhjid.onion/) | U.S. | BuyVM | Operated by [PrivacyDev](https://privacydev.net/) |
+| [quora.cepyxplublbyw2f4axy4pyztfbxmf63lrt2c7uwv6wl4iixz53czload.onion](http://quora.cepyxplublbyw2f4axy4pyztfbxmf63lrt2c7uwv6wl4iixz53czload.onion) | Hungary | N/A (Self-hosted) | Operated by [hnhx](https://femboy.hu) |
+| **3. I2P** | | | |
+| [qr.vern.i2p/](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
 
 ---
 
-## Comparision
+## Comparison
 
 ### Speed
 
-URL for comparision: https://www.quora.com/How-does-the-Z-boson-decay
+URL for comparison: https://www.quora.com/How-does-the-Z-boson-decay
 
 |                 | Quora     | Quetre   |
 | --------------- | --------- | -------- |
@@ -79,13 +105,13 @@ URL for comparision: https://www.quora.com/How-does-the-Z-boson-decay
 | Finish time     | 2.44min\* | 4.62s    |
 | Data consumed   | 3.49MB    | 404.47KB |
 
-\*the requests were ongoing even after 6 minutes
+\*The requests were ongoing even after 6 minutes
 
 ---
 
 ### Usability
 
-- Quora: You can't even see an answer(unless you do some hacks) if you're not signed in. They put a big banner in front of answers to sign you up/in forcefully.
+- Quora: You can't even see an answer (unless you do some hacks) if you're not signed in. They put a big banner in front of answers to sign you up/in forcefully.
 
 - Quetre: There is no accounts system. Just read whatever you want to read. Zero fuss.
 
@@ -93,92 +119,84 @@ URL for comparision: https://www.quora.com/How-does-the-Z-boson-decay
 
 ### Privacy
 
-#### Quora(when browsing anonymously)
+#### Quora (when browsing "anonymously")
 
 From [their privacy policy](https://www.quora.com/about/privacy)
 
-- Technologies used
-  - cookies
-  - log files
-  - clear GIFs/pixel tags
+- **Technologies used**
+  - Cookies
+  - Log files
+  - Clear GIFs/pixel tags
   - JavaScript
-  - web beacons
-  - local storage objects
+  - Web beacons
+  - Local Storage Objects
   - Analytics Tools
-  - other tracking technologies
-- Data collected
-  - searches
-  - page views
-  - date and time of your visit
-  - browser type
-  - type of computer or mobile device
-  - browser language
+  - Other tracking technologies
+- **Data collected**
+  - Searches
+  - Page views
+  - Date and time of your visit
+  - Browser type
+  - Type of computer or mobile device
+  - Browser language
   - IP address
-  - mobile carrier
-  - unique device identifier
-  - location
-  - requested and referring URLs
-  - other information about your use of the Quora Platform
+  - Mobile carrier
+  - Unique device identifier
+  - Location
+  - Requested and referring URLs
+  - Other information about your use of the Quora Platform
 
 #### Quetre
 
-- Data actively collected by Quetre
+- **Data actively collected by Quetre**
 
   None.
 
-- Data passively collected by Quetre
+- **Data passively collected by Quetre**
 
-  Whenever you hit some error page, an error object is logged to the console on the server. That error object contains the resource url you were trying to access, and the usual stack trace. That's it.
+  Whenever you hit some error page, an error object is logged to the console on the server. That error object contains the resource URL you were trying to access, and the usual stack trace. That's it.
 
-- Data stored locally in your browser
+- **Data stored locally in your browser**
 
   A key called 'theme' is stored in local storage provided by your browser to store your theme preference should you override the default theme. To prevent this behaviour, either disable JavaScript or local storage for Quetre.
-
-- Data collected by other services
-
-  If you're using the official instance(which is deployed on Heroku), Heroku might log your IP to prevent abuse. Also, as Quetre connects to 'cdn.jsdelivr.net' for MathJax library respectively, this services might log some data. So, follow due precaution. Using a VPN might be a good idea. Or even better, consider hosting your own instance.
 
 ---
 
 ## FAQs
 
-- How do I use this?
+- **How do I use this?**
 
-  Replace 'www.quora.com' in any URL with 'quetre.iket.me'. So, 'https://www.quora.com/Are-Nubians-nilotes' becomes 'https://quetre.iket.me/Are-Nubians-nilotes'.
+  Replace 'www.quora.com' in any URL with 'quetre.iket.me' (or any other instance). So, 'https://www.quora.com/Are-Nubians-nilotes' becomes 'https://quetre.iket.me/Are-Nubians-nilotes'.
 
-- I don't want to edit the URLs manually!
+- **I don't want to edit the URLs manually!**
 
   There are [a couple of solutions](#automatic-redirection) for that.
 
-- There are some unreachable routes.
+- **There are some unreachable routes.**
 
   I'm working to implement them soon. Keep an eye on [To-Do list](#to-do).
 
-- Why is the website connecting to 'cdn.jsdelivr.net'?
-
-  It is for an open source library – [Mathjax](https://www.mathjax.org/) – which is used to display math eqations nicely. If I get enough time, I'll include it locally.
-
-- Why are some math equations showing up weirdly?
+- **Why are some math equations showing up weirdly?**
 
   If you're browsing with JavaScript disabled, then the Mathjax library isn't able to load and format tex equations. I'd recommend to enable JavaScript for it since there's no other way to show them in the browser. Even Quora uses Mathjax.
 
-- Why can I only view a couple of answers?
+- **Why can I only view a couple of answers?**
 
   Quora doesn't show all answers at once. It only loads more answers as the user scrolls down. Furthermore, it uses many unique IDs to send ajax requests to fetch those answers. So, all in all, getting more answers isn't impossible but quite difficult requiring some serious amount of time on their website in order to figure out how it all happens. I'm short on time for now.
 
-- Why am I getting a _Recheck the URL_ error?
+- **Why am I getting a _Recheck the URL_ error?**
 
   Sometimes Quora doesn't populate the answer page HTML, and hence, Quetre is unable to extract data from it. If that happens, you can refresh the page a couple of times to get the answers.
 
-- I have some ideas/want to help.
+- **I have some ideas/want to help.**
 
-  You're most welcome to do that. Just [contact me](#contact) or fork [the repo](https://github.com/zyachel/quetre/fork) and make a pull request. You can even help by correcting some typos or translating this README to other languages.
+  You're most welcome to do that. Just [contact me](#contact) or fork [the repo](https://github.com/zyachel/quetre/fork) and make a pull request. You can even help by correcting some typos or translating this README to other languages. *Please, read the [CONTRIBUTING.md](./CONTRIBUTING.md) beforehand.*
 
-- Why the name Quetre?
+- **Why the name Quetre?**
 
-  Quora is [supposedly](https://www.quora.com/Why-is-Quora-called-Quora-4) a portmanteau of 'Questions or answers'. In the same vein, Quetre is a portmanteau of 'Questions and answers', but [in Latin](https://lingva.ml/en/la/questions%20and%20answers%0A).
+  Quora is [supposedly](https://www.quora.com/Why-is-Quora-called-Quora-4) a portmanteau of 'Questions or answers'. In the same vein, Quetre is a portmanteau of 'Questions and answers', but [in Latin](https://lingva.ml/en/la/questions%20and%20answers%0A).
 
-- I cannot view the comments. Will you add that feature?
+- **I cannot view the comments. Will you add that feature?**
 
   See [this issue](https://codeberg.org/zyachel/quetre/issues/11)
 
@@ -186,12 +204,12 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 ## To-Do
 
-- [ ] add missing routes like topics, profile, and search
-- [ ] use redis
-- [ ] serve images and other assets from Quetre
-- [x] implement a better installation method
-- [ ] implement other trivial routes like a specific answer, spaces, etc.
-- [ ] implement a way to get more answers(not a big priority as of now)
+- [x] Add missing routes like topics, profile, and search
+- [ ] Use redis
+- [x] Serve images and other assets from Quetre
+- [x] Implement a better installation method
+- [ ] Implement other trivial routes like a specific answer, spaces, etc.
+- [ ] Implement a way to get more answers (not a big priority as of now)
 
 ---
 
@@ -204,46 +222,64 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 2. Clone and set up the repository.
 
    ```bash
-   git clone https://github.com/zyachel/quetre.git # replace github.com with codeberg.org if you're cloning from there
+   git clone https://github.com/zyachel/quetre.git # Replace github.com with codeberg.org if you're cloning from there
    cd quetre
-   cp .env.example .env # you can make any changes here
-   # change `pnpm` to `npm run` here as well as in package.json if you use `npm`
+   cp .env.example .env # You can make any changes here
+   # Change `pnpm` to `npm run` here as well as in package.json if you use `npm`
    pnpm install
    pnpm start
    ```
 
 Quetre will start running at http://localhost:3000.
 
+**Important: If you are running an .onion or I2P instance, set the `NO_UPGRADE` .env variable to "1", otherwise the page will be broken.**
+
 ### Docker
 
-There is a [docker image](https://github.com/PussTheCat-org/docker-quetre-quay) made by [@TheFrenchGhosty](https://github.com/TheFrenchGhosty) for [PussTheCat.org](https://pussthecat.org/)'s [instance](https://quetre.pussthecat.org/). You can check that out case you want to go the docker way.
+There is a [docker image](https://github.com/PussTheCat-org/docker-quetre-quay) made by [@TheFrenchGhosty](https://github.com/TheFrenchGhosty) for [PussTheCat.org](https://pussthecat.org/)'s [instance](https://quetre.pussthecat.org/).  
+If you want a leaner one, you can checkout [@video-prize-ranch](https://codeberg.org/video-prize-ranch)'s [docker image](https://codeberg.org/video-prize-ranch/-/packages/container/quetre/latest).
 
 ---
+
+## Contributing
+
+The development may seem slow as I don't have lots of free time. And whenever I do, it gets split between this service and [LibreIMDb](https://github.com/zyachel/libremdb/).  
+If you believe you can help furthering this project in any way (be it maintaining, fixing issues, or adding features), please [get in touch](#contact).  
+*Regardless, any type of contribution is always welcome.*
+
+**If you plan on contributing, please read our [CONTRIBUTING.md](./CONTRIBUTING.md) file.**
 
 ## Misc
 
 ### Automatic redirection
 
-Following extensions can be used to automatically redirect Quora URLs to Quetre:
+The following extensions can be used to automatically redirect Quora URLs to Quetre:
 
 - [redirector](https://github.com/einaregilsson/Redirector)  
   You can manually add any redirect.
-  Below is a basic config of Quora to Quetre. Replace `quetre.herokuapp.com` in `Redirect to` to any instance of your choice.
+  Below is a basic config of Quora to Quetre. Replace `quetre.iket.me` in `Redirect to` to any instance of your choice.
 
   ```
   Description: Quora to Quetre
   Example URL: https://www.quora.com/What-is-Linux-4?share=1
-  Include pattern: https?:\/\/(www\.)?quora\.com\/([^\?]*)
-  Redirect to: https://quetre.herokuapp.com/$2
+  Include pattern: (https:\/\/.{2,}\.quora\.com\/.*)
+  Redirect to: https://quetre.iket.me/redirect/$1
   Pattern type: Regular Expression
-  Pattern description: redirects all Quora urls(excluding language-specific and spaces) to Quetre
+  Pattern description: Redirects all Quora urls to Quetre
   ```
 
   This config should output:  
-  `Example result: https://quetre.herokuapp.com/What-is-Linux-4`
+  `Example result: https://quetre.iket.me/redirect/https://www.quora.com/What-is-Linux-4?share=1`
 
 - [LibRedirect](https://github.com/libredirect/libredirect/)  
   Redirects many popular services to their alternative front-ends. Has a ton of features and an active community. Quetre is supported by default. So, no need to do anything.
+
+- [Privacy Redirector](https://github.com/dybdeskarphet/privacy-redirector)  
+  A userscript that redirects popular social media platforms to their privacy respecting frontends.
+
+- Other addons with similar functionality:  
+  - [Dynamic Privacy Redirect](https://github.com/PrivacyDevel/DPR-addon)
+  - [Alter](https://github.com/w3bdev1/alter)
 
 ### Other alternative front-ends
 
@@ -256,7 +292,7 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
 
 ### Programming
 
-- [JavaScript](https://www.ecma-international.org/technical-committees/tc39/): programming language
+- [JavaScript](https://www.ecma-international.org/technical-committees/tc39/): Programming language
 - [Sass](https://sass-lang.com/): CSS preprocessor
 - [Pug](https://pugjs.org/): Template engine
 - [Node.js](https://nodejs.org/en/): JS runtime environment

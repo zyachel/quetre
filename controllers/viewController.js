@@ -5,8 +5,9 @@
 import catchAsyncErrors from '../utils/catchAsyncErrors.js';
 import getAnswers from '../fetchers/getAnswers.js';
 import getTopic from '../fetchers/getTopic.js';
-import { nonSlugRoutes } from '../utils/constants.js';
+import { acceptedLanguages, nonSlugRoutes } from '../utils/constants.js';
 import getProfile from '../fetchers/getProfile.js';
+import getSearch from '../fetchers/getSearch.js';
 
 ////////////////////////////////////////////////////////
 //                     EXPORTS
@@ -15,7 +16,7 @@ export const about = (req, res, next) => {
   res.render('about', {
     meta: {
       title: 'About',
-      url: `${req.urlObj.origin}${req.urlObj.pathname}`,
+      url: req.urlObj,
       imageUrl: `${req.urlObj.origin}/icon.svg`,
       description:
         'Quetre is a libre front-end for Quora. See any answer without being tracked, without being required to log in, and without being bombarded by pesky ads.',
@@ -27,7 +28,7 @@ export const privacy = (req, res, next) => {
   res.render('privacy', {
     meta: {
       title: 'Privacy',
-      url: `${req.urlObj.origin}${req.urlObj.pathname}`,
+      url: req.urlObj,
       imageUrl: `${req.urlObj.origin}/icon.svg`,
       description: 'Privacy Policy of Quetre, a libre front-end for Quora.',
     },
@@ -36,10 +37,12 @@ export const privacy = (req, res, next) => {
 
 export const answers = catchAsyncErrors(async (req, res, next) => {
   const { slug } = req.params;
+  const { lang } = req.query;
+
   // added this so that a request by browser to get favicon doesn't end up being interpreted as a slug
   if (nonSlugRoutes.includes(slug)) return next();
 
-  const answersData = await getAnswers(slug);
+  const answersData = await getAnswers(slug, lang);
   const title = answersData.question.text[0].spans
     .map(span => span.text)
     .join('');
@@ -48,7 +51,7 @@ export const answers = catchAsyncErrors(async (req, res, next) => {
     data: answersData,
     meta: {
       title,
-      url: `${req.urlObj.origin}${req.urlObj.pathname}`,
+      url: req.urlObj,
       imageUrl: `${req.urlObj.origin}/icon.svg`,
       description: `Answers to ${title}`,
     },
@@ -56,13 +59,16 @@ export const answers = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const topic = catchAsyncErrors(async (req, res, next) => {
-  const topicData = await getTopic(req.params.slug);
+  const { slug } = req.params;
+  const { lang } = req.query;
+
+  const topicData = await getTopic(slug, lang);
 
   res.status(200).render('topic', {
     data: topicData,
     meta: {
       title: topicData.name,
-      url: `${req.urlObj.origin}${req.urlObj.pathname}`,
+      url: req.urlObj,
       imageUrl: `${req.urlObj.origin}/icon.svg`,
       description: `Information about ${topicData.name} topic.`,
     },
@@ -70,33 +76,70 @@ export const topic = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const profile = catchAsyncErrors(async (req, res, next) => {
-  const profileData = await getProfile(req.params.name);
+  const { name } = req.params;
+  const { lang } = req.query;
+  const profileData = await getProfile(name, lang);
 
   res.status(200).render('profile', {
     data: profileData,
     meta: {
       title: profileData.basic.name,
-      url: `${req.urlObj.origin}${req.urlObj.pathname}`,
+      url: req.urlObj,
       imageUrl: `${req.urlObj.origin}/icon.svg`,
       description: `${profileData.basic.name}'s profile.`,
     },
   });
 });
 
-export const unimplemented = (req, res, next) => {
-  const message =
-    "This route isn't yet implemented. Check back sometime later!";
-  res.status(501).render('error', {
-    data: {
-      statusCode: 501,
-      message,
+export const search = catchAsyncErrors(async (req, res, next) => {
+  const searchText = req.urlObj.searchParams.get('q')?.trim();
+  const { lang } = req.query;
+  let searchData = null;
+  if (searchText) searchData = await getSearch(req.urlObj.search, lang);
+
+  res.status(200).render('search', {
+    data: searchData,
+    meta: {
+      title: searchText || 'Search',
+      url: req.urlObj,
+      imageUrl: `${req.urlObj.origin}/icon.svg`,
+      description: searchText ? `results for '${searchText}'` : 'search page',
     },
+  });
+});
+
+const regex = /^https:\/\/(.{2,})\.quora\.com(\/.*)$/; // local helper constant
+export const redirect = (req, res, next) => {
+  const url = req.originalUrl.replace('/redirect/', ''); // removing `/redirect/` part.
+  const match = regex.exec(url);
+
+  if (!match) return res.redirect('/');
+
+  const [_, subdomain, rest] = match; // eg: subdomain: 'es', rest: '/topic/linux?share=1'
+  let link;
+
+  if (acceptedLanguages.includes(subdomain))
+    // adding lang param
+    link = `${rest}${rest.includes('?') ? '&' : '?'}lang=${subdomain}`;
+  else if (subdomain === 'www') link = rest; // doing nothing
+  else link = `/space/${subdomain}${rest}`; // gotta be a space url.
+
+  return res.redirect(link);
+};
+
+export const unimplemented = (req, res, next) => {
+  const data = {
+    message: "This route isn't yet implemented. Check back sometime later!",
+    statusCode: 501,
+  };
+
+  res.status(data.statusCode).render('error', {
+    data,
     meta: {
       title: 'Not yet implemented',
-      url: `${req.urlObj.origin}${req.urlObj.pathname}`,
+      url: req.urlObj,
       imageUrl: `${req.urlObj.origin}/icon.svg`,
-      urlObj: req.urlObj,
-      description: message,
+      description: data.message,
     },
   });
 };

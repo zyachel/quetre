@@ -10,16 +10,22 @@
 $clr-primary: #e3f6f5;
 $clr-secondary: #272343;
 $clr-highlight: #ff5277;
+$ff-default: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+  helvetica neue, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+$ff-monospace: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+  monospace;
 
 $misc-vars: (
   ff-primary: (
     'Worksans',
-    sans-serif,
+    $ff-default,
   ),
   ff-alt-alpha: (
     'QuickSand',
-    sans-serif,
+    $ff-default,
   ),
+  ff-default: $ff-default,
+  ff-mono: $ff-monospace,
   fs-160: 1.6rem,
   fs-180: 1.8rem,
   fs-200: 2rem,
@@ -45,6 +51,10 @@ $misc-vars: (
 );
 
 $themed-vars: (
+  color-scheme: (
+    light: 'light',
+    dark: 'dark',
+  ),
   // base
   clr-base-bg:
     (
@@ -152,5 +162,5 @@ $themed-vars: (
   clr-focus: (
     light: color.scale($clr-highlight, $lightness: 0%, $saturation: 0%),
     dark: color.scale($clr-highlight),
-  )
+  ),
 );

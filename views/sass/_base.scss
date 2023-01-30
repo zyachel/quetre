@@ -43,6 +43,8 @@ body {
 //                   BASE STYLING
 ////////////////////////////////////////////////////////
 :root {
+  color-scheme: light dark;
+
   // normal vars
   @include get-misc-vars;
   // themed vars(default:light)
@@ -61,9 +63,16 @@ body {
       @include get-themed-vars(dark);
     }
   }
+
+  // disabling fonts for webkit
+  @include fix-for-safari {
+    --ff-primary: var(--ff-default);
+    --ff-alt-alpha: var(--ff-default);
+  }
 }
 
 .body {
+  color-scheme: var(--color-scheme);
   font-size: var(--fs-160);
   font-family: var(--ff-primary);
   background-color: var(--clr-base-bg);
@@ -126,8 +135,7 @@ body {
 //                 KEYBOARD NAVIGATION
 ////////////////////////////////////////////////////////
 :focus {
-  outline: 3px solid var(--clr-focus);
-  outline-offset: 0.2em;
+  @include focus-rules;
 }
 
 @supports selector(:focus-visible) {
@@ -136,30 +144,6 @@ body {
   }
 
   :focus-visible {
-    outline: 3px solid var(--clr-focus);
-    outline-offset: 0.2em;
+    @include focus-rules;
   }
 }
-
-////////////////////////////////////////////////////////
-//                   FOR MATHJAX
-////////////////////////////////////////////////////////
-mjx-container.MathJax {
-  pointer-events: none;
-}
-/*
-.CtxtMenu_ContextMenu,
-.CtxtMenu_Info {
-  background-color: var(--clr-base-bg) !important;
-  font-family: inherit !important;
-  color: inherit !important;
-}
-.CtxtMenu_InfoTitle,
-.CtxtMenu_InfoSignature,
-.CtxtMenu_MenuClose .CtxtMenu_InfoClose,
-.CtxtMenu_InfoContent {
-  font-family: inherit !important;
-  background: inherit !important;
-  color: inherit !important;
-}
-*/

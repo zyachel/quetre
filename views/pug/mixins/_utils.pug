@@ -8,3 +8,38 @@ mixin addDate(date, className='')
 
 mixin formatNumber(number, className='')
   span(class=className)= new Intl.NumberFormat().format(number)
+
+mixin proxifyImg(imgUrl)
+  img(src=imgUrl.replace('https://', '/api/v1/image/'), loading='lazy')&attributes(attributes)
+
+mixin quetrefyUrl(url, text)
+  -
+    const acceptedLanguages=['en','es','fr','de','it','ja','id','pt','hi','nl','da','fi','nb','sv','mr','bn','ta','ar','he','gu','kn','ml','te','po'];
+    let link;
+    const match = /^https:\/\/(.{2,})\.quora\.com(\/.*)$/.exec(url);
+
+    if (match) {
+      const [_, subdomain, rest] = match;
+      if (acceptedLanguages.includes(subdomain)) link = link = `${rest}${rest.includes('?') ? '&' : '?'}lang=${subdomain}`;
+      else if (subdomain === 'www') link = rest;
+      else link = `/space/${subdomain}${rest}`;
+    } else {
+      link = url;
+    }
+
+  a(href=link)&attributes(attributes)= text
+
+mixin quorafyUrl(url, text='View on Quora')
+  -
+    const link = new URL(`${url.pathname}${url.search}`, 'https://www.quora.com');
+    const lang = link.searchParams.get('lang');
+    const match = /(?<=^\/space\/)([^\/]+)\/(.*)$/.exec(link.pathname); // taking space name and rest of pathname out.
+    if(lang) {
+      link.hostname = `${lang}.quora.com`;
+      link.searchParams.delete('lang');
+    } else if(match) {
+      link.hostname = `${match[1]}.quora.com`;
+      link.pathname = match[2];
+    }
+  
+  a(href=link.href, rel='noreferrer', target='_blank')&attributes(attributes)= text

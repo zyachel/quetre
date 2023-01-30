@@ -38,19 +38,18 @@ html(lang='en')
   - let someAnswerContainsMath = false;
 
   body.body
-    -if (title !=='About')
+    -if (meta.title !=='About')
       a.skip-link(href="#main") Skip to main content
 
     //- MAIN CONTENT GOES HERE
     include layout/_header
     block content 
-      p placeholder text 
     include layout/_footer
 
     //- including mathjax script only when some answer has math expressions(using the var from above)
     if someAnswerContainsMath
       script#MathJax-script(
         type='text/javascript', 
-        src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js',
+        src='/mathjax/tex-chtml.js',
         async
       )

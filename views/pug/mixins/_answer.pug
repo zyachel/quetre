@@ -1,18 +1,18 @@
 //-//////////////////////////////////////////////////////
 //-                 INCLUDES/EXTENDS
 //-//////////////////////////////////////////////////////
-include ../mixins/_formatText
-include ../mixins/_metadata
-include ../mixins/_utils
+include _formatText
+include _metadata
+include _utils
 
 //-//////////////////////////////////////////////////////
 //-                 MAIN CONTENT
 //-//////////////////////////////////////////////////////
-mixin addAnswer(answer)
+mixin addAnswer(answer, includeQuestion=false)
   article.answer
     //- ABOUT AUTHOR
-    figure.metadata-primary
-      figcaption.metadata-primary__heading
+    .metadata-primary
+      p.metadata-primary__heading
         if answer.author.isAnon
           span Anonymous
         else
@@ -21,14 +21,20 @@ mixin addAnswer(answer)
           svg.icon.metadata-primary__icon
             title verified
             use(href='/misc/sprite.svg#icon-verified')
-      img.metadata-primary__image(src=answer.author.image.replace('https://', "/api/v1/image/"), alt=`${answer.author.name}'s profile photo`, loading='lazy')
+      +proxifyImg(answer.author.image)(class='metadata-primary__image', alt='', aria-hidden='true')
       p.metadata-primary__misc(aria-label=`${answer.author.name}'s credentials`)= answer.author.credential || ''
 
     //- ORIGINAL QUESTION
-    h3.answer__question.heading.heading__tertiary
-      span Originally answered to&nbsp;
-      a.answer__link.answers__link(href=answer.originalQuestion.url)
-        +spansChecker(answer.originalQuestion.text[0].spans)
+    if includeQuestion
+      p.answer__question.heading.heading__tertiary
+        span Answered to&nbsp;
+        a.answer__link.answers__link(href=answer.question.url)
+          +spansChecker(answer.question.text[0].spans)
+    else if answer.originalQuestion
+      p.answer__question.heading.heading__tertiary
+        span Originally answered to&nbsp;
+        a.answer__link.answers__link(href=answer.originalQuestion.url)
+          +spansChecker(answer.originalQuestion.text[0].spans)
 
     //- ANSWER
     section.answer__text.text__container

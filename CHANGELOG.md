@@ -1,58 +1,56 @@
-# [4.0.0](https://github.com/zyachel/quetre/compare/v3.3.1...v4.0.0) (2022-09-22)
+# [5.5.0](https://github.com/zyachel/quetre/compare/v5.4.0...v5.5.0) (2023-01-15)
 
 
 ### Bug Fixes
 
-* fix fetcher.js ([bf266a9](https://github.com/zyachel/quetre/commit/bf266a9a8971b55400f934a1e2338e83d8fd4d38))
-
-
-### BREAKING CHANGES
-
-* previous fetcher.js won't work as Quora again changed their HTML
-
-closes https://github.com/zyachel/quetre/issues/68
-
-
-
-## [3.3.1](https://github.com/zyachel/quetre/compare/v3.3.0...v3.3.1) (2022-09-12)
-
-
-### Bug Fixes
-
-* broken layout on Tor instances ([dfec2b5](https://github.com/zyachel/quetre/commit/dfec2b5ebd0413606f64cd9f67a370aaf3d809fa))
-
-
-
-# [3.3.0](https://github.com/zyachel/quetre/compare/v3.2.0...v3.3.0) (2022-08-03)
+* fix outgoing url on error page ([595b720](https://github.com/zyachel/quetre/commit/595b720ee12b234a9454e470139a3a40b4ad600f))
+* ui fixes for webkit-based browsers ([44229f8](https://github.com/zyachel/quetre/commit/44229f87027b1b15d38c2739b9d85bec40a36bd8))
 
 
 ### Features
 
-* add profile route ([49f5a3e](https://github.com/zyachel/quetre/commit/49f5a3e74e1c5cfd058ab2a1cc12bf5d9799a1c7))
+* add redirection route ([4199bb3](https://github.com/zyachel/quetre/commit/4199bb38c379fa5e6c2c5e58098c63534c1743b5))
 
 
 
-# [3.2.0](https://github.com/zyachel/quetre/compare/v3.1.1...v3.2.0) (2022-07-24)
+# [5.4.0](https://github.com/zyachel/quetre/compare/v5.3.0...v5.4.0) (2023-01-07)
 
 
 ### Bug Fixes
 
-* fix a fatal bug in viewController.js ([33c90c1](https://github.com/zyachel/quetre/commit/33c90c17b12cf15eadde16d35fbba4cede10919b))
-* fix paragraph tag occuring inside heading tags ([65d14ba](https://github.com/zyachel/quetre/commit/65d14ba47c0d3bb1d2548972478a12a43f7e7500))
+* **routes:** add unimplemented error message to `space` route ([8820f36](https://github.com/zyachel/quetre/commit/8820f36af80f29d861a47526538293357e7c32f3))
 
 
 ### Features
 
-* add support for embedded content in answers ([bae2d7b](https://github.com/zyachel/quetre/commit/bae2d7b4f7f945d7eb55dddb4bd7e49ac21b2ae1))
+* **lang:** add ability to choose language in search route ([cca6f69](https://github.com/zyachel/quetre/commit/cca6f69deda235fa87416e28a4dd557698974e3d))
 
 
 
-## [3.1.1](https://github.com/zyachel/quetre/compare/v3.1.0...v3.1.1) (2022-07-22)
+# [5.3.0](https://github.com/zyachel/quetre/compare/v5.2.0...v5.3.0) (2023-01-07)
+
+
+### Features
+
+* add support for other languages ([d16ae48](https://github.com/zyachel/quetre/commit/d16ae48dcb762af6d0888b6fc556a04a4c954549))
+
+
+
+# [5.2.0](https://github.com/zyachel/quetre/compare/v5.1.1...v5.2.0) (2022-11-27)
+
+
+### Features
+
+* self hosted mathjax ([30d06dc](https://github.com/zyachel/quetre/commit/30d06dc0ffa1b0b362952a16ebdccc9ec2b804b9))
+
+
+
+## [5.1.1](https://github.com/zyachel/quetre/compare/v5.1.0...v5.1.1) (2022-10-30)
 
 
 ### Bug Fixes
 
-* browser theme preference not being respected when js is enabled ([40668b9](https://github.com/zyachel/quetre/commit/40668b92b5aa5c1b10cb265dc781066320cccce8))
+* fix accidental console.log statement in template ([f719b3c](https://github.com/zyachel/quetre/commit/f719b3c4c91c504db35d1077bd05aa149b0f42db))
 
 
 

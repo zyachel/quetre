@@ -63,6 +63,11 @@
   }
 }
 
+@mixin focus-rules {
+  outline: 3px solid var(--clr-focus);
+  outline-offset: 0.2em;
+}
+
 ////////////////////////////////////////////////////////
 //                 BREAKPOINT MANAGER
 ////////////////////////////////////////////////////////
@@ -101,6 +106,16 @@ $breakpoints: (
     $expr: 'min-width: #{$breakpoint}';
   }
   @media screen and ($expr) {
+    @content;
+  }
+}
+
+////////////////////////////////////////////////////////////////
+//           CHECK IF BROWSER IS SAFARI(it's the new IE)
+////////////////////////////////////////////////////////////////
+
+@mixin fix-for-safari {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     @content;
   }
 }

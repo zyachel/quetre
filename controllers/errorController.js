@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-param-reassign */
 
 ////////////////////////////////////////////////////////
@@ -34,9 +35,8 @@ const sendErrorResponse = (err, req, res, devMode = false) => {
       },
       meta: {
         title: 'Error',
-        url: `${req.urlObj.origin}${req.urlObj.pathname}`,
+        url: req.urlObj,
         imageUrl: `${req.urlObj.origin}/icon.svg`,
-        urlObj: req.urlObj,
         description: `ERROR: ${err.message}. Please try again later.`,
       },
     });

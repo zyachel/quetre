@@ -1,9 +1,9 @@
 //-//////////////////////////////////////////////////////
 //-                 INCLUDES/EXTENDS
 //-//////////////////////////////////////////////////////
-include ../mixins/_formatText
-include ../mixins/_metadata
-include ../mixins/_utils
+include _formatText
+include _metadata
+include _utils
 
 //-//////////////////////////////////////////////////////
 //-                 MAIN CONTENT
@@ -12,14 +12,14 @@ mixin addPost(post)
   article.answer
     //- ABOUT AUTHOR
     if post.space
-      figure.answer__metdata-primary.metadata-primary
-        figcaption.metadata-primary__heading
+      .answer__metdata-primary.metadata-primary
+        p.metadata-primary__heading
           a.answers__link(href=post.space.url)= post.space.name
-        img.metadata-primary__image(src=post.space.image.replace('https://', "/api/v1/image/"), alt=`cover photo of ${post.space.name} space`, loading='lazy')
+        +proxifyImg(post.space.image)(class='metadata-primary__image', alt='', aria-hidden='true')
         p.metadata-primary__misc= post.space.description
     else
-      figure.answer__metdata-primary.metadata-primary
-        figcaption.metadata-primary__heading
+      .answer__metdata-primary.metadata-primary
+        p.metadata-primary__heading
           if post.author.isAnon
             span Anonymous
           else
@@ -28,7 +28,7 @@ mixin addPost(post)
             svg.metadata-primary__icon
               title verified
               use(href='/misc/sprite.svg#icon-verified')
-        img.metadata-primary__image(src=post.author.image.replace('https://', "/api/v1/image/"), alt=`${post.author.name}'s profile photo`, loading='lazy')
+        +proxifyImg(post.author.image)(class='metadata-primary__image', alt='', aria-hidden='true')
         p.metadata-primary__misc(aria-label=`${post.author.name}'s credentials`)= post.author.credential || ''
 
     //- POST HEADING
