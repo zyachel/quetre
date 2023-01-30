@@ -41,7 +41,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 
 - Unofficial API support
 
-  just add `/api/v1/` after the domain name in the URL and get a JSON response.
+  just add `/api/v1/` after the domain name in the URL and get a JSON response.
 
 
 ---
@@ -238,6 +238,8 @@ If you want a leaner one, you can checkout [@video-prize-ranch](https://codeberg
 The development may seem slow as I don't have lots of free time. And whenever I do, it gets split between this service and [libremdb](https://github.com/zyachel/libremdb/).  
 If you believe you can help furthering this project in any way(be it maintaining, fixing issues, or adding features), please [get in touch](#contact).  
 Regardless, any type of contribution is always welcome.
+
+**If you plan on contributing, please read our [CONTRIBUTING.md](./CONTRIBUTING.md) file.**
 
 ## Misc
 
