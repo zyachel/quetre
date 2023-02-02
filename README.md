@@ -1,6 +1,6 @@
 # Quetre
 
-[![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)](https://github.com/humanetech-community/awesome-humane-tech)
+[![Delightful Humane Tech](https://codeberg.org/teaserbot-labs/delightful-humane-design/raw/branch/main/humane-tech-badge.svg)](https://codeberg.org/teaserbot-labs/delightful-humane-design)
 
 Quetre is an alternative front-end to Quora.
 It enables you to see answers without ads, trackers, and other such bloat.
@@ -256,7 +256,7 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
 - [Privacy Redirector](https://github.com/dybdeskarphet/privacy-redirector)  
   A userscript that redirects popular social media platforms to their privacy respecting frontends.
 
-- Other addons with similar functionality:  
+- Other addons with similar functionality:
   - [Dynamic Privacy Redirect](https://github.com/PrivacyDevel/DPR-addon)
   - [Alter](https://github.com/w3bdev1/alter)
 
