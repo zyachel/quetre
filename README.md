@@ -82,13 +82,13 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [que.wilbvr.me](https://que.wilbvr.me) | Netherlands | Liga Hosting | Operated by [Wilbvr](https://wilbvr.me) |
 | [quora.femboy.hu](https://quora.femboy.hu) | Hungary | N/A (Self-hosted) | Operated by [hnhx](https://femboy.hu) |
 | **2. Onion** | | | |
-| [quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion](http://quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
+| [quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion](http://quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz) |
 | [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
 | [ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion](http://ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion/) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
-| [quetre.g4c3eya4clenolymqbpgwz3q3tawoxw56yhzk4vugqrl6dtu3ejvhjid.onion](http://quetre.g4c3eya4clenolymqbpgwz3q3tawoxw56yhzk4vugqrl6dtu3ejvhjid.onion/) | U.S. | BuyVM | Operated by [PrivacyDev](https://privacydev.net/) |
+| [quetre.g4c3eya4clenolymqbpgwz3q3tawoxw56yhzk4vugqrl6dtu3ejvhjid.onion](http://quetre.g4c3eya4clenolymqbpgwz3q3tawoxw56yhzk4vugqrl6dtu3ejvhjid.onion/) | U.S. | BuyVM | Operated by [PrivacyDev](https://privacydev.net) |
 | [quora.cepyxplublbyw2f4axy4pyztfbxmf63lrt2c7uwv6wl4iixz53czload.onion](http://quora.cepyxplublbyw2f4axy4pyztfbxmf63lrt2c7uwv6wl4iixz53czload.onion) | Hungary | N/A (Self-hosted) | Operated by [hnhx](https://femboy.hu) |
 | **3. I2P** | | | |
-| [qr.vern.i2p/](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
+| [qr.vern.i2p](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p) | US | Hetzner | Operated by [~vern](https://vern.cc) |
 
 ---
 
@@ -111,9 +111,9 @@ URL for comparison: https://www.quora.com/How-does-the-Z-boson-decay
 
 ### Usability
 
-- Quora: You can't even see an answer (unless you do some hacks) if you're not signed in. They put a big banner in front of answers to sign you up/in forcefully.
+- **Quora**: You can't even see an answer (unless you do some hacks) if you're not signed in. They put a big banner in front of answers to sign you up/in forcefully.
 
-- Quetre: There is no accounts system. Just read whatever you want to read. Zero fuss.
+- **Quetre**: There is no accounts system. Just read whatever you want to read. Zero fuss.
 
 ---
 
@@ -124,6 +124,7 @@ URL for comparison: https://www.quora.com/How-does-the-Z-boson-decay
 From [their privacy policy](https://www.quora.com/about/privacy)
 
 - **Technologies used**
+
   - Cookies
   - Log files
   - Clear GIFs/pixel tags
@@ -132,7 +133,9 @@ From [their privacy policy](https://www.quora.com/about/privacy)
   - Local Storage Objects
   - Analytics Tools
   - Other tracking technologies
+
 - **Data collected**
+
   - Searches
   - Page views
   - Date and time of your visit
@@ -178,7 +181,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 - **Why are some math equations showing up weirdly?**
 
-  If you're browsing with JavaScript disabled, then the Mathjax library isn't able to load and format tex equations. I'd recommend to enable JavaScript for it since there's no other way to show them in the browser. Even Quora uses Mathjax.
+  If you're browsing with JavaScript disabled, then the MathJax library isn't able to load and format TeX equations. I'd recommend to enable JavaScript for it since there's no other way to show them in the browser. Even Quora uses MathJax.
 
 - **Why can I only view a couple of answers?**
 
@@ -205,7 +208,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 ## To-Do
 
 - [x] Add missing routes like topics, profile, and search
-- [ ] Use redis
+- [ ] Use Redis
 - [x] Serve images and other assets from Quetre
 - [x] Implement a better installation method
 - [ ] Implement other trivial routes like a specific answer, spaces, etc.
@@ -241,9 +244,20 @@ If you want a leaner one, you can checkout [@video-prize-ranch](https://codeberg
 
 ---
 
+### .env configuration
+
+Quetre uses the .env file to configurate the behavior of the Node.js server. Here is what you can configure:
+
+- `NODE_ENV`: This should be set to `production` mode, you can also use `development` **but that will log every request.**
+- `PORT`: Set to *3000* by default, controls the port of the Node.js server.
+- `CACHE_PERIOD`: Set to `1h` by default, tells the browser for how long should files be cached.
+- `AXIOS_USER_AGENT`: This is the useragent that Quetre uses for loading answers and therefore the one that Quora sees.
+- `AXIOS_ACCEPT`: Accept header that Quora sees.
+- `NO_UPGRADE`: As mentioned earlier, **If you are running a Tor/I2P instance, please set this to `1`** otherwise CSP errors will occur, *This tells the browser not to upgrade insecure connections*.
+
 ## Contributing
 
-The development may seem slow as I don't have lots of free time. And whenever I do, it gets split between this service and [LibreIMDb](https://github.com/zyachel/libremdb/).  
+The development may seem slow as I don't have lots of free time. And whenever I do, it gets split between this service and [libremdb](https://github.com/zyachel/libremdb/).  
 If you believe you can help furthering this project in any way (be it maintaining, fixing issues, or adding features), please [get in touch](#contact).  
 *Regardless, any type of contribution is always welcome.*
 
