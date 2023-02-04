@@ -265,6 +265,22 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
 - [digitalblossom/alternative-frontends](https://github.com/digitalblossom/alternative-frontends): contains other alternative front-ends.
 - [mendel5/alternative-front-ends](https://github.com/mendel5/alternative-front-ends): a bit more general, containing alternative clients too.
 
+### Development Helpers
+
+Running any one of:
+
+- `/fetchers/fetcher.js`
+
+- `/fetchers/getAnswers.js`
+
+- `/fetchers/getProfile.js`
+
+- `/fetchers/getTopic.js`
+
+with `node` and an argument will log the returned data to console. For example:
+
+- `node fetchers/fetcher.js What-is-the-Linux-Web-Hosting`
+
 ---
 
 ## Credits

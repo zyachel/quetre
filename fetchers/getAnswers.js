@@ -5,6 +5,7 @@
 import AppError from '../utils/AppError.js';
 import { quetrefy } from '../utils/urlModifiers.js';
 import fetcher from './fetcher.js';
+import { basename } from '../utils/misc.js'
 
 ////////////////////////////////////////////////////////
 //                     FUNCTION
@@ -91,3 +92,7 @@ const getAnswers = async (slug, lang) => {
 //                     EXPORTS
 ////////////////////////////////////////////////////////
 export default getAnswers;
+
+if (process.argv.length == 3 && basename(process.argv[1]) == 'getAnswers.js') {
+  console.log(JSON.stringify(await getAnswers(process.argv[2])))
+}

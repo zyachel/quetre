@@ -5,6 +5,7 @@
 import * as cheerio from 'cheerio';
 import getAxiosInstance from '../utils/getAxiosInstance.js';
 import AppError from '../utils/AppError.js';
+import { basename } from '../utils/misc.js'
 
 ////////////////////////////////////////////////////////
 //                     FUNCTION
@@ -62,3 +63,7 @@ const fetcher = async (
 //                     EXPORTS
 ////////////////////////////////////////////////////////
 export default fetcher;
+
+if (process.argv.length == 3 && basename(process.argv[1]) == 'fetcher.js') {
+  console.log(await fetcher(process.argv[2]))
+}

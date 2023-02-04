@@ -4,6 +4,7 @@
 import AppError from '../utils/AppError.js';
 import { quetrefy } from '../utils/urlModifiers.js';
 import fetcher from './fetcher.js';
+import { basename } from '../utils/misc.js'
 
 ////////////////////////////////////////////////////////
 //                  HELPER FUNCTIONS
@@ -219,3 +220,7 @@ const getProfile = async (slug, lang) => {
 //                     EXPORTS
 ////////////////////////////////////////////////////////
 export default getProfile;
+
+if (process.argv.length == 3 && basename(process.argv[1]) == 'getProfile.js') {
+  console.log(await getProfile(process.argv[2]))
+}

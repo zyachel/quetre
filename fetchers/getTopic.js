@@ -4,6 +4,7 @@
 import AppError from '../utils/AppError.js';
 import { quetrefy } from '../utils/urlModifiers.js';
 import fetcher from './fetcher.js';
+import { basename } from '../utils/misc.js'
 
 ////////////////////////////////////////////////////////
 //                     FUNCTION
@@ -63,3 +64,7 @@ const getTopic = async (slug, lang) => {
 //                     EXPORTS
 ////////////////////////////////////////////////////////
 export default getTopic;
+
+if (process.argv.length == 3 && basename(process.argv[1]) == 'getTopic.js') {
+  console.log(await getTopic(process.argv[2]))
+}
