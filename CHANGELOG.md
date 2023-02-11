@@ -1,3 +1,14 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [5.6.0](https://github.com/zyachel/quetre/compare/v5.5.0...v5.6.0) (2023-02-11)
+
+
+### Features
+
+* implement caching of api responses ([175878d](https://github.com/zyachel/quetre/commit/175878dba9aaf23a09325842997658c01670efd3))
+
 # [5.5.0](https://github.com/zyachel/quetre/compare/v5.4.0...v5.5.0) (2023-01-15)
 
 
@@ -51,6 +62,3 @@
 ### Bug Fixes
 
 * fix accidental console.log statement in template ([f719b3c](https://github.com/zyachel/quetre/commit/f719b3c4c91c504db35d1077bd05aa149b0f42db))
-
-
-
