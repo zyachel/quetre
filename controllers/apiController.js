@@ -8,6 +8,8 @@ import getAnswers from '../fetchers/getAnswers.js';
 import getTopic from '../fetchers/getTopic.js';
 import getProfile from '../fetchers/getProfile.js';
 import getSearch from '../fetchers/getSearch.js';
+import getOrSetCache from '../utils/getOrSetCache.js';
+import { answersKey, profileKey, searchKey, topicKey } from '../utils/cacheKeys.js';
 
 ////////////////////////////////////////////////////////
 //                     EXPORTS
@@ -21,31 +23,49 @@ export const about = (req, res, next) => {
 };
 
 export const answers = catchAsyncErrors(async (req, res, next) => {
-	const { slug } = req.params;
-	const { lang } = req.query;
+  const {
+    urlObj,
+    params: { slug },
+    query: { lang },
+  } = req;
 
-  const data = await getAnswers(slug, lang);
+  const data = await getOrSetCache(answersKey(urlObj), getAnswers, slug, lang);
   res.status(200).json({ status: 'success', data });
 });
 
 export const topic = catchAsyncErrors(async (req, res, next) => {
-	const { slug } = req.params;
-	const { lang } = req.query;
+  const {
+    urlObj,
+    params: { slug },
+    query: { lang },
+  } = req;
 
-  const data = await getTopic(slug, lang);
+  const data = await getOrSetCache(topicKey(urlObj), getTopic, slug, lang);
   res.status(200).json({ status: 'success', data });
 });
 
 export const profile = catchAsyncErrors(async (req, res, next) => {
-  const data = await getProfile(req.params.name);
+  const {
+    urlObj,
+    params: { name },
+    query: { lang },
+  } = req;
+
+  const data = await getOrSetCache(profileKey(urlObj), getProfile, name, lang);
   res.status(200).json({ status: 'success', data });
 });
 
 export const search = catchAsyncErrors(async (req, res, next) => {
-  const searchText = req.urlObj.searchParams.get('q')?.trim(); // no search to perform if there isn't any query
+  const {
+    urlObj,
+    query: { lang },
+  } = req;
 
+  const searchText = urlObj.searchParams.get('q')?.trim(); // no search to perform if there isn't any query
   let searchData = null;
-  if (searchText) searchData = await getSearch(req.urlObj.search);
+
+  if (searchText)
+    searchData = await getOrSetCache(searchKey(urlObj), getSearch, urlObj.search, lang);
 
   res.status(200).json({ status: 'success', data: searchData });
 });
@@ -72,5 +92,6 @@ export const image = catchAsyncErrors(async (req, res, next) => {
   const imageRes = await axiosInstance.get(path, { responseType: 'stream' });
 
   res.set('Content-Type', imageRes.headers['content-type']);
+  res.set('Cache-Control', 'public, max-age=315360000');
   return imageRes.data.pipe(res);
 });

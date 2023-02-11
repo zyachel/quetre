@@ -8,6 +8,8 @@ import getTopic from '../fetchers/getTopic.js';
 import { acceptedLanguages, nonSlugRoutes } from '../utils/constants.js';
 import getProfile from '../fetchers/getProfile.js';
 import getSearch from '../fetchers/getSearch.js';
+import getOrSetCache from '../utils/getOrSetCache.js';
+import { answersKey, profileKey, searchKey, topicKey } from '../utils/cacheKeys.js';
 
 ////////////////////////////////////////////////////////
 //                     EXPORTS
@@ -36,16 +38,17 @@ export const privacy = (req, res, next) => {
 };
 
 export const answers = catchAsyncErrors(async (req, res, next) => {
-  const { slug } = req.params;
-  const { lang } = req.query;
+  const {
+    urlObj,
+    params: { slug },
+    query: { lang },
+  } = req;
 
   // added this so that a request by browser to get favicon doesn't end up being interpreted as a slug
   if (nonSlugRoutes.includes(slug)) return next();
 
-  const answersData = await getAnswers(slug, lang);
-  const title = answersData.question.text[0].spans
-    .map(span => span.text)
-    .join('');
+  const answersData = await getOrSetCache(answersKey(urlObj), getAnswers, slug, lang);
+  const title = answersData.question.text[0].spans.map(span => span.text).join('');
 
   return res.status(200).render('answers', {
     data: answersData,
@@ -59,50 +62,62 @@ export const answers = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const topic = catchAsyncErrors(async (req, res, next) => {
-  const { slug } = req.params;
-  const { lang } = req.query;
+  const {
+    urlObj,
+    params: { slug },
+    query: { lang },
+  } = req;
 
-  const topicData = await getTopic(slug, lang);
+  const topicData = await getOrSetCache(topicKey(urlObj), getTopic, slug, lang);
 
   res.status(200).render('topic', {
     data: topicData,
     meta: {
       title: topicData.name,
-      url: req.urlObj,
-      imageUrl: `${req.urlObj.origin}/icon.svg`,
+      url: urlObj,
+      imageUrl: `${urlObj.origin}/icon.svg`,
       description: `Information about ${topicData.name} topic.`,
     },
   });
 });
 
 export const profile = catchAsyncErrors(async (req, res, next) => {
-  const { name } = req.params;
-  const { lang } = req.query;
-  const profileData = await getProfile(name, lang);
+  const {
+    urlObj,
+    params: { name },
+    query: { lang },
+  } = req;
+
+  const profileData = await getOrSetCache(profileKey(urlObj), getProfile, name, lang);
 
   res.status(200).render('profile', {
     data: profileData,
     meta: {
       title: profileData.basic.name,
-      url: req.urlObj,
-      imageUrl: `${req.urlObj.origin}/icon.svg`,
+      url: urlObj,
+      imageUrl: `${urlObj.origin}/icon.svg`,
       description: `${profileData.basic.name}'s profile.`,
     },
   });
 });
 
 export const search = catchAsyncErrors(async (req, res, next) => {
-  const searchText = req.urlObj.searchParams.get('q')?.trim();
-  const { lang } = req.query;
+  const {
+    urlObj,
+    query: { lang },
+  } = req;
+  const searchText = urlObj.searchParams.get('q')?.trim();
   let searchData = null;
-  if (searchText) searchData = await getSearch(req.urlObj.search, lang);
+
+  if (searchText)
+    searchData = await getOrSetCache(searchKey(urlObj), getSearch, urlObj.search, lang);
 
   res.status(200).render('search', {
     data: searchData,
     meta: {
       title: searchText || 'Search',
-      url: req.urlObj,
-      imageUrl: `${req.urlObj.origin}/icon.svg`,
+      url: urlObj,
+      imageUrl: `${urlObj.origin}/icon.svg`,
       description: searchText ? `results for '${searchText}'` : 'search page',
     },
   });

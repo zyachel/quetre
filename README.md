@@ -188,7 +188,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 ## To-Do
 
 - [x] add missing routes like topics, profile, and search
-- [ ] use redis
+- [x] use redis
 - [x] serve images and other assets from Quetre
 - [x] implement a better installation method
 - [ ] implement other trivial routes like a specific answer, spaces, etc.
@@ -200,7 +200,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 ### Manual
 
-1. Install [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/). Instructions are on their websites.
+1. Install [Node.js](https://nodejs.org/en/), [Git](https://git-scm.com/), and [Redis](https://redis.io)(Optional). Instructions are on their websites.
 
 2. Clone and set up the repository.
 
@@ -211,6 +211,8 @@ From [their privacy policy](https://www.quora.com/about/privacy)
    # change `pnpm` to `npm run` here as well as in package.json if you use `npm`
    pnpm install
    pnpm start
+   # optional
+   redis-server # useful for caching api responses
    ```
 
 Quetre will start running at http://localhost:3000.
