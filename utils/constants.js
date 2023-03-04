@@ -24,7 +24,7 @@ export const acceptedLanguages = [
   'fr', // French
   'de', // German
   'it', // Italian
-  'ja', // Japanese
+  'jp', // Japanese
   'id', // Indonesian
   'pt', // Portuguese
   'hi', // Hindi
