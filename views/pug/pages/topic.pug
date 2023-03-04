@@ -21,7 +21,6 @@ block content
             span= data.aliases.join(', ')
       .metadata-secondary
         +addMetadataSecondary('user','Followers', data.numFollowers)
-        +addMetadataSecondary('question','Questions', data.numQuestions)
         if data.isAdult
           +addMetadataSecondary('danger', 'Adult Topic', '18+', true)
         +quorafyUrl(meta.url)(class='link')

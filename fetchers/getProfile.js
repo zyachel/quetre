@@ -21,7 +21,7 @@ const feedAnswerCleaner = answer => ({
   numComments: answer.numDisplayComments,
   numUpvotes: answer.numUpvotes,
   numViews: answer.numViews,
-  numShares: answer.numSharers,
+  numShares: answer.numShares,
   numAnswerRequests: answer.numRequesters,
   isBusinessAnswer: answer.businessAnswer,
   author: {
@@ -55,7 +55,7 @@ const feedPostCleaner = post => ({
   numComments: post.numDisplayComments,
   numUpvotes: post.numUpvotes,
   numViews: post.numViews,
-  numShares: post.numSharers,
+  numShares: post.numShares,
   author: {
     uid: post.author.uid,
     isAnon: post.author.isAnon,

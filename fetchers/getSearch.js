@@ -54,8 +54,7 @@ const answerCleaner = ({ question, previewAnswer: answer }) => ({
   },
   ...(answer.originalQuestionIfDifferent && {
     originalQuestion: {
-      text: JSON.parse(answer.originalQuestionIfDifferent.question.title)
-        .sections,
+      text: JSON.parse(answer.originalQuestionIfDifferent.question.title).sections,
       url: quetrefy(answer.originalQuestionIfDifferent.question.url),
       qid: answer.originalQuestionIfDifferent.question.qid,
     },
@@ -67,7 +66,7 @@ const answerCleaner = ({ question, previewAnswer: answer }) => ({
   numComments: answer.numDisplayComments,
   numUpvotes: answer.numUpvotes,
   numViews: answer.numViews,
-  numShares: answer.numSharers,
+  numShares: answer.numShares,
   numAnswerRequests: answer.numRequesters,
   isBusinessAnswer: answer.businessAnswer,
   url: quetrefy(answer.url),
@@ -97,7 +96,7 @@ const postCleaner = post => ({
   numComments: post.numDisplayComments,
   numUpvotes: post.numUpvotes,
   numViews: post.numViews,
-  numShares: post.numSharers,
+  numShares: post.numShares,
   author: {
     uid: post.author.uid,
     isAnon: post.author.isAnon,
