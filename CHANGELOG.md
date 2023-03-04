@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.0.0](https://github.com/zyachel/quetre/compare/v5.6.0...v6.0.0) (2023-03-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* older versions will not work with answer route
+
+fix https://github.com/zyachel/quetre/issues/96
+
+### Bug Fixes
+
+* change japanese code from ja to jp ([ef46c5e](https://github.com/zyachel/quetre/commit/ef46c5ee3aa51064bcfde1011578e7062a044a61))
+* fix a couple of `NaN`s ([71587d0](https://github.com/zyachel/quetre/commit/71587d0db410eb506a1c9673ffa627a23b5cd4fa))
+* fix broken answers feed ([677b846](https://github.com/zyachel/quetre/commit/677b846eb2ef0dc6475e92f9a6de1c9dff23e051))
+
 ## [5.6.0](https://github.com/zyachel/quetre/compare/v5.5.0...v5.6.0) (2023-02-11)
 
 

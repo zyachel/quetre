@@ -1,6 +1,6 @@
 {
   "name": "quetre",
-  "version": "5.6.0",
+  "version": "6.0.0",
   "description": "a libre front-end for Quora",
   "private": true,
   "type": "module",
