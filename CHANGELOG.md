@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.0.0](https://github.com/zyachel/quetre/compare/v6.0.0...v7.0.0) (2023-04-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* **answers:** old fetcher may or may not work
+
+fix: https://github.com/zyachel/quetre/issues/101
+
+### Features
+
+* **cache:** increase ttl for routes that are cached but being accessed again ([10eea08](https://github.com/zyachel/quetre/commit/10eea0830511d0e914a255a05904ab18265e46e6))
+
+
+### Bug Fixes
+
+* **answers:** fix answers route crashing ([b8a0b9f](https://github.com/zyachel/quetre/commit/b8a0b9fcadd1d3c797b0023ff91b2221b9072298))
+* fix flash of inaccurate color theme ([35a0d87](https://github.com/zyachel/quetre/commit/35a0d87c133ccda9242d319afa63a2c17a6df973))
+
 ## [6.0.0](https://github.com/zyachel/quetre/compare/v5.6.0...v6.0.0) (2023-03-04)
 
 
