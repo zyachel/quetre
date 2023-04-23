@@ -6,6 +6,7 @@ const redisUrl = process.env.REDIS_URL;
 const stub = {
   get: async key => {},
   set: async (key, value, secondsToken, seconds) => {},
+  expire: async (key, seconds) => {},
 };
 
 const redis = redisUrl ? new Redis(redisUrl) : stub;
