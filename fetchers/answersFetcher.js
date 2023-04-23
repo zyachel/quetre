@@ -38,13 +38,16 @@ const answersFetcher = async (resourceStr, lang) => {
         rawData.question = matchedPart.question;
 
         // primary answer block
-      } else if (matchedPart.question?.answers?.edges) {
+      } else if (
+        matchedPart.question?.answers?.edges &&
+        matchedPart.question.answers.edges[0].node.answer.content
+      ) {
         rawData.answers.push(matchedPart.question.answers.edges[0].node.answer);
 
         // other answer blocks
       } else if (
         // eslint-disable-next-line no-underscore-dangle
-        matchedPart.node?.__typename === 'QuestionRelevantAnswerItem2'
+        matchedPart.node?.__typename === 'QuestionAnswerItem2'
       ) {
         rawData.answers.push(matchedPart.node.answer);
 
