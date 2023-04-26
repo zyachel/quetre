@@ -64,6 +64,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.lunar.icu](https://quetre.lunar.icu) | Germany | Cloudflare | Operated by [lunar.icu](https://lunar.icu/) |
 | [que.wilbvr.me](https://que.wilbvr.me) | Netherlands | Liga Hosting | Operated by [Wilbvr](https://wilbvr.me) |
 | [quora.femboy.hu](https://quora.femboy.hu) | Hungary | N/A (Self-hosted) | Operated by [hnhx](https://femboy.hu) |
+| [quetre.xbdm.fun](https://quetre.xbdm.fun) | Germany | Hetzner (Cloudflare) | Operated by [xbdm](https://github.com/xbdmHQ) |
 | 2. Onion | | | |
 | [quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion](http://quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
 | [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
