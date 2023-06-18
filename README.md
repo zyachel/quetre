@@ -54,7 +54,6 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.pussthecat.org](https://quetre.pussthecat.org) | Germany | &ndash; | Operated by [PussTheCat.org](https://pussthecat.org/) |
 | [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/) | U.S. | Oracle | Operated by [Tokhmi](https://tokhmi.xyz) |
 | [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt) | Europe | BuyVM | Operated by [Project Segfault](https://projectsegfau.lt) |
-| [quetre.esmailelbob.xyz](https://quetre.esmailelbob.xyz) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
 | [quetre.odyssey346.dev](https://quetre.odyssey346.dev) | Poland | OVHCloud | Operated by [Odyssey346](https://odyssey346.dev/) |
 | [quetre.privacydev.net](https://quetre.privacydev.net) | Germany | fastpipe.io | Operated by [PrivacyDev](https://privacydev.net/) |
 | [ask.habedieeh.re](https://ask.habedieeh.re) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
@@ -66,7 +65,6 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [questions.whateveritworks.org](https://questions.whateveritworks.org) | Germany | Hetzner (Cloudflare) | Operated by [WhateverItWorks](https://github.com/WhateverItWorks) |
 | [quetre.fascinated.cc](https://quetre.fascinated.cc) | Germany | Contabo (Cloudflare) | Operated by [RealFascinated](https://github.com/RealFascinated) |
 | 2. Onion | | | |
-| [quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion](http://quetre.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion) | Canada | OVHCloud | Operated by [Esmail EL BoB](https://esmailelbob.xyz/) |
 | [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
 | [ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion](http://ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion/) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
 | [quetre.g4c3eya4clenolymqbpgwz3q3tawoxw56yhzk4vugqrl6dtu3ejvhjid.onion](http://quetre.g4c3eya4clenolymqbpgwz3q3tawoxw56yhzk4vugqrl6dtu3ejvhjid.onion/) | Germany | fastpipe.io | Operated by [PrivacyDev](https://privacydev.net/) |
