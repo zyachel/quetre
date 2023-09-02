@@ -62,8 +62,9 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [que.wilbvr.me](https://que.wilbvr.me) | Netherlands | Liga Hosting | Operated by [Wilbvr](https://wilbvr.me) |
 | [quora.femboy.hu](https://quora.femboy.hu) | Hungary | N/A (Self-hosted) | Operated by [hnhx](https://femboy.hu) |
 | [questions.whateveritworks.org](https://questions.whateveritworks.org) | Germany | Hetzner (Cloudflare) | Operated by [WhateverItWorks](https://github.com/WhateverItWorks) |
-| [quetre.fascinated.cc](https://quetre.fascinated.cc) | Germany | Contabo (Cloudflare) | Operated by [RealFascinated](https://github.com/RealFascinated) |
 | [quetre.frontendfriendly.xyz](https://quetre.frontendfriendly.xyz) | &ndash; | &ndash; | Operated by [frontendfriendly.xyz](https://frontendfriendly.xyz) |
+[q.opnxng.com](https://q.opnxng.com/) | Singapore | Vultr | Operated by [Opnxng]((https://about.opnxng.com/) )
+[quetre.ftw.lol](https://quetre.ftw.lol) | Germany | Hetzner | Operated by [FTW.LOL](https://www.ftw.lol)
 | 2. Onion | | | |
 | [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
 | [ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion](http://ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion/) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
