@@ -65,6 +65,8 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | [quetre.frontendfriendly.xyz](https://quetre.frontendfriendly.xyz) | &ndash; | &ndash; | Operated by [frontendfriendly.xyz](https://frontendfriendly.xyz) |
 [q.opnxng.com](https://q.opnxng.com/) | Singapore | Vultr | Operated by [Opnxng]((https://about.opnxng.com/) )
 [quetre.ftw.lol](https://quetre.ftw.lol) | Germany | Hetzner | Operated by [FTW.LOL](https://www.ftw.lol)
+[quora.seitan-ayoub.lol](https://quora.seitan-ayoub.lol) | Germany | &ndash; | Operated by [seitan-ayoub.lol](https://seitan-ayoub.lol/)
+[quetre.catsarch.com](https://quetre.catsarch.com) | US  | N/A (Self-hosted) | Operated by [Butter Cat](https://catsarch.com)
 | 2. Onion | | | |
 | [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
 | [ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion](http://ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion/) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
