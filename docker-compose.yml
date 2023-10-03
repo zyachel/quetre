@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3'
 
 services:
   quetre:
@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "doc:3000"
     environment:
       - "NODE_ENV=production"
       - "PORT=3000"
