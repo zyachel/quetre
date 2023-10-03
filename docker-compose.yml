@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  quetre:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - "NODE_ENV=production"
+      - "PORT=3000"
+      - "CACHE_PERIOD=1h"
+      - "REDIS_URL=redis:6379" # optional
+      - "REDIS_TTL=3600"
+  redis:
+   image: docker.io/redis:alpine
+   container_name: redis
+   restart: unless-stopped
