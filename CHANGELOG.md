@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.1.0](https://github.com/zyachel/quetre/compare/v7.0.0...v7.1.0) (2023-11-05)
+
+
+### Features
+
+* add docker support with redis([#118](https://github.com/zyachel/quetre/issues/118)) ([2320c6c](https://github.com/zyachel/quetre/commit/2320c6c4d5edc77f8c84f3a23fb1b807e7747325))
+* **answers:** mark related questions that are unanswered ([f77a1b1](https://github.com/zyachel/quetre/commit/f77a1b15bfbbf395f47c107356942fc5d7186a45))
+
+
+### Bug Fixes
+
+* **fetcher:** fix answers route crashing in case there aren't any answers ([c6c4828](https://github.com/zyachel/quetre/commit/c6c4828422f3349cab72b76fd32448f1b5ab9b7e))
+* fix a typo while modifying url ([7547f54](https://github.com/zyachel/quetre/commit/7547f54d7016a4b9f64b712522c92b8bd6f8ccaf))
+* **search:** show search query along with results ([4cd5514](https://github.com/zyachel/quetre/commit/4cd551438b288841e41efea5e95cae02f1c27076))
+
 ## [7.0.0](https://github.com/zyachel/quetre/compare/v6.0.0...v7.0.0) (2023-04-23)
 
 
