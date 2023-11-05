@@ -20,7 +20,7 @@ mixin quetrefyUrl(url, text)
 
     if (match) {
       const [_, subdomain, rest] = match;
-      if (acceptedLanguages.includes(subdomain)) link = link = `${rest}${rest.includes('?') ? '&' : '?'}lang=${subdomain}`;
+      if (acceptedLanguages.includes(subdomain)) link = `${rest}${rest.includes('?') ? '&' : '?'}lang=${subdomain}`;
       else if (subdomain === 'www') link = rest;
       else link = `/space/${subdomain}${rest}`;
     } else {
