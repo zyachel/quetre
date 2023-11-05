@@ -41,4 +41,4 @@ block content
       ul.related__questions 
         each question in data.relatedQuestions
           li.related__question-item: a.related__question-link.answers__link(href=question.url)
-            +spansChecker([{text: question.url.slice(0, 12) == '/unanswered/' ? "[Unanswered] " : " ", modifiers: {highlight: true}}, ...question.text[0].spans])
+            +spansChecker(question.text[0].spans)
