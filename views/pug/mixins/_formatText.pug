@@ -27,6 +27,9 @@ mixin spansChecker(spans)
     //- handle italic text
     - else if (!!span.modifiers.italic)
       em.text__span-italic= span.text
+    //- handle highlight text
+    - else if (span.modifiers.highlight)
+      span.text__span-highlight= span.text
     //- regular plain text
     - else 
       span.text__span-plain= span.text 
