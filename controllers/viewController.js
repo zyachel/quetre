@@ -113,9 +113,9 @@ export const search = catchAsyncErrors(async (req, res, next) => {
     searchData = await getOrSetCache(searchKey(urlObj), getSearch, urlObj.search, lang);
 
   res.status(200).render('search', {
-    data: searchData,
+    data: { searchData, searchText },
     meta: {
-      title: searchText || 'Search',
+      title: searchText ? `Results for '${searchText}'` : 'Search',
       url: urlObj,
       imageUrl: `${urlObj.origin}/icon.svg`,
       description: searchText ? `results for '${searchText}'` : 'search page',

@@ -67,7 +67,7 @@ export const search = catchAsyncErrors(async (req, res, next) => {
   if (searchText)
     searchData = await getOrSetCache(searchKey(urlObj), getSearch, urlObj.search, lang);
 
-  res.status(200).json({ status: 'success', data: searchData });
+  res.status(200).json({ status: 'success', data: {searchData, searchText} });
 });
 
 export const unimplemented = (req, res, next) => {

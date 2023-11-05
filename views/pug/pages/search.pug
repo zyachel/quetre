@@ -14,7 +14,7 @@ include ../mixins/_metadata
 //-                   MAIN CONTENT
 //-//////////////////////////////////////////////////////
 block content
-  main#main(class=`main search ${data ? '' :'search--no-results'}`)
+  main#main(class=`main search ${data.searchData ? '' :'search--no-results'}`)
     - 
       const typesArr = [{key: 'question', text: 'Questions'}, {key: 'answer', text: 'Answers'}, {key: 'post', text: 'Posts'}, {key: 'profile', text: 'Profiles'}, {key: 'topic', text: 'Topics'}, {key: 'tribe', text: 'Spaces'}]
       const timesArr = [{key: 'hour', text: 'Hour'}, {key: 'day', text: 'Day'}, {key: 'week', text: 'Week'}, {key: 'month', text: 'Month'}, {key: 'year', text: 'Year'}] 
@@ -47,14 +47,14 @@ block content
             label.search-form__label(for=`lang--${lang}`)= lang.toUpperCase()
 
     //- TODO: refactor 'profile', 'topic', and 'space' into resusable mixins.
-    - if (data?.results)
+    - if (data.searchData?.results)
       section.search__results.search-results
-        h1.heading.heading__primary Results
-        - if (data.results.length === 0)
+        h1.heading.heading__primary= `Results for '${data.searchText}'`
+        - if (data.searchData.results.length === 0)
           p No results found for the query. Try being less specific and/or removing filters.
         - else
           .search-results__container
-            each item in data.results
+            each item in data.searchData.results
               .search-results__item
                 - if (item.type === 'answer')
                   +addAnswer(item, true)
