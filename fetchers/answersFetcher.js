@@ -38,10 +38,7 @@ const answersFetcher = async (resourceStr, lang) => {
         rawData.question = matchedPart.question;
 
         // primary answer block
-      } else if (
-        matchedPart.question?.answers?.edges &&
-        matchedPart.question.answers.edges[0].node.answer.content
-      ) {
+      } else if (matchedPart.question?.answers?.edges?.[0].node.answer?.content) {
         rawData.answers.push(matchedPart.question.answers.edges[0].node.answer);
 
         // other answer blocks
