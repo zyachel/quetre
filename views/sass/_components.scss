@@ -441,6 +441,11 @@
   &__question-item {
     font-weight: 500;
   }
+
+  &__question-link[href^="/unanswered/"]::before {
+    content: '[Unanswered] ';
+    color: var(--clr-base-text-alt-alpha);
+  }
 }
 
 ////////////////////////////////////////////////////////
