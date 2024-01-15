@@ -268,6 +268,10 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
   - [Dynamic Privacy Redirect](https://github.com/PrivacyDevel/DPR-addon)
   - [Alter](https://github.com/w3bdev1/alter)
 
+  - [Predirect](https://github.com/libreom/predirect), A modern, manifest v3 based extension that requires minimal permissions(even for embeds).
+
+See [Predirect's Comparision table](https://github.com/libreom/predirect/blob/main/COMPARISON.md) for more.
+
 ### Other alternative front-ends
 
 - [digitalblossom/alternative-frontends](https://github.com/digitalblossom/alternative-frontends): contains other alternative front-ends.
