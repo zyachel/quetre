@@ -70,6 +70,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 [ask.sudovanilla.org](https://ask.sudovanilla.org) | US  | N/A (Self-hosted) | Operated by [SudoVanilla](https://sudovanilla.org)
 [quetre.drgns.space](https://quetre.drgns.space) | US  | N/A (Self-hosted) | Operated with ❤️ from [drgns.space](https://drgns.space/)
 [quetre.r4fo.com](https://quetre.r4fo.com) | The Netherlands  | Oracle | Operated by [r4fo](https://r4fo.com/)
+[quetre.ducks.party](https://quetre.ducks.party) | Netherlands | Timeweb | Operated by [ducks.party](https://ducks.party)
 | 2. Onion | | | |
 | [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
 | [ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion](http://ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion/) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
