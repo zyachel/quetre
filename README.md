@@ -46,39 +46,30 @@ It enables you to see answers without ads, trackers, and other such bloat.
 ## Instances
 
 <!-- prettier-ignore -->
-| Instance | Region | Provider | Notes |
-| -------- | ------ | -------- | ----- |
-| 1. Clearnet | | | |
-| [quetre.iket.me](https://quetre.iket.me) | Canada | OVHCloud | Official instance |
-| [quora.vern.cc](https://qr.vern.cc) | US | Hetzner | Operated by [~vern](https://vern.cc/) |
-| [quetre.pussthecat.org](https://quetre.pussthecat.org) | Germany | &ndash; | Operated by [PussTheCat.org](https://pussthecat.org/) |
-| [quetre.tokhmi.xyz](https://quetre.tokhmi.xyz/) | U.S. | Oracle | Operated by [Tokhmi](https://tokhmi.xyz) |
-| [quetre.projectsegfau.lt](https://quetre.projectsegfau.lt) | Europe | BuyVM | Operated by [Project Segfault](https://projectsegfau.lt) |
-| [quetre.odyssey346.dev](https://quetre.odyssey346.dev) | Poland | OVHCloud | Operated by [Odyssey346](https://odyssey346.dev/) |
-| [quetre.privacydev.net](https://quetre.privacydev.net) | France | Clovux | Operated by [PrivacyDev](https://privacydev.net/) |
-| [ask.habedieeh.re](https://ask.habedieeh.re) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
-| [quetre.blackdrgn.nl](https://quetre.blackdrgn.nl) | Germany | Contabo | Operated by [blackdrgn.nl](https://blackdrgn.nl) |
-| [quetre.lunar.icu](https://quetre.lunar.icu) | Germany | Cloudflare | Operated by [lunar.icu](https://lunar.icu/) |
-| [que.wilbvr.me](https://que.wilbvr.me) | Netherlands | Liga Hosting | Operated by [Wilbvr](https://wilbvr.me) |
-| [quora.femboy.hu](https://quora.femboy.hu) | Hungary | N/A (Self-hosted) | Operated by [hnhx](https://femboy.hu) |
-| [questions.whateveritworks.org](https://questions.whateveritworks.org) | Germany | Hetzner (Cloudflare) | Operated by [WhateverItWorks](https://github.com/WhateverItWorks) |
-| [quetre.frontendfriendly.xyz](https://quetre.frontendfriendly.xyz) | &ndash; | &ndash; | Operated by [frontendfriendly.xyz](https://frontendfriendly.xyz) |
-[q.opnxng.com](https://q.opnxng.com/) | Singapore | Vultr | Operated by [Opnxng]((https://about.opnxng.com/) )
-[quetre.ftw.lol](https://quetre.ftw.lol) | Germany | Hetzner | Operated by [FTW.LOL](https://www.ftw.lol)
-[quora.seitan-ayoub.lol](https://quora.seitan-ayoub.lol) | Germany | &ndash; | Operated by [seitan-ayoub.lol](https://seitan-ayoub.lol/)
-[quetre.catsarch.com](https://quetre.catsarch.com) | US  | N/A (Self-hosted) | Operated by [Butter Cat](https://catsarch.com)
-[ask.sudovanilla.org](https://ask.sudovanilla.org) | US  | N/A (Self-hosted) | Operated by [SudoVanilla](https://sudovanilla.org)
-[quetre.drgns.space](https://quetre.drgns.space) | US  | N/A (Self-hosted) | Operated with ❤️ from [drgns.space](https://drgns.space/)
-[quetre.r4fo.com](https://quetre.r4fo.com) | The Netherlands  | Oracle | Operated by [r4fo](https://r4fo.com/)
-[quetre.ducks.party](https://quetre.ducks.party) | Netherlands | Timeweb | Operated by [ducks.party](https://ducks.party)
-| 2. Onion | | | |
-| [qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
-| [ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion](http://ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion/) | Canada | Oracle | Operated by [habedieeh.re](https://www.habedieeh.re) |
-| [quetre.g4c3eya4clenolymqbpgwz3q3tawoxw56yhzk4vugqrl6dtu3ejvhjid.onion](http://quetre.g4c3eya4clenolymqbpgwz3q3tawoxw56yhzk4vugqrl6dtu3ejvhjid.onion/) | France | Clovux | Operated by [PrivacyDev](https://privacydev.net/) |
-| [quora.cepyxplublbyw2f4axy4pyztfbxmf63lrt2c7uwv6wl4iixz53czload.onion](http://quora.cepyxplublbyw2f4axy4pyztfbxmf63lrt2c7uwv6wl4iixz53czload.onion) | Hungary | N/A (Self-hosted) | Operated by [hnhx](https://femboy.hu) |
-[quetre.catsarchywsyuss6jdxlypsw5dc7owd5u5tr6bujxb7o6xw2hipqehyd.onion](http://quetre.catsarchywsyuss6jdxlypsw5dc7owd5u5tr6bujxb7o6xw2hipqehyd.onion) | US  | N/A (Self-hosted) | Operated by [Butter Cat](https://catsarch.com)
-| 3. I2P | | | |
-| [qr.vern.i2p/](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
+| Instance                                  | Tor                                                                                  | I2P                                                                         | Region  | Provider             | Notes |
+| ----------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- | ------- | -------------------- | ----- |
+| <https://quetre.iket.me/>                 | No                                                                                   | No                                                                          | CA      | OVHCloud             | Official instance                                                           |
+| <https://qr.vern.cc/>                     | [Yes](http://qr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/)     | [Yes](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | US      | Hetzner              | Operated by [~vern](https://vern.cc/)                                       |
+| <https://quetre.pussthecat.org/>          | No                                                                                   | No                                                                          | DE      | &ndash;              | Operated by [PussTheCat.org](https://pussthecat.org/)                       |
+| <https://quetre.tokhmi.xyz/>              | No                                                                                   | No                                                                          | US      | Oracle               | Operated by [Tokhmi](https://tokhmi.xyz/)                                   |
+| <https://quetre.projectsegfau.lt/>        | No                                                                                   | No                                                                          | EU      | BuyVM                | Operated by [Project Segfault](https://projectsegfau.lt/)                   |
+| <https://quetre.odyssey346.dev/>          | No                                                                                   | No                                                                          | PL      | OVHCloud             | Operated by [Odyssey346](https://odyssey346.dev/)                           |
+| <https://quetre.privacydev.net/>          | [Yes](http://quetre.g4c3eya4clenolymqbpgwz3q3tawoxw56yhzk4vugqrl6dtu3ejvhjid.onion/) | No                                                                          | FR      | Clovux               | Operated by [PrivacyDev](https://privacydev.net/)                           |
+| <https://ask.habedieeh.re/>               | [Yes](http://ask.habeehrhadazsw3izbrbilqajalfyqqln54mrja3iwpqxgcuxnus7eid.onion/)    | No                                                                          | CA      | Oracle               | Operated by [habedieeh.re](https://www.habedieeh.re/)                       |
+| <https://quetre.blackdrgn.nl/>            | No                                                                                   | No                                                                          | DE      | Contabo              | Operated by [blackdrgn.nl](https://blackdrgn.nl/)                           |
+| <https://quetre.lunar.icu/>               | No                                                                                   | No                                                                          | DE      | Cloudflare           | Operated by [lunar.icu](https://lunar.icu/)                                 |
+| <https://que.wilbvr.me/>                  | No                                                                                   | No                                                                          | NL      | Liga Hosting         | Operated by [Wilbvr](https://wilbvr.me/)                                    |
+| <https://quora.femboy.hu/>                | [Yes](http://quora.cepyxplublbyw2f4axy4pyztfbxmf63lrt2c7uwv6wl4iixz53czload.onion/)  | No                                                                          | HU      | N/A (Self-hosted)    | Operated by [hnhx](https://femboy.hu/)                                      |
+| <https://questions.whateveritworks.org/>  | No                                                                                   | No                                                                          | DE      | Hetzner (Cloudflare) | Operated by [WhateverItWorks](https://github.com/WhateverItWorks)           |
+| <https://quetre.frontendfriendly.xyz/>    | No                                                                                   | No                                                                          | &ndash; | &ndash;              | Operated by [frontendfriendly.xyz](https://frontendfriendly.xyz/)           |
+| <https://q.opnxng.com/>                   | No                                                                                   | No                                                                          | SG      | Vultr                | Operated by [Opnxng](https://about.opnxng.com/)                             |
+| <https://quetre.ftw.lol/>                 | No                                                                                   | No                                                                          | DE      | Hetzner              | Operated by [FTW.LOL](https://www.ftw.lol/)                                 |
+| <https://quora.seitan-ayoub.lol/>         | No                                                                                   | No                                                                          | DE      | &ndash;              | Operated by [seitan-ayoub.lol](https://seitan-ayoub.lol/)                   |
+| <https://quetre.catsarch.com/>            | [Yes](http://quetre.catsarchywsyuss6jdxlypsw5dc7owd5u5tr6bujxb7o6xw2hipqehyd.onion/) | No                                                                          | US      | N/A (Self-hosted)    | Operated by [Butter Cat](https://catsarch.com/)                             |
+| <https://ask.sudovanilla.org/>            | No                                                                                   | No                                                                          | US      | N/A (Self-hosted)    | Operated by [SudoVanilla](https://sudovanilla.org/)                         |
+| <https://quetre.drgns.space/>             | No                                                                                   | No                                                                          | US      | N/A (Self-hosted)    | Operated with ❤️ from [drgns.space](https://drgns.space/)                    |
+| <https://quetre.r4fo.com/>                | No                                                                                   | No                                                                          | NL      | Oracle               | Operated by [r4fo](https://r4fo.com/)                                       |
+| <https://quetre.ducks.party/>             | No                                                                                   | No                                                                          | NL      | Timeweb              | Operated by [ducks.party](https://ducks.party/)                             |
 
 ---
 
