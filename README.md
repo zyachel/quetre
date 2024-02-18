@@ -71,6 +71,8 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | <https://quetre.r4fo.com/>                | No                                                                                   | No                                                                          | NL      | Oracle               | Operated by [r4fo](https://r4fo.com/)                                       |
 | <https://quetre.ducks.party/>             | No                                                                                   | No                                                                          | NL      | Timeweb              | Operated by [ducks.party](https://ducks.party/)                             |
 
+Instances list in JSON format can be found in [instances.json](instances.json) file.
+
 ---
 
 ## Comparision
