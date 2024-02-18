@@ -80,6 +80,8 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | 3. I2P | | | |
 | [qr.vern.i2p/](http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p/) | US | Hetzner | Operated by [~vern](https://vern.cc) |
 
+Instances list in JSON format can be found in [instances.json](instances.json) file.
+
 ---
 
 ## Comparision
