@@ -7,9 +7,8 @@ import catchAsyncErrors from '../utils/catchAsyncErrors.js';
 import getAnswers from '../fetchers/getAnswers.js';
 import getTopic from '../fetchers/getTopic.js';
 import getProfile from '../fetchers/getProfile.js';
-import getSearch from '../fetchers/getSearch.js';
 import getOrSetCache from '../utils/getOrSetCache.js';
-import { answersKey, profileKey, searchKey, topicKey } from '../utils/cacheKeys.js';
+import { answersKey, profileKey, topicKey } from '../utils/cacheKeys.js';
 
 ////////////////////////////////////////////////////////
 //                     EXPORTS
@@ -18,7 +17,7 @@ export const about = (req, res, next) => {
   res.status(200).json({
     status: 'success',
     message: `make a request. 
-    available endpoints are: '/slug', '/unanswered/slug', '/topic/slug', '/profile/slug', '/search?q=query', /?q=query.`,
+    available endpoints are: '/slug', '/unanswered/slug', '/topic/slug', '/profile/slug'`,
   });
 };
 
@@ -55,27 +54,20 @@ export const profile = catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({ status: 'success', data });
 });
 
-export const search = catchAsyncErrors(async (req, res, next) => {
-  const {
-    urlObj,
-    query: { lang },
-  } = req;
-
-  const searchText = urlObj.searchParams.get('q')?.trim(); // no search to perform if there isn't any query
-  let searchData = null;
-
-  if (searchText)
-    searchData = await getOrSetCache(searchKey(urlObj), getSearch, urlObj.search, lang);
-
-  res.status(200).json({ status: 'success', data: {searchData, searchText} });
-});
-
 export const unimplemented = (req, res, next) => {
   res.status(501).json({
     status: 'fail',
     message: "This route isn't yet implemented. Check back sometime later!",
   });
 };
+
+export const gone = (req, res, next) => {
+  res.status(501).json({
+    status: 'fail',
+    message: "This route doesn't exist anymore.",
+  });
+};
+
 
 export const image = catchAsyncErrors(async (req, res, next) => {
   const { domain, path } = req.params;

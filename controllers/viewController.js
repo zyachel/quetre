@@ -7,9 +7,8 @@ import getAnswers from '../fetchers/getAnswers.js';
 import getTopic from '../fetchers/getTopic.js';
 import { acceptedLanguages, nonSlugRoutes } from '../utils/constants.js';
 import getProfile from '../fetchers/getProfile.js';
-import getSearch from '../fetchers/getSearch.js';
 import getOrSetCache from '../utils/getOrSetCache.js';
-import { answersKey, profileKey, searchKey, topicKey } from '../utils/cacheKeys.js';
+import { answersKey, profileKey, topicKey } from '../utils/cacheKeys.js';
 
 ////////////////////////////////////////////////////////
 //                     EXPORTS
@@ -101,28 +100,6 @@ export const profile = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-export const search = catchAsyncErrors(async (req, res, next) => {
-  const {
-    urlObj,
-    query: { lang },
-  } = req;
-  const searchText = urlObj.searchParams.get('q')?.trim();
-  let searchData = null;
-
-  if (searchText)
-    searchData = await getOrSetCache(searchKey(urlObj), getSearch, urlObj.search, lang);
-
-  res.status(200).render('search', {
-    data: { searchData, searchText },
-    meta: {
-      title: searchText ? `Results for '${searchText}'` : 'Search',
-      url: urlObj,
-      imageUrl: `${urlObj.origin}/icon.svg`,
-      description: searchText ? `results for '${searchText}'` : 'search page',
-    },
-  });
-});
-
 const regex = /^https:\/\/(.{2,})\.quora\.com(\/.*)$/; // local helper constant
 export const redirect = (req, res, next) => {
   const url = req.originalUrl.replace('/redirect/', ''); // removing `/redirect/` part.
@@ -152,6 +129,23 @@ export const unimplemented = (req, res, next) => {
     data,
     meta: {
       title: 'Not yet implemented',
+      url: req.urlObj,
+      imageUrl: `${req.urlObj.origin}/icon.svg`,
+      description: data.message,
+    },
+  });
+};
+
+export const gone = (req, res, next) => {
+  const data = {
+    message: "This route doesn't exist anymore.",
+    statusCode: 410,
+  };
+
+  res.status(data.statusCode).render('error', {
+    data,
+    meta: {
+      title: 'Gone',
       url: req.urlObj,
       imageUrl: `${req.urlObj.origin}/icon.svg`,
       description: data.message,

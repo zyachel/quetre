@@ -8,11 +8,6 @@ const formatSlug = (slug, charToRemove) =>
 ////////////////////////////////////////////////////////
 //                      EXPORTS
 ////////////////////////////////////////////////////////
-export const searchKey = urlObj => {
-  const slug = formatSlug(urlObj.search, '?');
-  return `search:${slug}`;
-};
-
 export const answersKey = urlObj => {
   const slug = formatSlug(urlObj.pathname, '/');
   const lang = getLang(urlObj);

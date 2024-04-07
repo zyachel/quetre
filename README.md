@@ -187,7 +187,7 @@ From [their privacy policy](https://www.quora.com/about/privacy)
 
 ## To-Do
 
-- [x] add missing routes like topics, profile, and search
+- [x] add missing routes like topics and profile
 - [x] use redis
 - [x] serve images and other assets from Quetre
 - [x] implement a better installation method

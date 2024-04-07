@@ -10,8 +10,6 @@ header.header(class=`${meta.title === 'About' ? 'header__about': ''}`)
 
     //- BUTTON FOR CHANGING THEME
     .header__misc
-      a.link.header__search(href="/search", aria-label='search page')
-        svg.icon: use(href='/misc/sprite.svg#icon-search')
       button.button.theme-changer.header__theme(aria-label='Change Theme')
         svg.icon.icon__theme.theme-changer__icon.theme-changer__icon--sun: use(href='/misc/sprite.svg#icon-sun')
         svg.icon.icon__theme.theme-changer__icon.theme-changer__icon--moon: use(href='/misc/sprite.svg#icon-moon')
