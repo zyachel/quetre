@@ -5,6 +5,7 @@
 import * as cheerio from 'cheerio';
 import getAxiosInstance from '../utils/getAxiosInstance.js';
 import AppError from '../utils/AppError.js';
+import parse from '../utils/parse.js';
 
 ////////////////////////////////////////////////////////
 //                     FUNCTION
@@ -18,19 +19,16 @@ import AppError from '../utils/AppError.js';
  * await fetcher('topic/Space-Physics'); // will return 'space physics' topic object
  * await fetcher('profile/Charlie-Cheever'); // will return object containing information about charlie cheever
  */
-const fetcher = async (
-  resourceStr,
-  { keyword, lang, toEncode = true }
-) => {
+const fetcher = async (resourceStr, { keyword, lang, toEncode = true }) => {
   try {
     // as url might contain unescaped chars. so, encoding it right away
     const str = toEncode ? encodeURIComponent(resourceStr) : resourceStr;
     const axiosInstance = getAxiosInstance(lang);
     const res = await axiosInstance.get(str);
-    
+
     const $ = cheerio.load(res.data);
 
-    const regex = new RegExp(`"{\\\\"data\\\\":\\{\\\\"${keyword}.*\\}"`); // equivalent to /"\{\\"data\\":\{\\"searchConnection.*\}"/
+    const regex = new RegExp(String.raw`"{\\"data\\":\{\\"${keyword}.*?\}"`);
 
     let rawData;
     $('body script').each((i, el) => {
@@ -45,7 +43,7 @@ const fetcher = async (
 
     if (!rawData) throw new AppError("couldn't retrieve data", 500);
 
-    return JSON.parse(rawData);
+    return parse(rawData);
   } catch (err) {
     const statusCode = err.response?.status;
     if (statusCode === 404) throw new AppError('Not found', 404);

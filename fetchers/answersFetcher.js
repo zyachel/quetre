@@ -5,6 +5,7 @@
 import * as cheerio from 'cheerio';
 import getAxiosInstance from '../utils/getAxiosInstance.js';
 import AppError from '../utils/AppError.js';
+import parse from '../utils/parse.js';
 
 ////////////////////////////////////////////////////////
 //                     FUNCTION
@@ -31,7 +32,7 @@ const answersFetcher = async (resourceStr, lang) => {
       if (!matches) return;
 
       // brittle logic, but works
-      const matchedPart = JSON.parse(JSON.parse(matches[1])).data;
+      const matchedPart = JSON.parse(parse(matches[1])).data;
 
       // only question block has this word
       if (typeof matchedPart.question?.viewerHasAnswered !== 'undefined') {
