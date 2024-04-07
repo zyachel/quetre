@@ -30,8 +30,6 @@ const data = {
   name: rawData.name,
   url: quetrefy(rawData.url),
   image: rawData.photoUrl,
-  aliases: rawData.aliases,
-  numFollowers: rawData.numFollowers,
   // isLocked: rawData.isLocked,
   isAdult: rawData.adult,
   mostViewedAuthors: rawData.mostViewedAuthors.map(author => ({

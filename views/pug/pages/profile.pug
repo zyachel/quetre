@@ -145,8 +145,7 @@ block content
       section.profile__spaces.profile-spaces
         h2.heading.heading__secondary Spaces   
         p.profile-spaces__info
-          span.profile-spaces__item Active in #{data.spaces.numActiveInSpaces},&nbsp;
-          span.profile-spaces__item following #{data.spaces.numFollowingSpaces} spaces
+          span.profile-spaces__item Active in #{data.spaces.numActiveInSpaces} spaces
         ul.profile-spaces__list
           each space in data.spaces.spaces
             li.metadata-primary.profile-spaces__list-item
@@ -160,9 +159,7 @@ block content
                   span sensitive space
 
       section.profile__topics.profile-topics
-        h2.heading.heading__secondary.profile-topics__heading Topics     
-        p.profile-topics__info
-          span.profile-topics__item Following #{data.topics.numFollowingTopics} topics
+        h2.heading.heading__secondary.profile-topics__heading Topics
         ul.profile-topics__list
           each topic in data.topics.topics
             li.metadata-primary.profile-topics__list-item

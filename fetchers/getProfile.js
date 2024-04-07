@@ -184,7 +184,6 @@ const getProfile = async (slug, lang) => {
     },
     spaces: {
       numActiveInSpaces: rawData.numCanContributeTribes,
-      numFollowingSpaces: rawData.numFollowedTribes,
       spaces: rawData.followingTribesConnection.edges.map(space => ({
         numItems: space.node.numItemsOfUser,
         url: quetrefy(space.node.url),
@@ -194,7 +193,6 @@ const getProfile = async (slug, lang) => {
       })),
     },
     topics: {
-      numFollowingTopics: rawData.numFollowedTopics,
       topics: rawData.expertiseTopicsConnection.edges.map(topic => ({
         name: topic.node.name,
         url: quetrefy(topic.node.url),

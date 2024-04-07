@@ -15,12 +15,7 @@ block content
       .metadata-primary
         h1.heading.heading__primary.metadata-primary__heading.topic__name= data.name
         +proxifyImg(data.image)(class='metadata-primary__image', alt='', aria-hidden='true')
-        p.metadata-primary__misc
-          if data.aliases.length
-            span Also known as:&nbsp;
-            span= data.aliases.join(', ')
       .metadata-secondary
-        +addMetadataSecondary('user','Followers', data.numFollowers)
         if data.isAdult
           +addMetadataSecondary('danger', 'Adult Topic', '18+', true)
         +quorafyUrl(meta.url)(class='link')
