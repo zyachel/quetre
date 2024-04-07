@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [8.0.0](https://github.com/zyachel/quetre/compare/v7.1.0...v8.0.0) (2024-04-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* **search:** any search request will be responded with a 410
+
+### Bug Fixes
+
+* **parse:** don't bail out on encountering weird characters ([f11d3f2](https://github.com/zyachel/quetre/commit/f11d3f2ac641bce64c5a674c0995cf85ffc7e37e))
+* remove stats from UI that aren't available anymore ([a0ac36a](https://github.com/zyachel/quetre/commit/a0ac36a174849a466c6b63ff65161e4627f1a56b))
+* **search:** remove broken search route ([f49062d](https://github.com/zyachel/quetre/commit/f49062d44ac04c77c3f064e703f40a8e114b5776))
+
 ## [7.1.0](https://github.com/zyachel/quetre/compare/v7.0.0...v7.1.0) (2023-11-05)
 
 
