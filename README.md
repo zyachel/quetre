@@ -259,6 +259,7 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
   A userscript that redirects popular social media platforms to their privacy respecting frontends.
 
 - Other addons with similar functionality:
+
   - [Dynamic Privacy Redirect](https://github.com/PrivacyDevel/DPR-addon)
   - [Alter](https://github.com/w3bdev1/alter)
 
@@ -316,3 +317,9 @@ Send a message on [\[matrix\]](https://matrix.to/#/@ninal:matrix.org) or go old 
 ## License
 
 Licensed under [GNU AGPLv3](./LICENSE).
+
+---
+
+## Disclaimer
+
+*Quetre does not host any content. All content is from Quora. Quora is a tradmark of Quora Inc.*
