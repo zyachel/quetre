@@ -17,7 +17,8 @@ const setMetaTheme = () => {
 //                  EVENT LISTENER
 ////////////////////////////////////////////////////////
 btnTheme.addEventListener('click', () => {
-  const themeToSet = document.documentElement.getAttribute('theme') === 'light' ? 'dark' : 'light';
+  const curTheme = document.documentElement.getAttribute('theme') ?? 'light';
+  const themeToSet = curTheme === 'light' ? 'dark' : 'light';
   setTheme(themeToSet);
   if (isLocalStorageAccessible()) localStorage.setItem('theme', themeToSet);
   setMetaTheme();
