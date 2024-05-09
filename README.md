@@ -70,6 +70,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | <https://quetre.drgns.space/>             | No                                                                                   | No                                                                          | US      | N/A (Self-hosted)    | Operated with ❤️ from [drgns.space](https://drgns.space/)                    |
 | <https://quetre.r4fo.com/>                | No                                                                                   | No                                                                          | NL      | Oracle               | Operated by [r4fo](https://r4fo.com/)                                       |
 | <https://quetre.ducks.party/>             | No                                                                                   | No                                                                          | NL      | Timeweb              | Operated by [ducks.party](https://ducks.party/)                             |
+| <https://quetre.nadeko.net/>              | [Yes](http://quetre.nadekobxalvyqrhvp3m2atfgdmzp5vcwdmu3wo4htecwjkodancfmgid.onion)  | No                                                                          | CL      | Oracle               | Operated by [Fijxu](https://nadeko.net)                                     |
 
 Instances list in JSON format can be found in [instances.json](instances.json) file.
 
@@ -219,15 +220,15 @@ Quetre will start running at http://localhost:3000.
 
 ### Docker
 
-There is a [docker image](https://github.com/PussTheCat-org/docker-quetre-quay) made by [@TheFrenchGhosty](https://github.com/TheFrenchGhosty) for [PussTheCat.org](https://pussthecat.org/)'s [instance](https://quetre.pussthecat.org/).  
+There is a [docker image](https://github.com/PussTheCat-org/docker-quetre-quay) made by [@TheFrenchGhosty](https://github.com/TheFrenchGhosty) for [PussTheCat.org](https://pussthecat.org/)'s [instance](https://quetre.pussthecat.org/).
 If you want a leaner one, you can checkout [@video-prize-ranch](https://codeberg.org/video-prize-ranch)'s [docker image](https://codeberg.org/video-prize-ranch/-/packages/container/quetre/latest).
 
 ---
 
 ## Contributing
 
-The development may seem slow as I don't have lots of free time. And whenever I do, it gets split between this service and [libremdb](https://github.com/zyachel/libremdb/).  
-If you believe you can help furthering this project in any way(be it maintaining, fixing issues, or adding features), please [get in touch](#contact).  
+The development may seem slow as I don't have lots of free time. And whenever I do, it gets split between this service and [libremdb](https://github.com/zyachel/libremdb/).
+If you believe you can help furthering this project in any way(be it maintaining, fixing issues, or adding features), please [get in touch](#contact).
 Regardless, any type of contribution is always welcome.
 
 ## Misc
@@ -236,7 +237,7 @@ Regardless, any type of contribution is always welcome.
 
 Following extensions can be used to automatically redirect Quora URLs to Quetre:
 
-- [redirector](https://github.com/einaregilsson/Redirector)  
+- [redirector](https://github.com/einaregilsson/Redirector)
   You can manually add any redirect.
   Below is a basic config of Quora to Quetre. Replace `quetre.iket.me` in `Redirect to` to any instance of your choice.
 
@@ -249,13 +250,13 @@ Following extensions can be used to automatically redirect Quora URLs to Quetre:
   Pattern description: redirects all Quora urls to Quetre
   ```
 
-  This config should output:  
+  This config should output:
   `Example result: https://quetre.iket.me/redirect/https://www.quora.com/What-is-Linux-4?share=1`
 
-- [LibRedirect](https://github.com/libredirect/libredirect/)  
+- [LibRedirect](https://github.com/libredirect/libredirect/)
   Redirects many popular services to their alternative front-ends. Has a ton of features and an active community. Quetre is supported by default. So, no need to do anything.
 
-- [Privacy Redirector](https://github.com/dybdeskarphet/privacy-redirector)  
+- [Privacy Redirector](https://github.com/dybdeskarphet/privacy-redirector)
   A userscript that redirects popular social media platforms to their privacy respecting frontends.
 
 - Other addons with similar functionality:
