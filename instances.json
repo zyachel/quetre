@@ -91,5 +91,10 @@
     {
         "clearnet": "https://quetre.ducks.party/",
         "country": "NL"
+    },
+    {
+        "clearnet": "https://quetre.nadeko.net/",
+        "tor": "http://quetre.nadekobxalvyqrhvp3m2atfgdmzp5vcwdmu3wo4htecwjkodancfmgid.onion",
+        "country": "CL"
     }
 ]
