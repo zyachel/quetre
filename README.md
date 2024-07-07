@@ -71,6 +71,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | <https://quetre.r4fo.com/>                | No                                                                                   | No                                                                          | NL      | Oracle               | Operated by [r4fo](https://r4fo.com/)                                       |
 | <https://quetre.ducks.party/>             | No                                                                                   | No                                                                          | NL      | Timeweb              | Operated by [ducks.party](https://ducks.party/)                             |
 | <https://quetre.nadeko.net/>              | [Yes](http://quetre.nadekobxalvyqrhvp3m2atfgdmzp5vcwdmu3wo4htecwjkodancfmgid.onion)  | No                                                                          | CL      | Oracle               | Operated by [Fijxu](https://nadeko.net)                                     |
+| <https://quetre.private.coffee/>          | [Yes](http://quetre.coffee2m3bjsrrqqycx6ghkxrnejl2q6nl7pjw2j4clchjj6uk5zozad.onion)  | No                                                                          | AT      | Alwyzon              | Operated by [Private.coffee](https://private.coffee)                        |
 
 Instances list in JSON format can be found in [instances.json](instances.json) file.
 

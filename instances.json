@@ -97,5 +97,10 @@
         "clearnet": "https://quetre.nadeko.net/",
         "tor": "http://quetre.nadekobxalvyqrhvp3m2atfgdmzp5vcwdmu3wo4htecwjkodancfmgid.onion",
         "country": "CL"
+    },
+    {
+        "clearnet": "https://quetre.private.coffee/",
+        "tor": "http://quetre.coffee2m3bjsrrqqycx6ghkxrnejl2q6nl7pjw2j4clchjj6uk5zozad.onion",
+        "country": "AT"
     }
 ]
