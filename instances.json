@@ -102,5 +102,10 @@
         "clearnet": "https://quetre.private.coffee/",
         "tor": "http://quetre.coffee2m3bjsrrqqycx6ghkxrnejl2q6nl7pjw2j4clchjj6uk5zozad.onion",
         "country": "AT"
+    },{
+        "clearnet": "https://qr.zorby.top/",
+        "tor": "http://iuryhavpcvc5unkojuobya6efmromgyatc3dspw5arulgqxch4bylcqd.onion",
+        "i2p": "http://fytmh2fqkg2q4dwtu4eqe6qi24hvivjtkhciv7e3gch35wkh4dpq.b32.i2p",
+        "country": "DE"
     }
 ]
