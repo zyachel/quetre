@@ -111,5 +111,9 @@
     },
     {
         "clearnet": "https://quetre.canine.tools/"
+    },
+    {
+        "clearnet": "https://qt.bloat.cat/",
+        "country": "DE"
     }
 ]
