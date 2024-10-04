@@ -115,5 +115,9 @@
     {
         "clearnet": "https://qt.bloat.cat/",
         "country": "DE"
+    },
+    {
+        "clearnet": "https://quetre.gitro.xyz",
+        "country": "DE"
     }
 ]
