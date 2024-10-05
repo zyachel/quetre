@@ -75,6 +75,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | <https://qr.zorby.top/>          | [Yes](http://iuryhavpcvc5unkojuobya6efmromgyatc3dspw5arulgqxch4bylcqd.onion)  | [Yes](http://fytmh2fqkg2q4dwtu4eqe6qi24hvivjtkhciv7e3gch35wkh4dpq.b32.i2p)                                                                          | DE      | Pawhost              | Operated by [Troughy](https://zorby.top/)                        |
 | <https://quetre.canine.tools/>                | No                                                                               | No                                                                          | US | RoyaleHosting        | Operated by [canine.tools](https://canine.tools/)                           |
 | <https://qt.bloat.cat/>                | No                                                                               | No                                                                          | DE | Datalix        | Operated by [bloat.cat](https://bloat.cat/)                           |
+| <https://quetre.gitro.xyz>                | No                                                                                   | No                                                                          | DE      | Hetzner              | Operated by [Gitro](https://gitro.xyz)                                   |
 
 Instances list in JSON format can be found in [instances.json](instances.json) file.
 
