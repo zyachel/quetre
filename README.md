@@ -66,6 +66,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | <https://quetre.private.coffee/>          | [Yes](http://quetre.coffee2m3bjsrrqqycx6ghkxrnejl2q6nl7pjw2j4clchjj6uk5zozad.onion)  | No                                                                          | AT      | Alwyzon              | Operated by [Private.coffee](https://private.coffee)                        |
 | <https://quetre.canine.tools/>                | No                                                                               | No                                                                          | US | RoyaleHosting        | Operated by [canine.tools](https://canine.tools/)                           |
 | <https://qt.bloat.cat/>                | No                                                                               | No                                                                          | DE | Datalix        | Operated by [bloat.cat](https://bloat.cat/)                           |
+| <https://quetre.gitro.xyz>                | No                                                                                   | No                                                                          | DE      | Hetzner              | Operated by [Gitro](https://gitro.xyz)                                   |
 
 Instances list in JSON format can be found in [instances.json](instances.json) file.
 
