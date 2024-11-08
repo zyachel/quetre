@@ -40,12 +40,6 @@
         "country": "SG"
     },
     {
-        "clearnet": "https://quetre.catsarch.com/",
-        "tor": "http://quetre.catsarchywsyuss6jdxlypsw5dc7owd5u5tr6bujxb7o6xw2hipqehyd.onion",
-        "i2p": "http://5vtstw6besbeadtll62wy3prwq7o6nxxle2euhtoskmcrcpaa43q.b32.i2p",
-        "country": "US"
-    },
-    {
         "clearnet": "https://ask.sudovanilla.org/",
         "country": "US"
     },
