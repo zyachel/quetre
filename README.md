@@ -67,6 +67,7 @@ It enables you to see answers without ads, trackers, and other such bloat.
 | <https://qt.bloat.cat/>                | No                                                                               | No                                                                          | DE | Datalix        | Operated by [bloat.cat](https://bloat.cat/)                           |
 | <https://quetre.gitro.xyz>                | No                                                                                   | No                                                                          | DE      | Hetzner              | Operated by [Gitro](https://gitro.xyz)                                   |
 | <https://quetre.jeikobu.net>              | No                                                                                   | No                                                                          | DE      | Hetzner (Cloudflare) | Operated by [Shindou Jeikobu](https://jeikobu.net)                          |
+| <https://quetre.franklyflawless.org>      | No                                                                                   | No                                                                          | DE      | Hetzner              | Operated by [FranklyFlawless](https://franklyflawless.org)                  |
 
 Instances list in JSON format can be found in [instances.json](instances.json) file.
 
