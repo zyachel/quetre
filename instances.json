@@ -79,5 +79,9 @@
     {
         "clearnet": "https://quetre.jeikobu.net",
         "country": "DE"
+    },
+    {
+        "clearnet": "https://quetre.franklyflawless.org",
+        "country": "DE"
     }
 ]
