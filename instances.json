@@ -79,5 +79,13 @@
     {
         "clearnet": "https://quetre.franklyflawless.org",
         "country": "DE"
+    },
+    {
+        "clearnet": "https://q.307200.xyz",
+        "country": "FI"
+    },
+    {
+        "clearnet": "https://quora.nerdvpn.de",
+        "country": "UA"
     }
 ]
