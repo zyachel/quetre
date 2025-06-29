@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
 import Redis from 'ioredis';
+import env from './env.js';
 
-const redisUrl = process.env.REDIS_URL;
+const redisUrl = env.REDIS_URL;
+export const ttl = env.REDIS_TTL;
 
+/** @type {InstanceType<typeof Redis>} */
 const stub = {
-  get: async key => {},
-  set: async (key, value, secondsToken, seconds) => {},
-  expire: async (key, seconds) => {},
+  get: async () => { },
+  set: async () => { },
+  expire: async () => { },
 };
 
 const redis = redisUrl ? new Redis(redisUrl) : stub;

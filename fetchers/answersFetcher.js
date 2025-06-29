@@ -1,25 +1,15 @@
-/* eslint-disable no-useless-catch */
-////////////////////////////////////////////////////////
-//                      IMPORTS
-////////////////////////////////////////////////////////
 import * as cheerio from 'cheerio';
-import getAxiosInstance from '../utils/getAxiosInstance.js';
+import axiosInstance, { getBaseUrl } from '../utils/axiosInstance.js';
 import AppError from '../utils/AppError.js';
 import parse from '../utils/parse.js';
 
-////////////////////////////////////////////////////////
-//                     FUNCTION
-////////////////////////////////////////////////////////
 /**
- * makes a call to quora.com(with the resourceStr appended) and returns parsed JSON containing the data about the resource requested.
  * @param {string} resourceStr a string after the baseURL
- * @param {string} lang additional options
- * @returns JSON containing the result
+ * @param {string} lang 
  */
 const answersFetcher = async (resourceStr, lang) => {
   try {
-    const axiosInstance = getAxiosInstance(lang);
-    const res = await axiosInstance.get(encodeURIComponent(resourceStr));
+    const res = await axiosInstance.get(encodeURIComponent(resourceStr), { baseURL: getBaseUrl(lang) });
     const $ = cheerio.load(res.data);
 
     const rawData = { question: null, answers: [], related: [], answerCount: 0 };
@@ -71,7 +61,4 @@ const answersFetcher = async (resourceStr, lang) => {
   }
 };
 
-////////////////////////////////////////////////////////
-//                     EXPORTS
-////////////////////////////////////////////////////////
 export default answersFetcher;

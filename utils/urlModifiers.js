@@ -21,3 +21,23 @@ export const quetrefy = url => {
     return url;
   }
 };
+
+/**
+ * @param {import('express').Request['query']} queryParams
+ * @returns {Record<string, string>}
+ */
+export const getValidQueryParams = queryParams => {
+  /** @type {Record<string, string>} */
+  const validParams = {};
+  for (const key in queryParams) {
+    if (Object.hasOwn(queryParams, key)) {
+      const value = queryParams[key];
+      const finalValue = Array.isArray(value) ? value.find(Boolean) : value;
+      if (!finalValue) continue;
+
+      validParams[key] = finalValue;
+    }
+  }
+
+  return validParams;
+};

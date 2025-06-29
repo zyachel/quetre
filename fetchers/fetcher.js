@@ -1,15 +1,8 @@
-/* eslint-disable no-useless-catch */
-////////////////////////////////////////////////////////
-//                      IMPORTS
-////////////////////////////////////////////////////////
 import * as cheerio from 'cheerio';
-import getAxiosInstance from '../utils/getAxiosInstance.js';
+import axiosInstance, { getBaseUrl } from '../utils/axiosInstance.js';
 import AppError from '../utils/AppError.js';
 import parse from '../utils/parse.js';
 
-////////////////////////////////////////////////////////
-//                     FUNCTION
-////////////////////////////////////////////////////////
 /**
  * makes a call to quora.com(with the resourceStr appended) and returns parsed JSON containing the data about the resource requested.
  * @param {string} resourceStr a string after the baseURL
@@ -23,8 +16,7 @@ const fetcher = async (resourceStr, { keyword, lang, toEncode = true }) => {
   try {
     // as url might contain unescaped chars. so, encoding it right away
     const str = toEncode ? encodeURIComponent(resourceStr) : resourceStr;
-    const axiosInstance = getAxiosInstance(lang);
-    const res = await axiosInstance.get(str);
+    const res = await axiosInstance.get(str, { baseURL: getBaseUrl(lang) });
 
     const $ = cheerio.load(res.data);
 
@@ -56,7 +48,4 @@ const fetcher = async (resourceStr, { keyword, lang, toEncode = true }) => {
   }
 };
 
-////////////////////////////////////////////////////////
-//                     EXPORTS
-////////////////////////////////////////////////////////
 export default fetcher;

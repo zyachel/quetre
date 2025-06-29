@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  quetre:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - '3000:3000' # remember to set the same port in .env file
+    env_file: .env
+  redis:
+    image: docker.io/redis:alpine
+    container_name: redis
+    restart: unless-stopped
