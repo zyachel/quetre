@@ -87,5 +87,9 @@
     {
         "clearnet": "https://quora.nerdvpn.de",
         "country": "UA"
+    },
+    {
+        "clearnet": "https://quetre.privacyredirect.com/",
+        "country": "FI"
     }
 ]
