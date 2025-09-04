@@ -1,11 +1,11 @@
-const invalidLessThan = /\\x3C/g;
-const validLessThan = '\\u003C';
+const hexEscapeSequence = /\\x([0-9A-Fa-f]{2})/g;
+const unicodeEscapeSequence = String.raw`\u00$1`;
 
 /**
  * parses and corrects invalid escape sequences
  *  @param {string} data
- * @returns {Record<PropertyKey, any>}
+ * @returns {Record<PropertyKey, unknown>}
  */
-const parse = data => JSON.parse(data.replace(invalidLessThan, validLessThan));
+const parse = data => JSON.parse(data.replace(hexEscapeSequence, unicodeEscapeSequence));
 
 export default parse;
