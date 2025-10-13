@@ -3,6 +3,9 @@ name: Release Docker Images
 on:
   release:
     types: [published]
+  push:
+    tags:
+      - 'v*'
 
 env:
   REGISTRY: ghcr.io
