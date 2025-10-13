@@ -4,8 +4,6 @@ on:
   release:
     types: [published]
   push:
-    branches:
-      - feat/docker-optimization
     tags:
       - 'v*'
 
