@@ -18,6 +18,12 @@ RUN pnpm run sass:build
 # Final production image
 FROM node:lts-alpine
 
+# Add OCI labels for better image metadata
+LABEL org.opencontainers.image.title="Quetre" \
+      org.opencontainers.image.description="A libre front-end for Quora" \
+      org.opencontainers.image.source="https://github.com/zyachel/quetre" \
+      org.opencontainers.image.licenses="AGPL-3.0-or-later"
+
 # Create a non-root user
 RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001
 
