@@ -55,5 +55,10 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          annotations: |
+            index:org.opencontainers.image.title=Quetre
+            index:org.opencontainers.image.description=A libre front-end for Quora
+            index:org.opencontainers.image.source=https://github.com/zyachel/quetre
+            index:org.opencontainers.image.licenses=AGPL-3.0-or-later
           cache-from: type=gha
           cache-to: type=gha,mode=max
