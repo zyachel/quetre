@@ -1,0 +1,31 @@
+# Git
+.git
+.gitignore
+
+# GitHub
+.github
+
+# Dependencies
+node_modules
+
+# Environment files
+.env*
+
+# Development files
+.vscode
+dev-data
+dump.rdb
+
+# Documentation
+README.md
+CHANGELOG.md
+
+# Service files
+quetre.service
+
+# Built assets (will be rebuilt)
+public/css
+
+# Docker
+Dockerfile
+.dockerignore
