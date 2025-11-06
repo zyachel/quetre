@@ -2,6 +2,7 @@ version: '3'
 
 services:
   quetre:
+    env_file: .env
     build:
       context: .
       dockerfile: Dockerfile
