@@ -91,5 +91,9 @@
     {
         "clearnet": "https://quetre.privacyredirect.com/",
         "country": "FI"
+    },
+    {
+        "clearnet": "https://quetre.wuemeli.com",
+        "country": "CH"
     }
 ]
